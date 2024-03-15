@@ -7,6 +7,6 @@ public class mainPageController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        System.out.println("Hai premuto il pulsantozzo");
     }
 }

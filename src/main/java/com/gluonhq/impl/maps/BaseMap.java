@@ -47,6 +47,8 @@ import java.util.logging.Logger;
 
 import static java.lang.Math.ceil;
 import static java.lang.Math.floor;
+
+
 import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
 

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 /**
  * JavaFX App
  */
@@ -18,7 +19,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        
         scene = new Scene(createRoot("/com/fxml/mainPage"), 1280, 720);
 
         stage.setScene(scene);

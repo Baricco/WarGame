@@ -35,3 +35,68 @@ Il livello che identifica la forza complessiva dello stato. Io lo farei da 1 a 2
 
 LEVA OBBLIGATORIA:
 Questa modalità può essere attivata su tutto lo stato, e può essere disattivata in qualunque momento nel proprio turno (se viene disattivata bisogna aspettare due turni prima di poterla riattivare). Se disattivata, al giocatore compare un'altra opzione, Arruola, che consente di arruolare un quantitativo di truppe dipendente dal numero di abitanti del territorio e dalla Forza Lavoro. E' possibile scegliere la tipologia di truppe che si vuole arruolare, tenendo conto che arruolare truppe di livello superiore costa più risorse. Se attivata, le truppe aumentano in automatico all'inizio di ogni turno, e in quantitativo maggiore rispetto a ciò che si potrebbe ottenere manualmente, ma la Forza Lavoro di ogni territorio cala drasticamente.
+
+
+
+
+
+
+\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/-\-/
+
+
+
+
+
+
+STATI:
+
+America:
+1. Canada
+2. Stati Uniti
+3. Messico
+4. Centro America
+5. Colombia & Venezuela
+6. Brasile
+7. Perù
+8. Sud-America dell'Est
+9. Argentina
+
+Europa:
+10. Gran Bretagna
+11. Scandinavia
+12. Spagna & Portogallo
+13. Francia
+14. Germania
+15. Italia
+16. Jugoslavia
+17. Russia, Ucraina e Polonia
+18. Grecia 
+19. Turchia
+
+Africa:
+20. Algeria e Tunisia
+21. Marocco
+22. Libia
+23. Egitto
+24. Etiopia & Somalia & Kenya
+25. Repubblica Democratica del Congo & Nigeria & Ciad
+26. Africa del Nord-Ovest (Costa d'Avorio & Camerun)
+27. Madagascar
+28. Sudafrica
+29. Africa del Sud-Ovest (Angola)
+
+Medio Oriente:
+30. Arabia Saudita & Iraq & Israele & Palestina
+31. Iran & Afghanistan & Kazakistan
+
+Asia:
+32. India
+33. Cina
+34. Mongolia
+35. Corea
+36. Giappone
+37. Filippine & Vietnam
+
+Oceania:
+38. Australia
+39. Nuova Zelanda

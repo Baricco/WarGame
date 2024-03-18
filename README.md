@@ -86,17 +86,18 @@ Africa:
 29. Africa del Sud-Ovest (Angola)
 
 Medio Oriente:
-30. Arabia Saudita & Iraq & Israele & Palestina
-31. Iran & Afghanistan & Kazakistan
+30. Arabia Saudita
+31 Israele & Palestina & Iraq & Syria
+32. Iran & Afghanistan & Kazakistan
 
 Asia:
-32. India
-33. Cina
-34. Mongolia
-35. Corea
-36. Giappone
-37. Filippine & Vietnam
+33. India
+34. Cina
+35. Mongolia
+36. Corea
+37. Giappone
+38. Filippine & Vietnam
 
 Oceania:
-38. Australia
-39. Nuova Zelanda
+39. Australia
+40. Nuova Zelanda

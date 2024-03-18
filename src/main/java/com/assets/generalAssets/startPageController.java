@@ -12,7 +12,7 @@ import javafx.scene.shape.SVGPath;
 // IN MODO DA RIUSCIRE FINALMENTE A STAMPARE STA CAZZO DI MAPPA
 
 
-public class mainPageController {
+public class startPageController {
     
     @FXML
     private Pane mapContainer;

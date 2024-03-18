@@ -1,16 +1,16 @@
 package com.example;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.SVGPath;
+
+// TO DO:
+// BISOGNA TROVARE UN PARSER PER SVG CHE SI OCCUPI DI LEGGERE IL FILE "world.svg" E MANDI L'ATTRIBUTO "d" DEI SINGOLI PATH ALLA FUNZIONE "createRegionFromSvg" 
+// IN MODO DA RIUSCIRE FINALMENTE A STAMPARE STA CAZZO DI MAPPA
+
 
 public class mainPageController {
     
@@ -46,7 +46,6 @@ public class mainPageController {
 
 
         svgRegion.setStyle("-fx-background-color: red");
-        svgRegion.setMinSize(100, 100); // Imposta le dimensioni minime
         svgRegion.setPrefSize(200, 200); // Imposta le dimensioni preferite
         return svgRegion;
     }

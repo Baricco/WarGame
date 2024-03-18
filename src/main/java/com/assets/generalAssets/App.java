@@ -1,4 +1,4 @@
-package com.generalAssets;
+package com.assets.generalAssets;
 
 
 import javafx.application.Application;

@@ -1,4 +1,4 @@
-package com.example;
+package com.generalAssets;
 
 import java.io.IOException;
 

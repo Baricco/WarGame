@@ -1,7 +1,7 @@
-module com.example {
+module com.generalAssets {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens com.example to javafx.fxml;
-    exports com.example;
+    opens com.generalAssets to javafx.fxml;
+    exports com.generalAssets;
 }

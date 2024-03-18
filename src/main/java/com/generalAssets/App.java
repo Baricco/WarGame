@@ -1,4 +1,4 @@
-package com.example;
+package com.generalAssets;
 
 
 import javafx.application.Application;
@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         
-        scene = new Scene(createRoot("mainPage"), 1280, 720);
+        scene = new Scene(createRoot("/com/fxml/mainPage"), 1280, 720);
 
         stage.setScene(scene);
         stage.setTitle("WarGame");

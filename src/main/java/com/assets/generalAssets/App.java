@@ -19,7 +19,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(createRoot("/com/fxml/startPage"), 1280, 720);
+        scene = new Scene(createRoot("src/main/resources/com/fxml/startPage"), 1280, 720);
 
         stage.setScene(scene);
         stage.setTitle("WarGame");
@@ -39,6 +39,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+
+        
+        System.out.println(App.class.getResource("src/main/resources/com/fxml/startPage" + ".fxml"));
+
+        
         launch();
     }
 

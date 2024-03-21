@@ -19,12 +19,12 @@ public class SVGParser {
         
         ArrayList<Element> paths = new ArrayList<Element>();
         ArrayList<String> stringPaths = new ArrayList<String>();
+        paths.addAll(this.file.body().getElementsByTag("path"));
 
-        System.out.println(paths.addAll(this.file.body().getElementsByTag("path")));
-
-        for (Element path : paths) stringPaths.add(path.attribute("d").toString().substring(3));
-
+        for (Element path : paths) {
+            String temp = path.attribute("d").toString();
+            stringPaths.add(temp.substring(3,temp.length()-2));
+        }
         return stringPaths;
-
     }
 }

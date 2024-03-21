@@ -1,6 +1,7 @@
 module com.assets {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.jsoup;
 
 
     opens com.assets.gameAssets to javafx.fxml;

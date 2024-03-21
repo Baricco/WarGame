@@ -1,4 +1,10 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    
+    "java.project.referencedLibraries": [
+        "/../resources/com/lib/**/*.jar",
+        "/../resources/com/lib/jsoup-1.17.2.jar"
+    ]
+
 }

@@ -39,9 +39,10 @@ public class SVGParser {
         svgRegion.setShape(svgPath);
 
         // .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;}x\
-
+        
         svgRegion.setStyle("-fx-background-color: white; -fx-border-color: black");
         svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight()); // Imposta le dimensioni preferite
+        
         return svgRegion;
     }
 }

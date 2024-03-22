@@ -2,6 +2,7 @@ module com.assets {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.jsoup;
+    requires batik.parser;
 
 
     opens com.assets.gameAssets to javafx.fxml;

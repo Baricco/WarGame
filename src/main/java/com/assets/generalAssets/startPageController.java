@@ -22,24 +22,18 @@ public class startPageController {
     @FXML
     private void initialize() {
         SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\world.svg");
-        ArrayList<Pair<String, String>> svgPaths = svgParser.parseFile();
-
-        double offsetX = 0; // Offset iniziale X nel contenitore
-        double offsetY = 0; // Offset iniziale Y nel contenitore
+        ArrayList<String> svgPaths = svgParser.parseFile();
 
         // Loop sui path dell'SVG
-        for (Pair<String, String> svgPathData : svgPaths) {
-            Region region = svgParser.createRegionFromSvg(svgPathData.getKey(), svgPathData.getValue(), mapContainer);
-            
-            // Imposta la posizione della regione considerando l'offset
-            region.setLayoutX(offsetX);
-            region.setLayoutY(offsetY);
+        for (String svgPathData : svgPaths) {
+            Region region = svgParser.createRegionFromSvg(svgPathData, mapContainer);
 
             mapContainer.getChildren().add(region); // Aggiungi la regione al contenitore
 
             // qui potresti voler considerare la dimensione della regione appena aggiunta per calcolare l'offset successivo
             
         }
+        
     }
 
 

@@ -21,18 +21,20 @@ public class startPageController {
   
     @FXML
     private void initialize() {
-        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\world.svg");
+        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\mario.svg");
         ArrayList<String> svgPaths = svgParser.parseFile();
 
         // Loop sui path dell'SVG
-        for (String svgPathData : svgPaths) {
+       for (String svgPathData : svgPaths) {
             Region region = svgParser.createRegionFromSvg(svgPathData, mapContainer);
 
             mapContainer.getChildren().add(region); // Aggiungi la regione al contenitore
 
+            System.out.println(region.getShape());
+
             // qui potresti voler considerare la dimensione della regione appena aggiunta per calcolare l'offset successivo
             
-        }
+       }
         
     }
 

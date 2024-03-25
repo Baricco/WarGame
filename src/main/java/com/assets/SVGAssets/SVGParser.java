@@ -31,6 +31,37 @@ public class SVGParser {
         return pathData;
     }
 
+
+    /*
+
+    public Region createRegionFromSvg(ArrayList<String> svgPathsData, Pane container) {
+        StringBuilder combinedSvgPaths = new StringBuilder();
+        for (String svgPathData : svgPathsData) {
+            combinedSvgPaths.append(svgPathData);
+        }
+        
+        SVGPath svgPath = new SVGPath();
+        svgPath.setContent(combinedSvgPaths.toString());
+        
+        Region svgRegion = new Region();
+        svgRegion.setShape(svgPath);
+    
+        // Applica le trasformazioni di scala per adattare la dimensione dei percorsi al contenitore
+        double scaleFactor = 1.0; // Imposta il fattore di scala desiderato
+        svgRegion.setScaleX(scaleFactor);
+        svgRegion.setScaleY(scaleFactor);
+    
+        // Imposta le dimensioni preferite della regione
+        svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight());
+    
+        return svgRegion;
+    }
+    
+    */
+
+   // /*
+
+
     public Region createRegionFromSvg(String svgData, Pane container) {
         SVGPath svgPath = new SVGPath();
         svgPath.setContent(svgData);
@@ -40,9 +71,28 @@ public class SVGParser {
 
         // .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;}x\
         
-        svgRegion.setStyle("-fx-fill: #ECECEC; -fx-stroke: #000000; -fx-stroke-width: 0.2; -fx-stroke-linecap: round; -fx-stroke-linejoin: round; -fx-background-color: white; -fx-border-color: black");
+        double scaleFactor = 1.0; // Imposta il fattore di scala desiderato
+        svgRegion.setScaleX(scaleFactor);
+        svgRegion.setScaleY(scaleFactor);
+
+        svgRegion.setStyle("
+            -fx-fill: #ECECEC;
+            -fx-stroke: #000000; 
+            -fx-stroke-width: 0.2; 
+            -fx-stroke-linecap: round; 
+            -fx-stroke-linejoin: round; 
+            -fx-background-color: white; 
+            -fx-border-color: black
+        ");
+        
         svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight()); // Imposta le dimensioni preferite
         
         return svgRegion;
     }
+
+
+    // */
+
+
+
 }

@@ -2,10 +2,12 @@ package com.assets.SVGAssets;
 
 import java.io.File;
 import java.util.ArrayList;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -17,7 +19,9 @@ public class SVGParser {
 
     
     public SVGParser(String fileName) {
-        try { this.file = Jsoup.parse(new File(fileName)); } catch(Exception e) { System.out.println("Error, File doesn't exist"); }
+        try { 
+            this.file = Jsoup.parse(new File(fileName));
+        } catch(Exception e) { System.out.println("Error, File doesn't exist"); }
     }
 
     public ArrayList<String> parseFile() {
@@ -26,7 +30,6 @@ public class SVGParser {
 
         for (Element path : paths) {
             pathData.add(path.attr("d"));
-            
         }
         return pathData;
     }
@@ -65,28 +68,31 @@ public class SVGParser {
     public Region createRegionFromSvg(String svgData, Pane container) {
         SVGPath svgPath = new SVGPath();
         svgPath.setContent(svgData);
-        
-        Region svgRegion = new Region();
-        svgRegion.setShape(svgPath);
 
         // .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;}x\
-        
-        double scaleFactor = 1.0; // Imposta il fattore di scala desiderato
-        svgRegion.setScaleX(scaleFactor);
-        svgRegion.setScaleY(scaleFactor);
 
-        svgRegion.setStyle("
-            -fx-fill: #ECECEC;
-            -fx-stroke: #000000; 
-            -fx-stroke-width: 0.2; 
-            -fx-stroke-linecap: round; 
-            -fx-stroke-linejoin: round; 
-            -fx-background-color: white; 
-            -fx-border-color: black
-        ");
+       // svgRegion.setLayoutX(0);
+       // svgRegion.setLayoutY(0);
+                
+
+        System.out.println("Region Width: " + svgPath.prefWidth(-1) + " Region Height: " + svgPath.prefHeight(svgPath.prefWidth(-1)));
+
+        double originalWidth = svgPath.prefWidth(-1);
+        double originalHeight = svgPath.prefHeight(originalWidth);
+
+        svgPath.setScaleX(container.getPrefWidth() / originalWidth);
+        svgPath.setScaleY(container.getPrefHeight() / originalHeight);
+
+
+        Region svgRegion = new Region();
         
-        svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight()); // Imposta le dimensioni preferite
-        
+        svgRegion.setShape(svgPath);
+
+        //svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight()); // IL PROBLEMA STA IN QUESTA RIGA, PERCHE' IMPOSTA LA
+        // DIMENSIONE DI OGNI REGION ALLA DIMENSIONE DEL PAIN, MA NON SO A COSA IMPOSTARLA PERCHE' SE TOLGO QUESTA RIGA IMPOSTA LE DIMENSIONI A 0
+        // BISOGNA CREARE UNA FUNZIONE CHE CALCOLA LARGHEZZA E ALTEZZA DI OGNI REGION PARTENDO DAL PATH SVG E SETTI QUESTE DIMENSIONI NELLA RIGA SOPRA
+
+
         return svgRegion;
     }
 

@@ -1,0 +1,10 @@
+#mapContainer {
+    -fx-fill: #ECECEC; 
+    -fx-stroke: #000000; 
+    -fx-stroke-width: 0.2; 
+    -fx-stroke-linecap: round; 
+    -fx-stroke-linejoin: round; 
+    -fx-background-color: white; 
+    -fx-border-color: black;
+
+}

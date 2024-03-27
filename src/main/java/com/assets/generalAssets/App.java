@@ -23,7 +23,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
-
+        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("WarGame");
         stage.show();
@@ -42,7 +42,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        System.out.println();
         launch();
     }
 

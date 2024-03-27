@@ -5,6 +5,13 @@
     "java.project.referencedLibraries": [
         "/../resources/com/lib/**/*.jar",
         "/../resources/com/lib/jsoup-1.17.2.jar"
+    ],
+    "java.completion.filteredTypes": [
+        "com.sun.*",
+        "sun.*",
+        "jdk.*",
+        "org.graalvm.*",
+        "io.micrometer.shaded.*"
     ]
 
 }

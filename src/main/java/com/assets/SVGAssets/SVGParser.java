@@ -65,33 +65,44 @@ public class SVGParser {
    // /*
 
 
-    public Region createRegionFromSvg(String svgData, Pane container) {
+    public Region createRegionFromSvg(String svgData, Pane container) throws Exception {
+        
         SVGPath svgPath = new SVGPath();
-        svgPath.setContent(svgData);
-
-        // .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;}x\
-
-       // svgRegion.setLayoutX(0);
-       // svgRegion.setLayoutY(0);
-                
-
-        System.out.println("Region Width: " + svgPath.prefWidth(-1) + " Region Height: " + svgPath.prefHeight(svgPath.prefWidth(-1)));
+        svgPath.setContent(svgData);    
 
         double originalWidth = svgPath.prefWidth(-1);
         double originalHeight = svgPath.prefHeight(originalWidth);
 
+        if (originalWidth == 0 || originalHeight == 0) throw new Exception();
+
         svgPath.setScaleX(container.getPrefWidth() / originalWidth);
         svgPath.setScaleY(container.getPrefHeight() / originalHeight);
-
 
         Region svgRegion = new Region();
         
         svgRegion.setShape(svgPath);
 
-        //svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight()); // IL PROBLEMA STA IN QUESTA RIGA, PERCHE' IMPOSTA LA
-        // DIMENSIONE DI OGNI REGION ALLA DIMENSIONE DEL PAIN, MA NON SO A COSA IMPOSTARLA PERCHE' SE TOLGO QUESTA RIGA IMPOSTA LE DIMENSIONI A 0
-        // BISOGNA CREARE UNA FUNZIONE CHE CALCOLA LARGHEZZA E ALTEZZA DI OGNI REGION PARTENDO DAL PATH SVG E SETTI QUESTE DIMENSIONI NELLA RIGA SOPRA
+        svgRegion.getStyleClass().add("State");
 
+        double widthRatio = container.getPrefWidth() / originalWidth;
+        double heightRatio = container.getPrefHeight() / originalHeight; 
+        
+        System.out.println("Path Width: " + originalWidth + " Path Height: " + originalHeight);
+        System.out.println("Container Width: " + container.getPrefWidth() + " Container Height: " + container.getPrefHeight());
+        System.out.println("Region Width: " + widthRatio + " Region Height: " + heightRatio);
+        System.out.println("Region X: " + svgRegion.getLayoutX() + " Region Y: " + svgRegion.getLayoutY());
+        System.out.println("\n\n");
+
+        // QUI BISOGNA CALCOLARE LA POSIZIONE DELLA REGION CHE SI STA PER STAMPARE NEL MAPCONTAINER
+        // LA POSIZIONE VA RICAVATA (IN QUALCHE MODO, NON SO COME) DAL FILE SVG
+        // UNA VOLTA OTTENUTE LE COORDINATE CHE VANNO ASSEGNATE ALLA REGION, USIAMO IL COMANDO 
+        // svgRegion.setLayoutX() E svgRegion.setLayoutY() PER IMPOSTARLE, PER 
+        // DI DEFAULT ADESSO LE STAMPA A (0, 0), INFATTI LE METTE TUTTE UNA SOPRA L'ALTRA NELL'ANGOLO IN ALTO A SINISTRA
+        // L'ALTERNATIVA POTREBBE ESSERE DI MODIFICARE IN QUALCHE MODO IL FILE SVG IN MODO CHE ANCHE SE VENGONO STAMPATE TUTTE 
+        // IN (0, 0), LE REGIONI SI VEDONO IN MANIERA CORRETTA, MA CREDO CHE SIA PIU' DIFFICILE, PERO' FAI COME PREFERISCI PER ME E' UGUALE
+        // BUON SOGGIORNO TERMOLESE :)
+        
+        svgRegion.setPrefSize(widthRatio, heightRatio);
 
         return svgRegion;
     }

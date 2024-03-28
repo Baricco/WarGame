@@ -6,10 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.apache.batik.parser.DefaultPointsHandler;
-import org.apache.batik.parser.ParseException;
-import org.apache.batik.parser.PointsHandler;
-import org.apache.batik.parser.PointsParser;
 
 import java.io.IOException;
 

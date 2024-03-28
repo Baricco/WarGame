@@ -21,14 +21,16 @@ public class startPageController {
   
     @FXML
     private void initialize() {
-        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\cuore.svg");
+        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\Lupo.svg");
         ArrayList<String> svgPaths = svgParser.parseFile();
 
         // Loop sui path dell'SVG
        for (String svgPathData : svgPaths) {
-            Region region = svgParser.createRegionFromSvg(svgPathData, mapContainer);
+            try {
+                Region region = svgParser.createRegionFromSvg(svgPathData, mapContainer);
+                mapContainer.getChildren().add(region); // Aggiungi la regione al contenitore
+            } catch (Exception e) { continue; }
 
-            mapContainer.getChildren().add(region); // Aggiungi la regione al contenitore
 
             //System.out.println(region.getShape());
 

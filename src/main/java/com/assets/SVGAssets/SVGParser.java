@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.SVGPath;
+import javafx.util.Pair;
 
 public class SVGParser {
     
@@ -65,6 +66,28 @@ public class SVGParser {
    // /*
 
 
+    private String[] formatString(String[] splittedData) {
+        for (int i = 0; i < splittedData.length; i++) splittedData[i] = splittedData[i].replaceAll("[ \t\n\rMm]", "");
+        return splittedData;
+    }
+
+    private Pair<Double, Double> getStartingCoords(String svgData) {
+
+        String[] splittedData = svgData.split(",");
+
+        splittedData = formatString(splittedData);
+
+        //System.out.println(splittedData[0] + "   " + splittedData[1]);
+
+        // PORCODIO MA SI PUO CHE ALCUNI PATH SONO DIVISI CON LA VIRGOLA E ALTRI NO PORCODIO PORCODIO PORCODIO PORCODIO PORCODIO
+        
+        System.out.println(Double.parseDouble(splittedData[0]) + "    " + Double.parseDouble(splittedData[1]));
+
+        return new Pair<Double, Double>(Double.parseDouble(splittedData[0]), Double.parseDouble(splittedData[1]));
+
+
+    }
+
     public Region createRegionFromSvg(String svgData, Pane container) throws Exception {
         
         SVGPath svgPath = new SVGPath();
@@ -86,12 +109,24 @@ public class SVGParser {
 
         double widthRatio = container.getPrefWidth() / originalWidth;
         double heightRatio = container.getPrefHeight() / originalHeight; 
-        
+
+        System.out.println("porcodio");
+
+        // PER QUALCHE STRANO MOTIVO DA QUI IN POI I PRINTLN NON VANNO PIU
+
+        Pair<Double, Double> startCoords = getStartingCoords(svgData);
+
+        System.out.println(startCoords.getKey() + "   " + startCoords.getValue());
+
+        svgRegion.setLayoutX(startCoords.getKey());
+        svgRegion.setLayoutY(startCoords.getValue());
+
         System.out.println("Path Width: " + originalWidth + " Path Height: " + originalHeight);
         System.out.println("Container Width: " + container.getPrefWidth() + " Container Height: " + container.getPrefHeight());
         System.out.println("Region Width: " + widthRatio + " Region Height: " + heightRatio);
         System.out.println("Region X: " + svgRegion.getLayoutX() + " Region Y: " + svgRegion.getLayoutY());
         System.out.println("\n\n");
+
 
         // QUI BISOGNA CALCOLARE LA POSIZIONE DELLA REGION CHE SI STA PER STAMPARE NEL MAPCONTAINER
         // LA POSIZIONE VA RICAVATA (IN QUALCHE MODO, NON SO COME) DAL FILE SVG

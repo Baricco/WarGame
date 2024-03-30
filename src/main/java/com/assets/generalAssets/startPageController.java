@@ -21,7 +21,7 @@ public class startPageController {
   
     @FXML
     private void initialize() {
-        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\Lupo.svg");
+        SVGParser svgParser = new SVGParser("src\\main\\resources\\com\\LauraLaScimmiaPolimorfica.svg");
         ArrayList<String> svgPaths = svgParser.parseFile();
 
         // Loop sui path dell'SVG

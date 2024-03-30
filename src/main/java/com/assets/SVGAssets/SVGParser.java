@@ -27,11 +27,15 @@ public class SVGParser {
 
     public ArrayList<String> parseFile() {
         ArrayList<String> pathData = new ArrayList<>();
-        Elements paths = this.file.body().getElementsByTag("path");
 
-        for (Element path : paths) {
-            pathData.add(path.attr("d"));
-        }
+        System.out.println(this.file);
+        
+        Elements paths = this.file.body().select("g path");
+        
+        if (paths.isEmpty()) System.out.println("No path Found!");        
+        
+        for (Element path : paths) pathData.add(path.attr("d"));
+        
         return pathData;
     }
 
@@ -110,6 +114,8 @@ public class SVGParser {
         double widthRatio = container.getPrefWidth() / originalWidth;
         double heightRatio = container.getPrefHeight() / originalHeight; 
 
+        /*
+
         System.out.println("porcodio");
 
         // PER QUALCHE STRANO MOTIVO DA QUI IN POI I PRINTLN NON VANNO PIU
@@ -120,6 +126,8 @@ public class SVGParser {
 
         svgRegion.setLayoutX(startCoords.getKey());
         svgRegion.setLayoutY(startCoords.getValue());
+
+        */
 
         System.out.println("Path Width: " + originalWidth + " Path Height: " + originalHeight);
         System.out.println("Container Width: " + container.getPrefWidth() + " Container Height: " + container.getPrefHeight());
@@ -137,7 +145,7 @@ public class SVGParser {
         // IN (0, 0), LE REGIONI SI VEDONO IN MANIERA CORRETTA, MA CREDO CHE SIA PIU' DIFFICILE, PERO' FAI COME PREFERISCI PER ME E' UGUALE
         // BUON SOGGIORNO TERMOLESE :)
         
-        svgRegion.setPrefSize(widthRatio, heightRatio);
+          svgRegion.setPrefSize(widthRatio, heightRatio);
 
         return svgRegion;
     }

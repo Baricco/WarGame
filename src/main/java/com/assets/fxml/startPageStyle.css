@@ -1,10 +1,12 @@
-.State {
-    -fx-fill: #ECECEC; 
-    -fx-stroke: #000000; 
+#mapContainer .State {    
     -fx-stroke-width: 0.2; 
     -fx-stroke-linecap: round; 
     -fx-stroke-linejoin: round; 
-    -fx-background-color: white; 
-    -fx-border-color: black;
+    -fx-background-color: #FF0000; 
+    -fx-border-color: #00FF00;
 
+}
+
+#mapContainer {
+    -fx-background-color: #0000FF; 
 }

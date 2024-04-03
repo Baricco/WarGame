@@ -2,6 +2,8 @@ package com.assets.SVGAssets;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -27,8 +29,6 @@ public class SVGParser {
 
     public ArrayList<String> parseFile() {
         ArrayList<String> pathData = new ArrayList<>();
-
-        System.out.println(this.file);
         
         Elements paths = this.file.body().select("g path");
         
@@ -39,56 +39,16 @@ public class SVGParser {
         return pathData;
     }
 
-
-    /*
-
-    public Region createRegionFromSvg(ArrayList<String> svgPathsData, Pane container) {
-        StringBuilder combinedSvgPaths = new StringBuilder();
-        for (String svgPathData : svgPathsData) {
-            combinedSvgPaths.append(svgPathData);
-        }
-        
-        SVGPath svgPath = new SVGPath();
-        svgPath.setContent(combinedSvgPaths.toString());
-        
-        Region svgRegion = new Region();
-        svgRegion.setShape(svgPath);
-    
-        // Applica le trasformazioni di scala per adattare la dimensione dei percorsi al contenitore
-        double scaleFactor = 1.0; // Imposta il fattore di scala desiderato
-        svgRegion.setScaleX(scaleFactor);
-        svgRegion.setScaleY(scaleFactor);
-    
-        // Imposta le dimensioni preferite della regione
-        svgRegion.setPrefSize(container.getPrefWidth(), container.getPrefHeight());
-    
-        return svgRegion;
-    }
-    
-    */
-
-   // /*
-
-
-    private String[] formatString(String[] splittedData) {
-        for (int i = 0; i < splittedData.length; i++) splittedData[i] = splittedData[i].replaceAll("[ \t\n\rMm]", "");
-        return splittedData;
-    }
-
     private Pair<Double, Double> getStartingCoords(String svgData) {
 
-        String[] splittedData = svgData.split(",");
-
-        splittedData = formatString(splittedData);
-
-        //System.out.println(splittedData[0] + "   " + splittedData[1]);
-
-        // PORCODIO MA SI PUO CHE ALCUNI PATH SONO DIVISI CON LA VIRGOLA E ALTRI NO PORCODIO PORCODIO PORCODIO PORCODIO PORCODIO
+        Pattern commandPattern = Pattern.compile("([A-Za-z])([\\s-0-9.]+)", Pattern.DOTALL);
+        Matcher commandMatcher = commandPattern.matcher(svgData);
         
-        System.out.println(Double.parseDouble(splittedData[0]) + "    " + Double.parseDouble(splittedData[1]));
+        ArrayList<String> params = new ArrayList<>();
+        
+        while (commandMatcher.find()) params.add(commandMatcher.group(2));
 
-        return new Pair<Double, Double>(Double.parseDouble(splittedData[0]), Double.parseDouble(splittedData[1]));
-
+        return new Pair<Double, Double>(Double.parseDouble(params.get(0)), Double.parseDouble(params.get(1)));
 
     }
 
@@ -114,25 +74,17 @@ public class SVGParser {
         double widthRatio = container.getPrefWidth() / originalWidth;
         double heightRatio = container.getPrefHeight() / originalHeight; 
 
-        /*
-
-        System.out.println("porcodio");
-
-        // PER QUALCHE STRANO MOTIVO DA QUI IN POI I PRINTLN NON VANNO PIU
-
         Pair<Double, Double> startCoords = getStartingCoords(svgData);
-
-        System.out.println(startCoords.getKey() + "   " + startCoords.getValue());
 
         svgRegion.setLayoutX(startCoords.getKey());
         svgRegion.setLayoutY(startCoords.getValue());
 
-        */
 
         System.out.println("Path Width: " + originalWidth + " Path Height: " + originalHeight);
         System.out.println("Container Width: " + container.getPrefWidth() + " Container Height: " + container.getPrefHeight());
         System.out.println("Region Width: " + widthRatio + " Region Height: " + heightRatio);
         System.out.println("Region X: " + svgRegion.getLayoutX() + " Region Y: " + svgRegion.getLayoutY());
+        System.out.println("Region class: " + svgRegion.getStyleClass());
         System.out.println("\n\n");
 
 

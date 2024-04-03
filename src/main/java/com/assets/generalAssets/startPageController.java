@@ -29,7 +29,7 @@ public class startPageController {
             try {
                 Region region = svgParser.createRegionFromSvg(svgPathData, mapContainer);
                 mapContainer.getChildren().add(region); // Aggiungi la regione al contenitore
-            } catch (Exception e) { continue; }
+            } catch (Exception e) { System.out.println("\nError with: " + svgPathData + "\n\n"); }
 
 
             //System.out.println(region.getShape());

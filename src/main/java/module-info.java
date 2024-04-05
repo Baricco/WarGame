@@ -3,6 +3,10 @@ module com.assets {
     requires javafx.fxml;
     requires org.jsoup;
     requires batik.parser;
+    requires java.desktop;
+    requires batik.transcoder;
+    requires java.logging;
+    requires batik.dom;
 
 
     opens com.assets.gameAssets to javafx.fxml;

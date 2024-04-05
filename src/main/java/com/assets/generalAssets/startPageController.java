@@ -44,13 +44,13 @@ public class startPageController implements Initializable{
 
         // In my case I have added a file "svglogo.svg" in my project source folder within the default package.
         // Use any SVG file you like! I had success with http://en.wikipedia.org/wiki/File:SVG_logo.svg
-        try (InputStream file = getClass().getResourceAsStream("/svglogo.svg")) {
+        try (InputStream file = getClass().getResourceAsStream("../resources/com/worldLow.svg")) {
             TranscoderInput transIn = new TranscoderInput(file);
             TranscoderOutput transOut = new TranscoderOutput();
             try {
                 trans.transcode(transIn, transOut);
+                WritableImage img = getImage(transOut.getBufferedImage());
 
-                WritableImage img = getImage(trans.getBufferedImage());
 
                 // visto che transcode restituisce il risultato nella variabile
                 // transOut, bisogna trovare un modo per ottenere la BufferedImage da transOut

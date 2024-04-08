@@ -5,9 +5,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import com.assets.SVGAssets.SVGPathElement;
+import com.assets.SVGAssets.SVGPathLoader;
 
 /**
  * JavaFX App
@@ -23,6 +28,25 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("WarGame");
         stage.show();
+        SVGPathLoader svgPathLoader = new SVGPathLoader();
+        ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
+
+        for(SVGPathElement p : paths) {
+           try{ ((SVGPath)scene.lookup("#" + p.getId())).setContent(p.getContent());}
+            catch(Exception e) {System.out.println(p.getId());};
+
+            
+        }
+
+
+/*
+        for(int i = 0; i<paths.size(); i++){
+            try {
+            ((SVGPath)scene.lookup(paths.get(i).getId())).setContent(paths.get(i).getContent());
+            } catch(Exception e) {}
+        }
+
+        */
     }
 
     static Parent createRoot(String fxml) throws IOException {

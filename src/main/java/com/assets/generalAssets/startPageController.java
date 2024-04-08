@@ -74,7 +74,10 @@ public class startPageController implements Initializable{
     private SVGPath CF;
 
     @FXML
-    private SVGPath CH;
+    private SVGPath EG;
+
+    @FXML
+    private SVGPath IT;
 
     @FXML
     private SVGPath CN;
@@ -144,6 +147,9 @@ public class startPageController implements Initializable{
 
     @FXML
     private SVGPath TL;
+
+    @FXML
+    private SVGPath SA;
 
     @FXML
     private SVGPath TR;

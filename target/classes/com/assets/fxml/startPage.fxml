@@ -30,7 +30,6 @@
             <SVGPath fx:id="BY" content="M40,60 C42,48 44,30 25,32" layoutX="192.0" layoutY="395.0" />
             <SVGPath fx:id="CA" content="M40,60 C42,48 44,30 25,32" layoutX="788.0" layoutY="368.0" />
             <SVGPath fx:id="CF" content="M40,60 C42,48 44,30 25,32" layoutX="64.0" layoutY="66.0" />
-            <SVGPath fx:id="CH" content="M40,60 C42,48 44,30 25,32" layoutX="260.0" layoutY="155.0" />
             <SVGPath fx:id="CN" content="M40,60 C42,48 44,30 25,32" layoutX="550.0" layoutY="323.0" />
             <SVGPath fx:id="CO" content="M40,60 C42,48 44,30 25,32" layoutX="740.0" layoutY="248.0" />
             <SVGPath fx:id="CY" content="M40,60 C42,48 44,30 25,32" layoutX="173.0" layoutY="52.0" />
@@ -42,7 +41,6 @@
             <SVGPath fx:id="FJ" content="M40,60 C42,48 44,30 25,32" layoutX="660.0" layoutY="210.0" />
             <SVGPath fx:id="GB" content="M40,60 C42,48 44,30 25,32" layoutX="574.0" layoutY="170.0" />
             <SVGPath fx:id="GL" content="M40,60 C42,48 44,30 25,32" layoutX="335.0" layoutY="319.0" />
-            <SVGPath fx:id="GM" content="M40,60 C42,48 44,30 25,32" layoutX="280.0" layoutY="252.0" />
             <SVGPath fx:id="IL" content="M40,60 C42,48 44,30 25,32" layoutX="696.0" layoutY="113.0" />
             <SVGPath fx:id="JP" content="M40,60 C42,48 44,30 25,32" layoutX="442.0" layoutY="251.0" />
             <SVGPath fx:id="KG" content="M40,60 C42,48 44,30 25,32" layoutX="541.0" layoutY="246.0" />
@@ -58,6 +56,9 @@
             <SVGPath fx:id="TT" content="M40,60 C42,48 44,30 25,32" layoutX="662.0" layoutY="158.0" />
             <SVGPath fx:id="US" content="M40,60 C42,48 44,30 25,32" layoutX="596.0" layoutY="326.0" />
             <SVGPath fx:id="BZ" content="M40,60 C42,48 44,30 25,32" layoutX="670.0" layoutY="392.0" />
+            <SVGPath fx:id="SA" content="M40,60 C42,48 44,30 25,32" layoutX="343.0" layoutY="52.0" />
+            <SVGPath fx:id="IT" content="M40,60 C42,48 44,30 25,32" layoutX="539.0" layoutY="48.0" />
+            <SVGPath fx:id="EG" content="M40,60 C42,48 44,30 25,32" layoutX="666.0" layoutY="37.0" />
          </children></Pane>
       <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Click Me" />
    </children>

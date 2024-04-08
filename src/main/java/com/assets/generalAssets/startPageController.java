@@ -8,6 +8,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 
@@ -170,7 +180,12 @@ public class startPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+        CF.setLayoutX(0);
+        CF.setLayoutY(0);
+        CY.setLayoutX(0);
+        CY.setLayoutY(0);
+        MD.setLayoutX(0);
+        MD.setLayoutY(0);
     }
 
-}
+    }

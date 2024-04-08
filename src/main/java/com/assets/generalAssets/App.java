@@ -32,8 +32,12 @@ public class App extends Application {
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
 
         for(SVGPathElement p : paths) {
-           try{ ((SVGPath)scene.lookup("#" + p.getId())).setContent(p.getContent());}
-            catch(Exception e) {System.out.println(p.getId());};
+            try {
+                SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
+                curPath.setContent(p.getContent());
+                curPath.setLayoutX(0);
+                curPath.setLayoutY(0);
+            } catch(Exception e) {System.out.println(p.getId());};
 
             
         }

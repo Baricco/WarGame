@@ -13,7 +13,6 @@ public class SVGPathLoader {
 
     private String fileLocation;
 
-
     public SVGPathLoader(String fileLocation){
         this.fileLocation = fileLocation;
     }

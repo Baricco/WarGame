@@ -1,11 +1,18 @@
-#mapContainer .State {    
-    -fx-stroke-width: 0.2; 
+#mapContainer {
+    -fx-border-color: #00FF00;
+}
+
+.State {    
     -fx-stroke-linecap: round; 
     -fx-stroke-linejoin: round; 
-    -fx-background-color: #FF0000; 
-    -fx-border-color: #00FF00;
-
+    -fx-stroke-width: 0.5; 
+    -fx-fill: #AAAAAA; 
+    -fx-stroke: #FFFFFF;
 }
 
-#mapContainer {
+.State:hover {    
+    -fx-fill: #777777; 
+    -fx-stroke: #777777;
 }
+
+

@@ -24,10 +24,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
-        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("WarGame");
-        stage.show();
+
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
 
@@ -35,22 +32,22 @@ public class App extends Application {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
                 curPath.setContent(p.getContent());
-                curPath.setLayoutX(50);
-                curPath.setLayoutY(-50);
-            } catch(Exception e) {System.out.println(p.getId());};
+                curPath.setLayoutX(100);
+                curPath.setLayoutY(-100);
+                curPath.getStyleClass().add("State");
+            } catch(Exception e) {
+                System.out.println("Error on " + p.getId() + "\n");
+                e.printStackTrace();
+            }
 
             
         }
 
+        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("WarGame");
+        stage.show();
 
-/*
-        for(int i = 0; i<paths.size(); i++){
-            try {
-            ((SVGPath)scene.lookup(paths.get(i).getId())).setContent(paths.get(i).getContent());
-            } catch(Exception e) {}
-        }
-
-        */
     }
 
     static Parent createRoot(String fxml) throws IOException {

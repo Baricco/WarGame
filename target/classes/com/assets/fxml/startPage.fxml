@@ -29,11 +29,11 @@
             <SVGPath fx:id="BS" content="M40,60 C42,48 44,30 25,32" layoutX="721.0" layoutY="401.0" />
             <SVGPath fx:id="BY" content="M40,60 C42,48 44,30 25,32" layoutX="192.0" layoutY="395.0" />
             <SVGPath fx:id="CA" content="M40,60 C42,48 44,30 25,32" layoutX="788.0" layoutY="368.0" />
-            <SVGPath fx:id="CF" content="M40,60 C42,48 44,30 25,32" />
+            <SVGPath fx:id="CF" content="M40,60 C42,48 44,30 25,32" layoutX="64.0" layoutY="66.0" />
             <SVGPath fx:id="CH" content="M40,60 C42,48 44,30 25,32" layoutX="260.0" layoutY="155.0" />
             <SVGPath fx:id="CN" content="M40,60 C42,48 44,30 25,32" layoutX="550.0" layoutY="323.0" />
             <SVGPath fx:id="CO" content="M40,60 C42,48 44,30 25,32" layoutX="740.0" layoutY="248.0" />
-            <SVGPath fx:id="CY" content="M40,60 C42,48 44,30 25,32" />
+            <SVGPath fx:id="CY" content="M40,60 C42,48 44,30 25,32" layoutX="173.0" layoutY="52.0" />
             <SVGPath fx:id="DE" content="M40,60 C42,48 44,30 25,32" layoutX="446.0" layoutY="402.0" />
             <SVGPath fx:id="DZ" content="M40,60 C42,48 44,30 25,32" layoutX="643.0" layoutY="350.0" />
             <SVGPath fx:id="ER" content="M40,60 C42,48 44,30 25,32" layoutX="505.0" layoutY="351.0" />
@@ -49,8 +49,7 @@
             <SVGPath fx:id="KH" content="M40,60 C42,48 44,30 25,32" layoutX="219.0" layoutY="260.0" />
             <SVGPath fx:id="KP" content="M40,60 C42,48 44,30 25,32" layoutX="335.0" layoutY="206.0" />
             <SVGPath fx:id="LY" content="M40,60 C42,48 44,30 25,32" layoutX="415.0" layoutY="101.0" />
-            <SVGPath fx:id="MD" content="M40,60 C42,48 44,30 25,32" />
-            <SVGPath fx:id="MG" content="M40,60 C42,48 44,30 25,32" layoutX="449.0" layoutY="355.0" />
+            <SVGPath fx:id="MD" content="M40,60 C42,48 44,30 25,32" layoutX="81.0" layoutY="144.0" />
             <SVGPath fx:id="MX" content="M40,60 C42,48 44,30 25,32" layoutX="725.0" layoutY="355.0" />
             <SVGPath fx:id="NZ" content="M40,60 C42,48 44,30 25,32" layoutX="694.0" layoutY="249.0" />
             <SVGPath fx:id="PL" content="M40,60 C42,48 44,30 25,32" layoutX="377.0" layoutY="211.0" />

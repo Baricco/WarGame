@@ -170,12 +170,6 @@ public class startPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        CF.setLayoutX(0);
-        CF.setLayoutY(0);
-        CY.setLayoutX(0);
-        CY.setLayoutY(0);
-        MD.setLayoutX(0);
-        MD.setLayoutY(0);
     }
 
     }

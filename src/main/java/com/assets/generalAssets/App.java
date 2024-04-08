@@ -28,15 +28,15 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("WarGame");
         stage.show();
-        SVGPathLoader svgPathLoader = new SVGPathLoader();
+        SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
 
         for(SVGPathElement p : paths) {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
                 curPath.setContent(p.getContent());
-                curPath.setLayoutX(0);
-                curPath.setLayoutY(0);
+                curPath.setLayoutX(50);
+                curPath.setLayoutY(-50);
             } catch(Exception e) {System.out.println(p.getId());};
 
             

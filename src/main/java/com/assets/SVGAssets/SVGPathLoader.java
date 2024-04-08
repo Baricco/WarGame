@@ -3,31 +3,26 @@ package com.assets.SVGAssets;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
-import javafx.scene.shape.SVGPath;
-import javafx.util.Pair;
-
 public class SVGPathLoader {
 
-    public SVGPathLoader(){
+    private String fileLocation;
 
+
+    public SVGPathLoader(String fileLocation){
+        this.fileLocation = fileLocation;
     }
 
     public ArrayList<SVGPathElement> loadPaths(){
         ArrayList<SVGPathElement> svgPaths = new ArrayList<>();
 
         try {
-            File input = new File("src\\main\\resources\\com\\worldLow.svg");
+            File input = new File(this.fileLocation);
             Document doc = Jsoup.parse(input, "UTF-8", "");
 
             Elements paths = doc.select("path");

@@ -161,7 +161,7 @@ public class startPageController implements Initializable{
     private SVGPath BZ;
 
     @FXML
-    private SVGPath IR;
+    private SVGPath AM;
     
     @FXML
     private Pane mapContainer;    

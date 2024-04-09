@@ -33,7 +33,7 @@ public class App extends Application {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
                 curPath.setContent(p.getContent());
                 curPath.setLayoutX(100);
-                curPath.setLayoutY(-100);
+                curPath.setLayoutY(-150);
                 curPath.getStyleClass().add("State");
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");

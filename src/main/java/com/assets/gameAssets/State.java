@@ -1,3 +1,5 @@
-public class State {
+package com.assets.gameAssets;
 
+public class State {
+    
 }

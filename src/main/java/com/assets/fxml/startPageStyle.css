@@ -16,4 +16,10 @@
     -fx-stroke: #2d4535;
 }
 
+#playerMenu {
+    -fx-background-color: #cae193;
+    -fx-font-family:'Space Grotesk Light';
+    -fx-font-weight: 200;
+}
+
 

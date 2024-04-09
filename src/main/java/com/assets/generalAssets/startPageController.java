@@ -2,6 +2,8 @@ package com.assets.generalAssets;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 import java.net.URL;
@@ -165,6 +167,31 @@ public class startPageController implements Initializable{
     
     @FXML
     private Pane mapContainer;    
+
+    @FXML
+    private Pane playerMenu;
+
+    @FXML
+    private Label playerStateNameLabel;
+
+    @FXML
+    private Label playerStateMoneyLabel;
+
+    @FXML
+    private Label playerStateArmyLabel;
+
+    @FXML
+    private Label playerStateNaturalResourcesLabel;
+
+    @FXML
+    private Label playerStateRefinedResourcesLabel;
+
+
+    @FXML
+    private ListView<String> playerStateConqueredTerritoriesListView;
+
+    @FXML
+    private ListView<String> playerStateAlliedStatesListView;
  
 
 

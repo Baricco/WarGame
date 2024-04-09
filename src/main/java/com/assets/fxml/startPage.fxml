@@ -58,7 +58,7 @@
             <SVGPath fx:id="BZ" content="M40,60 C42,48 44,30 25,32" layoutX="670.0" layoutY="392.0" />
             <SVGPath fx:id="SA" content="M40,60 C42,48 44,30 25,32" layoutX="343.0" layoutY="52.0" />
             <SVGPath fx:id="IT" content="M40,60 C42,48 44,30 25,32" layoutX="539.0" layoutY="48.0" />
-            <SVGPath fx:id="AM" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
+            <SVGPath fx:id="IR" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
          </children></Pane>
       <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Click Me" />
    </children>

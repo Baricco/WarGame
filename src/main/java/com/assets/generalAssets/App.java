@@ -43,6 +43,9 @@ public class App extends Application {
             
         }
 
+
+
+
         scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("WarGame");

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.SVGPath;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -203,6 +204,14 @@ public class startPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }
+        
+        // Crea un rettangolo che definisce l'area di ritaglio
+        Rectangle clipRect = new Rectangle(mapContainer.getLayoutX(), mapContainer.getLayoutY(), mapContainer.getWidth(), mapContainer.getHeight());
+
+        // Imposta la clip del pannello sul rettangolo
+        mapContainer.setClip(clipRect);
+        
 
     }
+
+}

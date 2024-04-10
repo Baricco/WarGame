@@ -1,10 +1,11 @@
-:root {
-    --seaBlue: #8ac0c6;
-    --lightContinent: #4d6555;
-    --darkContinent: #2d4535;
-    --lightGray: #838383;
-    --lighterGreen: #cae193;
-    --lightGreen: #bad183;
+
+.root {
+    -seaBlue: #8ac0c6;
+    -lightContinent: #4d6555;
+    -darkContinent: #2d4535;
+    -lightGray: #838383;
+    -lighterGreen: #037579;
+    -lightGreen: #d5e39d;
 }
 
 VBox {
@@ -13,37 +14,37 @@ VBox {
 }
 
 #mapContainer {
-    -fx-background-color: var(--seaBlue);
+    -fx-background-color: -seaBlue;
 }
 
 .State {    
     -fx-stroke-linecap: round; 
     -fx-stroke-linejoin: round; 
     -fx-stroke-width: 0.5; 
-    -fx-fill: var(--lightContinent); 
-    -fx-stroke: var(--lightGray);
+    -fx-fill: -lightContinent; 
+    -fx-stroke: -lightGray;
 }
 
 .State:hover {    
-    -fx-fill: var(--darkContinent); 
-    -fx-stroke: var(--darkContinent);
+    -fx-fill: -darkContinent; 
+    -fx-stroke: -darkContinent;
 }
 
 
 #playerMenu {
-    -fx-background-color: var(--lighterGreen);
+    -fx-background-color: -lighterGreen;
 }
 
 
 #playerMenu > * {
-    -fx-background-color: var(--lightGreen);
+    -fx-background-color: -lightGreen;
 }
 
-#playerMenu Label {
-    -fx-background-color: var(--lighterGreen);
+.label {
+    -fx-background-color: -lighterGreen;
 }
 
-#playerMenu ListView {
+.ListView {
 
 }
 

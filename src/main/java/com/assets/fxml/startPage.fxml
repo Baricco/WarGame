@@ -67,14 +67,18 @@
       <Pane fx:id="playerMenu" prefHeight="75.0" prefWidth="1240.0">
          <children>
             <Label fx:id="playerStateNameLabel" layoutX="30.0" layoutY="29.0" text="State" />
-            <Label fx:id="playerStateMoneyLabel" layoutX="150.0" layoutY="14.0" text="Money" />
-            <Label fx:id="playerStateArmyLabel" layoutX="154.0" layoutY="38.0" text="Army" />
-            <Label fx:id="playerStateNaturalResourcesLabel" layoutX="297.0" layoutY="14.0" text="Natural Resources" />
-            <Label fx:id="playerStateRefinedResourcesLabel" layoutX="296.0" layoutY="38.0" text="Refined Resources" />
+            <Label layoutX="150.0" layoutY="14.0" text="Money:" />
+            <Label layoutX="154.0" layoutY="38.0" text="Army:" />
+            <Label layoutX="269.0" layoutY="14.0" text="Natural Resources:" />
+            <Label layoutX="269.0" layoutY="38.0" text="Refined Resources:" />
             <Label layoutX="492.0" layoutY="29.0" text="Territories" />
             <Label layoutX="856.0" layoutY="29.0" text="Alliances" />
             <ListView fx:id="playerStateConqueredTerritoriesListView" layoutX="924.0" layoutY="8.0" prefHeight="59.0" prefWidth="200.0" />
             <ListView fx:id="playerStateAlliedStatesListView" layoutX="565.0" layoutY="8.0" prefHeight="59.0" prefWidth="200.0" />
+            <Label fx:id="playerStateMoneyLabel" layoutX="194.0" layoutY="15.0" text="0" />
+            <Label fx:id="playerStateArmyLabel" layoutX="190.0" layoutY="38.0" text="0" />
+            <Label fx:id="playerStateNaturalResourcesLabel" layoutX="381.0" layoutY="14.0" text="0" />
+            <Label fx:id="playerStateRefinedResourcesLabel" layoutX="381.0" layoutY="38.0" text="0" />
          </children>
       </Pane>
    </children>

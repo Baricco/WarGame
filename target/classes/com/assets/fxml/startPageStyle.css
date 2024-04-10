@@ -1,25 +1,50 @@
+:root {
+    --seaBlue: #8ac0c6;
+    --lightContinent: #4d6555;
+    --darkContinent: #2d4535;
+    --lightGray: #838383;
+    --lighterGreen: #cae193;
+    --lightGreen: #bad183;
+}
+
+VBox {
+    -fx-font-family:'Space Grotesk Light';
+    -fx-font-weight: 200;
+}
+
 #mapContainer {
-    -fx-border-color: #00FF00;
-    -fx-background-color: #8ac0c6;
+    -fx-background-color: var(--seaBlue);
 }
 
 .State {    
     -fx-stroke-linecap: round; 
     -fx-stroke-linejoin: round; 
     -fx-stroke-width: 0.5; 
-    -fx-fill: #4d6555; 
-    -fx-stroke: #838383;
+    -fx-fill: var(--lightContinent); 
+    -fx-stroke: var(--lightGray);
 }
 
 .State:hover {    
-    -fx-fill: #2d4535; 
-    -fx-stroke: #2d4535;
+    -fx-fill: var(--darkContinent); 
+    -fx-stroke: var(--darkContinent);
 }
 
+
 #playerMenu {
-    -fx-background-color: #cae193;
-    -fx-font-family:'Space Grotesk Light';
-    -fx-font-weight: 200;
+    -fx-background-color: var(--lighterGreen);
+}
+
+
+#playerMenu > * {
+    -fx-background-color: var(--lightGreen);
+}
+
+#playerMenu Label {
+    -fx-background-color: var(--lighterGreen);
+}
+
+#playerMenu ListView {
+
 }
 
 

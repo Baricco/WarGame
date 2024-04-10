@@ -5,6 +5,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 
@@ -27,14 +29,17 @@ public class App extends Application {
 
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
+        Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
+        double xShift = 100, yShift = -120;
 
         for(SVGPathElement p : paths) {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
                 curPath.setContent(p.getContent());
-                curPath.setLayoutX(100);
-                curPath.setLayoutY(-150);
+                curPath.setLayoutX(xShift);
+                curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
+                curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");
                 e.printStackTrace();

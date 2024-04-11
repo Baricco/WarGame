@@ -14,43 +14,43 @@
       <Pane fx:id="mapContainer" maxHeight="599.0" maxWidth="1240.0" minHeight="513.0" minWidth="1240.0" prefHeight="548.0" prefWidth="1240.0" stylesheets="@app/../startPageStyle.css">
          <children>
             <SVGPath fx:id="AE" content="m 585.15039,368.63672 -0.5332,0.49805 -5.61524,1.64453 2.79493,3.25586 -0.92774,0.55078 -0.46289,1.08008 -2.13867,0.44531 -0.66992,1.15625 -1.21289,0.98437 -3.11915,-0.50781 -0.34765,1.27539 -0.125,1.11328 -0.43555,1.73828 1.39649,-0.0137 1.42968,2.16406 1.70703,2.52344 1.09376,2.31055 0.82031,0.69141 0.77734,1.5996 -0.15234,0.69532 0.92187,1.75781 1.51367,0.63086 1.31641,1.19141 1.60742,3.36132 -0.11914,1.78516 0.32422,2.08398 1.85742,2.8418 1.25,0.48828 1.93946,2.03906 0.79101,2.4043 1.49414,2.46094 1.44727,1.04687 0.21679,1.16407 0.84571,0.8789 0.36328,1.24024 0.125,1.26367 -0.33984,0.55859 0.2871,1.32227 -0.56054,0.14062 0.80664,1.18555 0.54687,2.12695 0.45899,0.84766 -0.0801,1.56641 0.73047,1.66992 1.93945,0.14453 0.89649,-0.38672 1.38671,0.0625 0.4336,-0.72656 0.73633,-0.20899 0.61328,-0.75586 0.70703,-0.16211 2.35351,-0.14843 1.78711,-0.55274 1.64063,-1.18945 0.83984,0.16992 1.23438,-0.1582 2.51172,-2.0293 4.47851,-1.3457 2.79102,-1.22071 0.0684,-0.98632 0.54297,-1.28907 2.02539,-0.77929 c -1.01247,-2.25615 -1.01362,-2.25827 0.002,-0.002 l 1.29492,-0.16406 1.875,-0.98242 1.54883,0.27539 1.35547,-0.81055 -0.0137,-1.17968 1.09765,-0.73828 1.74414,0.0234 0.64063,-0.61719 0.27344,-1.42968 1.75195,-1.10156 1.28906,0.01 0.26563,-0.36133 -0.34571,-1.97461 0.45117,-1.5039 0.58204,-0.70899 1.27148,0.15625 1.04688,-2.04101 1.18164,-0.95899 0.44922,-0.83984 1.01953,-1.79297 0.006,-0.67187 -1.00391,-0.38282 -0.75586,-1.00586 -1.26562,-1.73828 -1.66016,-0.55664 -2.05664,-0.39648 -1.56446,-1.10938 -1.25781,-2.09375 -0.38086,-2.4375 0.36328,-0.56055 0.26563,-1.2832 -0.34766,-0.27148 -0.8164,1.05859 v 0.002 l -1.77149,1.90821 -2.09179,1.97265 -1.91993,2.07227 -1.69336,-0.0898 -2.31835,-0.0801 -2.19532,0.48047 -0.10351,-0.83789 -0.5,0.15039 -0.53125,-1.16993 0.60742,-1.81054 -0.0488,-1.8086 -0.84766,-0.9707 -0.76562,0.33399 -0.75586,1.62304 0.18555,2.24024 -0.41797,-0.75196 -0.375,-1.01172 -0.80664,-0.86523 -0.35352,-1.04102 0.2793,-1.0332 -0.16992,-1.28515 -1.91016,-1.31446 -0.48242,-1.10156 -1.37891,-0.7207 -1.09765,-2.72657 -0.90235,-2.40429 0.25,-0.73047 -0.58398,-1.41797 -1.88477,-0.26953 -2.05859,3.08008 -5.21289,-0.25391 -7.90625,-6.49219 -4.17774,-2.29101 z" layoutX="34.0" layoutY="-89.0" />
-            <SVGPath fx:id="AL" content="M40,60 C42,48 44,30 25,32" layoutX="347.0" layoutY="147.0" />
+            <SVGPath fx:id="JG" content="M40,60 C42,48 44,30 25,32" layoutX="347.0" layoutY="147.0" />
             <SVGPath fx:id="AF" content="M40,60 C42,48 44,30 25,32" layoutX="190.0" layoutY="210.0" />
             <SVGPath fx:id="EG" content="M40,60 C42,48 44,30 25,32" layoutX="512.0" layoutY="197.0" />
-            <SVGPath fx:id="AO" content="M40,60 C42,48 44,30 25,32" layoutX="411.0" layoutY="308.0" />
+            <SVGPath fx:id="CG" content="M40,60 C42,48 44,30 25,32" layoutX="411.0" layoutY="308.0" />
             <SVGPath fx:id="AR" content="M40,60 C42,48 44,30 25,32" layoutX="621.0" layoutY="122.0" />
             <SVGPath fx:id="AT" content="M40,60 C42,48 44,30 25,32" layoutX="264.0" layoutY="356.0" />
             <SVGPath fx:id="ATL" content="M40,60 C42,48 44,30 25,32" layoutX="704.0" layoutY="316.0" />
             <SVGPath fx:id="AU" content="M40,60 C42,48 44,30 25,32" layoutX="740.0" layoutY="164.0" />
-            <SVGPath fx:id="BD" content="M40,60 C42,48 44,30 25,32" layoutX="507.0" layoutY="416.0" />
-            <SVGPath fx:id="BE" content="M40,60 C42,48 44,30 25,32" layoutX="622.0" layoutY="407.0" />
-            <SVGPath fx:id="BF" content="M40,60 C42,48 44,30 25,32" layoutX="358.0" layoutY="390.0" />
-            <SVGPath fx:id="BI" content="M40,60 C42,48 44,30 25,32" layoutX="98.0" layoutY="324.0" />
+            <SVGPath fx:id="ID" content="M40,60 C42,48 44,30 25,32" layoutX="507.0" layoutY="416.0" />
+            <SVGPath fx:id="FR" content="M40,60 C42,48 44,30 25,32" layoutX="622.0" layoutY="407.0" />
+            <SVGPath fx:id="SE" content="M40,60 C42,48 44,30 25,32" layoutX="358.0" layoutY="390.0" />
+            <SVGPath fx:id="MZ" content="M40,60 C42,48 44,30 25,32" layoutX="98.0" layoutY="324.0" />
             <SVGPath fx:id="BN" content="M40,60 C42,48 44,30 25,32" layoutX="419.0" layoutY="194.0" />
-            <SVGPath fx:id="BO" content="M40,60 C42,48 44,30 25,32" layoutX="512.0" layoutY="105.0" />
+            <SVGPath fx:id="CI" content="M40,60 C42,48 44,30 25,32" layoutX="512.0" layoutY="105.0" />
             <SVGPath fx:id="BR" content="M40,60 C42,48 44,30 25,32" layoutX="342.0" layoutY="253.0" />
-            <SVGPath fx:id="BS" content="M40,60 C42,48 44,30 25,32" layoutX="721.0" layoutY="401.0" />
-            <SVGPath fx:id="BY" content="M40,60 C42,48 44,30 25,32" layoutX="192.0" layoutY="395.0" />
+            <SVGPath fx:id="AC" content="M40,60 C42,48 44,30 25,32" layoutX="721.0" layoutY="401.0" />
+            <SVGPath fx:id="SU" content="M40,60 C42,48 44,30 25,32" layoutX="192.0" layoutY="395.0" />
             <SVGPath fx:id="CA" content="M40,60 C42,48 44,30 25,32" layoutX="788.0" layoutY="368.0" />
-            <SVGPath fx:id="CF" content="M40,60 C42,48 44,30 25,32" layoutX="64.0" layoutY="66.0" />
+            <SVGPath fx:id="NI" content="M40,60 C42,48 44,30 25,32" layoutX="64.0" layoutY="66.0" />
             <SVGPath fx:id="CN" content="M40,60 C42,48 44,30 25,32" layoutX="550.0" layoutY="323.0" />
             <SVGPath fx:id="CO" content="M40,60 C42,48 44,30 25,32" layoutX="740.0" layoutY="248.0" />
-            <SVGPath fx:id="CY" content="M40,60 C42,48 44,30 25,32" layoutX="173.0" layoutY="52.0" />
-            <SVGPath fx:id="DE" content="M40,60 C42,48 44,30 25,32" layoutX="446.0" layoutY="402.0" />
-            <SVGPath fx:id="DZ" content="M40,60 C42,48 44,30 25,32" layoutX="643.0" layoutY="350.0" />
-            <SVGPath fx:id="ER" content="M40,60 C42,48 44,30 25,32" layoutX="505.0" layoutY="351.0" />
-            <SVGPath fx:id="ES" content="M40,60 C42,48 44,30 25,32" layoutX="577.0" layoutY="390.0" />
-            <SVGPath fx:id="FI" content="M40,60 C42,48 44,30 25,32" layoutX="491.0" layoutY="261.0" />
-            <SVGPath fx:id="FJ" content="M40,60 C42,48 44,30 25,32" layoutX="660.0" layoutY="210.0" />
+            <SVGPath fx:id="GR" content="M40,60 C42,48 44,30 25,32" layoutX="173.0" layoutY="52.0" />
+            <SVGPath fx:id="GE" content="M40,60 C42,48 44,30 25,32" layoutX="446.0" layoutY="402.0" />
+            <SVGPath fx:id="MO" content="M40,60 C42,48 44,30 25,32" layoutX="643.0" layoutY="350.0" />
+            <SVGPath fx:id="ET" content="M40,60 C42,48 44,30 25,32" layoutX="505.0" layoutY="351.0" />
+            <SVGPath fx:id="SP" content="M40,60 C42,48 44,30 25,32" layoutX="577.0" layoutY="390.0" />
+            <SVGPath fx:id="SC" content="M40,60 C42,48 44,30 25,32" layoutX="491.0" layoutY="261.0" />
+            <SVGPath fx:id="IN" content="M40,60 C42,48 44,30 25,32" layoutX="660.0" layoutY="210.0" />
             <SVGPath fx:id="GB" content="M40,60 C42,48 44,30 25,32" layoutX="574.0" layoutY="170.0" />
             <SVGPath fx:id="GL" content="M40,60 C42,48 44,30 25,32" layoutX="335.0" layoutY="319.0" />
-            <SVGPath fx:id="IL" content="M40,60 C42,48 44,30 25,32" layoutX="696.0" layoutY="113.0" />
+            <SVGPath fx:id="PT" content="M40,60 C42,48 44,30 25,32" layoutX="696.0" layoutY="113.0" />
             <SVGPath fx:id="JP" content="M40,60 C42,48 44,30 25,32" layoutX="442.0" layoutY="251.0" />
-            <SVGPath fx:id="KG" content="M40,60 C42,48 44,30 25,32" layoutX="541.0" layoutY="246.0" />
-            <SVGPath fx:id="KH" content="M40,60 C42,48 44,30 25,32" layoutX="219.0" layoutY="260.0" />
-            <SVGPath fx:id="KP" content="M40,60 C42,48 44,30 25,32" layoutX="335.0" layoutY="206.0" />
+            <SVGPath fx:id="KZ" content="M40,60 C42,48 44,30 25,32" layoutX="541.0" layoutY="246.0" />
+            <SVGPath fx:id="TH" content="M40,60 C42,48 44,30 25,32" layoutX="219.0" layoutY="260.0" />
+            <SVGPath fx:id="KO" content="M40,60 C42,48 44,30 25,32" layoutX="335.0" layoutY="206.0" />
             <SVGPath fx:id="LY" content="M40,60 C42,48 44,30 25,32" layoutX="415.0" layoutY="101.0" />
-            <SVGPath fx:id="MD" content="M40,60 C42,48 44,30 25,32" layoutX="81.0" layoutY="144.0" />
+            <SVGPath fx:id="RO" content="M40,60 C42,48 44,30 25,32" layoutX="81.0" layoutY="144.0" />
             <SVGPath fx:id="MX" content="M40,60 C42,48 44,30 25,32" layoutX="725.0" layoutY="355.0" />
             <SVGPath fx:id="NZ" content="M40,60 C42,48 44,30 25,32" layoutX="694.0" layoutY="249.0" />
             <SVGPath fx:id="PL" content="M40,60 C42,48 44,30 25,32" layoutX="377.0" layoutY="211.0" />
@@ -61,7 +61,7 @@
             <SVGPath fx:id="BZ" content="M40,60 C42,48 44,30 25,32" layoutX="670.0" layoutY="392.0" />
             <SVGPath fx:id="SA" content="M40,60 C42,48 44,30 25,32" layoutX="343.0" layoutY="52.0" />
             <SVGPath fx:id="IT" content="M40,60 C42,48 44,30 25,32" layoutX="539.0" layoutY="48.0" />
-            <SVGPath fx:id="AM" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
+            <SVGPath fx:id="IR" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
          </children>
       </Pane>
       <Pane fx:id="playerMenu" prefHeight="75.0" prefWidth="1240.0">

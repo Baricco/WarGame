@@ -28,8 +28,4 @@ public class Dice {
     public int throwDice() { return this.randomGenerator.nextInt(1, this.faceNumber); }
 
 
-
-
-
 }
-

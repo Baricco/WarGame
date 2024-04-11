@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<States>
+    <State Id="">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border><!-- QUI DENTRO CI VA L'ID DELLO STATO CONFINANTE --></Bordes>
+
+            <!-- QUI METTIAMO TANTI TAG BORDER QUANTI SONO GLI STATI CONFINANTI -->
+        </NeighboringStates>
+
+        <Cities>
+            <City><!-- QUI CI VANNO I NOMI DELLE CITTA --></City>
+            
+            <!-- METTEREI ALMENO 20 CITTA' PER OGNI STATO -->
+        </Cities>
+
+    </State>
+</States>

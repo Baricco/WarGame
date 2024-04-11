@@ -4,13 +4,15 @@
     -lightContinent: #4d6555;
     -darkContinent: #2d4535;
     -lightGray: #838383;
-    -lighterGreen: #037579;
-    -lightGreen: #d5e39d;
+    -lighterGreen: #474647;
+    -lightGreen: #7fb0b8;
 }
 
 VBox {
     -fx-font-family:'Space Grotesk Light';
     -fx-font-weight: 200;
+    -fx-background-color: #EEFCFE;
+    -fx-color: #FFFFFF;
 }
 
 #mapContainer {

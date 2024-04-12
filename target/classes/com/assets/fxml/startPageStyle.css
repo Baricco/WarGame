@@ -4,15 +4,14 @@
     -lightContinent: #4d6555;
     -darkContinent: #2d4535;
     -lightGray: #838383;
-    -lighterGreen: #474647;
-    -lightGreen: #7fb0b8;
+    -darkGray: #474747;
+    -lightBlue: #7fb0b8;
 }
 
 VBox {
     -fx-font-family:'Space Grotesk Light';
-    -fx-font-weight: 200;
+    -fx-font-weight: 300;
     -fx-background-color: #EEFCFE;
-    -fx-color: #FFFFFF;
 }
 
 #mapContainer {
@@ -33,20 +32,22 @@ VBox {
 }
 
 
-#playerMenu {
-    -fx-background-color: -lighterGreen;
+#playerMenu, #sideMenu {
+    -fx-background-color: -darkGray;
 }
 
-
-#playerMenu > * {
-    -fx-background-color: -lightGreen;
+#calendarLabel {
+    -fx-background-color: -seaBlue ;
 }
 
-.label {
-    -fx-background-color: -lighterGreen;
+Label {
+    -fx-background-color: -darkGray;
+    -fx-text-fill: #FFFFFF;
 }
 
-.ListView {
+ListView {
+    -fx-background-color: -lightGray;
+    -fx-text-fill: #FFFFFF;
 
 }
 

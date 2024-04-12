@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.generalAssets.startPageController">
+<VBox prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.generalAssets.startPageController">
    <children>
-      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Click Me" />
-      <Pane fx:id="mapContainer" maxHeight="599.0" maxWidth="1240.0" minHeight="513.0" minWidth="1240.0" prefHeight="548.0" prefWidth="1240.0" stylesheets="@app/../startPageStyle.css">
+      <Pane fx:id="mapContainer" maxHeight="550.0" maxWidth="1110.0" minHeight="550.0" minWidth="1100.0" prefHeight="550.0" prefWidth="1110.0" stylesheets="@app/../startPageStyle.css">
          <children>
+            <Pane layoutX="592.0" prefHeight="17.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="calendarLabel" layoutX="15.0" prefHeight="17.0" prefWidth="71.0" text="DD/MM/YY" textAlignment="CENTER" />
+                  <SVGPath content="M40,60 C42,48 44,30 25,32" layoutX="11.0" layoutY="-15.0" />
+               </children>
+            </Pane>
             <SVGPath fx:id="AE" content="m 585.15039,368.63672 -0.5332,0.49805 -5.61524,1.64453 2.79493,3.25586 -0.92774,0.55078 -0.46289,1.08008 -2.13867,0.44531 -0.66992,1.15625 -1.21289,0.98437 -3.11915,-0.50781 -0.34765,1.27539 -0.125,1.11328 -0.43555,1.73828 1.39649,-0.0137 1.42968,2.16406 1.70703,2.52344 1.09376,2.31055 0.82031,0.69141 0.77734,1.5996 -0.15234,0.69532 0.92187,1.75781 1.51367,0.63086 1.31641,1.19141 1.60742,3.36132 -0.11914,1.78516 0.32422,2.08398 1.85742,2.8418 1.25,0.48828 1.93946,2.03906 0.79101,2.4043 1.49414,2.46094 1.44727,1.04687 0.21679,1.16407 0.84571,0.8789 0.36328,1.24024 0.125,1.26367 -0.33984,0.55859 0.2871,1.32227 -0.56054,0.14062 0.80664,1.18555 0.54687,2.12695 0.45899,0.84766 -0.0801,1.56641 0.73047,1.66992 1.93945,0.14453 0.89649,-0.38672 1.38671,0.0625 0.4336,-0.72656 0.73633,-0.20899 0.61328,-0.75586 0.70703,-0.16211 2.35351,-0.14843 1.78711,-0.55274 1.64063,-1.18945 0.83984,0.16992 1.23438,-0.1582 2.51172,-2.0293 4.47851,-1.3457 2.79102,-1.22071 0.0684,-0.98632 0.54297,-1.28907 2.02539,-0.77929 c -1.01247,-2.25615 -1.01362,-2.25827 0.002,-0.002 l 1.29492,-0.16406 1.875,-0.98242 1.54883,0.27539 1.35547,-0.81055 -0.0137,-1.17968 1.09765,-0.73828 1.74414,0.0234 0.64063,-0.61719 0.27344,-1.42968 1.75195,-1.10156 1.28906,0.01 0.26563,-0.36133 -0.34571,-1.97461 0.45117,-1.5039 0.58204,-0.70899 1.27148,0.15625 1.04688,-2.04101 1.18164,-0.95899 0.44922,-0.83984 1.01953,-1.79297 0.006,-0.67187 -1.00391,-0.38282 -0.75586,-1.00586 -1.26562,-1.73828 -1.66016,-0.55664 -2.05664,-0.39648 -1.56446,-1.10938 -1.25781,-2.09375 -0.38086,-2.4375 0.36328,-0.56055 0.26563,-1.2832 -0.34766,-0.27148 -0.8164,1.05859 v 0.002 l -1.77149,1.90821 -2.09179,1.97265 -1.91993,2.07227 -1.69336,-0.0898 -2.31835,-0.0801 -2.19532,0.48047 -0.10351,-0.83789 -0.5,0.15039 -0.53125,-1.16993 0.60742,-1.81054 -0.0488,-1.8086 -0.84766,-0.9707 -0.76562,0.33399 -0.75586,1.62304 0.18555,2.24024 -0.41797,-0.75196 -0.375,-1.01172 -0.80664,-0.86523 -0.35352,-1.04102 0.2793,-1.0332 -0.16992,-1.28515 -1.91016,-1.31446 -0.48242,-1.10156 -1.37891,-0.7207 -1.09765,-2.72657 -0.90235,-2.40429 0.25,-0.73047 -0.58398,-1.41797 -1.88477,-0.26953 -2.05859,3.08008 -5.21289,-0.25391 -7.90625,-6.49219 -4.17774,-2.29101 z" layoutX="34.0" layoutY="-89.0" />
             <SVGPath fx:id="AL" content="M40,60 C42,48 44,30 25,32" layoutX="347.0" layoutY="147.0" />
             <SVGPath fx:id="AF" content="M40,60 C42,48 44,30 25,32" layoutX="190.0" layoutY="210.0" />
@@ -62,27 +65,45 @@
             <SVGPath fx:id="SA" content="M40,60 C42,48 44,30 25,32" layoutX="343.0" layoutY="52.0" />
             <SVGPath fx:id="IT" content="M40,60 C42,48 44,30 25,32" layoutX="539.0" layoutY="48.0" />
             <SVGPath fx:id="AM" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
+            <Pane fx:id="sideMenu" layoutX="1101.0" prefHeight="556.0" prefWidth="179.0">
+               <children>
+                  <Pane layoutX="56.0" layoutY="20.0" prefHeight="28.0" prefWidth="63.0">
+                     <children>
+                        <SVGPath content="M40,60 C42,48 44,30 25,32" layoutX="16.0" layoutY="-23.0" />
+                        <Label fx:id="menuStateLvlLabel" layoutX="22.0" layoutY="-15.0" text="LVL" />
+                        <Label fx:id="menuStateNameLabel" layoutX="18.0" layoutY="6.0" text="State" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
          </children>
       </Pane>
-      <Pane fx:id="playerMenu" prefHeight="75.0" prefWidth="1240.0">
+      <Pane fx:id="playerMenu" prefHeight="176.0" prefWidth="1280.0">
          <children>
-            <Label fx:id="playerStateNameLabel" layoutX="30.0" layoutY="29.0" text="State" />
-            <Label layoutX="150.0" layoutY="14.0" text="Money:" />
-            <Label layoutX="154.0" layoutY="38.0" text="Army:" />
-            <Label layoutX="269.0" layoutY="14.0" text="Natural Resources:" />
-            <Label layoutX="269.0" layoutY="38.0" text="Refined Resources:" />
-            <Label layoutX="492.0" layoutY="29.0" text="Territories" />
-            <Label layoutX="856.0" layoutY="29.0" text="Alliances" />
-            <ListView fx:id="playerStateConqueredTerritoriesListView" layoutX="924.0" layoutY="8.0" prefHeight="59.0" prefWidth="200.0" />
-            <ListView fx:id="playerStateAlliedStatesListView" layoutX="565.0" layoutY="8.0" prefHeight="59.0" prefWidth="200.0" />
-            <Label fx:id="playerStateMoneyLabel" layoutX="194.0" layoutY="15.0" text="0" />
-            <Label fx:id="playerStateArmyLabel" layoutX="190.0" layoutY="38.0" text="0" />
-            <Label fx:id="playerStateNaturalResourcesLabel" layoutX="381.0" layoutY="14.0" text="0" />
-            <Label fx:id="playerStateRefinedResourcesLabel" layoutX="381.0" layoutY="38.0" text="0" />
+            <Pane layoutX="609.0" prefHeight="28.0" prefWidth="63.0">
+               <children>
+                  <SVGPath content="M40,60 C42,48 44,30 25,32" layoutX="16.0" layoutY="-23.0" />
+                  <Label fx:id="playerStateLvlLabel" layoutX="22.0" layoutY="-20.0" text="LVL" />
+                  <Label fx:id="playerStateNameLabel" layoutX="18.0" layoutY="6.0" text="State" />
+               </children>
+            </Pane>
+            <Label contentDisplay="CENTER" layoutX="34.0" layoutY="42.0" prefHeight="20.0" prefWidth="60.0" text="Money:" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="34.0" layoutY="111.0" prefHeight="20.0" prefWidth="60.0" text="Army:" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="169.0" layoutY="44.0" prefHeight="20.0" prefWidth="120.0" text="Natural Resources:" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="175.0" layoutY="113.0" text="Refined Resources:" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="611.0" layoutY="75.0" prefHeight="20.0" prefWidth="120.0" text="Territories" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="851.0" layoutY="73.0" prefHeight="20.0" prefWidth="60.0" text="Alliances" textAlignment="CENTER" />
+            <ListView fx:id="playerStateConqueredTerritoriesListView" layoutX="781.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
+            <ListView fx:id="playerStateAlliedStatesListView" layoutX="541.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
+            <Label fx:id="playerStateMoneyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="44.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label fx:id="playerStateArmyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="111.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label fx:id="playerStateNaturalResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="44.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label fx:id="playerStateRefinedResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="113.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="345.0" layoutY="73.0" prefHeight="20.0" prefWidth="79.0" text="Work Force:" textAlignment="CENTER" />
+            <Label fx:id="playerStateMoneyLabel1" contentDisplay="CENTER" layoutX="424.0" layoutY="74.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label contentDisplay="CENTER" layoutX="1105.0" layoutY="74.0" prefHeight="20.0" prefWidth="60.0" text="Battles" textAlignment="CENTER" />
+            <ListView fx:id="playerBattlesListView" layoutX="1024.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
          </children>
       </Pane>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
 </VBox>

@@ -30,7 +30,7 @@ public class App extends Application {
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
         Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
-        double xShift = 100, yShift = -120;
+        double xShift = 50, yShift = -110;
 
         for(SVGPathElement p : paths) {
             try {

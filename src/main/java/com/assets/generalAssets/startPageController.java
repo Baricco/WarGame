@@ -187,19 +187,29 @@ public class startPageController implements Initializable{
     @FXML
     private Label playerStateRefinedResourcesLabel;
 
+    @FXML
+    private Label playerStateLvlLabel;
 
     @FXML
     private ListView<String> playerStateConqueredTerritoriesListView;
 
     @FXML
-    private ListView<String> playerStateAlliedStatesListView;
- 
-
+    private Pane sideMenu;
 
     @FXML
-    private void switchToSecondary() throws IOException {
-        System.out.println("Hai premuto il pulsantozzo");
-    }
+    private Label calendarLabel;
+
+    @FXML
+    private Label menuStateLvlLabel;
+
+    @FXML
+    private Label menuStateNameLabel;
+
+    @FXML
+    private ListView<String> playerStateAlliedStatesListView;
+
+    @FXML
+    private ListView<String> playerBattlesListView;
 
 
     @Override

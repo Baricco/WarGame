@@ -3,7 +3,7 @@
     <State Id="AE">
         <Name>Arab Emirates</Name>
         <Money>100000000</Money>
-        <StageMoney>80000</StageMoney>
+        <StageMoney>8000000</StageMoney>
         <NaturalResources>35000</NaturalResources>
         <StageNaturalResources>5800</StageNaturalResources>
         <RefinedResources>48000</RefinedResources>
@@ -138,7 +138,7 @@
 
     <State Id="EG">
         <Name>Egypt</Name>
-        <Money>500000000</Money>
+        <Money>600000000</Money>
         <StageMoney>800000</StageMoney>
         <NaturalResources>224000</NaturalResources>
         <StageNaturalResources>35000</StageNaturalResources>
@@ -223,605 +223,588 @@
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="CG">
+        <Name>Congo</Name>
+        <Money>200000000</Money>
+        <StageMoney>64000000</StageMoney>
+        <NaturalResources>71000</NaturalResources>
+        <StageNaturalResources>6800</StageNaturalResources>
+        <RefinedResources>14000</RefinedResources>
+        <StageRefinedResources>2050</StageRefinedResources>
+        <Population>125000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">NI</Bordes>
+            <Border SeaBorder="false">ET</Bordes>
+            <Border SeaBorder="false">MZ</Bordes>
+            <Border SeaBorder="false">SA</Bordes>
+            <Border SeaBorder="true">SE</Bordes>
+            <Border SeaBorder="true">BR</Bordes>
         </NeighboringStates>
         <Cities>
+            <City>Kinshasa</City>
+            <City>Bandudu</City>
+            <City>Beni</City>
+            <City>Boma</City>
+            <City>Bukavu</City>
+            <City>Butembo</City>
+            <City>Goma</City>
+            <City>Kamina</City>
+            <City>Kananga</City>
+            <City>Kikwit</City>
+            <City>Kisangani</City>
+            <City>Kolwezi</City>
+            <City>Likasi</City>
+            <City>Lubumbashi</City>
+            <City>Matadi</City>
+            <City>Mbandaka</City>
+            <City>Moba</City>
+            <City>Mbuji-Mayi</City>
+            <City>Tshikapa</City>
+            <City>Ubundu</City>
             <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Luanda</City>
+            <City>Cabinda</City>
+            <City>Huando</City>
+            <City>Lunda</City>
+            <City>Gaborone</City>
+            <City>Windhoek</City>
+    </State>
+
+    <State Id="AR">
+        <Name>Argentina</Name>
+        <Money>720000000</Money>
+        <StageMoney>8800000</StageMoney>
+        <NaturalResources>230000</NaturalResources>
+        <StageNaturalResources>28000</StageNaturalResources>
+        <RefinedResources>87000</RefinedResources>
+        <StageRefinedResources>13000</StageRefinedResources>
+        <Population>68400000</Population>
+        <NeighboringStates>
+            <Border SeaBorder="false">CI</Bordes>
+            <Border SeaBorder="false">BR</Bordes>
+            <Border SeaBorder="true">SA</Bordes>
+            <Border SeaBorder="true">CG</Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City>Buenos Aires</City>
+            <City>La Plata</City>
+            <City>Resistencia</City>
+            <City>Cordoba</City>
+            <City>Corrientes</City>
+            <City>Posadas</City>
+            <City>Viedma</City>
+            <City>Salta</City>
+            <City>Santa Fe</City>
+            <City>Tucuman</City>
+            <City>Asuncion</City>
+            <City>Montevideo</City>
+            <City>Salto</City>
+            <City>Maldonado</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="AT">
+        <Name>Austria</Name>
+        <Money>850000000</Money>
+        <StageMoney>13000000</StageMoney>
+        <NaturalResources>184000</NaturalResources>
+        <StageNaturalResources>24000</StageNaturalResources>
+        <RefinedResources>61000</RefinedResources>
+        <StageRefinedResources>8900</StageRefinedResources>
+        <Population>36800000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">IT</Bordes>
+            <Border SeaBorder="false">GE</Bordes>
+            <Border SeaBorder="false">PL</Bordes>
+            <Border SeaBorder="false">RO</Bordes>
+            <Border SeaBorder="false">JG</Bordes>
         </NeighboringStates>
         <Cities>
+            <City>Wien</City>
+            <City>Sankt Polten</City>
+            <City>Linz</City>
+            <City>Salzburg</City>
+            <City>Innsbruck</City>
+            <City>Klagenfurt</City>
+            <City>Graz</City>
+            <City>Wels</City>
+            <City>Villach</City>
             <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Praha</City>
+            <City>Troja</City>
+            <City>Bratislava</City>
+            <City>Kosice</City>
+            <City>Budapest</City>
+            <City>Debrecen</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="AU">
+        <Name>Australia</Name>
+        <Money>950000000</Money>
+        <StageMoney>17000000</StageMoney>
+        <NaturalResources>283000</NaturalResources>
+        <StageNaturalResources>32000</StageNaturalResources>
+        <RefinedResources>153000</RefinedResources>
+        <StageRefinedResources>14000</StageRefinedResources>
+        <Population>25850000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true">NZ</Bordes>
+            <Border SeaBorder="true">IN</Bordes>
+            <Border SeaBorder="true">TH</Bordes>
+            <Border SeaBorder="true">SA</Bordes>
+            <Border SeaBorder="true">CI</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Canberra</City>
+            <City>Sydney</City>
+            <City>Adelaide</City>
+            <City>Perth</City>
+            <City>Brisbane</City>
+            <City>Melbourne</City>
+            <City>Kingston</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="ID">
+        <Name>India</Name>
+        <Money>50000000</Money>
+        <StageMoney>3900000</StageMoney>
+        <NaturalResources>104000</NaturalResources>
+        <StageNaturalResources>18000</StageNaturalResources>
+        <RefinedResources>23000</RefinedResources>
+        <StageRefinedResources>8300</StageRefinedResources>
+        <Population>1500000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">AF</Bordes>
+            <Border SeaBorder="false">CN</Bordes>
+            <Border SeaBorder="false">TH</Bordes>
+            <Border SeaBorder="true">IR</Bordes>
+            <Border SeaBorder="true">AE</Bordes>
+            <Border SeaBorder="true">IN</Bordes>
+            <Border SeaBorder="true">PT</Bordes>
+            <Border SeaBorder="true">ET</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Nai Dilli</City>
+            <City>Mumbai</City>
+            <City>Kalkutta</City>
+            <City>Bengaluru</City>
+            <City>Cennai</City>
+            <City>Hyderabad</City>
+            <City>Ahmedabad</City>
+            <City>Surat</City>
+            <City>Pune</City>
+            <City>Jaipur</City>
+            <City>Laknau</City>
+            <City>Kohzikode</City>
+            <City>Nagpur</City>
+            <City>Indore</City>
+            <City>Patna</City>
+            <City>Bhopal</City>
+            <City>Kanpur</City>
+            <City>Ludhiana</City>
+            <City>Agra</City>
+            <City>Vadodara</City>
+            <City>Kathmandu</City>
+            <City>Janakpur</City>
+            <City>Kotte</City>
+            <City>Dhaka</City>
+            <City>Chittagong</City>
+            <City>Khulna</City>
+            <City>Rajshahi</City>
+            <City>Sylhet</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="IT">
+        <Name>Italy</Name>
+        <Money>900000000</Money>
+        <StageMoney>1100000</StageMoney>
+        <NaturalResources>149000</NaturalResources>
+        <StageNaturalResources>48000</StageNaturalResources>
+        <RefinedResources>94000</RefinedResources>
+        <StageRefinedResources>23000</StageRefinedResources>
+        <Population>70000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">FR</Bordes>
+            <Border SeaBorder="false">GE</Bordes>
+            <Border SeaBorder="false">AT</Bordes>
+            <Border SeaBorder="false">JG</Bordes>
+            <Border SeaBorder="true">SP</Bordes>
+            <Border SeaBorder="true">GR</Bordes>
+            <Border SeaBorder="true">MO</Bordes>
+            <Border SeaBorder="true">LY</Bordes>
+            <Border SeaBorder="true">EG</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Roma</City>
+            <City>Milano</City>
+            <City>Torino</City>
+            <City>Venezia</City>
+            <City>Firenze</City>
+            <City>Bologna</City>
+            <City>Napoli</City>
+            <City>Bari</City>
+            <City>Palermo</City>
+            <City>Cagliari</City>
+            <City>Trento</City>
+            <City>Trieste</City>
+            <City>Genova</City>
+            <City>Perugia</City>
+            <City>Ancona</City>
+            <City>Pescara</City>
+            <City>L'Aquila</City>
+            <City>Campobasso</City>
+            <City>Potenza</City>
+            <City>Catanzaro</City>
+            <City>Termoli</City>
+            <City>Campomarino</City>
+            <City>Corlo</City>
+            <City>Magreta</City>
+            <City>Modena</City>
+            <City>Brescia</City>
+            <City>Predappio</City>
+            <City>Bern</City>
+            <City>Zurich</City>
+            <City>Geneve</City>
+            <City>Basel</City>
+            <City>Lausanne</City>
+            <City>Luzern</City>
+            <City>Lugan</City>
+            <City>Ljubjana</City>
+            <City>Aiaccio</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="FR">
+        <Name>France</Name>
+        <Money>1100000000</Money>
+        <StageMoney>18000000</StageMoney>
+        <NaturalResources>160000</NaturalResources>
+        <StageNaturalResources>52000</StageNaturalResources>
+        <RefinedResources>123000</RefinedResources>
+        <StageRefinedResources>27000</StageRefinedResources>
+        <Population>85000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SP</Bordes>
+            <Border SeaBorder="false">GE</Bordes>
+            <Border SeaBorder="false">IT</Bordes>
+            <Border SeaBorder="true">GB</Bordes>
+            <Border SeaBorder="true">MO</Bordes>
+            <Border SeaBorder="true">LY</Bordes>
+            <Border SeaBorder="true">SC</Bordes>
+            <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Paris</City>
+            <City>Marseille</City>
+            <City>Lyon</City>
+            <City>Toulose</City>
+            <City>Nice</City>
+            <City>Nantes</City>
+            <City>Montpellier</City>
+            <City>Strasbourg</City>
+            <City>Bordeaux</City>
+            <City>Lille</City>
+            <City>Rennes</City>
+            <City>Bruxelles</City>
+            <City>Anvers</City>
+            <City>Gent</City>
+            <City>Charleroi</City>
+            <City>Liege</City>
+            <City>Bruges</City>
+            <City>Amsterdam</City>
+            <City>Rotterdam</City>
+            <City>Den Haag</City>
+            <City>Utrecht</City>
+            <City>Eindhoven</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="SE">
+        <Name>Senegal</Name>
+        <Money>160000000</Money>
+        <StageMoney>13000000</StageMoney>
+        <NaturalResources>56000</NaturalResources>
+        <StageNaturalResources>10300</StageNaturalResources>
+        <RefinedResources>34000</RefinedResources>
+        <StageRefinedResources>6200</StageRefinedResources>
+        <Population>135700000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">MO</Bordes>
+            <Border SeaBorder="false">NI</Bordes>
+            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="true">CG</Bordes>
+            <Border SeaBorder="true">SP</Bordes>
+            <Border SeaBorder="true">SA</Bordes>
+            <Border SeaBorder="true">BR</Bordes>
+            <Border SeaBorder="true">CO</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Dakar</City>
+            <City>Niayes</City>
+            <City>Guedawaye</City>
+            <City>Thiaroye</City>
+            <City>Dagoudane</City>
+            <City>Thies</City>
+            <City>M'bour</City>
+            <City>Kawlax</City>
+            <City>Nuwakshut</City>
+            <City>Rosso</City>
+            <City>Bamako</City>
+            <City>Sikasso</City>
+            <City>Ouagadougou</City>
+            <City>Dioulasso</City>
+            <City>Akkra</City>
+            <City>Yamoussokro</City>
+            <City>Freetown</City>
+            <City>Kissy</City>
+            <City>Kenema</City>
+            <City>Konakry</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="MZ">
+        <Name>Mozambique</Name>
+        <Money>72000000</Money>
+        <StageMoney>2700000</StageMoney>
+        <NaturalResources>68000</NaturalResources>
+        <StageNaturalResources>7400</StageNaturalResources>
+        <RefinedResources>20000</RefinedResources>
+        <StageRefinedResources>5600</StageRefinedResources>
+        <Population>127000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SA</Bordes>
+            <Border SeaBorder="false">CG</Bordes>
+            <Border SeaBorder="false">ET</Bordes>
+            <Border SeaBorder="true">AE</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Maputo</City>
+            <City>Beira</City>
+            <City>Nampula</City>
+            <City>Quelimane</City>
+            <City>Dodoma</City>
+            <City>Dar</City>
+            <City>Zanzibar</City>
+            <City>Arusha</City>
+            <City>Harare</City>
+            <City>Bulawayo</City>
+            <City>Chitungwiza</City>
+            <City>Lusaka</City>
+            <City>Kasama</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="CI">
+        <Name>Chile</Name>
+        <Money>290000000</Money>
+        <StageMoney>4800000</StageMoney>
+        <NaturalResources>186000</NaturalResources>
+        <StageNaturalResources>47000</StageNaturalResources>
+        <RefinedResources>59000</RefinedResources>
+        <StageRefinedResources>12000</StageRefinedResources>
+        <Population>30000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">CO</Bordes>
+            <Border SeaBorder="false">BR</Bordes>
+            <Border SeaBorder="false">AR</Bordes>
+            <Border SeaBorder="true">AC</Bordes>
+            <Border SeaBorder="true">MX</Bordes>
+            <Border SeaBorder="true">IN</Bordes>
+            <Border SeaBorder="true">AU</Bordes>
+            <Border SeaBorder="true">NZ</Bordes>
         </NeighboringStates>
-        <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+        <Cities>            
+            <City>Santiago</City>
+            <City>Concepcion</City>
+            <City>Vina del Mar</City>
+            <City>Antofagasta</City>
+            <City>Valparaiso</City>
+            <City>Talcahuano</City>
+            <City>Sucre</City>
+            <City>La Paz</City>            
+            <City>Cochabamba</City>
+            <City>Santa Cruz</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="BR">
+        <Name>Brazil</Name>
+        <Money>80000000</Money>
+        <StageMoney>9000000</StageMoney>
+        <NaturalResources>280000</NaturalResources>
+        <StageNaturalResources>32000</StageNaturalResources>
+        <RefinedResources>79000</RefinedResources>
+        <StageRefinedResources>13000</StageRefinedResources>
+        <Population>217800000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">CO</Bordes>
+            <Border SeaBorder="false">CI</Bordes>
+            <Border SeaBorder="false">AR</Bordes>
+            <Border SeaBorder="true">AC</Bordes>
+            <Border SeaBorder="true">SE</Bordes>
+            <Border SeaBorder="true">NI</Bordes>
+            <Border SeaBorder="true">CG</Bordes>
+            <Border SeaBorder="true">SA</Bordes>
+            <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Brasilia</City>
+            <City>Sao Paulo</City>
+            <City>Rio de Janeiro</City>
+            <City>Salvador</City>
+            <City>Fortaleza</City>
+            <City>Belo Horizonte</City>
+            <City>Manaus</City>
+            <City>Curitiba</City>
+            <City>Recife</City>
+            <City>Porto Alegre</City>
+            <City>Belem</City>
+            <City>Goiania</City>
+            <City>Guarulhos</City>
+            <City>Campinas</City>
+            <City>Sao Luis</City>
+            <City>Sao Goncalo</City>
+            <City>Maceio</City>
+            <City>Caxias</City>
+            <City>Natal</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="AC">
+        <Name>Central America</Name>
+        <Money>210000000</Money>
+        <StageMoney>5800000</StageMoney>
+        <NaturalResources>223000</NaturalResources>
+        <StageNaturalResources>34000</StageNaturalResources>
+        <RefinedResources>98000</RefinedResources>
+        <StageRefinedResources>16000</StageRefinedResources>
+        <Population>75200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">MX</Bordes>
+            <Border SeaBorder="false">CO</Bordes>
+            <Border SeaBorder="true">US</Bordes>
+            <Border SeaBorder="true">CA</Bordes>
+            <Border SeaBorder="true">CI</Bordes>
+            <Border SeaBorder="true">BR</Bordes>
+            <Border SeaBorder="true">SE</Bordes>
+            <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Ciudad</City>
+            <City>Mixco</City>
+            <City>Villa Nueva</City>
+            <City>San Pedro</City>
+            <City>San Juan</City>
+            <City>Coban</City>
+            <City>Quetzaltenango</City>
+            <City>Tegucigalpa</City>
+            <City>Sula</City>
+            <City>Choloma</City>
+            <City>Managua</City>
+            <City>Leon</City>
+            <City>San Jose</City>
+            <City>Cartago</City>
+            <City>Puerto Limon</City>
+            <City>Panama</City>
+            <City>La Habana</City>
+            <City>Cuba</City>
+            <City>Camaguey</City>
+            <City>Holguin</City>
+            <City>Guantanamo</City>
+            <City>Port-au-Prince</City>
+            <City>Santo Domingo</City>
+            <City>Este</City>
+            <City>Caballeros</City>
+            <City>Norte</City>
+            <City>Oeste</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="SU">
+        <Name>Soviet Union</Name>
+        <Money>1100000000</Money>
+        <StageMoney>16000000</StageMoney>
+        <NaturalResources>76000</NaturalResources>
+        <StageNaturalResources>25000</StageNaturalResources>
+        <RefinedResources>83000</RefinedResources>
+        <StageRefinedResources>21000</StageRefinedResources>
+        <Population>152000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SC</Bordes>
+            <Border SeaBorder="false">PL</Bordes>
+            <Border SeaBorder="false">RO</Bordes>
+            <Border SeaBorder="false">IR</Bordes>
+            <Border SeaBorder="false">KZ</Bordes>
+            <Border SeaBorder="false">CN</Bordes>
+            <Border SeaBorder="false">KO</Bordes>
+            <Border SeaBorder="true">JG</Bordes>
+            <Border SeaBorder="true">TR</Bordes>
+            <Border SeaBorder="true">JP</Bordes>
+            <Border SeaBorder="true">US</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Moska</City>
+            <City>Sankt-Peterburg</City>
+            <City>Novosibirsk</City>
+            <City>Ekaterimburg</City>
+            <City>Novgorod</City>
+            <City>Kazan</City>
+            <City>Celjabinsk</City>
+            <City>Samara</City>
+            <City>Omsk</City>
+            <City>Rostov</City>
+            <City>Ufa</City>
+            <City>Krasonjarsk</City>
+            <City>Perm</City>
+            <City>Voronez</City>
+            <City>Volgograd</City>
+            <City>Krasnodar</City>
+            <City>Togliatti</City>
+            <City>Tallin</City>
+            <City>Riga</City>
+            <City>Vilnjus</City>
+            <City>Kaunas</City>
         </Cities>
     </State>
 
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="CA">
+        <Name>Canada</Name>
+        <Money>1200000000</Money>
+        <StageMoney>43000000</StageMoney>
+        <NaturalResources>192000</NaturalResources>
+        <StageNaturalResources>43000</StageNaturalResources>
+        <RefinedResources>186000</RefinedResources>
+        <StageRefinedResources>36000</StageRefinedResources>
+        <Population>39000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">US</Bordes>
+            <Border SeaBorder="true">GL</Bordes>
+            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="true">SC</Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-        </Cities>
-    </State>
-
-    <State Id="">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
-        <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-        </NeighboringStates>
-        <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City>Ottawa</City>
+            <City>Toronto</City>
+            <City>Montreal</City>
+            <City>Vancouver</City>
+            <City>Calgary</City>
+            <City>Edmonton</City>
+            <City>Quebec</City>
+            <City>Winnipeg</City>
+            <City>Hamilton</City>
+            <City>London</City>
+            <City>Kitchener</City>
+            <City>St Catharines</City>
+            <City>Niagara</City>
+            <City>Halifax</City>
+            <City>Oshawa</City>
+            <City>Victoria</City>
+            <City>Windsor</City>
+            <City>Saskatoon</City>
+            <City>Regina</City>
         </Cities>
     </State>
 

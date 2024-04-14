@@ -1,13 +1,12 @@
 
 .root {
+    -transparent: #FFFFFF00;
     -seaBlue: #8ac0c6;
     -lightContinent: #4d6555;
     -darkContinent: #2d4535;
     -lightGray: #838383;
     -darkGray: #474747;
-    -lightBlue: #7fb0b8;
-    -transparent: #FFFFFF00;
-    -black: #000000;
+    -black: #171219;
 }
 
 VBox {
@@ -34,13 +33,13 @@ VBox {
 }
 
 #sideMenu {
-    -fx-background-color: -lightGray;
+    -fx-background-color: -black;
     -fx-border-color: -transparent -transparent -transparent -black;
     -fx-border-width: 2;
 }
 
 #playerMenu {
-    -fx-background-color: -lightGray;
+    -fx-background-color: -black;
     -fx-border-color: -black -transparent -transparent -transparent;
     -fx-border-width: 2;
 }

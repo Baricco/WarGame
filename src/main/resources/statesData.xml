@@ -18,27 +18,27 @@
             <Border SeaBorder="true">ID</Bordes>
         </NeighboringStates>
          <Cities>
-            <City>al-Riyad</City>
-            <City>al-Baha</City>
-            <City>Baljurashi</City>
-            <City>Ar'ar</City>
-            <City>Sakaka</City>
-            <City>al-Medina</City>
-            <City>al-Bahr</City>
-            <City>Burayda</City>
-            <City>al-Ras</City>
-            <City>Dammam</City>
-            <City>Abha</City>
-            <City>Bariq</City>
-            <City>Ha'il</City>
-            <City>Jizan</City>
-            <City>Makka</City>
-            <City>Jeddah</City>
-            <City>Najran</City>
-            <City>Tabuk</City>
-            <City>Masqat</City>
-            <City>San'a</City>
-            <City>Adan</City>
+            <City trainStation="true">al-Riyad</City>      <!-- PROBABILMENTE QUI CI SERVIRANNO ANCHE LE COORDINATE SE VOGLIAMO MOSTRARE LE STAZIONI, MA POI CI PENSIAMO -->
+            <City trainStation="false">al-Baha</City>
+            <City trainStation="false">Baljurashi</City>
+            <City trainStation="false">Ar'ar</City>
+            <City trainStation="false">Sakaka</City>
+            <City trainStation="false">al-Medina</City>
+            <City trainStation="false">al-Bahr</City>
+            <City trainStation="false">Burayda</City>
+            <City trainStation="false">al-Ras</City>
+            <City trainStation="false">Dammam</City>
+            <City trainStation="false">Abha</City>
+            <City trainStation="false">Bariq</City>
+            <City trainStation="false">Ha'il</City>
+            <City trainStation="false">Jizan</City>
+            <City trainStation="false">Makka</City>
+            <City trainStation="false">Jeddah</City>
+            <City trainStation="false">Najran</City>
+            <City trainStation="false">Tabuk</City>
+            <City trainStation="false">Masqat</City>
+            <City trainStation="false">San'a</City>
+            <City trainStation="false">Adan</City>
         </Cities>
     </State>
 
@@ -61,27 +61,27 @@
             <Border SeaBorder="true">ET</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Kabul</City>
-            <City>Kandahar</City>
-            <City>Feyzabad</City>
-            <City>Qala-i-Naw</City>
-            <City>Khomri</City>
-            <City>Sharif</City>
-            <City>Bamiyan</City>
-            <City>Farah</City>
-            <City>Meymaneh</City>
-            <City>Ghazni</City>
-            <City>Changcharan</City>
-            <City>Lashkar Gah</City>
-            <City>Herat</City>
-            <City>Konduz</City>
-            <City>Islamabad</City>
-            <City>Quetta</City>
-            <City>Peshawar</City>
-            <City>Lahaur</City>
-            <City>Karachi</City>
-            <City>Muzaffarabad</City>
-            <City>Gilgit</City>
+            <City trainStation="true">Kabul</City>
+            <City trainStation="false">Kandahar</City>
+            <City trainStation="false">Feyzabad</City>
+            <City trainStation="false">Qala-i-Naw</City>
+            <City trainStation="false">Khomri</City>
+            <City trainStation="false">Sharif</City>
+            <City trainStation="false">Bamiyan</City>
+            <City trainStation="false">Farah</City>
+            <City trainStation="false">Meymaneh</City>
+            <City trainStation="false">Ghazni</City>
+            <City trainStation="false">Changcharan</City>
+            <City trainStation="false">Lashkar Gah</City>
+            <City trainStation="false">Herat</City>
+            <City trainStation="false">Konduz</City>
+            <City trainStation="true">Islamabad</City>
+            <City trainStation="false">Quetta</City>
+            <City trainStation="false">Peshawar</City>
+            <City trainStation="false">Lahaur</City>
+            <City trainStation="false">Karachi</City>
+            <City trainStation="false">Muzaffarabad</City>
+            <City trainStation="false">Gilgit</City>
         </Cities>
     </State>
 
@@ -102,37 +102,37 @@
             <Border SeaBorder="true">LY</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Zagreb</City>
-            <City>Petrinja</City>
-            <City>Split</City>
-            <City>Zadar</City>
-            <City>Fiume</City>
-            <City>Pula</City>
-            <City>Sisak</City>
-            <City>Varazdin</City>
-            <City>Koprivnica</City>
-            <City>Dubrovnik</City>
-            <City>Sarajevo</City>
-            <City>Banja Luka</City>
-            <City>Tuzla</City>
-            <City>Mostar</City>
-            <City>Beograd</City>
-            <City>Novi Sad</City>
-            <City>Niss</City>
-            <City>Kragujevac</City>
-            <City>Leskovac</City>
-            <City>Subotica</City>
-            <City>Sofia</City>
-            <City>Vidin</City>
-            <City>Vroca</City>
-            <City>Pernik</City>
-            <City>Kjustendil</City>
-            <City>Blagoevgrad</City>
-            <City>Burgas</City>
-            <City>Zagora</City>
-            <City>Tirana</City>
-            <City>Durres</City>
-            <City>Alessio</City>
+            <City trainStation="false">Zagreb</City>
+            <City trainStation="false">Petrinja</City>
+            <City trainStation="false">Split</City>
+            <City trainStation="false">Zadar</City>
+            <City trainStation="false">Fiume</City>
+            <City trainStation="false">Pula</City>
+            <City trainStation="false">Sisak</City>
+            <City trainStation="false">Varazdin</City>
+            <City trainStation="false">Koprivnica</City>
+            <City trainStation="false">Dubrovnik</City>
+            <City trainStation="true">Sarajevo</City>
+            <City trainStation="false">Banja Luka</City>
+            <City trainStation="false">Tuzla</City>
+            <City trainStation="false">Mostar</City>
+            <City trainStation="true">Beograd</City>
+            <City trainStation="false">Novi Sad</City>
+            <City trainStation="false">Niss</City>
+            <City trainStation="false">Kragujevac</City>
+            <City trainStation="false">Leskovac</City>
+            <City trainStation="false">Subotica</City>
+            <City trainStation="false">Sofia</City>
+            <City trainStation="false">Vidin</City>
+            <City trainStation="false">Vroca</City>
+            <City trainStation="false">Pernik</City>
+            <City trainStation="false">Kjustendil</City>
+            <City trainStation="false">Blagoevgrad</City>
+            <City trainStation="false">Burgas</City>
+            <City trainStation="false">Zagora</City>
+            <City trainStation="true">Tirana</City>
+            <City trainStation="false">Durres</City>
+            <City trainStation="false">Alessio</City>
         </Cities>
     </State>
 
@@ -155,27 +155,27 @@
             <Border SeaBorder="true">TR</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>al-Qahira</City>
-            <City>Alexandria</City>
-            <City>Berenice</City>
-            <City>Gizah</City>
-            <City>al-Alamyn</City>
-            <City>Aswan</City>
-            <City>al-Minya</City>
-            <City>Sharm al-Shayk</City>
-            <City>Saqqara</City>
-            <City>al-Arish</City>
-            <City>Asyut</City>
-            <City>Bilbeis</City>
-            <City>Dumyat</City>
-            <City>File</City>
-            <City>al-Uqsur</City>
-            <City>Siwa</City>
-            <City>al-Suways</City>
-            <City>al-Khartum</City>
-            <City>Omdurman</City>
-            <City>Bahri</City>
-            <City>Bur Sudan</City>
+            <City trainStation="true">al-Qahira</City>
+            <City trainStation="false">Alexandria</City>
+            <City trainStation="false">Berenice</City>
+            <City trainStation="false">Gizah</City>
+            <City trainStation="false">al-Alamyn</City>
+            <City trainStation="false">Aswan</City>
+            <City trainStation="false">al-Minya</City>
+            <City trainStation="false">Sharm al-Shayk</City>
+            <City trainStation="false">Saqqara</City>
+            <City trainStation="false">al-Arish</City>
+            <City trainStation="false">Asyut</City>
+            <City trainStation="false">Bilbeis</City>
+            <City trainStation="false">Dumyat</City>
+            <City trainStation="false">File</City>
+            <City trainStation="false">al-Uqsur</City>
+            <City trainStation="false">Siwa</City>
+            <City trainStation="false">al-Suways</City>
+            <City trainStation="false">al-Khartum</City>
+            <City trainStation="false">Omdurman</City>
+            <City trainStation="false">Bahri</City>
+            <City trainStation="false">Bur Sudan</City>
         </Cities>
     </State>
     
@@ -200,26 +200,26 @@
             <Border SeaBorder="true">JG</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Tehran</City>
-            <City>Mashhad</City>
-            <City>Isfahan</City>
-            <City>Tabriz</City>
-            <City>Karaj</City>
-            <City>Shiraz</City>
-            <City>Ahvaz</City>
-            <City>Qom</City>
-            <City>Kirmasan</City>
-            <City>Urmiya</City>
-            <City>Rasht</City>
-            <City>Zahedan</City>
-            <City>Kerman</City>
-            <City>Hamadan</City>
-            <City>Arak</City>
-            <City>Yazd</City>
-            <City>Ardabil</City>
-            <City>Abbas</City>
-            <City>Sanandaj</City>
-            <City>Eslamshar</City>
+            <City trainStation="true">Tehran</City>
+            <City trainStation="true">Mashhad</City>
+            <City trainStation="false">Isfahan</City>
+            <City trainStation="false">Tabriz</City>
+            <City trainStation="false">Karaj</City>
+            <City trainStation="true">Shiraz</City>
+            <City trainStation="false">Ahvaz</City>
+            <City trainStation="false">Qom</City>
+            <City trainStation="false">Kirmasan</City>
+            <City trainStation="false">Urmiya</City>
+            <City trainStation="false">Rasht</City>
+            <City trainStation="false">Zahedan</City>
+            <City trainStation="false">Kerman</City>
+            <City trainStation="false">Hamadan</City>
+            <City trainStation="false">Arak</City>
+            <City trainStation="false">Yazd</City>
+            <City trainStation="false">Ardabil</City>
+            <City trainStation="false">Abbas</City>
+            <City trainStation="false">Sanandaj</City>
+            <City trainStation="false">Eslamshar</City>
         </Cities>
     </State>
 
@@ -241,33 +241,33 @@
             <Border SeaBorder="true">BR</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Kinshasa</City>
-            <City>Bandudu</City>
-            <City>Beni</City>
-            <City>Boma</City>
-            <City>Bukavu</City>
-            <City>Butembo</City>
-            <City>Goma</City>
-            <City>Kamina</City>
-            <City>Kananga</City>
-            <City>Kikwit</City>
-            <City>Kisangani</City>
-            <City>Kolwezi</City>
-            <City>Likasi</City>
-            <City>Lubumbashi</City>
-            <City>Matadi</City>
-            <City>Mbandaka</City>
-            <City>Moba</City>
-            <City>Mbuji-Mayi</City>
-            <City>Tshikapa</City>
-            <City>Ubundu</City>
-            <City></City>
-            <City>Luanda</City>
-            <City>Cabinda</City>
-            <City>Huando</City>
-            <City>Lunda</City>
-            <City>Gaborone</City>
-            <City>Windhoek</City>
+            <City trainStation="true">Kinshasa</City>
+            <City trainStation="false">Bandudu</City>
+            <City trainStation="false">Beni</City>
+            <City trainStation="false">Boma</City>
+            <City trainStation="false">Bukavu</City>
+            <City trainStation="false">Butembo</City>
+            <City trainStation="false">Goma</City>
+            <City trainStation="false">Kamina</City>
+            <City trainStation="false">Kananga</City>
+            <City trainStation="false">Kikwit</City>
+            <City trainStation="true">Kisangani</City>
+            <City trainStation="false">Kolwezi</City>
+            <City trainStation="false">Likasi</City>
+            <City trainStation="true">Lubumbashi</City>
+            <City trainStation="false">Matadi</City>
+            <City trainStation="false">Mbandaka</City>
+            <City trainStation="false">Moba</City>
+            <City trainStation="false">Mbuji-Mayi</City>
+            <City trainStation="false">Tshikapa</City>
+            <City trainStation="false">Ubundu</City>
+            <City trainStation="false"></City>
+            <City trainStation="false">Luanda</City>
+            <City trainStation="false">Cabinda</City>
+            <City trainStation="false">Huando</City>
+            <City trainStation="false">Lunda</City>
+            <City trainStation="false">Gaborone</City>
+            <City trainStation="false">Windhoek</City>
     </State>
 
     <State Id="AR">
@@ -286,20 +286,20 @@
             <Border SeaBorder="true">CG</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Buenos Aires</City>
-            <City>La Plata</City>
-            <City>Resistencia</City>
-            <City>Cordoba</City>
-            <City>Corrientes</City>
-            <City>Posadas</City>
-            <City>Viedma</City>
-            <City>Salta</City>
-            <City>Santa Fe</City>
-            <City>Tucuman</City>
-            <City>Asuncion</City>
-            <City>Montevideo</City>
-            <City>Salto</City>
-            <City>Maldonado</City>
+            <City trainStation="true">Buenos Aires</City>
+            <City trainStation="false">La Plata</City>
+            <City trainStation="false">Resistencia</City>
+            <City trainStation="false">Cordoba</City>
+            <City trainStation="false">Corrientes</City>
+            <City trainStation="false">Posadas</City>
+            <City trainStation="false">Viedma</City>
+            <City trainStation="true">Salta</City>
+            <City trainStation="false">Santa Fe</City>
+            <City trainStation="false">Tucuman</City>
+            <City trainStation="false">Asuncion</City>
+            <City trainStation="false">Montevideo</City>
+            <City trainStation="false">Salto</City>
+            <City trainStation="false">Maldonado</City>
         </Cities>
     </State>
 
@@ -320,22 +320,22 @@
             <Border SeaBorder="false">JG</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Wien</City>
-            <City>Sankt Polten</City>
-            <City>Linz</City>
-            <City>Salzburg</City>
-            <City>Innsbruck</City>
-            <City>Klagenfurt</City>
-            <City>Graz</City>
-            <City>Wels</City>
-            <City>Villach</City>
-            <City></City>
-            <City>Praha</City>
-            <City>Troja</City>
-            <City>Bratislava</City>
-            <City>Kosice</City>
-            <City>Budapest</City>
-            <City>Debrecen</City>
+            <City trainStation="true">Wien</City>
+            <City trainStation="false">Sankt Polten</City>
+            <City trainStation="false">Linz</City>
+            <City trainStation="false">Salzburg</City>
+            <City trainStation="false">Innsbruck</City>
+            <City trainStation="false">Klagenfurt</City>
+            <City trainStation="false">Graz</City>
+            <City trainStation="false">Wels</City>
+            <City trainStation="false">Villach</City>
+            <City trainStation="false"></City>
+            <City trainStation="true">Praha</City>
+            <City trainStation="false">Troja</City>
+            <City trainStation="false">Bratislava</City>
+            <City trainStation="false">Kosice</City>
+            <City trainStation="true">Budapest</City>
+            <City trainStation="false">Debrecen</City>
         </Cities>
     </State>
 
@@ -356,13 +356,13 @@
             <Border SeaBorder="true">CI</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Canberra</City>
-            <City>Sydney</City>
-            <City>Adelaide</City>
-            <City>Perth</City>
-            <City>Brisbane</City>
-            <City>Melbourne</City>
-            <City>Kingston</City>
+            <City trainStation="true">Canberra</City>
+            <City trainStation="false">Sydney</City>
+            <City trainStation="false">Adelaide</City>
+            <City trainStation="false">Perth</City>
+            <City trainStation="false">Brisbane</City>
+            <City trainStation="false">Melbourne</City>
+            <City trainStation="true">Kingston</City>
         </Cities>
     </State>
 
@@ -386,34 +386,34 @@
             <Border SeaBorder="true">ET</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Nai Dilli</City>
-            <City>Mumbai</City>
-            <City>Kalkutta</City>
-            <City>Bengaluru</City>
-            <City>Cennai</City>
-            <City>Hyderabad</City>
-            <City>Ahmedabad</City>
-            <City>Surat</City>
-            <City>Pune</City>
-            <City>Jaipur</City>
-            <City>Laknau</City>
-            <City>Kohzikode</City>
-            <City>Nagpur</City>
-            <City>Indore</City>
-            <City>Patna</City>
-            <City>Bhopal</City>
-            <City>Kanpur</City>
-            <City>Ludhiana</City>
-            <City>Agra</City>
-            <City>Vadodara</City>
-            <City>Kathmandu</City>
-            <City>Janakpur</City>
-            <City>Kotte</City>
-            <City>Dhaka</City>
-            <City>Chittagong</City>
-            <City>Khulna</City>
-            <City>Rajshahi</City>
-            <City>Sylhet</City>
+            <City trainStation="true">Nai Dilli</City>
+            <City trainStation="true">Mumbai</City>
+            <City trainStation="true">Kalkutta</City>
+            <City trainStation="false">Bengaluru</City>
+            <City trainStation="false">Cennai</City>
+            <City trainStation="false">Hyderabad</City>
+            <City trainStation="false">Ahmedabad</City>
+            <City trainStation="false">Surat</City>
+            <City trainStation="false">Pune</City>
+            <City trainStation="false">Jaipur</City>
+            <City trainStation="false">Laknau</City>
+            <City trainStation="false">Kohzikode</City>
+            <City trainStation="false">Nagpur</City>
+            <City trainStation="false">Indore</City>
+            <City trainStation="false">Patna</City>
+            <City trainStation="false">Bhopal</City>
+            <City trainStation="false">Kanpur</City>
+            <City trainStation="false">Ludhiana</City>
+            <City trainStation="false">Agra</City>
+            <City trainStation="false">Vadodara</City>
+            <City trainStation="false">Kathmandu</City>
+            <City trainStation="false">Janakpur</City>
+            <City trainStation="false">Kotte</City>
+            <City trainStation="false">Dhaka</City>
+            <City trainStation="false">Chittagong</City>
+            <City trainStation="false">Khulna</City>
+            <City trainStation="false">Rajshahi</City>
+            <City trainStation="false">Sylhet</City>
         </Cities>
     </State>
 
@@ -438,46 +438,46 @@
             <Border SeaBorder="true">EG</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Roma</City>
-            <City>Milano</City>
-            <City>Torino</City>
-            <City>Venezia</City>
-            <City>Firenze</City>
-            <City>Bologna</City>
-            <City>Napoli</City>
-            <City>Bari</City>
-            <City>Palermo</City>
-            <City>Cagliari</City>
-            <City>Trento</City>
-            <City>Trieste</City>
-            <City>Genova</City>
-            <City>Perugia</City>
-            <City>Ancona</City>
-            <City>Pescara</City>
-            <City>L'Aquila</City>
-            <City>Campobasso</City>
-            <City>Potenza</City>
-            <City>Catanzaro</City>
-            <City>Termoli</City>
-            <City>Campomarino</City>
-            <City>Corlo</City>
-            <City>Magreta</City>
-            <City>Modena</City>
-            <City>Brescia</City>
-            <City>Predappio</City>
-            <City>Reggio Calabria</City>
-            <City>Vasto</City>
-            <City>Bern</City>
-            <City>Zurich</City>
-            <City>Geneve</City>
-            <City>Basel</City>
-            <City>Lausanne</City>
-            <City>Luzern</City>
-            <City>Lugan</City>
-            <City>Ljubjana</City>
-            <City>Aiaccio</City>
-            <City>San Marino</City>
-            <City>Dogana</City> 
+            <City trainStation="true">Roma</City>
+            <City trainStation="true">Milano</City>
+            <City trainStation="false">Torino</City>
+            <City trainStation="false">Venezia</City>
+            <City trainStation="false">Firenze</City>
+            <City trainStation="false">Bologna</City>
+            <City trainStation="true">Napoli</City>
+            <City trainStation="false">Bari</City>
+            <City trainStation="false">Palermo</City>
+            <City trainStation="false">Cagliari</City>
+            <City trainStation="false">Trento</City>
+            <City trainStation="false">Trieste</City>
+            <City trainStation="false">Genova</City>
+            <City trainStation="false">Perugia</City>
+            <City trainStation="false">Ancona</City>
+            <City trainStation="false">Pescara</City>
+            <City trainStation="false">L'Aquila</City>
+            <City trainStation="false">Campobasso</City>
+            <City trainStation="false">Potenza</City>
+            <City trainStation="false">Catanzaro</City>
+            <City trainStation="false">Termoli</City>
+            <City trainStation="false">Campomarino</City>
+            <City trainStation="false">Corlo</City>
+            <City trainStation="false">Magreta</City>
+            <City trainStation="false">Modena</City>
+            <City trainStation="false">Brescia</City>
+            <City trainStation="false">Predappio</City>
+            <City trainStation="false">Reggio Calabria</City>
+            <City trainStation="false">Vasto</City>
+            <City trainStation="false">Bern</City>
+            <City trainStation="false">Zurich</City>
+            <City trainStation="false">Geneve</City>
+            <City trainStation="false">Basel</City>
+            <City trainStation="false">Lausanne</City>
+            <City trainStation="false">Luzern</City>
+            <City trainStation="false">Lugan</City>
+            <City trainStation="true">Ljubjana</City>
+            <City trainStation="false">Aiaccio</City>
+            <City trainStation="false">San Marino</City>
+            <City trainStation="false">Dogana</City> 
         </Cities>
     </State>
 
@@ -501,29 +501,29 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Paris</City>
-            <City>Marseille</City>
-            <City>Lyon</City>
-            <City>Toulose</City>
-            <City>Nice</City>
-            <City>Nantes</City>
-            <City>Montpellier</City>
-            <City>Strasbourg</City>
-            <City>Bordeaux</City>
-            <City>Lille</City>
-            <City>Rennes</City>
-            <City>Monaco</City>
-            <City>Bruxelles</City>
-            <City>Anvers</City>
-            <City>Gent</City>
-            <City>Charleroi</City>
-            <City>Liege</City>
-            <City>Bruges</City>
-            <City>Amsterdam</City>
-            <City>Rotterdam</City>
-            <City>Den Haag</City>
-            <City>Utrecht</City>
-            <City>Eindhoven</City>
+            <City trainStation="true">Paris</City>
+            <City trainStation="true">Marseille</City>
+            <City trainStation="false">Lyon</City>
+            <City trainStation="false">Toulose</City>
+            <City trainStation="false">Nice</City>
+            <City trainStation="false">Nantes</City>
+            <City trainStation="false">Montpellier</City>
+            <City trainStation="false">Strasbourg</City>
+            <City trainStation="false">Bordeaux</City>
+            <City trainStation="false">Lille</City>
+            <City trainStation="false">Rennes</City>
+            <City trainStation="false">Monaco</City>
+            <City trainStation="true">Bruxelles</City>
+            <City trainStation="false">Anvers</City>
+            <City trainStation="false">Gent</City>
+            <City trainStation="false">Charleroi</City>
+            <City trainStation="false">Liege</City>
+            <City trainStation="false">Bruges</City>
+            <City trainStation="true">Amsterdam</City>
+            <City trainStation="false">Rotterdam</City>
+            <City trainStation="false">Den Haag</City>
+            <City trainStation="false">Utrecht</City>
+            <City trainStation="false">Eindhoven</City>
         </Cities>
     </State>
 
@@ -547,26 +547,26 @@
             <Border SeaBorder="true">CO</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Dakar</City>
-            <City>Niayes</City>
-            <City>Guedawaye</City>
-            <City>Thiaroye</City>
-            <City>Dagoudane</City>
-            <City>Thies</City>
-            <City>M'bour</City>
-            <City>Kawlax</City>
-            <City>Nuwakshut</City>
-            <City>Rosso</City>
-            <City>Bamako</City>
-            <City>Sikasso</City>
-            <City>Ouagadougou</City>
-            <City>Dioulasso</City>
-            <City>Akkra</City>
-            <City>Yamoussokro</City>
-            <City>Freetown</City>
-            <City>Kissy</City>
-            <City>Kenema</City>
-            <City>Konakry</City>
+            <City trainStation="true">Dakar</City>
+            <City trainStation="false">Niayes</City>
+            <City trainStation="false">Guedawaye</City>
+            <City trainStation="false">Thiaroye</City>
+            <City trainStation="false">Dagoudane</City>
+            <City trainStation="false">Thies</City>
+            <City trainStation="false">M'bour</City>
+            <City trainStation="false">Kawlax</City>
+            <City trainStation="false">Nuwakshut</City>
+            <City trainStation="false">Rosso</City>
+            <City trainStation="false">Bamako</City>
+            <City trainStation="false">Sikasso</City>
+            <City trainStation="false">Ouagadougou</City>
+            <City trainStation="false">Dioulasso</City>
+            <City trainStation="false">Akkra</City>
+            <City trainStation="false">Yamoussokro</City>
+            <City trainStation="false">Freetown</City>
+            <City trainStation="false">Kissy</City>
+            <City trainStation="false">Kenema</City>
+            <City trainStation="false">Konakry</City>
         </Cities>
     </State>
 
@@ -586,19 +586,19 @@
             <Border SeaBorder="true">AE</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Maputo</City>
-            <City>Beira</City>
-            <City>Nampula</City>
-            <City>Quelimane</City>
-            <City>Dodoma</City>
-            <City>Dar</City>
-            <City>Zanzibar</City>
-            <City>Arusha</City>
-            <City>Harare</City>
-            <City>Bulawayo</City>
-            <City>Chitungwiza</City>
-            <City>Lusaka</City>
-            <City>Kasama</City>
+            <City trainStation="false">Maputo</City>
+            <City trainStation="false">Beira</City>
+            <City trainStation="false">Nampula</City>
+            <City trainStation="false">Quelimane</City>
+            <City trainStation="false">Dodoma</City>
+            <City trainStation="false">Dar</City>
+            <City trainStation="true">Zanzibar</City>
+            <City trainStation="false">Arusha</City>
+            <City trainStation="false">Harare</City>
+            <City trainStation="false">Bulawayo</City>
+            <City trainStation="false">Chitungwiza</City>
+            <City trainStation="true">Lusaka</City>
+            <City trainStation="false">Kasama</City>
         </Cities>
     </State>
 
@@ -622,16 +622,16 @@
             <Border SeaBorder="true">NZ</Bordes>
         </NeighboringStates>
         <Cities>            
-            <City>Santiago</City>
-            <City>Concepcion</City>
-            <City>Vina del Mar</City>
-            <City>Antofagasta</City>
-            <City>Valparaiso</City>
-            <City>Talcahuano</City>
-            <City>Sucre</City>
-            <City>La Paz</City>            
-            <City>Cochabamba</City>
-            <City>Santa Cruz</City>
+            <City trainStation="true">Santiago</City>
+            <City trainStation="false">Concepcion</City>
+            <City trainStation="false">Vina del Mar</City>
+            <City trainStation="false">Antofagasta</City>
+            <City trainStation="false">Valparaiso</City>
+            <City trainStation="false">Talcahuano</City>
+            <City trainStation="false">Sucre</City>
+            <City trainStation="true">La Paz</City>            
+            <City trainStation="false">Cochabamba</City>
+            <City trainStation="false">Santa Cruz</City>
         </Cities>
     </State>
 
@@ -656,25 +656,25 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Brasilia</City>
-            <City>Sao Paulo</City>
-            <City>Rio de Janeiro</City>
-            <City>Salvador</City>
-            <City>Fortaleza</City>
-            <City>Belo Horizonte</City>
-            <City>Manaus</City>
-            <City>Curitiba</City>
-            <City>Recife</City>
-            <City>Porto Alegre</City>
-            <City>Belem</City>
-            <City>Goiania</City>
-            <City>Guarulhos</City>
-            <City>Campinas</City>
-            <City>Sao Luis</City>
-            <City>Sao Goncalo</City>
-            <City>Maceio</City>
-            <City>Caxias</City>
-            <City>Natal</City>
+            <City trainStation="true">Brasilia</City>
+            <City trainStation="true">Sao Paulo</City>
+            <City trainStation="false">Rio de Janeiro</City>
+            <City trainStation="false">Salvador</City>
+            <City trainStation="false">Fortaleza</City>
+            <City trainStation="false">Belo Horizonte</City>
+            <City trainStation="true">Manaus</City>
+            <City trainStation="false">Curitiba</City>
+            <City trainStation="false">Recife</City>
+            <City trainStation="false">Porto Alegre</City>
+            <City trainStation="false">Belem</City>
+            <City trainStation="false">Goiania</City>
+            <City trainStation="false">Guarulhos</City>
+            <City trainStation="false">Campinas</City>
+            <City trainStation="false">Sao Luis</City>
+            <City trainStation="false">Sao Goncalo</City>
+            <City trainStation="false">Maceio</City>
+            <City trainStation="false">Caxias</City>
+            <City trainStation="true">Natal</City>
         </Cities>
     </State>
 
@@ -698,33 +698,33 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Ciudad</City>
-            <City>Mixco</City>
-            <City>Villa Nueva</City>
-            <City>San Pedro</City>
-            <City>San Juan</City>
-            <City>Coban</City>
-            <City>Quetzaltenango</City>
-            <City>Tegucigalpa</City>
-            <City>Sula</City>
-            <City>Choloma</City>
-            <City>Managua</City>
-            <City>Leon</City>
-            <City>San Jose</City>
-            <City>Cartago</City>
-            <City>Puerto Limon</City>
-            <City>Panama</City>
-            <City>La Habana</City>
-            <City>Cuba</City>
-            <City>Camaguey</City>
-            <City>Holguin</City>
-            <City>Guantanamo</City>
-            <City>Port-au-Prince</City>
-            <City>Santo Domingo</City>
-            <City>Este</City>
-            <City>Caballeros</City>
-            <City>Norte</City>
-            <City>Oeste</City>
+            <City trainStation="true">Ciudad</City>
+            <City trainStation="false">Mixco</City>
+            <City trainStation="false">Villa Nueva</City>
+            <City trainStation="false">San Pedro</City>
+            <City trainStation="false">San Juan</City>
+            <City trainStation="false">Coban</City>
+            <City trainStation="false">Quetzaltenango</City>
+            <City trainStation="false">Tegucigalpa</City>
+            <City trainStation="false">Sula</City>
+            <City trainStation="false">Choloma</City>
+            <City trainStation="false">Managua</City>
+            <City trainStation="false">Leon</City>
+            <City trainStation="false">San Jose</City>
+            <City trainStation="false">Cartago</City>
+            <City trainStation="false">Puerto Limon</City>
+            <City trainStation="true">Panama</City>
+            <City trainStation="true">La Habana</City>
+            <City trainStation="false">Cuba</City>
+            <City trainStation="false">Camaguey</City>
+            <City trainStation="false">Holguin</City>
+            <City trainStation="false">Guantanamo</City>
+            <City trainStation="false">Port-au-Prince</City>
+            <City trainStation="false">Santo Domingo</City>
+            <City trainStation="false">Este</City>
+            <City trainStation="false">Caballeros</City>
+            <City trainStation="false">Norte</City>
+            <City trainStation="false">Oeste</City>
         </Cities>
     </State>
 
@@ -752,27 +752,27 @@
             <Border SeaBorder="true">GE</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Moska</City>
-            <City>Sankt-Peterburg</City>
-            <City>Novosibirsk</City>
-            <City>Ekaterimburg</City>
-            <City>Novgorod</City>
-            <City>Kazan</City>
-            <City>Celjabinsk</City>
-            <City>Samara</City>
-            <City>Omsk</City>
-            <City>Rostov</City>
-            <City>Ufa</City>
-            <City>Krasonjarsk</City>
-            <City>Perm</City>
-            <City>Voronez</City>
-            <City>Volgograd</City>
-            <City>Krasnodar</City>
-            <City>Togliatti</City>
-            <City>Tallin</City>
-            <City>Riga</City>
-            <City>Vilnjus</City>
-            <City>Kaunas</City>
+            <City trainStation="true">Moska</City>
+            <City trainStation="true">Sankt-Peterburg</City>
+            <City trainStation="false">Novosibirsk</City>
+            <City trainStation="false">Ekaterimburg</City>
+            <City trainStation="false">Novgorod</City>
+            <City trainStation="false">Kazan</City>
+            <City trainStation="false">Celjabinsk</City>
+            <City trainStation="false">Samara</City>
+            <City trainStation="true">Omsk</City>
+            <City trainStation="false">Rostov</City>
+            <City trainStation="false">Ufa</City>
+            <City trainStation="false">Krasonjarsk</City>
+            <City trainStation="false">Perm</City>
+            <City trainStation="false">Voronez</City>
+            <City trainStation="false">Volgograd</City>
+            <City trainStation="false">Krasnodar</City>
+            <City trainStation="false">Togliatti</City>
+            <City trainStation="false">Tallin</City>
+            <City trainStation="true">Riga</City>
+            <City trainStation="false">Vilnjus</City>
+            <City trainStation="false">Kaunas</City>
         </Cities>
     </State>
 
@@ -794,25 +794,25 @@
             <Border SeaBorder="true">GB</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Ottawa</City>
-            <City>Toronto</City>
-            <City>Montreal</City>
-            <City>Vancouver</City>
-            <City>Calgary</City>
-            <City>Edmonton</City>
-            <City>Quebec</City>
-            <City>Winnipeg</City>
-            <City>Hamilton</City>
-            <City>London</City>
-            <City>Kitchener</City>
-            <City>St Catharines</City>
-            <City>Niagara</City>
-            <City>Halifax</City>
-            <City>Oshawa</City>
-            <City>Victoria</City>
-            <City>Windsor</City>
-            <City>Saskatoon</City>
-            <City>Regina</City>
+            <City trainStation="true">Ottawa</City>
+            <City trainStation="false">Toronto</City>
+            <City trainStation="false">Montreal</City>
+            <City trainStation="true">Vancouver</City>
+            <City trainStation="false">Calgary</City>
+            <City trainStation="false">Edmonton</City>
+            <City trainStation="false">Quebec</City>
+            <City trainStation="false">Winnipeg</City>
+            <City trainStation="false">Hamilton</City>
+            <City trainStation="false">London</City>
+            <City trainStation="false">Kitchener</City>
+            <City trainStation="false">St Catharines</City>
+            <City trainStation="false">Niagara</City>
+            <City trainStation="false">Halifax</City>
+            <City trainStation="false">Oshawa</City>
+            <City trainStation="false">Victoria</City>
+            <City trainStation="false">Windsor</City>
+            <City trainStation="false">Saskatoon</City>
+            <City trainStation="false">Regina</City>
         </Cities>
     </State>
 
@@ -835,25 +835,25 @@
             <Border SeaBorder="true">SA</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Abuja</City>
-            <City>Lagos</City>
-            <City>Ibadan</City>
-            <City>Benin</City>
-            <City>Kano</City>
-            <City>Harcourt</City>
-            <City>Kaduna</City>
-            <City>Aba</City>
-            <City>Maiduguri</City>
-            <City>Ilorin</City>
-            <City>Yaounde</City>
-            <City>Bafoussam</City>
-            <City>Bamenda</City>
-            <City>Douala</City>
-            <City>Edea</City>
-            <City>Garoua</City>
-            <City>N'Dajmena</City>
-            <City>Niamey</City>
-            <City>Zinder</City>
+            <City trainStation="true">Abuja</City>
+            <City trainStation="true">Lagos</City>
+            <City trainStation="false">Ibadan</City>
+            <City trainStation="false">Benin</City>
+            <City trainStation="false">Kano</City>
+            <City trainStation="false">Harcourt</City>
+            <City trainStation="false">Kaduna</City>
+            <City trainStation="false">Aba</City>
+            <City trainStation="false">Maiduguri</City>
+            <City trainStation="false">Ilorin</City>
+            <City trainStation="false">Yaounde</City>
+            <City trainStation="false">Bafoussam</City>
+            <City trainStation="false">Bamenda</City>
+            <City trainStation="false">Douala</City>
+            <City trainStation="false">Edea</City>
+            <City trainStation="false">Garoua</City>
+            <City trainStation="false">N'Dajmena</City>
+            <City trainStation="false">Niamey</City>
+            <City trainStation="false">Zinder</City>
         </Cities>
     </State>
 
@@ -878,28 +878,28 @@
             <Border SeaBorder="true">IN</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Beijing</City>
-            <City>Shanghai</City>
-            <City>Hong Kong</City>
-            <City>Wuhan</City>
-            <City>Nanjing</City>
-            <City>Tianjin</City>
-            <City>Canton</City>
-            <City>Shenzen</City>
-            <City>Shenyang</City>
-            <City>Chongqing</City>
-            <City>Nanchang</City>
-            <City>Harbin</City>
-            <City>Shijiazhuang</City>
-            <City>Xi'an</City>
-            <City>Chengdu</City>
-            <City>Changchun</City>
-            <City>Dalian</City>
-            <City>Hangzhou</City>
-            <City>Jinan</City>
-            <City>Taiyuan</City>
-            <City>Qingdao</City>
-            <City>Ulan Bator</City>
+            <City trainStation="true">Beijing</City>
+            <City trainStation="true">Shanghai</City>
+            <City trainStation="true">Hong Kong</City>
+            <City trainStation="false">Wuhan</City>
+            <City trainStation="false">Nanjing</City>
+            <City trainStation="false">Tianjin</City>
+            <City trainStation="false">Canton</City>
+            <City trainStation="false">Shenzen</City>
+            <City trainStation="false">Shenyang</City>
+            <City trainStation="true">Chongqing</City>
+            <City trainStation="false">Nanchang</City>
+            <City trainStation="false">Harbin</City>
+            <City trainStation="false">Shijiazhuang</City>
+            <City trainStation="false">Xi'an</City>
+            <City trainStation="false">Chengdu</City>
+            <City trainStation="false">Changchun</City>
+            <City trainStation="false">Dalian</City>
+            <City trainStation="false">Hangzhou</City>
+            <City trainStation="false">Jinan</City>
+            <City trainStation="false">Taiyuan</City>
+            <City trainStation="false">Qingdao</City>
+            <City trainStation="false">Ulan Bator</City>
         </Cities>
     </State>
 
@@ -921,35 +921,35 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Bogota</City>
-            <City>Medellin</City>
-            <City>Baranquilla</City>
-            <City>Cartagena</City>
-            <City>Tunja</City>
-            <City>Manizales</City>
-            <City>Popayan</City>
-            <City>Valledupar</City>
-            <City>Monteria</City>
-            <City>Neiva</City>
-            <City>Santa Marta</City>
-            <City>Villavicencio</City>
-            <City>Pasto</City>
-            <City>Cucuta</City>
-            <City>Armenia</City>
-            <City>Pereira</City>
-            <City>Bucamaranga</City>
-            <City>Sincelejo</City>
-            <City>Ibague</City>
-            <City>Cali</City>
-            <City>Caracas</City>
-            <City>Maracaibo</City>
-            <City>Valencia</City>
-            <City>Barquisimeto</City>
-            <City>Maracay</City>
-            <City>Guayana</City>
-            <City>Quito</City>
-            <City>Guayaquil</City>
-            <City>Riobamba</City>
+            <City trainStation="true">Bogota</City>
+            <City trainStation="false">Medellin</City>
+            <City trainStation="false">Baranquilla</City>
+            <City trainStation="false">Cartagena</City>
+            <City trainStation="false">Tunja</City>
+            <City trainStation="false">Manizales</City>
+            <City trainStation="false">Popayan</City>
+            <City trainStation="false">Valledupar</City>
+            <City trainStation="false">Monteria</City>
+            <City trainStation="false">Neiva</City>
+            <City trainStation="false">Santa Marta</City>
+            <City trainStation="false">Villavicencio</City>
+            <City trainStation="false">Pasto</City>
+            <City trainStation="false">Cucuta</City>
+            <City trainStation="false">Armenia</City>
+            <City trainStation="false">Pereira</City>
+            <City trainStation="false">Bucamaranga</City>
+            <City trainStation="false">Sincelejo</City>
+            <City trainStation="false">Ibague</City>
+            <City trainStation="true">Cali</City>
+            <City trainStation="true">Caracas</City>
+            <City trainStation="false">Maracaibo</City>
+            <City trainStation="false">Valencia</City>
+            <City trainStation="false">Barquisimeto</City>
+            <City trainStation="false">Maracay</City>
+            <City trainStation="false">Guayana</City>
+            <City trainStation="true">Quito</City>
+            <City trainStation="false">Guayaquil</City>
+            <City trainStation="false">Riobamba</City>
         </Cities>
     </State>
 
@@ -971,22 +971,22 @@
             <Border SeaBorder="true">IT</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Athene</City>
-            <City>Thessaloniki</City>
-            <City>Patra</City>
-            <City>Pireas</City>
-            <City>Volo</City>
-            <City>Peristeri</City>
-            <City>Candia</City>
-            <City>Kallithea</City>
-            <City>Nikaia</City>
-            <City>Sparta</City>
-            <City>Mykonos</City>
-            <City>Santorini</City>
-            <City>Zante</City>
-            <City>Mitilene</City>
-            <City>Skopje</City>
-            <City>Nicosia</City>
+            <City trainStation="true">Athene</City>
+            <City trainStation="true">Thessaloniki</City>
+            <City trainStation="false">Patra</City>
+            <City trainStation="false">Pireas</City>
+            <City trainStation="false">Volo</City>
+            <City trainStation="false">Peristeri</City>
+            <City trainStation="false">Candia</City>
+            <City trainStation="false">Kallithea</City>
+            <City trainStation="false">Nikaia</City>
+            <City trainStation="false">Sparta</City>
+            <City trainStation="false">Mykonos</City>
+            <City trainStation="false">Santorini</City>
+            <City trainStation="false">Zante</City>
+            <City trainStation="false">Mitilene</City>
+            <City trainStation="true">Skopje</City>
+            <City trainStation="false">Nicosia</City>
         </Cities>
     </State>
 
@@ -1009,31 +1009,31 @@
             <Border SeaBorder="true">SU</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Berlin</City>
-            <City>Hamburg</City>
-            <City>Munchen</City>
-            <City>Koln</City>
-            <City>Frankfurt</City>
-            <City>Stuttgart</City>
-            <City>Dusseldorf</City>
-            <City>Leipzig</City>
-            <City>Dortmund</City>
-            <City>Essen</City>
-            <City>Bremen</City>
-            <City>Dresden</City>
-            <City>Hannover</City>
-            <City>Nurnberg</City>
-            <City>Duisburg</City>
-            <City>Bochum</City>
-            <City>Wuppertal</City>
-            <City>Bielefeld</City>
-            <City>Bonn</City>
-            <City>Munster</City>
-            <City>Freiburg</City>
-            <City>Kopenaghen</City>
-            <City>Aarhus</City>
-            <City>Aalborg</City>
-            <City>Odense</City>
+            <City trainStation="true">Berlin</City>
+            <City trainStation="true">Hamburg</City>
+            <City trainStation="false">Munchen</City>
+            <City trainStation="false">Koln</City>
+            <City trainStation="true">Frankfurt</City>
+            <City trainStation="false">Stuttgart</City>
+            <City trainStation="false">Dusseldorf</City>
+            <City trainStation="false">Leipzig</City>
+            <City trainStation="false">Dortmund</City>
+            <City trainStation="false">Essen</City>
+            <City trainStation="false">Bremen</City>
+            <City trainStation="false">Dresden</City>
+            <City trainStation="false">Hannover</City>
+            <City trainStation="false">Nurnberg</City>
+            <City trainStation="false">Duisburg</City>
+            <City trainStation="false">Bochum</City>
+            <City trainStation="false">Wuppertal</City>
+            <City trainStation="false">Bielefeld</City>
+            <City trainStation="false">Bonn</City>
+            <City trainStation="false">Munster</City>
+            <City trainStation="false">Freiburg</City>
+            <City trainStation="true">Kopenaghen</City>
+            <City trainStation="false">Aarhus</City>
+            <City trainStation="false">Aalborg</City>
+            <City trainStation="false">Odense</City>
         </Cities>
     </State>
 
@@ -1056,21 +1056,21 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>al-Rabat</City>
-            <City>Casablanca</City>
-            <City>Fas</City>
-            <City>Tanja</City>
-            <City>Marrakech</City>
-            <City>Agadir</City>
-            <City>Miknas</City>
-            <City>Wujda</City>
-            <City>Tittawan</City>
-            <City>Asfi</City>
-            <City>al-Jaza'ir</City>
-            <City>Wahran</City>
-            <City>Qusantina</City>
-            <City>Annaba</City>
-            <City>Blida</City>
+            <City trainStation="false">al-Rabat</City>
+            <City trainStation="true">Casablanca</City>
+            <City trainStation="false">Fas</City>
+            <City trainStation="false">Tanja</City>
+            <City trainStation="true">Marrakech</City>
+            <City trainStation="false">Agadir</City>
+            <City trainStation="false">Miknas</City>
+            <City trainStation="false">Wujda</City>
+            <City trainStation="false">Tittawan</City>
+            <City trainStation="false">Asfi</City>
+            <City trainStation="false">al-Jaza'ir</City>
+            <City trainStation="false">Wahran</City>
+            <City trainStation="false">Qusantina</City>
+            <City trainStation="false">Annaba</City>
+            <City trainStation="false">Blida</City>
         </Cities>
     </State>
 
@@ -1095,26 +1095,26 @@
             <Border SeaBorder="true">ID</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Addis Abeba</City>
-            <City>Adaama</City>
-            <City>Gondar</City>
-            <City>Maqalle</City>
-            <City>Auasa</City>
-            <City>Mahrdar</City>
-            <City>Diredaua</City>
-            <City>Muqdisho</City>
-            <City>Hargeysa</City>
-            <City>Boosaaso</City>
-            <City>Gaalkacyo</City>
-            <City>Marka</City>
-            <City>Berbera</City>
-            <City>Kismayoo</City>
-            <City>Jamaame</City>
-            <City>Nairobi</City>
-            <City>Mombasa</City>
-            <City>Nakuru</City>
-            <City>Kakamega</City>
-            <City>Kampala</City>
+            <City trainStation="true">Addis Abeba</City>
+            <City trainStation="false">Adaama</City>
+            <City trainStation="false">Gondar</City>
+            <City trainStation="false">Maqalle</City>
+            <City trainStation="false">Auasa</City>
+            <City trainStation="false">Mahrdar</City>
+            <City trainStation="false">Diredaua</City>
+            <City trainStation="false">Muqdisho</City>
+            <City trainStation="false">Hargeysa</City>
+            <City trainStation="true">Boosaaso</City>
+            <City trainStation="false">Gaalkacyo</City>
+            <City trainStation="false">Marka</City>
+            <City trainStation="false">Berbera</City>
+            <City trainStation="false">Kismayoo</City>
+            <City trainStation="false">Jamaame</City>
+            <City trainStation="true">Nairobi</City>
+            <City trainStation="false">Mombasa</City>
+            <City trainStation="false">Nakuru</City>
+            <City trainStation="false">Kakamega</City>
+            <City trainStation="true">Kampala</City>
     </State>
 
     <State Id="SP">
@@ -1136,33 +1136,33 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Madrid</City>
-            <City>Barcelona</City>
-            <City>Valencia</City>
-            <City>Sevilla</City>
-            <City>Zaragoza</City>
-            <City>Malaga</City>
-            <City>Murcia</City>
-            <City>Mallorca</City>
-            <City>Las Palmas</City>
-            <City>Bilbao</City>
-            <City>Alicante</City>
-            <City>Cordoba</City>
-            <City>Valladolid</City>
-            <City>Vigo</City>
-            <City>Gijon</City>
-            <City>La Coruna</City>
-            <City>Llobregat</City>
-            <City>Tenerife</City>
-            <City>Granada</City>
-            <City>Vitoria</City>
-            <City>Lisboa</City>
-            <City>Villa Nova</City>
-            <City>Porto</City>
-            <City>Braga</City>
-            <City>Setubal</City>
-            <City>Guimaraes</City>
-            <City>La Vella</City>
+            <City trainStation="true">Madrid</City>
+            <City trainStation="true">Barcelona</City>
+            <City trainStation="false">Valencia</City>
+            <City trainStation="false">Sevilla</City>
+            <City trainStation="false">Zaragoza</City>
+            <City trainStation="false">Malaga</City>
+            <City trainStation="false">Murcia</City>
+            <City trainStation="false">Mallorca</City>
+            <City trainStation="false">Las Palmas</City>
+            <City trainStation="true">Bilbao</City>
+            <City trainStation="false">Alicante</City>
+            <City trainStation="false">Cordoba</City>
+            <City trainStation="false">Valladolid</City>
+            <City trainStation="false">Vigo</City>
+            <City trainStation="false">Gijon</City>
+            <City trainStation="false">La Coruna</City>
+            <City trainStation="false">Llobregat</City>
+            <City trainStation="false">Tenerife</City>
+            <City trainStation="true">Granada</City>
+            <City trainStation="false">Vitoria</City>
+            <City trainStation="true">Lisboa</City>
+            <City trainStation="false">Villa Nova</City>
+            <City trainStation="true">Porto</City>
+            <City trainStation="false">Braga</City>
+            <City trainStation="false">Setubal</City>
+            <City trainStation="false">Guimaraes</City>
+            <City trainStation="false">La Vella</City>
         </Cities>
     </State>
 
@@ -1187,19 +1187,19 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Stockholm</City>
-            <City>Goteborg</City>
-            <City>Malmo</City>
-            <City>Uppsala</City>
-            <City>Helsinki</City>
-            <City>Espoo</City>
-            <City>Tampere</City>
-            <City>Vantaa</City>
-            <City>Salo</City>
-            <City>Oslo</City>
-            <City>Bodo</City>
-            <City>Bergen</City>
-            <City>Reykjavik</City>
+            <City trainStation="true">Stockholm</City>
+            <City trainStation="false">Goteborg</City>
+            <City trainStation="false">Malmo</City>
+            <City trainStation="false">Uppsala</City>
+            <City trainStation="true">Helsinki</City>
+            <City trainStation="false">Espoo</City>
+            <City trainStation="false">Tampere</City>
+            <City trainStation="false">Vantaa</City>
+            <City trainStation="false">Salo</City>
+            <City trainStation="true">Oslo</City>
+            <City trainStation="false">Bodo</City>
+            <City trainStation="false">Bergen</City>
+            <City trainStation="true">Reykjavik</City>
         </Cities>
     </State>
 
@@ -1224,33 +1224,33 @@
             <Border SeaBorder="true">KO</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>Jakarta</City>
-            <City>Surabaya</City>
-            <City>Bandung</City>
-            <City>Medan</City>
-            <City>Padang</City>
-            <City>Palembang</City>
-            <City>Jambi</City>
-            <City>Pekanbaru</City>
-            <City>Lampung</City>
-            <City>Serang</City>
-            <City>Semarang</City>
-            <City>Yogyakarta</City>
-            <City>Denpasar</City>
-            <City>Mataram</City>
-            <City>Kupang</City>
-            <City>Pontianak</City>
-            <City>Banjarmasin</City>
-            <City>Samarinda</City>
-            <City>Manado</City>
-            <City>Makassar</City>
-            <City>Lumpur</City>
-            <City>Sepang</City>
-            <City>Petaling</City>
-            <City>Bahru</City>
-            <City>Langat</City>
-            <City>Klang</City>
-            <City>Kuching</City>
+            <City trainStation="true">Jakarta</City>
+            <City trainStation="false">Surabaya</City>
+            <City trainStation="false">Bandung</City>
+            <City trainStation="false">Medan</City>
+            <City trainStation="false">Padang</City>
+            <City trainStation="false">Palembang</City>
+            <City trainStation="false">Jambi</City>
+            <City trainStation="true">Pekanbaru</City>
+            <City trainStation="false">Lampung</City>
+            <City trainStation="false">Serang</City>
+            <City trainStation="false">Semarang</City>
+            <City trainStation="false">Yogyakarta</City>
+            <City trainStation="false">Denpasar</City>
+            <City trainStation="false">Mataram</City>
+            <City trainStation="false">Kupang</City>
+            <City trainStation="false">Pontianak</City>
+            <City trainStation="false">Banjarmasin</City>
+            <City trainStation="false">Samarinda</City>
+            <City trainStation="false">Manado</City>
+            <City trainStation="false">Makassar</City>
+            <City trainStation="true">Lumpur</City>
+            <City trainStation="false">Sepang</City>
+            <City trainStation="false">Petaling</City>
+            <City trainStation="false">Bahru</City>
+            <City trainStation="false">Langat</City>
+            <City trainStation="false">Klang</City>
+            <City trainStation="false">Kuching</City>
         </Cities>
     </State>
 
@@ -1273,39 +1273,39 @@
             <Border SeaBorder="true">ATL</Bordes>
         </NeighboringStates>
         <Cities>
-            <City>London</City>
-            <City>Manchester</City>
-            <City>Liverpool</City>
-            <City>Sheffield</City>
-            <City>Newcastle</City>
-            <City>Birmingham</City>
-            <City>Leeds</City>
-            <City>Wolverhampton</City>
-            <City>Coventry</City>
-            <City>Bolton</City>
-            <City>Nottingham</City>
-            <City>Dudley</City>
-            <City>Bradford</City>
-            <City>Huddersfield</City>
-            <City>Bristol</City>
-            <City>Cambridge</City>
-            <City>Hastings</City>
-            <City>Winchester</City>
-            <City>Canterbury</City>
-            <City>Northampton</City>
-            <City>Oxford</City>
-            <City>Cardiff</City>
-            <City>Swansea</City>
-            <City>Edimburgh</City>
-            <City>Glasgow</City>
-            <City>Aberdeen</City>
-            <City>Dumfries</City>
-            <City>Belfast</City>
-            <City>Derry</City>
-            <City>Dublin</City>
-            <City>Cork</City>
-            <City>Limerick</City>
-            <City>Drogheda</City>
+            <City trainStation="true">London</City>
+            <City trainStation="true">Manchester</City>
+            <City trainStation="false">Liverpool</City>
+            <City trainStation="false">Sheffield</City>
+            <City trainStation="false">Newcastle</City>
+            <City trainStation="false">Birmingham</City>
+            <City trainStation="false">Leeds</City>
+            <City trainStation="false">Wolverhampton</City>
+            <City trainStation="false">Coventry</City>
+            <City trainStation="false">Bolton</City>
+            <City trainStation="false">Nottingham</City>
+            <City trainStation="false">Dudley</City>
+            <City trainStation="false">Bradford</City>
+            <City trainStation="false">Huddersfield</City>
+            <City trainStation="false">Bristol</City>
+            <City trainStation="false">Cambridge</City>
+            <City trainStation="false">Hastings</City>
+            <City trainStation="false">Winchester</City>
+            <City trainStation="false">Canterbury</City>
+            <City trainStation="false">Northampton</City>
+            <City trainStation="false">Oxford</City>
+            <City trainStation="true">Cardiff</City>
+            <City trainStation="false">Swansea</City>
+            <City trainStation="true">Edimburgh</City>
+            <City trainStation="false">Glasgow</City>
+            <City trainStation="false">Aberdeen</City>
+            <City trainStation="false">Dumfries</City>
+            <City trainStation="true">Belfast</City>
+            <City trainStation="false">Derry</City>
+            <City trainStation="true">Dublin</City>
+            <City trainStation="false">Cork</City>
+            <City trainStation="false">Limerick</City>
+            <City trainStation="false">Drogheda</City>
         </Cities>
     </State>
 
@@ -1328,27 +1328,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1371,27 +1371,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1414,27 +1414,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1457,27 +1457,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1500,27 +1500,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1543,27 +1543,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1586,27 +1586,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1629,27 +1629,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1672,27 +1672,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1715,27 +1715,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1758,27 +1758,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1801,27 +1801,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1844,27 +1844,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1887,27 +1887,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 
@@ -1930,27 +1930,27 @@
             <Border SeaBorder="true"></Bordes>
         </NeighboringStates>
         <Cities>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
-            <City></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
+            <City trainStation="false"></City>
         </Cities>
     </State>
 </States>

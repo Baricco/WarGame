@@ -10,12 +10,12 @@
         <StageRefinedResources>8000</StageRefinedResources>
         <Population>70000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">PT</Bordes>
-            <Border SeaBorder="false">EG</Bordes>
-            <Border SeaBorder="true">ET</Bordes>
-            <Border SeaBorder="true">IR</Bordes>
-            <Border SeaBorder="true">AF</Bordes>
-            <Border SeaBorder="true">ID</Bordes>
+            <Border SeaBorder="false">PT</Border>
+            <Border SeaBorder="false">EG</Border>
+            <Border SeaBorder="true">ET</Border>
+            <Border SeaBorder="true">IR</Border>
+            <Border SeaBorder="true">AF</Border>
+            <Border SeaBorder="true">ID</Border>
         </NeighboringStates>
          <Cities>
             <City trainStation="true">al-Riyad</City>      <!-- PROBABILMENTE QUI CI SERVIRANNO ANCHE LE COORDINATE SE VOGLIAMO MOSTRARE LE STAZIONI, MA POI CI PENSIAMO -->
@@ -52,13 +52,13 @@
         <StageRefinedResources>3800</StageRefinedResources>
         <Population>280000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">IR</Bordes>
-            <Border SeaBorder="false">KZ</Bordes>
-            <Border SeaBorder="false">ID</Bordes>
-            <Border SeaBorder="false">CN</Bordes>
-            <Border SeaBorder="true">PT</Bordes>
-            <Border SeaBorder="true">AE</Bordes>
-            <Border SeaBorder="true">ET</Bordes>
+            <Border SeaBorder="false">IR</Border>
+            <Border SeaBorder="false">KZ</Border>
+            <Border SeaBorder="false">ID</Border>
+            <Border SeaBorder="false">CN</Border>
+            <Border SeaBorder="true">PT</Border>
+            <Border SeaBorder="true">AE</Border>
+            <Border SeaBorder="true">ET</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Kabul</City>
@@ -95,11 +95,14 @@
         <StageRefinedResources>7900</StageRefinedResources>
         <Population>22000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">IT</Bordes>
-            <Border SeaBorder="false">GR</Bordes>
-            <Border SeaBorder="false">RO</Bordes>
-            <Border SeaBorder="false">AT</Bordes>
-            <Border SeaBorder="true">LY</Bordes>
+            <Border SeaBorder="false">IT</Border>
+            <Border SeaBorder="false">GR</Border>
+            <Border SeaBorder="false">RO</Border>
+            <Border SeaBorder="false">AT</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="true">IR</Border>
+            <Border SeaBorder="true">SU</Border>
+            <Border SeaBorder="true">TR</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="false">Zagreb</City>
@@ -146,13 +149,13 @@
         <StageRefinedResources>12000</StageRefinedResources>
         <Population>148000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">LY</Bordes>
-            <Border SeaBorder="false">NI</Bordes>
-            <Border SeaBorder="false">ET</Bordes>
-            <Border SeaBorder="false">AE</Bordes>
-            <Border SeaBorder="false">PT</Bordes>
-            <Border SeaBorder="true">GR</Bordes>
-            <Border SeaBorder="true">TR</Bordes>
+            <Border SeaBorder="false">LY</Border>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="false">ET</Border>
+            <Border SeaBorder="false">AE</Border>
+            <Border SeaBorder="false">PT</Border>
+            <Border SeaBorder="true">GR</Border>
+            <Border SeaBorder="true">TR</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">al-Qahira</City>
@@ -189,15 +192,15 @@
         <StageRefinedResources>4400</StageRefinedResources>
         <Population>84000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">PT</Bordes>
-            <Border SeaBorder="false">TR</Bordes>
-            <Border SeaBorder="false">SU</Bordes>
-            <Border SeaBorder="false">KZ</Bordes>
-            <Border SeaBorder="false">AF</Bordes>
-            <Border SeaBorder="true">AE</Bordes>
-            <Border SeaBorder="true">ID</Bordes>
-            <Border SeaBorder="true">RO</Bordes>
-            <Border SeaBorder="true">JG</Bordes>
+            <Border SeaBorder="false">PT</Border>
+            <Border SeaBorder="false">TR</Border>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="false">KZ</Border>
+            <Border SeaBorder="false">AF</Border>
+            <Border SeaBorder="true">AE</Border>
+            <Border SeaBorder="true">ID</Border>
+            <Border SeaBorder="true">RO</Border>
+            <Border SeaBorder="true">JG</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Tehran</City>
@@ -233,12 +236,12 @@
         <StageRefinedResources>2050</StageRefinedResources>
         <Population>125000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">NI</Bordes>
-            <Border SeaBorder="false">ET</Bordes>
-            <Border SeaBorder="false">MZ</Bordes>
-            <Border SeaBorder="false">SA</Bordes>
-            <Border SeaBorder="true">SE</Bordes>
-            <Border SeaBorder="true">BR</Bordes>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="false">ET</Border>
+            <Border SeaBorder="false">MZ</Border>
+            <Border SeaBorder="false">SA</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">BR</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Kinshasa</City>
@@ -280,10 +283,10 @@
         <StageRefinedResources>13000</StageRefinedResources>
         <Population>68400000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">CI</Bordes>
-            <Border SeaBorder="false">BR</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">CG</Bordes>
+            <Border SeaBorder="false">CI</Border>
+            <Border SeaBorder="false">BR</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">CG</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Buenos Aires</City>
@@ -313,11 +316,11 @@
         <StageRefinedResources>8900</StageRefinedResources>
         <Population>36800000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">IT</Bordes>
-            <Border SeaBorder="false">GE</Bordes>
-            <Border SeaBorder="false">PL</Bordes>
-            <Border SeaBorder="false">RO</Bordes>
-            <Border SeaBorder="false">JG</Bordes>
+            <Border SeaBorder="false">IT</Border>
+            <Border SeaBorder="false">GE</Border>
+            <Border SeaBorder="false">PL</Border>
+            <Border SeaBorder="false">RO</Border>
+            <Border SeaBorder="false">JG</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Wien</City>
@@ -349,11 +352,11 @@
         <StageRefinedResources>14000</StageRefinedResources>
         <Population>25850000</Population>
         <NeighboringStates>
-            <Border SeaBorder="true">NZ</Bordes>
-            <Border SeaBorder="true">IN</Bordes>
-            <Border SeaBorder="true">TH</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">CI</Bordes>
+            <Border SeaBorder="true">NZ</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">TH</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">CI</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Canberra</City>
@@ -376,14 +379,14 @@
         <StageRefinedResources>8300</StageRefinedResources>
         <Population>1500000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">AF</Bordes>
-            <Border SeaBorder="false">CN</Bordes>
-            <Border SeaBorder="false">TH</Bordes>
-            <Border SeaBorder="true">IR</Bordes>
-            <Border SeaBorder="true">AE</Bordes>
-            <Border SeaBorder="true">IN</Bordes>
-            <Border SeaBorder="true">PT</Bordes>
-            <Border SeaBorder="true">ET</Bordes>
+            <Border SeaBorder="false">AF</Border>
+            <Border SeaBorder="false">CN</Border>
+            <Border SeaBorder="false">TH</Border>
+            <Border SeaBorder="true">IR</Border>
+            <Border SeaBorder="true">AE</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">PT</Border>
+            <Border SeaBorder="true">ET</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Nai Dilli</City>
@@ -427,15 +430,15 @@
         <StageRefinedResources>23000</StageRefinedResources>
         <Population>70000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">FR</Bordes>
-            <Border SeaBorder="false">GE</Bordes>
-            <Border SeaBorder="false">AT</Bordes>
-            <Border SeaBorder="false">JG</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">GR</Bordes>
-            <Border SeaBorder="true">MO</Bordes>
-            <Border SeaBorder="true">LY</Bordes>
-            <Border SeaBorder="true">EG</Bordes>
+            <Border SeaBorder="false">FR</Border>
+            <Border SeaBorder="false">GE</Border>
+            <Border SeaBorder="false">AT</Border>
+            <Border SeaBorder="false">JG</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">GR</Border>
+            <Border SeaBorder="true">MO</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="true">EG</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Roma</City>
@@ -467,6 +470,7 @@
             <City trainStation="false">Predappio</City>
             <City trainStation="false">Reggio Calabria</City>
             <City trainStation="false">Vasto</City>
+            <City trainStation="false">Aci Trezza</City>
             <City trainStation="false">Bern</City>
             <City trainStation="false">Zurich</City>
             <City trainStation="false">Geneve</City>
@@ -491,14 +495,14 @@
         <StageRefinedResources>27000</StageRefinedResources>
         <Population>85000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SP</Bordes>
-            <Border SeaBorder="false">GE</Bordes>
-            <Border SeaBorder="false">IT</Bordes>
-            <Border SeaBorder="true">GB</Bordes>
-            <Border SeaBorder="true">MO</Bordes>
-            <Border SeaBorder="true">LY</Bordes>
-            <Border SeaBorder="true">SC</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">SP</Border>
+            <Border SeaBorder="false">GE</Border>
+            <Border SeaBorder="false">IT</Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">MO</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Paris</City>
@@ -537,14 +541,14 @@
         <StageRefinedResources>6200</StageRefinedResources>
         <Population>135700000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">MO</Bordes>
-            <Border SeaBorder="false">NI</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
-            <Border SeaBorder="true">CG</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">BR</Bordes>
-            <Border SeaBorder="true">CO</Bordes>
+            <Border SeaBorder="false">MO</Border>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="true">ATL</Border>
+            <Border SeaBorder="true">CG</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">BR</Border>
+            <Border SeaBorder="true">CO</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Dakar</City>
@@ -580,10 +584,10 @@
         <StageRefinedResources>5600</StageRefinedResources>
         <Population>127000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SA</Bordes>
-            <Border SeaBorder="false">CG</Bordes>
-            <Border SeaBorder="false">ET</Bordes>
-            <Border SeaBorder="true">AE</Bordes>
+            <Border SeaBorder="false">SA</Border>
+            <Border SeaBorder="false">CG</Border>
+            <Border SeaBorder="false">ET</Border>
+            <Border SeaBorder="true">AE</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="false">Maputo</City>
@@ -612,14 +616,14 @@
         <StageRefinedResources>12000</StageRefinedResources>
         <Population>30000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">CO</Bordes>
-            <Border SeaBorder="false">BR</Bordes>
-            <Border SeaBorder="false">AR</Bordes>
-            <Border SeaBorder="true">AC</Bordes>
-            <Border SeaBorder="true">MX</Bordes>
-            <Border SeaBorder="true">IN</Bordes>
-            <Border SeaBorder="true">AU</Bordes>
-            <Border SeaBorder="true">NZ</Bordes>
+            <Border SeaBorder="false">CO</Border>
+            <Border SeaBorder="false">BR</Border>
+            <Border SeaBorder="false">AR</Border>
+            <Border SeaBorder="true">AC</Border>
+            <Border SeaBorder="true">MX</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">AU</Border>
+            <Border SeaBorder="true">NZ</Border>
         </NeighboringStates>
         <Cities>            
             <City trainStation="true">Santiago</City>
@@ -645,15 +649,15 @@
         <StageRefinedResources>13000</StageRefinedResources>
         <Population>217800000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">CO</Bordes>
-            <Border SeaBorder="false">CI</Bordes>
-            <Border SeaBorder="false">AR</Bordes>
-            <Border SeaBorder="true">AC</Bordes>
-            <Border SeaBorder="true">SE</Bordes>
-            <Border SeaBorder="true">NI</Bordes>
-            <Border SeaBorder="true">CG</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">CO</Border>
+            <Border SeaBorder="false">CI</Border>
+            <Border SeaBorder="false">AR</Border>
+            <Border SeaBorder="true">AC</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">NI</Border>
+            <Border SeaBorder="true">CG</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Brasilia</City>
@@ -688,14 +692,14 @@
         <StageRefinedResources>16000</StageRefinedResources>
         <Population>75200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">MX</Bordes>
-            <Border SeaBorder="false">CO</Bordes>
-            <Border SeaBorder="true">US</Bordes>
-            <Border SeaBorder="true">CA</Bordes>
-            <Border SeaBorder="true">CI</Bordes>
-            <Border SeaBorder="true">BR</Bordes>
-            <Border SeaBorder="true">SE</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">MX</Border>
+            <Border SeaBorder="false">CO</Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">CI</Border>
+            <Border SeaBorder="true">BR</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Ciudad</City>
@@ -736,20 +740,20 @@
         <StageNaturalResources>25000</StageNaturalResources>
         <RefinedResources>83000</RefinedResources>
         <StageRefinedResources>21000</StageRefinedResources>
-        <Population>152000000</Population>
+        <Population>162000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SC</Bordes>
-            <Border SeaBorder="false">PL</Bordes>
-            <Border SeaBorder="false">RO</Bordes>
-            <Border SeaBorder="false">IR</Bordes>
-            <Border SeaBorder="false">KZ</Bordes>
-            <Border SeaBorder="false">CN</Bordes>
-            <Border SeaBorder="false">KO</Bordes>
-            <Border SeaBorder="true">JG</Bordes>
-            <Border SeaBorder="true">TR</Bordes>
-            <Border SeaBorder="true">JP</Bordes>
-            <Border SeaBorder="true">US</Bordes>
-            <Border SeaBorder="true">GE</Bordes>
+            <Border SeaBorder="false">SC</Border>
+            <Border SeaBorder="false">PL</Border>
+            <Border SeaBorder="false">RO</Border>
+            <Border SeaBorder="false">IR</Border>
+            <Border SeaBorder="false">KZ</Border>
+            <Border SeaBorder="false">CN</Border>
+            <Border SeaBorder="false">KO</Border>
+            <Border SeaBorder="true">JG</Border>
+            <Border SeaBorder="true">TR</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">GE</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Moska</City>
@@ -773,6 +777,9 @@
             <City trainStation="true">Riga</City>
             <City trainStation="false">Vilnjus</City>
             <City trainStation="false">Kaunas</City>
+            <City trainStation="true">Miensk</City>
+            <City trainStation="false">Homel</City>
+            <City trainStation="false">Hrodna</City>
         </Cities>
     </State>
 
@@ -786,12 +793,13 @@
         <StageRefinedResources>36000</StageRefinedResources>
         <Population>39000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">US</Bordes>
-            <Border SeaBorder="true">GL</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
-            <Border SeaBorder="true">SC</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">GB</Bordes>
+            <Border SeaBorder="false">US</Border>
+            <Border SeaBorder="true">GL</Border>
+            <Border SeaBorder="true">ATL</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">JP</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Ottawa</City>
@@ -826,13 +834,13 @@
         <StageRefinedResources>5300</StageRefinedResources>
         <Population>310200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SE</Bordes>
-            <Border SeaBorder="false">MO</Bordes>
-            <Border SeaBorder="false">LY</Bordes>
-            <Border SeaBorder="false">EG</Bordes>
-            <Border SeaBorder="false">ET</Bordes>
-            <Border SeaBorder="false">CG</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
+            <Border SeaBorder="false">SE</Border>
+            <Border SeaBorder="false">MO</Border>
+            <Border SeaBorder="false">LY</Border>
+            <Border SeaBorder="false">EG</Border>
+            <Border SeaBorder="false">ET</Border>
+            <Border SeaBorder="false">CG</Border>
+            <Border SeaBorder="true">SA</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Abuja</City>
@@ -867,15 +875,14 @@
         <StageRefinedResources>37000</StageRefinedResources>
         <Population>1435000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">TH</Bordes>
-            <Border SeaBorder="false">ID</Bordes>
-            <Border SeaBorder="false">AF</Bordes>
-            <Border SeaBorder="false">KZ</Bordes>
-            <Border SeaBorder="false">SU</Bordes>
-            <Border SeaBorder="false">KO</Bordes>
-            <Border SeaBorder="true">JP</Bordes>
-            <Border SeaBorder="true">JP</Bordes>
-            <Border SeaBorder="true">IN</Bordes>
+            <Border SeaBorder="false">TH</Border>
+            <Border SeaBorder="false">ID</Border>
+            <Border SeaBorder="false">AF</Border>
+            <Border SeaBorder="false">KZ</Border>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="false">KO</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">IN</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Beijing</City>
@@ -913,12 +920,12 @@
         <StageRefinedResources>17000</StageRefinedResources>
         <Population>102000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">AC</Bordes>
-            <Border SeaBorder="false">CI</Bordes>
-            <Border SeaBorder="false">BR</Bordes>
-            <Border SeaBorder="true">US</Bordes>
-            <Border SeaBorder="true">SE</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">AC</Border>
+            <Border SeaBorder="false">CI</Border>
+            <Border SeaBorder="false">BR</Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Bogota</City>
@@ -963,12 +970,12 @@
         <StageRefinedResources>23000</StageRefinedResources>
         <Population>14200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">JG</Bordes>
-            <Border SeaBorder="false">TR</Bordes>
-            <Border SeaBorder="true">PT</Bordes>
-            <Border SeaBorder="true">EG</Bordes>
-            <Border SeaBorder="true">LY</Bordes>
-            <Border SeaBorder="true">IT</Bordes>
+            <Border SeaBorder="false">JG</Border>
+            <Border SeaBorder="false">TR</Border>
+            <Border SeaBorder="true">PT</Border>
+            <Border SeaBorder="true">EG</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="true">IT</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Athene</City>
@@ -1000,13 +1007,13 @@
         <StageRefinedResources>26000</StageRefinedResources>
         <Population>90300000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">FR</Bordes>
-            <Border SeaBorder="false">IT</Bordes>
-            <Border SeaBorder="false">AT</Bordes>
-            <Border SeaBorder="false">PL</Bordes>
-            <Border SeaBorder="true">SC</Bordes>
-            <Border SeaBorder="true">GB</Bordes>
-            <Border SeaBorder="true">SU</Bordes>
+            <Border SeaBorder="false">FR</Border>
+            <Border SeaBorder="false">IT</Border>
+            <Border SeaBorder="false">AT</Border>
+            <Border SeaBorder="false">PL</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">SU</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Berlin</City>
@@ -1047,13 +1054,13 @@
         <StageRefinedResources>8900</StageRefinedResources>
         <Population>79100000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SE</Bordes>
-            <Border SeaBorder="false">NI</Bordes>
-            <Border SeaBorder="false">LY</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">FR</Bordes>
-            <Border SeaBorder="true">IT</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">SE</Border>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="false">LY</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">FR</Border>
+            <Border SeaBorder="true">IT</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="false">al-Rabat</City>
@@ -1084,15 +1091,15 @@
         <StageRefinedResources>3900</StageRefinedResources>
         <Population>214600000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">EG</Bordes>
-            <Border SeaBorder="false">NI</Bordes>
-            <Border SeaBorder="false">CG</Bordes>
-            <Border SeaBorder="false">MZ</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">AE</Bordes>
-            <Border SeaBorder="true">ID</Bordes>
-            <Border SeaBorder="true">AF</Bordes>
-            <Border SeaBorder="true">ID</Bordes>
+            <Border SeaBorder="false">EG</Border>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="false">CG</Border>
+            <Border SeaBorder="false">MZ</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">AE</Border>
+            <Border SeaBorder="true">ID</Border>
+            <Border SeaBorder="true">AF</Border>
+            <Border SeaBorder="true">ID</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Addis Abeba</City>
@@ -1127,13 +1134,13 @@
         <StageRefinedResources>19000</StageRefinedResources>
         <Population>59200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">FR</Bordes>
-            <Border SeaBorder="true">LY</Bordes>
-            <Border SeaBorder="false">MO</Bordes>
-            <Border SeaBorder="false">GB</Bordes>
-            <Border SeaBorder="true">IT</Bordes>
-            <Border SeaBorder="true">CA</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">FR</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="false">MO</Border>
+            <Border SeaBorder="false">GB</Border>
+            <Border SeaBorder="true">IT</Border>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Madrid</City>
@@ -1176,15 +1183,15 @@
         <StageRefinedResources>31000</StageRefinedResources>
         <Population>21800000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">SU</Bordes>
-            <Border SeaBorder="true">PL</Bordes>
-            <Border SeaBorder="true">GE</Bordes>
-            <Border SeaBorder="true">FR</Bordes>
-            <Border SeaBorder="true">GB</Bordes>
-            <Border SeaBorder="true">GL</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">CA</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="true">PL</Border>
+            <Border SeaBorder="true">GE</Border>
+            <Border SeaBorder="true">FR</Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">GL</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Stockholm</City>
@@ -1213,15 +1220,15 @@
         <StageRefinedResources>17000</StageRefinedResources>
         <Population>313400000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">TH</Bordes>
-            <Border SeaBorder="true">AU</Bordes>
-            <Border SeaBorder="true">NZ</Bordes>
-            <Border SeaBorder="true">ID</Bordes>
-            <Border SeaBorder="true">CN</Bordes>
-            <Border SeaBorder="true">JP</Bordes>
-            <Border SeaBorder="true">CI</Bordes>
-            <Border SeaBorder="true">SA</Bordes>
-            <Border SeaBorder="true">KO</Bordes>
+            <Border SeaBorder="false">TH</Border>
+            <Border SeaBorder="true">AU</Border>
+            <Border SeaBorder="true">NZ</Border>
+            <Border SeaBorder="true">ID</Border>
+            <Border SeaBorder="true">CN</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">CI</Border>
+            <Border SeaBorder="true">SA</Border>
+            <Border SeaBorder="true">KO</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">Jakarta</City>
@@ -1244,13 +1251,6 @@
             <City trainStation="false">Samarinda</City>
             <City trainStation="false">Manado</City>
             <City trainStation="false">Makassar</City>
-            <City trainStation="true">Lumpur</City>
-            <City trainStation="false">Sepang</City>
-            <City trainStation="false">Petaling</City>
-            <City trainStation="false">Bahru</City>
-            <City trainStation="false">Langat</City>
-            <City trainStation="false">Klang</City>
-            <City trainStation="false">Kuching</City>
         </Cities>
     </State>
 
@@ -1264,13 +1264,13 @@
         <StageRefinedResources>25000</StageRefinedResources>
         <Population>71400000</Population>
         <NeighboringStates>
-            <Border SeaBorder="true">CA</Bordes>
-            <Border SeaBorder="true">GL</Bordes>
-            <Border SeaBorder="true">SC</Bordes>
-            <Border SeaBorder="true">GE</Bordes>
-            <Border SeaBorder="true">FR</Bordes>
-            <Border SeaBorder="true">SP</Bordes>
-            <Border SeaBorder="true">ATL</Bordes>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">GL</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true">GE</Border>
+            <Border SeaBorder="true">FR</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="true">London</City>
@@ -1310,604 +1310,568 @@
     </State>
 
     <State Id="GL">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Greenland</Name>
+        <Money>150000000</Money>
+        <StageMoney>3200000</StageMoney>
+        <NaturalResources>32000</NaturalResources>
+        <StageNaturalResources>4300</StageNaturalResources>
+        <RefinedResources>11000</RefinedResources>
+        <StageRefinedResources>1400</StageRefinedResources>
+        <Population>56421</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true"></Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Nuuk</City>
+            <City trainStation="false">Ilulissat</City>
+            <City trainStation="false">Qaqortoq</City>
+            <City trainStation="false">Qeqqata</City>
+            <City trainStation="false">Aasiaat</City>
         </Cities>
     </State>
 
     <State Id="PT">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Palestine</Name>
+        <Money>575000000</Money>
+        <StageMoney>16000000</StageMoney>
+        <NaturalResources>143000</NaturalResources>
+        <StageNaturalResources>29000</StageNaturalResources>
+        <RefinedResources>87000</RefinedResources>
+        <StageRefinedResources>13000</StageRefinedResources>
+        <Population>78100000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">EG</Border>
+            <Border SeaBorder="false">AE</Border>
+            <Border SeaBorder="false">IR</Border>
+            <Border SeaBorder="false">TR</Border>
+            <Border SeaBorder="true">GR</Border>
+            <Border SeaBorder="true">LY</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Yerushalaim</City>
+            <City trainStation="false">Natzrat</City>
+            <City trainStation="false">Hefa</City>
+            <City trainStation="true">Tel Aviv</City>
+            <City trainStation="false">Be'er Sheva</City>
+            <City trainStation="true">Ramallah</City>
+            <City trainStation="false">Bayt Lahm</City>
+            <City trainStation="false">Gaza</City>
+            <City trainStation="true">Dimasq</City>
+            <City trainStation="false">Halab</City>
+            <City trainStation="false">Hims</City>
+            <City trainStation="false">Hama</City>
+            <City trainStation="false">Ladhiqqiyyaa</City>
+            <City trainStation="true">Baghdad</City>
+            <City trainStation="false">Ba'quba</City>
+            <City trainStation="false">al-Basra</City>
+            <City trainStation="false">al-Falluja</City>
+            <City trainStation="false">Kerbela</City>
+            <City trainStation="false">Kirkuk</City>
+            <City trainStation="false">al-Mawsil</City>
+            <City trainStation="false">al-Najaf</City>
+            <City trainStation="false">al-Nasiriyya</City>
+            <City trainStation="false">Samarra</City>
         </Cities>
     </State>
 
     <State Id="JP">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Japan</Name>
+        <Money>950000000</Money>
+        <StageMoney>30000000</StageMoney>
+        <NaturalResources>207000</NaturalResources>
+        <StageNaturalResources>31000</StageNaturalResources>
+        <RefinedResources>176000</RefinedResources>
+        <StageRefinedResources>23000</StageRefinedResources>
+        <Population>126200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true">SU</Border>
+            <Border SeaBorder="true">CN</Border>
+            <Border SeaBorder="true">KO</Border>
+            <Border SeaBorder="true">TH</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">CA</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Tokyo</City>
+            <City trainStation="false">Yokohama</City>
+            <City trainStation="true">Osaka</City>
+            <City trainStation="false">Nagoya</City>
+            <City trainStation="true">Sapporo</City>
+            <City trainStation="false">Kobe</City>
+            <City trainStation="true">Fukuoka</City>
+            <City trainStation="false">Kawasaki</City>
+            <City trainStation="false">Kyoto</City>
+            <City trainStation="false">Saitama</City>
+            <City trainStation="false">Shizuoka</City>
+            <City trainStation="false">Fuchu</City>
+            <City trainStation="false">Kamakura</City>
+            <City trainStation="false">Hita</City>
         </Cities>
     </State>
 
     <State Id="KZ">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Kazakistan</Name>
+        <Money>155000000</Money>
+        <StageMoney>14000000</StageMoney>
+        <NaturalResources>103000</NaturalResources>
+        <StageNaturalResources>18500</StageNaturalResources>
+        <RefinedResources>65000</RefinedResources>
+        <StageRefinedResources>9600</StageRefinedResources>
+        <Population>59500000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="false">IR</Border>
+            <Border SeaBorder="false">AF</Border>
+            <Border SeaBorder="false">CN</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Astana</City>
+            <City trainStation="true">Almaty</City>
+            <City trainStation="false">Bajkonur</City>
+            <City trainStation="true">Ashq-abad</City>
+            <City trainStation="false">Dasoguz</City>
+            <City trainStation="false">Turkmenabat</City>
+            <City trainStation="true">Toshkent</City>
+            <City trainStation="false">Andijon</City>
+            <City trainStation="false">Bukhara</City>
+            <City trainStation="false">Farg'ona</City>
+            <City trainStation="false">Qarshi</City>
+            <City trainStation="false">Namangan</City>
+            <City trainStation="false">Samarqand</City>
         </Cities>
     </State>
 
     <State Id="TH">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Thailand</Name>
+        <Money>875000000</Money>
+        <StageMoney>23000000</StageMoney>
+        <NaturalResources>186000</NaturalResources>
+        <StageNaturalResources>32000</StageNaturalResources>
+        <RefinedResources>149000</RefinedResources>
+        <StageRefinedResources>18000</StageRefinedResources>
+        <Population>375900000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">IN</Border>
+            <Border SeaBorder="false">ID</Border>
+            <Border SeaBorder="false">CN</Border>
+            <Border SeaBorder="true">KO</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">AU</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Bangkok</City>
+            <City trainStation="false">Phatthaya</City>
+            <City trainStation="false">Nonthaburi</City>
+            <City trainStation="false">Pak Kret</City>
+            <City trainStation="true">Naypyjdaw</City>
+            <City trainStation="false">Yangon</City>
+            <City trainStation="true">Mandalay</City>
+            <City trainStation="false">Bagan</City>
+            <City trainStation="false">Pegu</City>
+            <City trainStation="false">Mawlamyine</City>
+            <City trainStation="false">Sagaing</City>
+            <City trainStation="false">Pathein</City>
+            <City trainStation="true">Viangchan</City>
+            <City trainStation="true">Pak Se</City>
+            <City trainStation="true">Ha Noi</City>
+            <City trainStation="true">Ho Chi Minh</City>
+            <City trainStation="false">Da Nang</City>
+            <City trainStation="false">Hue</City>
+            <City trainStation="false">Hai Phong</City>
+            <City trainStation="true">Lumpur</City>
+            <City trainStation="false">Sepang</City>
+            <City trainStation="false">Petaling</City>
+            <City trainStation="false">Bahru</City>
+            <City trainStation="false">Langat</City>
+            <City trainStation="false">Klang</City>
+            <City trainStation="true">Kuching</City>
+            <City trainStation="true">Maynila</City>
+            <City trainStation="false">Quezon</City>
+            <City trainStation="false">Caloocan</City>
+            <City trainStation="true">Davao</City>
+            <City trainStation="true">Cebu</City>
+            <City trainStation="false">Zamboanga</City>
+            <City trainStation="false">Antipolo</City>
+            <City trainStation="false">Pasig</City>
+            <City trainStation="false">Taguig</City>
+            <City trainStation="false">Valenzuela</City>
+            <City trainStation="false">Dasmarinas</City>
+            <City trainStation="false">Cagayan</City>
         </Cities>
     </State>
 
     <State Id="KO">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Korea</Name>
+        <Money>1100000000</Money>
+        <StageMoney>38000000</StageMoney>
+        <NaturalResources>174000</NaturalResources>
+        <StageNaturalResources>29000</StageNaturalResources>
+        <RefinedResources>231000</RefinedResources>
+        <StageRefinedResources>32000</StageRefinedResources>
+        <Population>76900000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">CN</Border>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">TH</Border>
+            <Border SeaBorder="true"IN></Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Seoul</City>
+            <City trainStation="true">Busan</City>
+            <City trainStation="false">Daegu</City>
+            <City trainStation="false">Incheon</City>
+            <City trainStation="false">Gwanju</City>
+            <City trainStation="false">Daejeon</City>
+            <City trainStation="false">Ulsan</City>
+            <City trainStation="true">Jeju</City>
+            <City trainStation="false">Sejong</City>
+            <City trainStation="false">Suwon</City>
+            <City trainStation="false">Chuncheon</City>
+            <City trainStation="false">Cheongju</City>
+            <City trainStation="false">Jeonju</City>
+            <City trainStation="false">Changwon</City>
+            <City trainStation="true">Pyongyang</City>
+            <City trainStation="true">Rason</City>
+            <City trainStation="false">Namp'o</City>
+            <City trainStation="false">Kaesong</City>
+            <City trainStation="false">Kanggye</City>
+            <City trainStation="false">Sinuiju</City>
+            <City trainStation="false">Pyongsong</City>
+            <City trainStation="false">Haeju</City>
+            <City trainStation="false">Sariwon</City>
+            <City trainStation="false">Wonsan</City>
+            <City trainStation="false">Hamhung</City>
+            <City trainStation="false">Chongjin</City>
         </Cities>
     </State>
 
     <State Id="LY">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Lybia</Name>
+        <Money>100000000</Money>
+        <StageMoney>9000000</StageMoney>
+        <NaturalResources>120000</NaturalResources>
+        <StageNaturalResources>16000</StageNaturalResources>
+        <RefinedResources>54000</RefinedResources>
+        <StageRefinedResources>7800</StageRefinedResources>
+        <Population>19100000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">MO</Border>
+            <Border SeaBorder="false">NI</Border>
+            <Border SeaBorder="false">EG</Border>
+            <Border SeaBorder="true">FR</Border>
+            <Border SeaBorder="true">IT</Border>
+            <Border SeaBorder="true">JG</Border>
+            <Border SeaBorder="true">GR</Border>
+            <Border SeaBorder="true">TR</Border>
+            <Border SeaBorder="true">PT</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Tarabulus</City>
+            <City trainStation="true">Banghazi</City>
+            <City trainStation="false">Misrata</City>
+            <City trainStation="false">el-Azizia</City>
+            <City trainStation="false">Tarhunah</City>
+            <City trainStation="false">al-Bayda</City>
+            <City trainStation="false">al-Khums</City>
+            <City trainStation="true">Tunis</City>
+            <City trainStation="false">Safaquis</City>
+            <City trainStation="false">Susa</City>
         </Cities>
     </State>
 
     <State Id="RO">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Romania</Name>
+        <Money>450000000</Money>
+        <StageMoney>13000000</StageMoney>
+        <NaturalResources>142000</NaturalResources>
+        <StageNaturalResources>38000</StageNaturalResources>
+        <RefinedResources>98000</RefinedResources>
+        <StageRefinedResources>19000</StageRefinedResources>
+        <Population>59200000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="false">PL</Border>
+            <Border SeaBorder="false">AT</Border>
+            <Border SeaBorder="false">JG</Border>
+            <Border SeaBorder="true">IR</Border>
+            <Border SeaBorder="true">TR</Border>
+            <Border SeaBorder="true">GR</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Bucuresti</City>
+            <City trainStation="false">Iasi</City>
+            <City trainStation="true">Timisoara</City>
+            <City trainStation="false">Napoca</City>
+            <City trainStation="false">Consanta</City>
+            <City trainStation="false">Craiova</City>
+            <City trainStation="false">Brasov</City>
+            <City trainStation="false">Galati</City>
+            <City trainStation="false">Ploiesti</City>
+            <City trainStation="true">Kisinev</City>
+            <City trainStation="false">Tiraspol</City>
+            <City trainStation="true">Kyiv</City>
+            <City trainStation="false">Charkiv</City>
+            <City trainStation="false">Dnipro</City>
+            <City trainStation="true">Odesa</City>
+            <City trainStation="true">Donec'k</City>
+            <City trainStation="false">Zaporizzja</City>
+            <City trainStation="true">L'viv</City>
+            <City trainStation="false">Kryvyj</City>
+            <City trainStation="false">Mykolaiv</City>
+            <City trainStation="false">Mariupol</City>
+            <City trainStation="false">Luhans'k</City>
+            <City trainStation="false">Sevastopol</City>
+            <City trainStation="false">Ternopil</City>
+            <City trainStation="false">New Cernobyl</City>
         </Cities>
     </State>
 
     <State Id="MX">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Mexico</Name>
+        <Money>800000000</Money>
+        <StageMoney>24000000</StageMoney>
+        <NaturalResources>186000</NaturalResources>
+        <StageNaturalResources>32000</StageNaturalResources>
+        <RefinedResources>130000</RefinedResources>
+        <StageRefinedResources>18000</StageRefinedResources>
+        <Population>129900000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">US</Border>
+            <Border SeaBorder="false">AC</Border>
+            <Border SeaBorder="true">CO</Border>
+            <Border SeaBorder="true">CI</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Mexico</City>
+            <City trainStation="false">Guadalajara</City>
+            <City trainStation="false">Monterrey</City>
+            <City trainStation="false">Puebla</City>
+            <City trainStation="false">Toluca</City>
+            <City trainStation="true">Juarez</City>
+            <City trainStation="false">Tijuana</City>
+            <City trainStation="false">Leon</City>
+            <City trainStation="false">Torreon</City>
+            <City trainStation="false">Queretaro</City>
+            <City trainStation="false">Potosi</City>
+            <City trainStation="false">Merida</City>
+            <City trainStation="false">Mexicali</City>
+            <City trainStation="false">Aguascalientes</City>
+            <City trainStation="false">Cuervanacava</City>
+            <City trainStation="false">Acapulco</City>
+            <City trainStation="false">Tampico</City>
+            <City trainStation="false">Chihuahua</City>
+            <City trainStation="false">Saltillo</City>
+            <City trainStation="false">Morelia</City>
+            <City trainStation="false">Veracruz</City>
+            <City trainStation="false">Centro</City>
+            <City trainStation="false">Reynosa</City>
+            <City trainStation="true">Tuxtla</City>
         </Cities>
     </State>
 
     <State Id="NZ">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>New Zealand</Name>
+        <Money>240000000</Money>
+        <StageMoney>4300000</StageMoney>
+        <NaturalResources>202000</NaturalResources>
+        <StageNaturalResources>31000</StageNaturalResources>
+        <RefinedResources>86000</RefinedResources>
+        <StageRefinedResources>16000</StageRefinedResources>
+        <Population>5149000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true">AU</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">CI</Border> 
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-        </Cities>
+            <City trainStation="true">Wellington</City>
+            <City trainStation="false">Auckland</City>
+            <City trainStation="false">Tauranga</City>
+            <City trainStation="false">Christchurch</City>
+            <City trainStation="true">Dunedin</City>
+            <City trainStation="false">Hamilton</City>
     </State>
 
     <State Id="PL">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Poland</Name>
+        <Money>650000000</Money>
+        <StageMoney>26500000</StageMoney>
+        <NaturalResources>163000</NaturalResources>
+        <StageNaturalResources>35000</StageNaturalResources>
+        <RefinedResources>92000</RefinedResources>
+        <StageRefinedResources>21000</StageRefinedResources>
+        <Population>38000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">SU</Border>
+            <Border SeaBorder="false">GE</Border>
+            <Border SeaBorder="false">AT</Border>
+            <Border SeaBorder="false">RO</Border>
+            <Border SeaBorder="true">SC</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Warszava</City>
+            <City trainStation="false">Krakow</City>
+            <City trainStation="false">Lodz</City>
+            <City trainStation="false">Wroclaw</City>
+            <City trainStation="false">Poznan</City>
+            <City trainStation="true">Gdansk</City>
+            <City trainStation="true">Stettino</City>
+            <City trainStation="false">Bydgoszcz</City>
+            <City trainStation="false">Lublin</City>
+            <City trainStation="false">Katowicy</City>
+            <City trainStation="true">Bialystok</City>
+            <City trainStation="false">Gdynia</City>
+            <City trainStation="false">Czestochowa</City>
+            <City trainStation="false">Radom</City>
+            <City trainStation="false">Sosnowjec</City>
+            <City trainStation="true">Aushwitz</City>
         </Cities>
     </State>
 
     <State Id="TR">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>Turkey</Name>
+        <Money>600000000</Money>
+        <StageMoney>34000000</StageMoney>
+        <NaturalResources>175000</NaturalResources>
+        <StageNaturalResources>23000</StageNaturalResources>
+        <RefinedResources>183000</RefinedResources>
+        <StageRefinedResources>22000</StageRefinedResources>
+        <Population>85300000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">GR</Border>
+            <Border SeaBorder="false">PT</Border>
+            <Border SeaBorder="false">IR</Border>
+            <Border SeaBorder="true">SU</Border>
+            <Border SeaBorder="true">RO</Border>
+            <Border SeaBorder="true">JG</Border>
+            <Border SeaBorder="true">EG</Border>
+            <Border SeaBorder="true">LY</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Ankara</City>
+            <City trainStation="true">Istanbul</City>
+            <City trainStation="false">Izmir</City>
+            <City trainStation="false">Bursa</City>
+            <City trainStation="false">Adana</City>
+            <City trainStation="false">Ayintap</City>
+            <City trainStation="false">Konya</City>
+            <City trainStation="false">Antalya</City>
+            <City trainStation="false">Diyarbakir</City>
+            <City trainStation="false">Mersin</City>
+            <City trainStation="false">Kayseri</City>
+            <City trainStation="false">Eskisehir</City>
+            <City trainStation="false">Denizli</City>
+            <City trainStation="false">Sanliurfa</City>
+            <City trainStation="false">Samsun</City>
+            <City trainStation="false">Adapazari</City>
+            <City trainStation="false">Kahramanmaras</City>
+            <City trainStation="false">Malatya</City>
+            <City trainStation="true">Van</City>
+            <City trainStation="false">Elazig</City>
         </Cities>
     </State>
 
     <State Id="US">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>United States</Name>
+        <Money>1200000000</Money>
+        <StageMoney>53000000</StageMoney>
+        <NaturalResources>239000</NaturalResources>
+        <StageNaturalResources>38500</StageNaturalResources>
+        <RefinedResources>238000</RefinedResources>
+        <StageRefinedResources>37000</StageRefinedResources>
+        <Population>341100000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">CA</Border>
+            <Border SeaBorder="false">MX</Border>
+            <Border SeaBorder="true">GL</Border>
+            <Border SeaBorder="false">CA</Border>
+            <Border SeaBorder="true">SU</Border>
+            <Border SeaBorder="true">CO</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Washington</City>
+            <City trainStation="true">New York</City>
+            <City trainStation="true">Los Angeles</City>
+            <City trainStation="false">Chicago</City>
+            <City trainStation="false">Houston</City>
+            <City trainStation="false">Philadelphia</City>
+            <City trainStation="true">Phoenix</City>
+            <City trainStation="false">San Antonio</City>
+            <City trainStation="false">San Diego</City>
+            <City trainStation="false">Dallas</City>
+            <City trainStation="false">San Jose</City>
+            <City trainStation="false">San Francisco</City>
+            <City trainStation="false">Boston</City>
+            <City trainStation="true">Seattle</City>
+            <City trainStation="false">Denver</City>
+            <City trainStation="false">Sacramento</City>
+            <City trainStation="false">Raleigh</City>
+            <City trainStation="false">Atlanta</City>
+            <City trainStation="true">Honolulu</City>
+            <City trainStation="false">Springfield</City>
+            <City trainStation="false">Indianapolis</City>
+            <City trainStation="false">Des Moines</City>
+            <City trainStation="false">Baton Rouge</City>
+            <City trainStation="false">Saint Paul</City>
+            <City trainStation="false">Lincoln</City>
+            <City trainStation="false">Albuquerqe</City>
+            <City trainStation="false">Columbus</City>
+            <City trainStation="false">Oklahoma</City>
+            <City trainStation="false">Salem</City>
+            <City trainStation="false">Nashville</City>
+            <City trainStation="true">Austin</City>
+            <City trainStation="false">Richmond</City>
+            <City trainStation="false">Charleston</City>
+            <City trainStation="false">Madison</City>
+            <City trainStation="false">Italy</City>
+            <City trainStation="false">Cape Canaveral</City>
         </Cities>
     </State>
 
     <State Id="SA">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+        <Name>South Africa</Name>
+        <Money>700000000</Money>
+        <StageMoney>26000000</StageMoney>
+        <NaturalResources>176000</NaturalResources>
+        <StageNaturalResources>34000</StageNaturalResources>
+        <RefinedResources>112000</RefinedResources>
+        <StageRefinedResources>23000</StageRefinedResources>
+        <Population>91000000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false">CG</Border>
+            <Border SeaBorder="false">MZ</Border>
+            <Border SeaBorder="true">AR</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">BR</Border>
+            <Border SeaBorder="true">NI</Border>
+            <Border SeaBorder="true">ET</Border>
+            <Border SeaBorder="true">AU</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
-            <City trainStation="false"></City>
+            <City trainStation="true">Bloemfontein</City>
+            <City trainStation="true">Kaapstad</City>
+            <City trainStation="true">Pretoria</City>
+            <City trainStation="false">Johannesburg</City>
+            <City trainStation="false">Durban</City>
+            <City trainStation="true">Porth Elizabeth</City>
+            <City trainStation="false">Oos-Londen</City>
+            <City trainStation="false">Vanderbjilpark</City>
+            <City trainStation="false">Pietermaritburg</City>
+            <City trainStation="true">Thohoyandou</City>
+            <City trainStation="false">Polokwane</City>
+            <City trainStation="false">Mbombela</City>
+            <City trainStation="false">Witbank</City>
+            <City trainStation="true">Maseru</City>
+            <City trainStation="true">Tana</City>
         </Cities>
     </State>
 
@@ -1921,13 +1885,13 @@
         <StageRefinedResources></StageRefinedResources>
         <Population></Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="false"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
-            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="false"></Border>
+            <Border SeaBorder="false"></Border>
+            <Border SeaBorder="false"></Border>
+            <Border SeaBorder="false"></Border>
+            <Border SeaBorder="true"></Border>
+            <Border SeaBorder="true"></Border>
+            <Border SeaBorder="true"></Border>
         </NeighboringStates>
         <Cities>
             <City trainStation="false"></City>

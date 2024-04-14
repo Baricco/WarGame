@@ -6,6 +6,8 @@
     -lightGray: #838383;
     -darkGray: #474747;
     -lightBlue: #7fb0b8;
+    -transparent: #FFFFFF00;
+    -black: #000000;
 }
 
 VBox {
@@ -31,22 +33,29 @@ VBox {
     -fx-stroke: -darkContinent;
 }
 
+#sideMenu {
+    -fx-background-color: -lightGray;
+    -fx-border-color: -transparent -transparent -transparent -black;
+    -fx-border-width: 2;
+}
 
-#playerMenu, #sideMenu {
-    -fx-background-color: -darkGray;
+#playerMenu {
+    -fx-background-color: -lightGray;
+    -fx-border-color: -black -transparent -transparent -transparent;
+    -fx-border-width: 2;
 }
 
 #calendarLabel {
-    -fx-background-color: -seaBlue ;
+    -fx-background-color: -transparent;
 }
 
 Label {
-    -fx-background-color: -darkGray;
+    -fx-background-color: -transparent;
     -fx-text-fill: #FFFFFF;
 }
 
 ListView {
-    -fx-background-color: -lightGray;
+    -fx-background-color: -darkGray;
     -fx-text-fill: #FFFFFF;
 
 }

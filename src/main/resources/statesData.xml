@@ -1309,7 +1309,7 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="GL">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>
@@ -1352,7 +1352,7 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="PT">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>
@@ -1395,7 +1395,7 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="JP">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>
@@ -1438,7 +1438,7 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="KZ">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>
@@ -1481,7 +1481,7 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="TH">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>
@@ -1524,7 +1524,394 @@
         </Cities>
     </State>
 
-    <State Id="">
+    <State Id="KO">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="LY">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="RO">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="MX">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="NZ">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="PL">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="TR">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="US">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="SA">
+        <Name></Name>
+        <Money></Money>
+        <StageMoney></StageMoney>
+        <NaturalResources></NaturalResources>
+        <StageNaturalResources></StageNaturalResources>
+        <RefinedResources></RefinedResources>
+        <StageRefinedResources></StageRefinedResources>
+        <Population></Population>
+        <NeighboringStates>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="false"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+            <Border SeaBorder="true"></Bordes>
+        </NeighboringStates>
+        <Cities>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+            <City></City>
+        </Cities>
+    </State>
+
+    <State Id="ATL">
         <Name></Name>
         <Money></Money>
         <StageMoney></StageMoney>

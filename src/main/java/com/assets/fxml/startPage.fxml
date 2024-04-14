@@ -11,7 +11,7 @@
    <children>
       <Pane fx:id="mapContainer" maxHeight="550.0" maxWidth="1110.0" minHeight="550.0" minWidth="1100.0" prefHeight="550.0" prefWidth="1110.0" stylesheets="@app/../startPageStyle.css">
          <children>
-            <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#33333366" layoutX="469.0" layoutY="-129.0" />
+            <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#00000066" layoutX="469.0" layoutY="-129.0" />
             <Pane layoutX="593.0" prefHeight="17.0" prefWidth="100.0">
                <children>
                   <Label fx:id="calendarLabel" layoutX="-35.0" prefHeight="17.0" prefWidth="71.0" text="DD/MM/YY" textAlignment="CENTER" textFill="WHITE" />
@@ -64,12 +64,12 @@
             <SVGPath fx:id="IR" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
             <Pane fx:id="sideMenu" layoutX="1101.0" prefHeight="556.0" prefWidth="179.0">
                <children>
-                  <Line endX="108.0" endY="-28.32085609436035" layoutX="71.0" layoutY="58.0" startX="-71.0" startY="-28.32085609436035" stroke="#474747" />
-                  <Pane layoutX="56.0" layoutY="17.0" prefHeight="28.0" prefWidth="63.0">
+                  <Line endX="108.0" endY="-28.32085609436035" layoutX="72.0" layoutY="58.0" startX="-71.0" startY="-28.32085609436035" stroke="#171219" strokeWidth="2.0" />
+                  <Pane layoutX="59.0" layoutY="17.0" prefHeight="28.0" prefWidth="63.0">
                      <children>
-                        <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#333333" layoutX="-89.0" layoutY="-128.0" />
+                        <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="-89.0" layoutY="-128.0" />
                         <Label fx:id="menuStateLvlLabel" layoutX="21.0" layoutY="-15.0" text="LVL" />
-                        <Label fx:id="menuStateNameLabel" layoutX="16.0" layoutY="5.0" text="State" />
+                        <Label fx:id="menuStateNameLabel" layoutX="16.0" layoutY="4.0" text="State" />
                      </children>
                   </Pane>
                </children>
@@ -80,7 +80,7 @@
          <children>
             <Pane layoutX="609.0" layoutY="-5.0" prefHeight="28.0" prefWidth="63.0">
                <children>
-                  <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#333333" layoutX="-89.0" layoutY="-134.0" />
+                  <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="-89.0" layoutY="-134.0" />
                   <Label fx:id="playerStateLvlLabel" layoutX="21.0" layoutY="-20.0" text="LVL" textFill="WHITE" />
                   <Label fx:id="playerStateNameLabel" layoutX="16.0" layoutY="-2.0" text="State" textAlignment="CENTER" textFill="WHITE" />
                </children>

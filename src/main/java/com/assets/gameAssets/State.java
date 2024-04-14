@@ -1,5 +1,7 @@
 package com.assets.gameAssets;
 
+import com.assets.SVGAssets.XMLParser;
+
 public class State {
 
     private String name;
@@ -16,8 +18,25 @@ public class State {
     private int population;
     private int level; 
 
-    public State(String fileName, String Id) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level) {
+        this.name = name;
         this.Id = Id;
+        this.money = money;
+        this.stageMoney = stageMoney;
+        this.naturalResources = naturalResources;
+        this.stageNaturalResources = stageNaturalResources;
+        this.refinedResources = refinedResources;
+        this.stageRefinedResources = stageRefinedResources;
+        this.reputation = reputation;
+        this.population = population;
+        this.level = level;
+    }
+
+    public State(String fileName, String Id) {
+        
+        XMLParser xmlParser = new XMLParser("src/main/resources/statesData.xml");
+
+        State temp = xmlParser.parseFile(Id);
         
         // da qui in poi bisogna leggere il file xml e leggere i dati corrispondenti alla nazione
     

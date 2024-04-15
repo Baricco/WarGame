@@ -18,10 +18,18 @@
             <Border SeaBorder="true">ID</Border>
         </NeighboringStates>
          <Cities>
-            <City trainStation="true">al-Riyad</City>      <!-- PROBABILMENTE QUI CI SERVIRANNO ANCHE LE COORDINATE SE VOGLIAMO MOSTRARE LE STAZIONI, MA POI CI PENSIAMO -->
+            <City 
+            trainStation="true"
+            cordX="-24" cordY="+46">
+             al-Riyad
+             </City> 
             <City trainStation="false">al-Baha</City>
             <City trainStation="false">Baljurashi</City>
-            <City trainStation="false">Ar'ar</City>
+            <City 
+            trainStation="true"
+            cordX="-31" cordY="+41">
+            Ar'ar
+            </City>
             <City trainStation="false">Sakaka</City>
             <City trainStation="false">al-Medina</City>
             <City trainStation="false">al-Bahr</City>
@@ -32,12 +40,24 @@
             <City trainStation="false">Bariq</City>
             <City trainStation="false">Ha'il</City>
             <City trainStation="false">Jizan</City>
-            <City trainStation="false">Makka</City>
+            <City 
+            trainStation="true"
+            cordX="-21" cordY="+39">
+            Makka
+            </City>
             <City trainStation="false">Jeddah</City>
             <City trainStation="false">Najran</City>
             <City trainStation="false">Tabuk</City>
-            <City trainStation="false">Masqat</City>
-            <City trainStation="false">San'a</City>
+            <City
+            trainStation="true"
+            cordX="-23" cordY="+58">
+            Masqat
+            </City>
+            <City
+            trainStation="true"
+            cordX="-15" cordY="+44">
+            San'a
+            </City>
             <City trainStation="false">Adan</City>
         </Cities>
     </State>
@@ -61,9 +81,17 @@
             <Border SeaBorder="true">ET</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Kabul</City>
+            <City 
+            trainStation="true"
+            cordX="-34" cordY="+69">
+            Kabul
+            </City>
             <City trainStation="false">Kandahar</City>
-            <City trainStation="false">Feyzabad</City>
+            <City 
+            trainStation="true"
+            cordX="-37" cordY"+70">
+            Feyzabad
+            </City>
             <City trainStation="false">Qala-i-Naw</City>
             <City trainStation="false">Khomri</City>
             <City trainStation="false">Sharif</City>
@@ -74,12 +102,23 @@
             <City trainStation="false">Changcharan</City>
             <City trainStation="false">Lashkar Gah</City>
             <City trainStation="false">Herat</City>
-            <City trainStation="false">Konduz</City>
-            <City trainStation="true">Islamabad</City>
+            <City 
+            trainStation="true"
+            cordX="-33" cordY="+73">
+            Islamabad
+            </City>
             <City trainStation="false">Quetta</City>
             <City trainStation="false">Peshawar</City>
-            <City trainStation="false">Lahaur</City>
-            <City trainStation="false">Karachi</City>
+            <City 
+            trainStation="true"
+            cordX="-31" cordY"74">
+            Lahaur
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-23" "+67">
+            Karachi
+            </City>
             <City trainStation="false">Muzaffarabad</City>
             <City trainStation="false">Gilgit</City>
         </Cities>
@@ -105,9 +144,16 @@
             <Border SeaBorder="true">TR</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false">Zagreb</City>
-            <City trainStation="false">Petrinja</City>
-            <City trainStation="false">Split</City>
+            <City 
+            trainStation="true"
+            cordX="-44" cordY="+16">
+            Zagreb
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-44" cordY="+16">
+            Split
+            </City>
             <City trainStation="false">Zadar</City>
             <City trainStation="false">Fiume</City>
             <City trainStation="false">Pula</City>
@@ -115,25 +161,49 @@
             <City trainStation="false">Varazdin</City>
             <City trainStation="false">Koprivnica</City>
             <City trainStation="false">Dubrovnik</City>
-            <City trainStation="true">Sarajevo</City>
+            <City 
+            trainStation="true"
+            cordX="-43" cordY="+18">
+            Sarajevo
+            </City>
             <City trainStation="false">Banja Luka</City>
             <City trainStation="false">Tuzla</City>
             <City trainStation="false">Mostar</City>
-            <City trainStation="true">Beograd</City>
+            <City 
+            trainStation="true"
+            cordX="-44" cordY="+20">
+            Beograd
+            </City>
             <City trainStation="false">Novi Sad</City>
-            <City trainStation="false">Niss</City>
+            <City 
+            trainStation="true"
+            cordX="-43" cordY="+22">
+            Niss
+            </City>
             <City trainStation="false">Kragujevac</City>
             <City trainStation="false">Leskovac</City>
             <City trainStation="false">Subotica</City>
-            <City trainStation="false">Sofia</City>
+            <City 
+            trainStation="true"
+            cordX="-42" cordY"+23">
+            Sofia
+            </City>
             <City trainStation="false">Vidin</City>
             <City trainStation="false">Vroca</City>
             <City trainStation="false">Pernik</City>
             <City trainStation="false">Kjustendil</City>
             <City trainStation="false">Blagoevgrad</City>
-            <City trainStation="false">Burgas</City>
+            <City 
+            trainStation="true"
+            cordX="-42" cordY="+27">
+            Burgas
+            </City>
             <City trainStation="false">Zagora</City>
-            <City trainStation="true">Tirana</City>
+            <City 
+            trainStation="true"
+            cordX="-41" cordY="+20">
+            Tirana
+            </City>
             <City trainStation="false">Durres</City>
             <City trainStation="false">Alessio</City>
         </Cities>
@@ -158,27 +228,51 @@
             <Border SeaBorder="true">TR</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">al-Qahira</City>
+            <City 
+            trainStation="true"
+            cordX="-30" cordY="+31">
+            al-Qahira
+            </City>
             <City trainStation="false">Alexandria</City>
-            <City trainStation="false">Berenice</City>
+            <City 
+            trainStation="true"
+            cordX="-24" cordY="+35">
+            Berenice
+            </City>
             <City trainStation="false">Gizah</City>
             <City trainStation="false">al-Alamyn</City>
             <City trainStation="false">Aswan</City>
             <City trainStation="false">al-Minya</City>
             <City trainStation="false">Sharm al-Shayk</City>
             <City trainStation="false">Saqqara</City>
-            <City trainStation="false">al-Arish</City>
+            <City 
+            trainStation="true"
+            cordX="-31" cordY="+33">
+            al-Arish
+            </City>
             <City trainStation="false">Asyut</City>
             <City trainStation="false">Bilbeis</City>
             <City trainStation="false">Dumyat</City>
             <City trainStation="false">File</City>
             <City trainStation="false">al-Uqsur</City>
             <City trainStation="false">Siwa</City>
-            <City trainStation="false">al-Suways</City>
-            <City trainStation="false">al-Khartum</City>
+            <City 
+            trainStation="true"
+            cordX="-30" cordY="+32">
+            al-Suways
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-15" cordY="+32">
+            al-Khartum
+            </City>
             <City trainStation="false">Omdurman</City>
             <City trainStation="false">Bahri</City>
-            <City trainStation="false">Bur Sudan</City>
+            <City 
+            trainStation="true"
+            cordX="-19" cordY="+37">
+            Bur Sudan
+            </City>
         </Cities>
     </State>
     
@@ -203,8 +297,16 @@
             <Border SeaBorder="true">JG</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Tehran</City>
-            <City trainStation="true">Mashhad</City>
+            <City 
+            trainStation="true"
+            cordX="-35" cordY="+51">
+            Tehran
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-36" cordY="+59">
+            Mashhad
+            </City>
             <City trainStation="false">Isfahan</City>
             <City trainStation="false">Tabriz</City>
             <City trainStation="false">Karaj</City>
@@ -214,7 +316,11 @@
             <City trainStation="false">Kirmasan</City>
             <City trainStation="false">Urmiya</City>
             <City trainStation="false">Rasht</City>
-            <City trainStation="false">Zahedan</City>
+            <City 
+            trainStation="true"
+            cordX="-29" cordY="+61">
+            Zahedan
+            </City>
             <City trainStation="false">Kerman</City>
             <City trainStation="false">Hamadan</City>
             <City trainStation="false">Arak</City>
@@ -222,7 +328,7 @@
             <City trainStation="false">Ardabil</City>
             <City trainStation="false">Abbas</City>
             <City trainStation="false">Sanandaj</City>
-            <City trainStation="false">Eslamshar</City>
+            <City trainStation="false">Eslamshahr</City>
         </Cities>
     </State>
 
@@ -244,33 +350,58 @@
             <Border SeaBorder="true">BR</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Kinshasa</City>
+            <City 
+            trainStation="true"
+            cordX="+4" cordY="+15">
+            Kinshasa
+            </City>
             <City trainStation="false">Bandudu</City>
-            <City trainStation="false">Beni</City>
+            <City 
+            trainStation="true"
+            cordX="+0" cordY="+29">
+            Beni
+            </City>
             <City trainStation="false">Boma</City>
             <City trainStation="false">Bukavu</City>
             <City trainStation="false">Butembo</City>
             <City trainStation="false">Goma</City>
-            <City trainStation="false">Kamina</City>
+            <City 
+            trainStation="true"
+            cordX="+8" cordY="+25">
+            Kamina
+            </City>
             <City trainStation="false">Kananga</City>
-            <City trainStation="false">Kikwit</City>
-            <City trainStation="true">Kisangani</City>
+            <City 
+            trainStation="false"
+            cordX="+5" cordY="+18">
+            Kikwit
+            </City>
+            <City trainStation="false">Kisangani</City>
             <City trainStation="false">Kolwezi</City>
             <City trainStation="false">Likasi</City>
-            <City trainStation="true">Lubumbashi</City>
+            <City trainStation="false">Lubumbashi</City>
             <City trainStation="false">Matadi</City>
             <City trainStation="false">Mbandaka</City>
             <City trainStation="false">Moba</City>
             <City trainStation="false">Mbuji-Mayi</City>
             <City trainStation="false">Tshikapa</City>
             <City trainStation="false">Ubundu</City>
-            <City trainStation="false"></City>
-            <City trainStation="false">Luanda</City>
+            <City 
+            trainStation="true"
+            cordX="+9" cordY="+13">
+            Luanda
+            </City>
             <City trainStation="false">Cabinda</City>
-            <City trainStation="false">Huando</City>
-            <City trainStation="false">Lunda</City>
-            <City trainStation="false">Gaborone</City>
-            <City trainStation="false">Windhoek</City>
+            <City 
+            trainStation="true"
+            cordX="+24" cordY="+26">
+            Gaborone
+            </City>
+            <City 
+            trainStation="true"
+            cordX="+22" cordY="+17">
+            Windhoek
+            </City>
     </State>
 
     <State Id="AR">
@@ -289,9 +420,17 @@
             <Border SeaBorder="true">CG</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Buenos Aires</City>
+            <City 
+            trainStation="true"
+            cordX="+34" cordY="-58">
+            Buenos Aires
+            </City>
             <City trainStation="false">La Plata</City>
-            <City trainStation="false">Resistencia</City>
+            <City 
+            trainStation="true"
+            cordX="+27" cordY="-60">
+            Resistencia
+            </City>
             <City trainStation="false">Cordoba</City>
             <City trainStation="false">Corrientes</City>
             <City trainStation="false">Posadas</City>
@@ -299,10 +438,20 @@
             <City trainStation="true">Salta</City>
             <City trainStation="false">Santa Fe</City>
             <City trainStation="false">Tucuman</City>
-            <City trainStation="false">Asuncion</City>
-            <City trainStation="false">Montevideo</City>
+            <City 
+            trainStation="false"
+            cordX="+25" cordY="-57"
+            >Asuncion
+            </City>
+            <City 
+            trainStation="true"
+            cordX="+34" cordY="-56">
+            Montevideo
+            </City>
             <City trainStation="false">Salto</City>
-            <City trainStation="false">Maldonado</City>
+            <City 
+            trainStation="true"
+            cordX="+34" cordY="-58">Maldonado</City>
         </Cities>
     </State>
 

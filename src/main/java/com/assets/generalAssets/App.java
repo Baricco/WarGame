@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
+import com.assets.gameAssets.GameManager;
 
 /**
  * JavaFX App
@@ -27,14 +28,18 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
 
+        GameManager gameManager = new GameManager("src\\main\\resources\\com\\statesData.xml");
+
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
         Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
         double xShift = 50, yShift = -110;
 
+
         for(SVGPathElement p : paths) {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
+                gameManager.addState(p.getId());
                 curPath.setContent(p.getContent());
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
@@ -45,6 +50,7 @@ public class App extends Application {
                 e.printStackTrace();
             }
 
+            System.out.println(gameManager.toString());
             
         }
 

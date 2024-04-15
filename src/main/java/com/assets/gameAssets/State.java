@@ -32,24 +32,40 @@ public class State {
         this.level = level;
     }
 
-    public State(String fileName, String Id) {
+    public State(String fileName, String id) throws Exception {
         
-        XMLParser xmlParser = new XMLParser("src/main/resources/statesData.xml");
-
-        State temp = xmlParser.parseFile(Id);
-        
-        // da qui in poi bisogna leggere il file xml e leggere i dati corrispondenti alla nazione
-    
-        // . . . 
+        System.out.println("Sbirro");
 
 
-        // qui settiamo gli attributi che non sono nell'XML
+        XMLParser xmlParser = new XMLParser(fileName);
+
+        System.out.println("Sburro");
+
+
+        State state = xmlParser.parseFile(id);
+                
+        // Qui settiamo le variabili che si possono settare dall'XML
+
+        if (state != null) {
+            this.name = state.getName();
+            this.Id = state.getId();
+            this.money = state.getMoney();
+            this.stageMoney = state.getStageMoney();
+            this.naturalResources = state.getNaturalResources();
+            this.stageNaturalResources = state.getStageNaturalResources();
+            this.refinedResources = state.getRefinedResources();
+            this.stageRefinedResources = state.getStageRefinedResources();
+            this.population = state.getPopulation();
+        } else {
+            throw new Exception("State with ID: " + Id + " not found in " + fileName);
+        }
+
+        // Qui settiamo le variabili che non si trovano nell'XML
 
         this.level  = 0;
 
         this.reputation = -5;
 
-        // . . . 
 
     
     
@@ -67,8 +83,12 @@ public class State {
         return this.money;
     }
 
+    public double getStageMoney() {
+        return this.stageMoney;
+    }
+
     public void collectTax() {
-        this.money += this.stageMoney;
+        this.addMoney(this.stageMoney);
     }
 
     public void addMoney(double money) {

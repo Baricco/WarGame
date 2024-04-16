@@ -1,8 +1,13 @@
 package com.assets.SVGAssets;
 
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Parser;
 
 import com.assets.gameAssets.State;
 
@@ -11,15 +16,11 @@ public class XMLParser {
     Document document;
 
     public XMLParser(String fileName) {
-
-        this.document = Jsoup.parse(fileName, "UTF-8");
+        try { this.document = Jsoup.parse(Files.readString(new File(fileName).toPath(), StandardCharsets.UTF_8), "", Parser.xmlParser()); } catch (Exception e) { e.printStackTrace(); }
     }
 
     public State parseFile(String id) {
-        Element state = this.document.getElementById(id);
-
-        // state è null madonna senza mani
-        System.out.println(state);
+        Element state = document.getElementById(id);
 
         return new State(
             state.getElementsByTag("Name").text(),
@@ -32,7 +33,10 @@ public class XMLParser {
             Double.parseDouble(state.getElementsByTag("StageRefinedResources").text()),
             0, 
             Integer.parseInt(state.getElementsByTag("Population").text()), 
-            0
+            0,
+            0,
+            0,
+            null
         );
     }
 

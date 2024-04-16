@@ -2,6 +2,8 @@ package com.assets.gameAssets;
 
 import com.assets.SVGAssets.XMLParser;
 
+import javafx.scene.shape.SVGPath;
+
 public class State {
 
     private String name;
@@ -14,11 +16,16 @@ public class State {
     private double refinedResources;        // risorse lavorate totali
     private double stageRefinedResources;   // risorse lavorate generate per ogni turno
     private double reputation;  // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria (-5 ; +5)
+    private int army;                // numero di truppe
+    private int workForce;
     
+    private SVGPath path;
+
+
     private int population;
     private int level; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, SVGPath path) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -30,17 +37,14 @@ public class State {
         this.reputation = reputation;
         this.population = population;
         this.level = level;
+        this.path = path;
+        this.army = army;
+        this.workForce = workForce;
     }
 
-    public State(String fileName, String id) throws Exception {
+    public State(String fileName, String id, SVGPath path) throws Exception {
         
-        System.out.println("Sbirro");
-
-
         XMLParser xmlParser = new XMLParser(fileName);
-
-        System.out.println("Sburro");
-
 
         State state = xmlParser.parseFile(id);
                 
@@ -62,11 +66,13 @@ public class State {
 
         // Qui settiamo le variabili che non si trovano nell'XML
 
+        this.army = 0;
+
         this.level  = 0;
 
         this.reputation = -5;
 
-
+        this.path = path;
     
     
     } 
@@ -149,17 +155,17 @@ public class State {
     @Override
     public String toString() {
         return "{" +
-            " name='" + getName() + "'" +
-            ", Id='" + getId() + "'" +
-            ", money='" + getMoney() + "'" +
-            ", naturalResources='" + getNaturalResources() + "'" +
-            ", stageNaturalResources='" + getStageNaturalResources() + "'" +
-            ", refinedResources='" + getRefinedResources() + "'" +
-            ", stageRefinedResources='" + getStageRefinedResources() + "'" +
-            ", reputation='" + getReputation() + "'" +
-            ", population='" + getPopulation() + "'" +
-            ", level='" + getLevel() + "'" +
-            "}";
+            " name='" + getName() + "',\n" +
+            "Id='" + getId() + "',\n" +
+            "money='" + getMoney() + "',\n" +
+            "naturalResources='" + getNaturalResources() + "',\n" +
+            "stageNaturalResources='" + getStageNaturalResources() + "',\n" +
+            "refinedResources='" + getRefinedResources() + "',\n" +
+            "stageRefinedResources='" + getStageRefinedResources() + "',\n" +
+            "reputation='" + getReputation() + "',\n" +
+            "population='" + getPopulation() + "',\n" +
+            "level='" + getLevel() + "',\n" +
+            "}\n";
     }
 
 

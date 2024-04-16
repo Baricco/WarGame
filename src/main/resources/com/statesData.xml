@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <States>
-    <State Id="#AE">
+    <State Id="AE">
         <Name>Arab Emirates</Name>
         <Money>100000000</Money>
         <StageMoney>8000000</StageMoney>
@@ -62,7 +62,7 @@
         </Cities>
     </State>
 
-    <State Id="#AF">
+    <State Id="AF">
         <Name>Afghanistan</Name>
         <Money>70000000</Money>
         <StageMoney>8500000</StageMoney>
@@ -124,7 +124,7 @@
         </Cities>
     </State>
 
-    <State Id="#JG">
+    <State Id="JG">
         <Name>Jugoslavia</Name>
         <Money>550000000</Money>
         <StageMoney>6800000</StageMoney>
@@ -209,7 +209,7 @@
         </Cities>
     </State>
 
-    <State Id="#EG">
+    <State Id="EG">
         <Name>Egypt</Name>
         <Money>600000000</Money>
         <StageMoney>800000</StageMoney>
@@ -276,7 +276,7 @@
         </Cities>
     </State>
     
-    <State Id="#IR">
+    <State Id="IR">
         <Name>Iran</Name>
         <Money>65000000</Money>
         <StageMoney>8000000</StageMoney>
@@ -332,7 +332,7 @@
         </Cities>
     </State>
 
-    <State Id="#CG">
+    <State Id="CG">
         <Name>Congo</Name>
         <Money>200000000</Money>
         <StageMoney>64000000</StageMoney>
@@ -404,7 +404,7 @@
             </City>
     </State>
 
-    <State Id="#AR">
+    <State Id="AR">
         <Name>Argentina</Name>
         <Money>720000000</Money>
         <StageMoney>8800000</StageMoney>
@@ -455,7 +455,7 @@
         </Cities>
     </State>
 
-    <State Id="#AT">
+    <State Id="AT">
         <Name>Austria</Name>
         <Money>850000000</Money>
         <StageMoney>13000000</StageMoney>
@@ -491,7 +491,7 @@
         </Cities>
     </State>
 
-    <State Id="#AU">
+    <State Id="AU">
         <Name>Australia</Name>
         <Money>950000000</Money>
         <StageMoney>17000000</StageMoney>
@@ -518,7 +518,7 @@
         </Cities>
     </State>
 
-    <State Id="#ID">
+    <State Id="ID">
         <Name>India</Name>
         <Money>50000000</Money>
         <StageMoney>3900000</StageMoney>
@@ -569,7 +569,7 @@
         </Cities>
     </State>
 
-    <State Id="#IT">
+    <State Id="IT">
         <Name>Italy</Name>
         <Money>1000000000</Money>
         <StageMoney>2000000</StageMoney>
@@ -634,7 +634,7 @@
         </Cities>
     </State>
 
-    <State Id="#FR">
+    <State Id="FR">
         <Name>France</Name>
         <Money>1150000000</Money>
         <StageMoney>28000000</StageMoney>
@@ -680,7 +680,7 @@
         </Cities>
     </State>
 
-    <State Id="#SE">
+    <State Id="SE">
         <Name>Senegal</Name>
         <Money>160000000</Money>
         <StageMoney>13000000</StageMoney>
@@ -723,7 +723,7 @@
         </Cities>
     </State>
 
-    <State Id="#MZ">
+    <State Id="MZ">
         <Name>Mozambique</Name>
         <Money>72000000</Money>
         <StageMoney>2700000</StageMoney>
@@ -755,7 +755,7 @@
         </Cities>
     </State>
 
-    <State Id="#CI">
+    <State Id="CI">
         <Name>Chile</Name>
         <Money>290000000</Money>
         <StageMoney>4800000</StageMoney>
@@ -788,7 +788,7 @@
         </Cities>
     </State>
 
-    <State Id="#BR">
+    <State Id="BR">
         <Name>Brazil</Name>
         <Money>80000000</Money>
         <StageMoney>9000000</StageMoney>
@@ -831,7 +831,7 @@
         </Cities>
     </State>
 
-    <State Id="#AC">
+    <State Id="AC">
         <Name>Central America</Name>
         <Money>210000000</Money>
         <StageMoney>5800000</StageMoney>
@@ -881,7 +881,7 @@
         </Cities>
     </State>
 
-    <State Id="#SU">
+    <State Id="SU">
         <Name>Soviet Union</Name>
         <Money>1100000000</Money>
         <StageMoney>16000000</StageMoney>
@@ -932,7 +932,7 @@
         </Cities>
     </State>
 
-    <State Id="#CA">
+    <State Id="CA">
         <Name>Canada</Name>
         <Money>1200000000</Money>
         <StageMoney>43000000</StageMoney>
@@ -973,7 +973,7 @@
         </Cities>
     </State>
 
-    <State Id="#NI">
+    <State Id="NI">
         <Name>Nigeria</Name>
         <Money>340000000</Money>
         <StageMoney>9000000</StageMoney>
@@ -1014,7 +1014,7 @@
         </Cities>
     </State>
 
-    <State Id="#CN">
+    <State Id="CN">
         <Name>China</Name>
         <Money>1250000000</Money>
         <StageMoney>49000000</StageMoney>
@@ -1059,7 +1059,7 @@
         </Cities>
     </State>
 
-    <State Id="#CO">
+    <State Id="CO">
         <Name>Colombia</Name>
         <Money>4200000000</Money>
         <StageMoney>17000000</StageMoney>
@@ -1109,7 +1109,7 @@
         </Cities>
     </State>
 
-    <State Id="#GR">
+    <State Id="GR">
         <Name>Greece</Name>
         <Money>250000000</Money>
         <StageMoney>9400000</StageMoney>
@@ -1146,7 +1146,7 @@
         </Cities>
     </State>
 
-    <State Id="#GE">
+    <State Id="GE">
         <Name>Germany</Name>
         <Money>1100000000</Money>
         <StageMoney>28000000</StageMoney>
@@ -1193,7 +1193,7 @@
         </Cities>
     </State>
 
-    <State Id="#MO">
+    <State Id="MO">
         <Name>Morocco</Name>
         <Money>290000000</Money>
         <StageMoney>16000000</StageMoney>
@@ -1230,7 +1230,7 @@
         </Cities>
     </State>
 
-    <State Id="#ET">
+    <State Id="ET">
         <Name>Ethiopia</Name>
         <Money>110000000</Money>
         <StageMoney>7000000</StageMoney>
@@ -1273,7 +1273,7 @@
             <City trainStation="true">Kampala</City>
     </State>
 
-    <State Id="#SP">
+    <State Id="SP">
         <Name>Spain</Name>
         <Money>950000000</Money>
         <StageMoney>26000000</StageMoney>
@@ -1322,7 +1322,7 @@
         </Cities>
     </State>
 
-    <State Id="#SC">
+    <State Id="SC">
         <Name>Scandinavia</Name>
         <Money>1100000000</Money>
         <StageMoney>28000000</StageMoney>
@@ -1359,7 +1359,7 @@
         </Cities>
     </State>
 
-    <State Id="#IN">
+    <State Id="IN">
         <Name>Indonesia</Name>
         <Money>900000000</Money>
         <StageMoney>24000000</StageMoney>
@@ -1403,7 +1403,7 @@
         </Cities>
     </State>
 
-    <State Id="#GB">
+    <State Id="GB">
         <Name>Great Britain</Name>
         <Money>1050000000</Money>
         <StageMoney>26500000</StageMoney>
@@ -1458,7 +1458,7 @@
         </Cities>
     </State>
 
-    <State Id="#GL">
+    <State Id="GL">
         <Name>Greenland</Name>
         <Money>150000000</Money>
         <StageMoney>3200000</StageMoney>
@@ -1484,7 +1484,7 @@
         </Cities>
     </State>
 
-    <State Id="#PT">
+    <State Id="PT">
         <Name>Palestine</Name>
         <Money>575000000</Money>
         <StageMoney>16000000</StageMoney>
@@ -1528,7 +1528,7 @@
         </Cities>
     </State>
 
-    <State Id="#JP">
+    <State Id="JP">
         <Name>Japan</Name>
         <Money>950000000</Money>
         <StageMoney>30000000</StageMoney>
@@ -1564,7 +1564,7 @@
         </Cities>
     </State>
 
-    <State Id="#KZ">
+    <State Id="KZ">
         <Name>Kazakistan</Name>
         <Money>155000000</Money>
         <StageMoney>14000000</StageMoney>
@@ -1596,7 +1596,7 @@
         </Cities>
     </State>
 
-    <State Id="#TH">
+    <State Id="TH">
         <Name>Thailand</Name>
         <Money>875000000</Money>
         <StageMoney>23000000</StageMoney>
@@ -1655,7 +1655,7 @@
         </Cities>
     </State>
 
-    <State Id="#KO">
+    <State Id="KO">
         <Name>Korea</Name>
         <Money>1100000000</Money>
         <StageMoney>38000000</StageMoney>
@@ -1701,7 +1701,7 @@
         </Cities>
     </State>
 
-    <State Id="#LY">
+    <State Id="LY">
         <Name>Lybia</Name>
         <Money>100000000</Money>
         <StageMoney>9000000</StageMoney>
@@ -1735,7 +1735,7 @@
         </Cities>
     </State>
 
-    <State Id="#RO">
+    <State Id="RO">
         <Name>Romania</Name>
         <Money>450000000</Money>
         <StageMoney>13000000</StageMoney>
@@ -1782,7 +1782,7 @@
         </Cities>
     </State>
 
-    <State Id="#MX">
+    <State Id="MX">
         <Name>Mexico</Name>
         <Money>800000000</Money>
         <StageMoney>24000000</StageMoney>
@@ -1825,7 +1825,7 @@
         </Cities>
     </State>
 
-    <State Id="#NZ">
+    <State Id="NZ">
         <Name>New Zealand</Name>
         <Money>240000000</Money>
         <StageMoney>4300000</StageMoney>
@@ -1848,7 +1848,7 @@
             <City trainStation="false">Hamilton</City>
     </State>
 
-    <State Id="#PL">
+    <State Id="PL">
         <Name>Poland</Name>
         <Money>650000000</Money>
         <StageMoney>26500000</StageMoney>
@@ -1884,7 +1884,7 @@
         </Cities>
     </State>
 
-    <State Id="#TR">
+    <State Id="TR">
         <Name>Turkey</Name>
         <Money>600000000</Money>
         <StageMoney>34000000</StageMoney>
@@ -1927,7 +1927,7 @@
         </Cities>
     </State>
 
-    <State Id="#US">
+    <State Id="US">
         <Name>United States</Name>
         <Money>1200000000</Money>
         <StageMoney>53000000</StageMoney>
@@ -1983,10 +1983,11 @@
             <City trainStation="false">Madison</City>
             <City trainStation="false">Italy</City>
             <City trainStation="false">Cape Canaveral</City>
+            <City trainStation="false">Los Alamos</City>
         </Cities>
     </State>
 
-    <State Id="#SA">
+    <State Id="SA">
         <Name>South Africa</Name>
         <Money>700000000</Money>
         <StageMoney>26000000</StageMoney>
@@ -2024,15 +2025,15 @@
         </Cities>
     </State>
 
-    <State Id="#ATL">
-        <Name></Name>
-        <Money></Money>
-        <StageMoney></StageMoney>
-        <NaturalResources></NaturalResources>
-        <StageNaturalResources></StageNaturalResources>
-        <RefinedResources></RefinedResources>
-        <StageRefinedResources></StageRefinedResources>
-        <Population></Population>
+    <State Id="ATL">
+        <Name>Atlantis</Name>
+        <Money>2147483647</Money>
+        <StageMoney>2147483647</StageMoney>
+        <NaturalResources>2147483647</NaturalResources>
+        <StageNaturalResources>2147483647</StageNaturalResources>
+        <RefinedResources>2147483647</RefinedResources>
+        <StageRefinedResources>2147483647</StageRefinedResources>
+        <Population>2147483647</Population>
         <NeighboringStates>
             <Border SeaBorder="false"></Border>
             <Border SeaBorder="false"></Border>

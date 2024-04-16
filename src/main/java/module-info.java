@@ -6,7 +6,6 @@ module com.assets {
     requires java.logging;
     requires javafx.graphics;
 
-
     opens com.assets.gameAssets to javafx.fxml;
     opens com.assets.generalAssets to javafx.fxml;
     exports com.assets.gameAssets;

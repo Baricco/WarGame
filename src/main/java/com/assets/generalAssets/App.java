@@ -28,7 +28,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
 
-        GameManager gameManager = new GameManager("src\\main\\resources\\com\\statesData.xml");
+        GameManager gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
+       // System.out.println(gameManager.toString());
 
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
@@ -39,19 +40,17 @@ public class App extends Application {
         for(SVGPathElement p : paths) {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
-                gameManager.addState(p.getId());
+                gameManager.addState(p.getId(), curPath);
                 curPath.setContent(p.getContent());
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
+                curPath.setOnMouseClicked(e -> gameManager.manageClick(curPath.getId()));
                 curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");
                 e.printStackTrace();
             }
-
-            System.out.println(gameManager.toString());
-            
         }
 
 

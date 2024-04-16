@@ -13,6 +13,7 @@ VBox {
     -fx-font-family:'Space Grotesk Light';
     -fx-font-weight: 300;
     -fx-background-color: #EEFCFE;
+    -fx-align: center;
 }
 
 #mapContainer {
@@ -52,6 +53,7 @@ Label {
     -fx-background-color: -transparent;
     -fx-text-fill: #FFFFFF;
 }
+
 
 ListView {
     -fx-background-color: -darkGray;

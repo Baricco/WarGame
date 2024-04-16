@@ -29,7 +29,6 @@ public class App extends Application {
         scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
 
         GameManager gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
-       // System.out.println(gameManager.toString());
 
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
@@ -58,6 +57,7 @@ public class App extends Application {
 
         scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.setTitle("WarGame");
         stage.show();
 

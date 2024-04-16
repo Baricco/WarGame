@@ -4,21 +4,21 @@ import javafx.scene.control.Label;
 import java.util.HashMap;
 import java.util.Map;
 
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.shape.SVGPath;
-
 
 public class GameManager {
     
     private HashMap<String, State> states;
     private String fileName;
     private Scene scene;
+    private Calendar calendar;
 
     public GameManager(String fileName, Scene scene) {
         this.states = new HashMap<>();
         this.fileName = fileName;
         this.scene = scene;
+        this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
     }
 
     public void addState(String id, SVGPath path) {

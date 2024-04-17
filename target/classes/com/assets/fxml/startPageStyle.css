@@ -4,8 +4,9 @@
     -seaBlue: #8ac0c6;
     -lightContinent: #4d6555;
     -darkContinent: #2d4535;
-    -lightGray: #838383;
-    -darkGray: #474747;
+    -borderGray: #838383;
+    -lightGray: #474747;
+    -darkGray: #272727;
     -black: #171219;
 }
 
@@ -25,7 +26,7 @@ VBox {
     -fx-stroke-linejoin: round; 
     -fx-stroke-width: 0.5; 
     -fx-fill: -lightContinent; 
-    -fx-stroke: -lightGray;
+    -fx-stroke: -borderGray;
 }
 
 .State:hover {    
@@ -61,4 +62,7 @@ ListView {
 
 }
 
+#sideMenuTopPane {
+    -fx-background-color: -darkGray;
+}
 

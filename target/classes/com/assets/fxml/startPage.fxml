@@ -64,7 +64,7 @@
                   <Line endX="108.0" endY="-28.32085609436035" layoutX="72.0" layoutY="58.0" startX="-71.0" startY="-28.32085609436035" stroke="#171219" strokeWidth="2.0" />
                   <AnchorPane prefHeight="69.0" prefWidth="181.0">
                      <children>
-                        <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="-30.0" layoutY="-109.0" scaleX="1.2" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" />
+                        <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="-30.0" layoutY="-109.0" scaleX="1.2" styleClass="trapezoid-shape" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" />
                         <Label fx:id="menuStateLvlLabel" alignment="CENTER" layoutY="5.0" text="LVL" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <Label fx:id="menuStateNameLabel" alignment="CENTER" layoutX="76.8" layoutY="22.0" text="State" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
@@ -77,7 +77,7 @@
          <children>
             <AnchorPane prefHeight="170.0" prefWidth="1280.0">
                <children>
-                  <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="520.0" layoutY="-135.0" scaleX="1.2" />
+                  <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="520.0" layoutY="-135.0" scaleX="1.2" styleClass="trapezoid-shape" />
                   <Label fx:id="playerStateLvlLabel" alignment="CENTER" layoutY="-22.0" prefHeight="18.0" prefWidth="1280.0" text="LVL" textFill="WHITE" />
                   <Label fx:id="playerStateNameLabel" alignment="CENTER" layoutY="-2.0" prefHeight="18.0" prefWidth="1280.0" text="State" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>

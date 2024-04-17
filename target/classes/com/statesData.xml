@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <States>
     <State Id="AE">
-        <Name>Arab Emirates</Name>
+        <Name>Saudi Arabia</Name>
         <Money>100000000</Money>
         <StageMoney>8000000</StageMoney>
         <NaturalResources>35000</NaturalResources>
@@ -788,7 +788,7 @@
     </State>
 
     <State Id="SE">
-        <Name>Senegal</Name>
+        <Name>Western Africa</Name>
         <Money>160000000</Money>
         <StageMoney>13000000</StageMoney>
         <NaturalResources>56000</NaturalResources>
@@ -1736,7 +1736,7 @@
     </State>
 
     <State Id="TH">
-        <Name>Thailand</Name>
+        <Name>South-East Asia</Name>
         <Money>875000000</Money>
         <StageMoney>23000000</StageMoney>
         <NaturalResources>186000</NaturalResources>

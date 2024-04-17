@@ -4,7 +4,9 @@ import javafx.scene.control.Label;
 import java.util.HashMap;
 import java.util.Map;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 
 public class GameManager {
@@ -25,12 +27,28 @@ public class GameManager {
         try { this.states.put(id, new State(this.fileName, id, path)); } catch(Exception e) { e.printStackTrace(); }
     }
 
+    private Node getElementByCssSelector(String selector) {
+        return this.scene.lookup(selector);
+    }
+
+    private void setLabelContent(String labelSelector, String content) {
+        Label stateNameLabel = (Label)getElementByCssSelector(labelSelector);
+        stateNameLabel.setText(content);
+    }
+
+    private void setTrapezoidXScale(String paneSelector, double xScale) {
+        ((SVGPath)(((Pane)scene.lookup(paneSelector)).lookup(".trapezoid-shape"))).setScaleX(xScale < 1 ? 1 : xScale);
+    }
+
     public void manageClick(String id) {
+        
         State curState = this.states.get(id);
-        Label stateNameLabel = (Label)scene.lookup("#menuStateNameLabel");
-        stateNameLabel.setText(curState.getName());
-        Label stateLvLabel = (Label)scene.lookup("#menuStateLvlLabel");
-        stateLvLabel.setText(String.valueOf(curState.getLevel()));
+        
+        setLabelContent("#menuStateNameLabel", curState.getName());
+        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(curState.getLevel())));
+        
+        setTrapezoidXScale("#sideMenu", curState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
+
     }
     
 

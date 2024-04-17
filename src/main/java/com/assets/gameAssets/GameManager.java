@@ -32,8 +32,7 @@ public class GameManager {
     }
 
     private void setLabelContent(String labelSelector, String content) {
-        Label stateNameLabel = (Label)getElementByCssSelector(labelSelector);
-        stateNameLabel.setText(content);
+        ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
 
     private void setTrapezoidXScale(String paneSelector, double xScale) {

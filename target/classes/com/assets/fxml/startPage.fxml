@@ -84,28 +84,28 @@
                   <Label fx:id="playerStateNameLabel" alignment="CENTER" layoutY="-2.0" prefHeight="18.0" prefWidth="1280.0" text="State" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../resources/com/icons/moneyIcon.png" />
+                        <Image url="@../../../../../src/main/resources/com/icons/moneyIcon.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../resources/com/icons/tankIcon.png" />
+                        <Image url="@../../../../../src/main/resources/com/icons/tankIcon.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../resources/com/icons/woodIcon.png" />
+                        <Image url="@../../../../../src/main/resources/com/icons/woodIcon.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../resources/com/icons/factoryIcon.png" />
+                        <Image url="@../../../../../src/main/resources/com/icons/factoryIcon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="playerStateRefinedResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="111.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
                   <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="380.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../resources/com/icons/repairToolsIcon.png" />
+                        <Image url="@../../../../../src/main/resources/com/icons/repairToolsIcon.png" />
                      </image>
                   </ImageView>
                </children>

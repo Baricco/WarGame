@@ -1,8 +1,12 @@
 package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.assets.gameAssets.basics.Calendar;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -15,12 +19,29 @@ public class GameManager {
     private String fileName;
     private Scene scene;
     private Calendar calendar;
+    private ArrayList<Player> players;
+
 
     public GameManager(String fileName, Scene scene) {
         this.states = new HashMap<>();
         this.fileName = fileName;
         this.scene = scene;
         this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
+        this.players = new ArrayList<>();
+    }
+
+    public void addPlayer(Player newPlayer) throws Exception {
+        if (this.players.contains(newPlayer)) throw new Exception("Error, tried to had: " + newPlayer.getName() + " in the game, but it is already been added");
+        
+        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName());
+
+    }
+
+    public void removePlayer(Player player) throws Exception {
+        if (!this.players.contains(player)) throw new Exception("Error, tried to remove: " + player.getName() + " from the game, but it is already been removed");
+        
+        if (this.players.remove(player)) System.out.println(player.getName() + " exited the Game, We will miss you " + player.getName() + " :'( ");
+
     }
 
     public void addState(String id, SVGPath path) {

@@ -1,4 +1,4 @@
-package com.assets.gameAssets;
+package com.assets.gameAssets.basics;
 
 import java.time.LocalDateTime;
 

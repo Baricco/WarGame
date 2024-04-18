@@ -3,6 +3,8 @@ package com.assets.generalAssets;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 import java.net.URL;
@@ -197,10 +199,30 @@ public class startPageController implements Initializable{
     @FXML
     private ListView<String> playerBattlesListView;
 
+    @FXML
+    private ImageView playerStateMoneyImageView;
+
+    @FXML
+    private ImageView playerStateArmyImageView;
+
+    @FXML
+    private ImageView playerStateNaturalResourcesImageView;
+
+    @FXML
+    private ImageView playerStateRefinedResourcesImageView;
+
+    @FXML
+    private ImageView playerStateWorkForceImageView;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {       
-    
+        Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
+        Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));
+        Tooltip.install(playerStateNaturalResourcesImageView, new Tooltip("Stage Natural Resources: "));
+        Tooltip.install(playerStateRefinedResourcesImageView, new Tooltip("Stage Refined Resources: "));
+        Tooltip.install(playerStateWorkForceImageView, new Tooltip("Stage Work Force: "));
+
     }
 
 }

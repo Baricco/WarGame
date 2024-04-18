@@ -8,7 +8,9 @@ public abstract class Player {
     public enum PlayerType {
         TYPE_BOT,               // every bot Player must have this playerType
         TYPE_PLAYER             // every human Player must have this playerType
-    }        
+    }
+
+    private boolean active;     // the Player is active only if it's their turn
 
     private State originalState;                // the State that the Player starts with
 
@@ -29,6 +31,8 @@ public abstract class Player {
         
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
+
+        this.active = false;
     
     }
 
@@ -44,15 +48,31 @@ public abstract class Player {
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
         
+        this.active = false;
+
     }
 
     public Player(State originalState, String name, String hexColor, PlayerType playerType, ArrayList<State> occupiedStates, ArrayList<Player> allies) {
+        
         this.originalState = originalState;
         this.name = name;
         this.hexColor = hexColor;
         this.playerType = playerType;
         this.occupiedStates = occupiedStates;
         this.allies = allies;
+        this.active = false;
+    }
+
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public void setActive() {
+        this.active = true;
+    }
+
+    public void deactivate() {
+        this.active = false;
     }
 
     public State getOriginalState() {

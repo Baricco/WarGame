@@ -82,28 +82,28 @@
                   <SVGPath content="m 119.12356,113.01251 c -10.48152,0 -18.97867,6.76533 -18.97867,15.1111 H 73.584998 l 17.424239,24.92493 58.206593,-0.0748 16.67079,-24.85016 h -27.78441 c 0,-8.34577 -8.49715,-15.1111 -18.97865,-15.1111 z" fill="#16211e" layoutX="520.0" layoutY="-135.0" scaleX="1.2" styleClass="trapezoid-shape" AnchorPane.leftAnchor="593.5849990844727" />
                   <Label fx:id="playerStateLvlLabel" alignment="CENTER" layoutY="-22.0" prefHeight="18.0" prefWidth="1280.0" text="LVL" textFill="WHITE" />
                   <Label fx:id="playerStateNameLabel" alignment="CENTER" layoutY="-2.0" prefHeight="18.0" prefWidth="1280.0" text="State" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerStateMoneyImageView" fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/moneyIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerStateArmyImageView" fitHeight="32.0" fitWidth="32.0" layoutX="51.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/tankIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerStateNaturalResourcesImageView" fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/woodIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerStateRefinedResourcesImageView" fitHeight="32.0" fitWidth="32.0" layoutX="250.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/factoryIcon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="playerStateRefinedResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="111.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="380.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerStateWorkForceImageView" fitHeight="32.0" fitWidth="32.0" layoutX="380.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/repairToolsIcon.png" />
                      </image>
@@ -117,7 +117,7 @@
             <Label fx:id="playerStateMoneyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="44.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
             <Label fx:id="playerStateArmyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="111.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
             <Label fx:id="playerStateNaturalResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="44.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
-            <Label fx:id="playerStateMoneyLabel1" contentDisplay="CENTER" layoutX="424.0" layoutY="74.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
+            <Label fx:id="playerStateWorkForceLabel" contentDisplay="CENTER" layoutX="424.0" layoutY="74.0" prefHeight="20.0" prefWidth="5.0" text="0" textAlignment="CENTER" />
             <Label contentDisplay="CENTER" layoutX="1105.0" layoutY="74.0" prefHeight="20.0" prefWidth="60.0" text="Battles" textAlignment="CENTER" />
             <ListView fx:id="playerBattlesListView" layoutX="1024.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
          </children>

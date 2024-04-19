@@ -878,18 +878,39 @@
             <Border SeaBorder="true">AE</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false">Maputo</City>
-            <City trainStation="false">Beira</City>
-            <City trainStation="false">Nampula</City>
+            <City 
+            trainStation="true"
+            cordX="+26" cordY="+32">
+            Maputo
+            </City>
+            <City 
+            trainStation="false">Beira</City>
+            <City 
+            trainStation="true"
+            cordX="+15" cordY="+39">
+            Nampula
+            </City>
             <City trainStation="false">Quelimane</City>
-            <City trainStation="false">Dodoma</City>
+            <City 
+            trainStation="true"
+            cordX="+6" cordY="+35">
+            Dodoma
+            </City>
             <City trainStation="false">Dar</City>
             <City trainStation="true">Zanzibar</City>
             <City trainStation="false">Arusha</City>
-            <City trainStation="false">Harare</City>
+            <City 
+            trainStation="true"
+            cordX="+17" cordY="+31">
+            Harare
+            </City>
             <City trainStation="false">Bulawayo</City>
             <City trainStation="false">Chitungwiza</City>
-            <City trainStation="true">Lusaka</City>
+            <City 
+            trainStation="true"
+            cordX="+15" cordY="+28">
+            Lusaka
+            </City>
             <City trainStation="false">Kasama</City>
         </Cities>
     </State>
@@ -914,14 +935,27 @@
             <Border SeaBorder="true">NZ</Border>
         </NeighboringStates>
         <Cities>            
-            <City trainStation="true">Santiago</City>
+            <City 
+            trainStation="true"
+            cordX="+33" cordY="-70">
+            Santiago
+            </City>
             <City trainStation="false">Concepcion</City>
             <City trainStation="false">Vina del Mar</City>
-            <City trainStation="false">Antofagasta</City>
+            <City 
+            trainStation="true"
+            cordX="+23" cordY="-70">
+            Antofagasta
+            </City>
             <City trainStation="false">Valparaiso</City>
             <City trainStation="false">Talcahuano</City>
-            <City trainStation="false">Sucre</City>
-            <City trainStation="true">La Paz</City>            
+            <City 
+            trainStation="false">Sucre</City>
+            <City 
+            trainStation="true"
+            cordX="+16" cordY="-68">
+            La Paz
+            </City>            
             <City trainStation="false">Cochabamba</City>
             <City trainStation="false">Santa Cruz</City>
         </Cities>
@@ -948,13 +982,29 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Brasilia</City>
-            <City trainStation="true">Sao Paulo</City>
+            <City 
+            trainStation="true"
+            cordX="+15" cordY="-48">
+            Brasilia
+            </City>
+            <City 
+            trainStation="true"
+            cordX="+23" cordX="-46">
+            Sao Paulo
+            </City>
             <City trainStation="false">Rio de Janeiro</City>
             <City trainStation="false">Salvador</City>
-            <City trainStation="false">Fortaleza</City>
+            <City 
+            trainStation="true"
+            cordX="+3" cordY="-38">
+            Fortaleza
+            </City>
             <City trainStation="false">Belo Horizonte</City>
-            <City trainStation="true">Manaus</City>
+            <City 
+            trainStation="true"
+            cordX="+3" cordY="-60">
+            Manaus
+            </City>
             <City trainStation="false">Curitiba</City>
             <City trainStation="false">Recife</City>
             <City trainStation="false">Porto Alegre</City>
@@ -990,29 +1040,61 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Ciudad</City>
+            <City 
+            trainStation="true"
+            cordX="-14" cordY="-90">
+            Ciudad
+            </City>
             <City trainStation="false">Mixco</City>
             <City trainStation="false">Villa Nueva</City>
             <City trainStation="false">San Pedro</City>
             <City trainStation="false">San Juan</City>
             <City trainStation="false">Coban</City>
             <City trainStation="false">Quetzaltenango</City>
-            <City trainStation="false">Tegucigalpa</City>
+            <City 
+            trainStation="true"
+            cordX="-14" cordY="-87">
+            Tegucigalpa
+            </City>
             <City trainStation="false">Sula</City>
             <City trainStation="false">Choloma</City>
-            <City trainStation="false">Managua</City>
+            <City 
+            trainStation="true"
+            cordX="-12" cordY="-86">
+            Managua
+            </City>
             <City trainStation="false">Leon</City>
-            <City trainStation="false">San Jose</City>
+            <City 
+            trainStation="true"
+            cordX="-10" cordY="-84">
+            San Jose
+            </City>
             <City trainStation="false">Cartago</City>
             <City trainStation="false">Puerto Limon</City>
-            <City trainStation="true">Panama</City>
-            <City trainStation="true">La Habana</City>
+            <City 
+            trainStation="true"
+            cordX="-9" cordY="-79">
+            Panama
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-23" cordY="-82">
+            La Habana
+            </City>
             <City trainStation="false">Cuba</City>
             <City trainStation="false">Camaguey</City>
             <City trainStation="false">Holguin</City>
             <City trainStation="false">Guantanamo</City>
-            <City trainStation="false">Port-au-Prince</City>
-            <City trainStation="false">Santo Domingo</City>
+            <City 
+            trainStation="true"
+            cordX="-18" cordY="-72">
+            Port-au-Prince
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-18" cordY="-70">
+            Santo Domingo
+            </City>
             <City trainStation="false">Este</City>
             <City trainStation="false">Caballeros</City>
             <City trainStation="false">Norte</City>
@@ -1044,9 +1126,21 @@
             <Border SeaBorder="true">GE</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Moska</City>
-            <City trainStation="true">Sankt-Peterburg</City>
-            <City trainStation="false">Novosibirsk</City>
+            <City 
+            trainStation="true"
+            cordX="-55" cordY="+37">
+            Moska
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-60" cordY="+30">
+            Sankt-Peterburg
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-55" cordY="+83">
+            Novosibirsk
+            </City>
             <City trainStation="false">Ekaterimburg</City>
             <City trainStation="false">Novgorod</City>
             <City trainStation="false">Kazan</City>
@@ -1061,11 +1155,27 @@
             <City trainStation="false">Volgograd</City>
             <City trainStation="false">Krasnodar</City>
             <City trainStation="false">Togliatti</City>
-            <City trainStation="false">Tallin</City>
-            <City trainStation="true">Riga</City>
-            <City trainStation="false">Vilnjus</City>
+            <City 
+            trainStation="true"
+            cordX="-59" cordY="+24">
+            Tallin
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-57" cordY="+24">
+            Riga
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-54" cordY="+25">
+            Vilnjus
+            </City>
             <City trainStation="false">Kaunas</City>
-            <City trainStation="true">Miensk</City>
+            <City 
+            trainStation="true"
+            cordX="-54" cordY="+27">
+            Miensk
+            </City>
             <City trainStation="false">Homel</City>
             <City trainStation="false">Hrodna</City>
         </Cities>
@@ -1090,14 +1200,26 @@
             <Border SeaBorder="true">JP</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Ottawa</City>
+            <City 
+            trainStation="true"
+            cordX="-45" cordY="-75">
+            Ottawa
+            </City>
             <City trainStation="false">Toronto</City>
             <City trainStation="false">Montreal</City>
-            <City trainStation="true">Vancouver</City>
+            <City 
+            trainStation="true"
+            cordX="-49" cordY="-123">
+            Vancouver
+            </City>
             <City trainStation="false">Calgary</City>
             <City trainStation="false">Edmonton</City>
             <City trainStation="false">Quebec</City>
-            <City trainStation="false">Winnipeg</City>
+            <City 
+            trainStation="true"
+            cordX="-50" cordY="-97">
+            Winnipeg
+            </City>
             <City trainStation="false">Hamilton</City>
             <City trainStation="false">London</City>
             <City trainStation="false">Kitchener</City>
@@ -1131,24 +1253,52 @@
             <Border SeaBorder="true">SA</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Abuja</City>
-            <City trainStation="true">Lagos</City>
+            <City 
+            trainStation="true"
+            cordX="-9" cordY="+7">
+            Abuja
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-6" cordY="+3">
+            Lagos
+            </City>
             <City trainStation="false">Ibadan</City>
             <City trainStation="false">Benin</City>
-            <City trainStation="false">Kano</City>
+            <City 
+            trainStation="true"
+            cordX="-12" cordY="+8">
+            Kano
+            </City>
             <City trainStation="false">Harcourt</City>
             <City trainStation="false">Kaduna</City>
             <City trainStation="false">Aba</City>
             <City trainStation="false">Maiduguri</City>
             <City trainStation="false">Ilorin</City>
-            <City trainStation="false">Yaounde</City>
+            <City 
+            trainStation="true"
+            cordX="-4" cordY="+11">
+            Yaounde
+            </City>
             <City trainStation="false">Bafoussam</City>
             <City trainStation="false">Bamenda</City>
             <City trainStation="false">Douala</City>
             <City trainStation="false">Edea</City>
-            <City trainStation="false">Garoua</City>
-            <City trainStation="false">N'Dajmena</City>
-            <City trainStation="false">Niamey</City>
+            <City 
+            trainStation="true"
+            cordX="-9" cordY="+13">
+            Garoua
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-12" cordY="+15">
+            N'Dajmena
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-13" cordY="+2">
+            Niamey
+            </City>
             <City trainStation="false">Zinder</City>
         </Cities>
     </State>
@@ -1173,9 +1323,21 @@
             <Border SeaBorder="true">IN</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Beijing</City>
-            <City trainStation="true">Shanghai</City>
-            <City trainStation="true">Hong Kong</City>
+            <City 
+            trainStation="true"
+            cordX="-40" cordY="+116">
+            Beijing
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-31" cordY="+121">
+            Shanghai
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-22" cordY="+114">
+            Hong Kong
+            </City>
             <City trainStation="false">Wuhan</City>
             <City trainStation="false">Nanjing</City>
             <City trainStation="false">Tianjin</City>
@@ -1194,7 +1356,11 @@
             <City trainStation="false">Jinan</City>
             <City trainStation="false">Taiyuan</City>
             <City trainStation="false">Qingdao</City>
-            <City trainStation="false">Ulan Bator</City>
+            <City 
+            trainStation="true"
+            cordX="-48" cordY="+107">
+            Ulan Bator
+            </City>
         </Cities>
     </State>
 
@@ -1216,13 +1382,21 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Bogota</City>
+            <City 
+            trainStation="true"
+            cordX="-4" cordY="-74">
+            Bogota
+            </City>
             <City trainStation="false">Medellin</City>
             <City trainStation="false">Baranquilla</City>
             <City trainStation="false">Cartagena</City>
             <City trainStation="false">Tunja</City>
             <City trainStation="false">Manizales</City>
-            <City trainStation="false">Popayan</City>
+            <City 
+            trainStation="true"
+            cordX="-2" cordY="-75">
+            Popayan
+            </City>
             <City trainStation="false">Valledupar</City>
             <City trainStation="false">Monteria</City>
             <City trainStation="false">Neiva</City>
@@ -1236,13 +1410,25 @@
             <City trainStation="false">Sincelejo</City>
             <City trainStation="false">Ibague</City>
             <City trainStation="true">Cali</City>
-            <City trainStation="true">Caracas</City>
-            <City trainStation="false">Maracaibo</City>
+            <City 
+            trainStation="true"
+            cordX="-10" cordY="-67">
+            Caracas
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-10" cordX="-71">
+            Maracaibo
+            </City>
             <City trainStation="false">Valencia</City>
             <City trainStation="false">Barquisimeto</City>
             <City trainStation="false">Maracay</City>
             <City trainStation="false">Guayana</City>
-            <City trainStation="true">Quito</City>
+            <City 
+            trainStation="true"
+            cordX="+0" cordY="-78">
+            Quito
+            </City>
             <City trainStation="false">Guayaquil</City>
             <City trainStation="false">Riobamba</City>
         </Cities>
@@ -1266,13 +1452,25 @@
             <Border SeaBorder="true">IT</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Athene</City>
-            <City trainStation="true">Thessaloniki</City>
+            <City 
+            trainStation="true"
+            cordX="-38" cordY="+23">
+            Athene
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-40" cordY="+23">
+            Thessaloniki
+            </City>
             <City trainStation="false">Patra</City>
             <City trainStation="false">Pireas</City>
             <City trainStation="false">Volo</City>
             <City trainStation="false">Peristeri</City>
-            <City trainStation="false">Candia</City>
+            <City 
+            trainStation="true"
+            cordX="-35" cordY="+25">
+            Candia
+            </City>
             <City trainStation="false">Kallithea</City>
             <City trainStation="false">Nikaia</City>
             <City trainStation="false">Sparta</City>
@@ -1280,8 +1478,11 @@
             <City trainStation="false">Santorini</City>
             <City trainStation="false">Zante</City>
             <City trainStation="false">Mitilene</City>
-            <City trainStation="true">Skopje</City>
-            <City trainStation="false">Nicosia</City>
+            <City 
+            trainStation="true"
+            cordX="-42" cordY="+21">
+            Skopje
+            </City>
         </Cities>
     </State>
 

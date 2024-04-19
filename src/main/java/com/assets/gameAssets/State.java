@@ -48,7 +48,6 @@ public class State {
 
         State state = xmlParser.parseFile(id);
         
-        System.out.println(state);
 
         // Qui settiamo le variabili che si possono settare dall'XML
 

@@ -34,7 +34,7 @@ public class App extends Application {
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
         Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
         double xShift = 50, yShift = -110;
-
+        
 
         for(SVGPathElement p : paths) {
             try {

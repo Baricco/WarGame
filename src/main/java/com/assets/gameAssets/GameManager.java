@@ -60,6 +60,14 @@ public class GameManager {
         ((SVGPath)(((Pane)scene.lookup(paneSelector)).lookup(".trapezoid-shape"))).setScaleX(xScale < 1 ? 1 : xScale);
     }
 
+    private String formatHighNumber(double value) {
+        int billion = 1000000000, million = 1000000, thousand = 1000;
+        if (value >= billion) return (int)(value / billion) + " Bln";
+        if (value >= million) return (int)(value / million) + " Mln";
+        if (value >= thousand) return (int)(value / thousand) + " K";
+        return String.valueOf(value);
+    }
+
     public void manageClick(String id) {
         
         State curState = this.states.get(id);
@@ -68,6 +76,10 @@ public class GameManager {
         setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(curState.getLevel())));
         
         setTrapezoidXScale("#sideMenu", curState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
+
+        setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(curState.getMoney())));
+        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(curState.getPopulation())));
+
 
     }
     

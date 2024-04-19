@@ -214,6 +214,12 @@ public class mainPageController implements Initializable{
     @FXML
     private ImageView playerStateWorkForceImageView;
 
+    @FXML
+    private Label sideMenuStateArmyLabel;
+
+    @FXML
+    private Label sideMenuStateMoneyLabel;
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {       
@@ -222,6 +228,10 @@ public class mainPageController implements Initializable{
         Tooltip.install(playerStateNaturalResourcesImageView, new Tooltip("Stage Natural Resources: "));
         Tooltip.install(playerStateRefinedResourcesImageView, new Tooltip("Stage Refined Resources: "));
         Tooltip.install(playerStateWorkForceImageView, new Tooltip("Stage Work Force: "));
+
+        Tooltip.install(sideMenuStateMoneyLabel, new Tooltip("Stage Money: "));
+        Tooltip.install(sideMenuStateArmyLabel, new Tooltip("Stage Army: "));
+
 
     }
 

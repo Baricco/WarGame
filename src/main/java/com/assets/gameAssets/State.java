@@ -47,7 +47,9 @@ public class State {
         XMLParser xmlParser = new XMLParser(fileName);
 
         State state = xmlParser.parseFile(id);
-                
+        
+        System.out.println(state);
+
         // Qui settiamo le variabili che si possono settare dall'XML
 
         if (state != null) {
@@ -83,6 +85,10 @@ public class State {
 
     public String getId() {
         return this.Id;
+    }
+
+    public int getArmy() {
+        return this.army;
     }
 
     public double getMoney() {

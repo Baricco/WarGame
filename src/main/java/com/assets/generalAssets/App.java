@@ -26,7 +26,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
+        scene = new Scene(createRoot("/com/assets/fxml/mainPage"), 1280, 720);
 
         GameManager gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
 
@@ -55,7 +55,7 @@ public class App extends Application {
 
 
 
-        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
+        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/mainPageStyle.css").toExternalForm());
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("WarGame");

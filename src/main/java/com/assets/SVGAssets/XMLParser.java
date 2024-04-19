@@ -3,13 +3,16 @@ package com.assets.SVGAssets;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Parser;
+import org.jsoup.select.Elements;
 
 import com.assets.gameAssets.State;
+import com.assets.gameAssets.basics.City;
 
 public class XMLParser {
     
@@ -21,6 +24,31 @@ public class XMLParser {
 
     public State parseFile(String id) {
         Element state = document.getElementById(id);
+
+        ArrayList<City> cities = new ArrayList<>();
+
+        Elements xmlCities = state.getElementsByTag("Cities");
+
+        for (Element city : xmlCities) {
+            
+            String cityName = city.text();
+            boolean hasTrainStation = Boolean.parseBoolean(city.attr("trainStation"));
+            
+            int coordX, coordY;
+
+            try {
+
+                coordY = Integer.parseInt(city.attr("coordY"));
+                coordX = Integer.parseInt(city.attr("coordX"));
+            } catch (NumberFormatException e) {
+
+                coordY = -1;
+                coordX = -1;
+            }
+            
+            cities.add(new City(cityName, hasTrainStation, id, coordY, coordX));
+
+        }
 
         return new State(
             state.getElementsByTag("Name").text(),
@@ -36,7 +64,8 @@ public class XMLParser {
             0,
             0,
             0,
-            null
+            null,
+            cities
         );
     }
 

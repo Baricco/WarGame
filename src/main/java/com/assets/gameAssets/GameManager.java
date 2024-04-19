@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.assets.gameAssets.basics.Calendar;
+import com.assets.gameAssets.basics.City;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -20,6 +21,7 @@ public class GameManager {
     private Scene scene;
     private Calendar calendar;
     private ArrayList<Player> players;
+    private MapIconManager mapIconManager;
 
 
     public GameManager(String fileName, Scene scene) {
@@ -28,6 +30,7 @@ public class GameManager {
         this.scene = scene;
         this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
         this.players = new ArrayList<>();
+        this.mapIconManager = new MapIconManager("railwayIcon.png", (Pane)scene.lookup("#mapContainer"));
     }
 
     public void addPlayer(Player newPlayer) throws Exception {
@@ -45,7 +48,13 @@ public class GameManager {
     }
 
     public void addState(String id, SVGPath path) {
-        try { this.states.put(id, new State(this.fileName, id, path)); } catch(Exception e) { e.printStackTrace(); }
+        try { 
+            this.states.put(id, new State(this.fileName, id, path));
+
+            for (City city : this.states.get(id).getCities()) if (city.hasTrainStation()) this.mapIconManager.addIcon(city);
+
+        } catch(Exception e) { e.printStackTrace(); }
+        
     }
 
     private Node getElementByCssSelector(String selector) {

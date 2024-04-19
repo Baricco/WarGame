@@ -1,6 +1,9 @@
 package com.assets.gameAssets;
 
+import java.util.ArrayList;
+
 import com.assets.SVGAssets.XMLParser;
+import com.assets.gameAssets.basics.City;
 
 import javafx.scene.shape.SVGPath;
 
@@ -15,9 +18,11 @@ public class State {
     private double stageNaturalResources;   // risorse naturali generate per ogni turno
     private double refinedResources;        // risorse lavorate totali
     private double stageRefinedResources;   // risorse lavorate generate per ogni turno
-    private double reputation;  // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria (-5 ; +5)
-    private int army;                // numero di truppe
+    private double reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria (-5 ; +5)
+    private int army;
     private int workForce;
+    private ArrayList<City> cities;
+
     
     private SVGPath path;
 
@@ -25,7 +30,7 @@ public class State {
     private int population;
     private int level; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, SVGPath path) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, SVGPath path, ArrayList<City> cities) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -40,6 +45,7 @@ public class State {
         this.path = path;
         this.army = army;
         this.workForce = workForce;
+        this.cities = new ArrayList<City>(cities);
     }
 
     public State(String fileName, String id, SVGPath path) throws Exception {
@@ -48,7 +54,6 @@ public class State {
 
         State state = xmlParser.parseFile(id);
         
-
         // Qui settiamo le variabili che si possono settare dall'XML
 
         if (state != null) {
@@ -61,6 +66,7 @@ public class State {
             this.refinedResources = state.getRefinedResources();
             this.stageRefinedResources = state.getStageRefinedResources();
             this.population = state.getPopulation();
+            this.cities = state.getCities();
         } else {
             throw new Exception("State with ID: " + Id + " not found in " + fileName);
         }
@@ -80,6 +86,10 @@ public class State {
 
     public String getName() {
         return this.name;
+    }
+
+    public ArrayList<City> getCities() {
+        return this.cities;
     }
 
     public String getId() {

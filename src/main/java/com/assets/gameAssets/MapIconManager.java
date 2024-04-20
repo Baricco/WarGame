@@ -29,26 +29,24 @@ public class MapIconManager {
 
     public void addIcon(City city) {
 
-        System.out.println("SBORRA");       // BISOGNA CAPIRE COME MAI NON VADA QUESTA COSA
-
-        ImageView newIcon = new ImageView(new Image("../resources/com/icons/" + this.sourceName));
+        ImageView newIcon = new ImageView(new Image("com/icons/" + this.sourceName));       // L'ERRORE E' QUESTA RIGA PERCHE' COME AL SOLITO I PERCORSI IN JAVA NON HANNO SENSO
 
         newIcon.setVisible(true);
         newIcon.setScaleX(0.25);
-
-        System.out.println(new Image("../../../../resources/com/icons" + this.sourceName).getUrl());
-
+        
         this.icons.add(newIcon);
         
         this.posX = (this.mapContainer.getPrefWidth() / 2) + city.getLongitude();
         this.posY = (this.mapContainer.getPrefHeight() / 2) + city.getLatitude();
 
-        this.icons.getLast().setLayoutX(this.posX);
-        this.icons.getLast().setLayoutY(this.posY);
+        ImageView lastIcon = this.icons.get(this.icons.size() - 1);
 
-        this.mapContainer.getChildren().add(this.icons.getLast());
+        lastIcon.setLayoutX(this.posX);
+        lastIcon.setLayoutY(this.posY);
 
-        Tooltip.install(this.icons.getLast(), new Tooltip(city.getName()));
+        this.mapContainer.getChildren().add(lastIcon);
+
+        Tooltip.install(lastIcon, new Tooltip(city.getName()));
 
         for (ImageView icon : this.icons) System.out.println(icon);
 

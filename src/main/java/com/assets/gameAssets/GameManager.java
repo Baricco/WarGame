@@ -51,7 +51,7 @@ public class GameManager {
         try { 
             this.states.put(id, new State(this.fileName, id, path));
 
-            for (City city : this.states.get(id).getCities()) if (city.hasTrainStation()) this.mapIconManager.addIcon(city);
+            for (City city : this.states.get(id).getCities()) { if (city.hasTrainStation()) System.out.println(city.getName() + " has a Train Station"); this.mapIconManager.addIcon(city); }
 
         } catch(Exception e) { e.printStackTrace(); }
         

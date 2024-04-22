@@ -27,21 +27,21 @@ public class XMLParser {
 
         ArrayList<City> cities = new ArrayList<>();
 
-        Elements xmlCities = state.getElementsByTag("Cities");
+        Elements xmlCities = state.getElementsByTag("Cities").first().getElementsByTag("City");
+
 
         for (Element city : xmlCities) {
             
-            String cityName = city.text();
+            String cityName = city.ownText();
             boolean hasTrainStation = Boolean.parseBoolean(city.attr("trainStation"));
             
             int coordX, coordY;
 
             try {
-
-                coordY = Integer.parseInt(city.attr("coordY"));
-                coordX = Integer.parseInt(city.attr("coordX"));
+                coordY = Integer.parseInt(city.attr("cordY"));
+                coordX = Integer.parseInt(city.attr("cordX"));
             } catch (NumberFormatException e) {
-
+                
                 coordY = -1;
                 coordX = -1;
             }

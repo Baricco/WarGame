@@ -65,3 +65,13 @@ ListView {
 #sideMenuTopPane {
     -fx-background-color: -darkGray;
 }
+
+Circle {
+    -fx-fill: -darkGray;    
+}
+
+Circle:hover {
+    -fx-fill: -black;
+    -fx-scale-x: 2;
+    -fx-scale-y: 2;
+}

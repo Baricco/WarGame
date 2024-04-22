@@ -20,14 +20,14 @@
          <Cities>
             <City 
             trainStation="true"
-            cordX="-24" cordY="+46">
+            cordY="-24" cordX="+46">
              al-Riyad
              </City> 
             <City trainStation="false">al-Baha</City>
             <City trainStation="false">Baljurashi</City>
             <City 
             trainStation="true"
-            cordX="-31" cordY="+41">
+            cordY="-31" cordX="+41">
             Ar'ar
             </City>
             <City trainStation="false">Sakaka</City>
@@ -42,7 +42,7 @@
             <City trainStation="false">Jizan</City>
             <City 
             trainStation="true"
-            cordX="-21" cordY="+39">
+            cordY="-21" cordX="+39">
             Makka
             </City>
             <City trainStation="false">Jeddah</City>
@@ -50,12 +50,12 @@
             <City trainStation="false">Tabuk</City>
             <City
             trainStation="true"
-            cordX="-23" cordY="+58">
+            cordY="-23" cordX="+58">
             Masqat
             </City>
             <City
             trainStation="true"
-            cordX="-15" cordY="+44">
+            cordY="-15" cordX="+44">
             San'a
             </City>
             <City trainStation="false">Adan</City>
@@ -83,13 +83,13 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-34" cordY="+69">
+            cordY="-34" cordX="+69">
             Kabul
             </City>
             <City trainStation="false">Kandahar</City>
             <City 
             trainStation="true"
-            cordX="-37" cordY"+70">
+            cordY="-37" cordX"+70">
             Feyzabad
             </City>
             <City trainStation="false">Qala-i-Naw</City>
@@ -104,19 +104,19 @@
             <City trainStation="false">Herat</City>
             <City 
             trainStation="true"
-            cordX="-33" cordY="+73">
+            cordY="-33" cordX="+73">
             Islamabad
             </City>
             <City trainStation="false">Quetta</City>
             <City trainStation="false">Peshawar</City>
             <City 
             trainStation="true"
-            cordX="-31" cordY"+74">
+            cordY="-31" cordX"+74">
             Lahaur
             </City>
             <City 
             trainStation="true"
-            cordX="-23" "+67">
+            cordY="-23" "+67">
             Karachi
             </City>
             <City trainStation="false">Muzaffarabad</City>
@@ -146,12 +146,12 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-44" cordY="+16">
+            cordY="-44" cordX="+16">
             Zagreb
             </City>
             <City 
             trainStation="true"
-            cordX="-44" cordY="+16">
+            cordY="-44" cordX="+16">
             Split
             </City>
             <City trainStation="false">Zadar</City>
@@ -163,7 +163,7 @@
             <City trainStation="false">Dubrovnik</City>
             <City 
             trainStation="true"
-            cordX="-43" cordY="+18">
+            cordY="-43" cordX="+18">
             Sarajevo
             </City>
             <City trainStation="false">Banja Luka</City>
@@ -171,13 +171,13 @@
             <City trainStation="false">Mostar</City>
             <City 
             trainStation="true"
-            cordX="-44" cordY="+20">
+            cordY="-44" cordX="+20">
             Beograd
             </City>
             <City trainStation="false">Novi Sad</City>
             <City 
             trainStation="true"
-            cordX="-43" cordY="+22">
+            cordY="-43" cordX="+22">
             Niss
             </City>
             <City trainStation="false">Kragujevac</City>
@@ -185,7 +185,7 @@
             <City trainStation="false">Subotica</City>
             <City 
             trainStation="true"
-            cordX="-42" cordY"+23">
+            cordY="-42" cordX"+23">
             Sofia
             </City>
             <City trainStation="false">Vidin</City>
@@ -195,13 +195,13 @@
             <City trainStation="false">Blagoevgrad</City>
             <City 
             trainStation="true"
-            cordX="-42" cordY="+27">
+            cordY="-42" cordX="+27">
             Burgas
             </City>
             <City trainStation="false">Zagora</City>
             <City 
             trainStation="true"
-            cordX="-41" cordY="+20">
+            cordY="-41" cordX="+20">
             Tirana
             </City>
             <City trainStation="false">Durres</City>
@@ -230,13 +230,13 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-30" cordY="+31">
+            cordY="-30" cordX="+31">
             al-Qahira
             </City>
             <City trainStation="false">Alexandria</City>
             <City 
             trainStation="true"
-            cordX="-24" cordY="+35">
+            cordY="-24" cordX="+35">
             Berenice
             </City>
             <City trainStation="false">Gizah</City>
@@ -247,7 +247,7 @@
             <City trainStation="false">Saqqara</City>
             <City 
             trainStation="true"
-            cordX="-31" cordY="+33">
+            cordY="-31" cordX="+33">
             al-Arish
             </City>
             <City trainStation="false">Asyut</City>
@@ -258,19 +258,19 @@
             <City trainStation="false">Siwa</City>
             <City 
             trainStation="true"
-            cordX="-30" cordY="+32">
+            cordY="-30" cordX="+32">
             al-Suways
             </City>
             <City 
             trainStation="true"
-            cordX="-15" cordY="+32">
+            cordY="-15" cordX="+32">
             al-Khartum
             </City>
             <City trainStation="false">Omdurman</City>
             <City trainStation="false">Bahri</City>
             <City 
             trainStation="true"
-            cordX="-19" cordY="+37">
+            cordY="-19" cordX="+37">
             Bur Sudan
             </City>
         </Cities>
@@ -299,12 +299,12 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-35" cordY="+51">
+            cordY="-35" cordX="+51">
             Tehran
             </City>
             <City 
             trainStation="true"
-            cordX="-36" cordY="+59">
+            cordY="-36" cordX="+59">
             Mashhad
             </City>
             <City trainStation="false">Isfahan</City>
@@ -318,7 +318,7 @@
             <City trainStation="false">Rasht</City>
             <City 
             trainStation="true"
-            cordX="-29" cordY="+61">
+            cordY="-29" cordX="+61">
             Zahedan
             </City>
             <City trainStation="false">Kerman</City>
@@ -352,13 +352,13 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="+4" cordY="+15">
+            cordY="+4" cordX="+15">
             Kinshasa
             </City>
             <City trainStation="false">Bandudu</City>
             <City 
             trainStation="true"
-            cordX="+0" cordY="+29">
+            cordY="+0" cordX="+29">
             Beni
             </City>
             <City trainStation="false">Boma</City>
@@ -367,13 +367,13 @@
             <City trainStation="false">Goma</City>
             <City 
             trainStation="true"
-            cordX="+8" cordY="+25">
+            cordY="+8" cordX="+25">
             Kamina
             </City>
             <City trainStation="false">Kananga</City>
             <City 
             trainStation="false"
-            cordX="+5" cordY="+18">
+            cordY="+5" cordX="+18">
             Kikwit
             </City>
             <City trainStation="false">Kisangani</City>
@@ -388,18 +388,18 @@
             <City trainStation="false">Ubundu</City>
             <City 
             trainStation="true"
-            cordX="+9" cordY="+13">
+            cordY="+9" cordX="+13">
             Luanda
             </City>
             <City trainStation="false">Cabinda</City>
             <City 
             trainStation="true"
-            cordX="+24" cordY="+26">
+            cordY="+24" cordX="+26">
             Gaborone
             </City>
             <City 
             trainStation="true"
-            cordX="+22" cordY="+17">
+            cordY="+22" cordX="+17">
             Windhoek
             </City>
     </State>
@@ -422,13 +422,13 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="+34" cordY="-58">
+            cordY="+34" cordX="-58">
             Buenos Aires
             </City>
             <City trainStation="false">La Plata</City>
             <City 
             trainStation="true"
-            cordX="+27" cordY="-60">
+            cordY="+27" cordX="-60">
             Resistencia
             </City>
             <City trainStation="false">Cordoba</City>
@@ -440,18 +440,18 @@
             <City trainStation="false">Tucuman</City>
             <City 
             trainStation="false"
-            cordX="+25" cordY="-57"
+            cordY="+25" cordX="-57"
             >Asuncion
             </City>
             <City 
             trainStation="true"
-            cordX="+34" cordY="-56">
+            cordY="+34" cordX="-56">
             Montevideo
             </City>
             <City trainStation="false">Salto</City>
             <City 
             trainStation="true"
-            cordX="+34" cordY="-58">Maldonado</City>
+            cordY="+34" cordX="-58">Maldonado</City>
         </Cities>
     </State>
 
@@ -474,7 +474,7 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-48" cordY="+16">
+            cordY="-48" cordX="+16">
             Wien
             </City>
             <City trainStation="false">Sankt Polten</City>
@@ -482,30 +482,30 @@
             <City trainStation="false">Salzburg</City>
             <City 
             trainStation="true"
-            cordX="-47" cordY="+11">
+            cordY="-47" cordX="+11">
             Innsbruck
             </City>
             <City 
             trainStation="true"
-            cordX="-46" cordY="+14">
+            cordY="-46" cordX="+14">
             Klagenfurt
             </City>
             <City trainStation="false">Graz</City>
             <City trainStation="false">Wels</City>
             <City 
             trainStation="true"
-            cordX="-50" cordY="+14">
+            cordY="-50" cordX="+14">
             Praha
             </City>
             <City 
             trainStation="true"
-            cordX="-48" cordY="+17">
+            cordY="-48" cordX="+17">
             Bratislava
             </City>
             <City trainStation="false">Kosice</City>
             <City 
             trainStation="true"
-            cordX="-47" cordY="+19">
+            cordY="-47" cordX="+19">
             Budapest
             </City>
             <City trainStation="false">Debrecen</City>
@@ -531,14 +531,14 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="+35" cordY="+149">
+            cordY="+35" cordX="+149">
             Canberra
             </City>
             <City trainStation="false">Sydney</City>
             <City trainStation="false">Adelaide</City>
             <City 
             trainStation="true"
-            cordX="+32" cordY="+115">
+            cordY="+32" cordX="+115">
             Perth
             </City>
             <City trainStation="false">Brisbane</City>
@@ -568,21 +568,21 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-28" cordY="+77">
+            cordY="-28" cordX="+77">
             Nai Dilli
             </City>
             <City 
             trainStation="true"
-            cordX="-19" cordY="+73">
+            cordY="-19" cordX="+73">
             Mumbai
             </City>
             <City trainStation="true"
-            cordX="-22" cordY="+88">
+            cordY="-22" cordX="+88">
             Kalkutta
             </City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="+77">
+            cordY="-12" cordX="+77">
             Bengaluru
             </City>
             <City trainStation="false">Cennai</City>
@@ -603,18 +603,18 @@
             <City trainStation="false">Vadodara</City>
             <City 
             trainStation="true"
-            cordX="-27" cordY="+85">
+            cordY="-27" cordX="+85">
             Kathmandu
             </City>
             <City trainStation="false">Janakpur</City>
             <City 
             trainStation="true"
-            cordX="-7" cordY="+80">
+            cordY="-7" cordX="+80">
             Kotte
             </City>
             <City 
             trainStation="true"
-            cordX="-23" cordY="+90">
+            cordY="-23" cordX="+90">
             Dhaka
             </City>
             <City trainStation="false">Chittagong</City>
@@ -647,18 +647,18 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-42" cordY="+12">
+            cordY="-42" cordX="+12">
             Roma
             </City>
             <City 
             trainStation="true"
-            cordX="-45" cordY="+9">
+            cordY="-45" cordX="+9">
             Milano
             </City>
             <City trainStation="false">Torino</City>
             <City 
             trainStation="true"
-            cordX="-45" cordY="+12">
+            cordY="-45" cordX="+12">
             Venezia
             </City>
             <City trainStation="false">Firenze</City>
@@ -667,7 +667,7 @@
             <City trainStation="false">Bari</City>
             <City 
             trainStation="true"
-            cordX="-38" cordY="+13">
+            cordY="-38" cordX="+13">
             Palermo
             </City>
             <City trainStation="false">Cagliari</City>
@@ -683,7 +683,7 @@
             <City trainStation="false">Catanzaro</City>
             <City 
             trainStation="true"
-            cordX="-42" cordY="+15">
+            cordY="-42" cordX="+15">
             Termoli
             </City>
             <City trainStation="false">Campomarino</City>
@@ -697,7 +697,7 @@
             <City trainStation="false">Aci Trezza</City>
             <City 
             trainStation="true"
-            cordX="-47" cordY="+7">
+            cordY="-47" cordX="+7">
             Bern
             </City>
             <City trainStation="false">Zurich</City>
@@ -707,12 +707,12 @@
             <City trainStation="false">Luzern</City>
             <City 
             trainStation="true"
-            cordX="-46" cordY="+9">
+            cordY="-46" cordX="+9">
             Lugan
             </City>
             <City 
             trainStation="true"
-            cordX="-46" cordY="+14">
+            cordY="-46" cordX="+14">
             Ljubjana
             </City>
             <City trainStation="false">Aiaccio</City>
@@ -743,12 +743,12 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-48" cordY="+2">
+            cordY="-48" cordX="+2">
             Paris
             </City>
             <City 
             trainStation="true"
-            cordX="-43" cordY="+5">
+            cordY="-43" cordX="+5">
             Marseille
             </City>
             <City trainStation="false">Lyon</City>
@@ -759,7 +759,7 @@
             <City trainStation="false">Strasbourg</City>
             <City 
             trainStation="true"
-            cordX="-44" cordY="+0">
+            cordY="-44" cordX="+0">
             Bordeaux
             </City>
             <City trainStation="false">Lille</City>
@@ -767,7 +767,7 @@
             <City trainStation="false">Monaco</City>
             <City 
             trainStation="true"
-            cordX="-50" cordY="+4">
+            cordY="-50" cordX="+4">
             Bruxelles
             </City>
             <City trainStation="false">Anvers</City>
@@ -777,7 +777,7 @@
             <City trainStation="false">Bruges</City>
             <City 
             trainStation="true"
-            cordX="-52" cordY="+4">
+            cordY="-52" cordX="+4">
             Amsterdam
             </City>
             <City trainStation="false">Rotterdam</City>
@@ -809,7 +809,7 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-14" cordY="-17">
+            cordY="-14" cordX="-17">
             Dakar
             </City>
             <City trainStation="false">Niayes</City>
@@ -821,42 +821,42 @@
             <City trainStation="false">Kawlax</City>
             <City 
             trainStation="true"
-            cordX="-18" cordY="-16">
+            cordY="-18" cordX="-16">
             Nuwakshut
             </City>
             <City trainStation="false">Rosso</City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="-8">
+            cordY="-12" cordX="-8">
             Bamako
             </City>
             <City trainStation="false">Sikasso</City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="-1">
+            cordY="-12" cordX="-1">
             Ouagadougou
             </City>
             <City trainStation="false">Dioulasso</City>
             <City 
             trainStation="true"
-            cordX="-5" cordY="-0">
+            cordY="-5" cordX="-0">
             Akkra
             </City>
             <City 
             trainStation="true"
-            cordX="-6" cordX="-5">
+            cordY="-6" cordY="-5">
             Yamoussokro
             </City>
             <City 
             trainStation="true"
-            cordX="-8" cordY="-13">
+            cordY="-8" cordX="-13">
             Freetown
             </City>
             <City trainStation="false">Kissy</City>
             <City trainStation="false">Kenema</City>
             <City 
             trainStation="true"
-            cordX="-9" cordY="-13">
+            cordY="-9" cordX="-13">
             Konakry
             </City>
         </Cities>
@@ -880,20 +880,20 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="+26" cordY="+32">
+            cordY="+26" cordX="+32">
             Maputo
             </City>
             <City 
             trainStation="false">Beira</City>
             <City 
             trainStation="true"
-            cordX="+15" cordY="+39">
+            cordY="+15" cordX="+39">
             Nampula
             </City>
             <City trainStation="false">Quelimane</City>
             <City 
             trainStation="true"
-            cordX="+6" cordY="+35">
+            cordY="+6" cordX="+35">
             Dodoma
             </City>
             <City trainStation="false">Dar</City>
@@ -901,14 +901,14 @@
             <City trainStation="false">Arusha</City>
             <City 
             trainStation="true"
-            cordX="+17" cordY="+31">
+            cordY="+17" cordX="+31">
             Harare
             </City>
             <City trainStation="false">Bulawayo</City>
             <City trainStation="false">Chitungwiza</City>
             <City 
             trainStation="true"
-            cordX="+15" cordY="+28">
+            cordY="+15" cordX="+28">
             Lusaka
             </City>
             <City trainStation="false">Kasama</City>
@@ -937,14 +937,14 @@
         <Cities>            
             <City 
             trainStation="true"
-            cordX="+33" cordY="-70">
+            cordY="+33" cordX="-70">
             Santiago
             </City>
             <City trainStation="false">Concepcion</City>
             <City trainStation="false">Vina del Mar</City>
             <City 
             trainStation="true"
-            cordX="+23" cordY="-70">
+            cordY="+23" cordX="-70">
             Antofagasta
             </City>
             <City trainStation="false">Valparaiso</City>
@@ -953,7 +953,7 @@
             trainStation="false">Sucre</City>
             <City 
             trainStation="true"
-            cordX="+16" cordY="-68">
+            cordY="+16" cordX="-68">
             La Paz
             </City>            
             <City trainStation="false">Cochabamba</City>
@@ -984,25 +984,25 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="+15" cordY="-48">
+            cordY="+15" cordX="-48">
             Brasilia
             </City>
             <City 
             trainStation="true"
-            cordX="+23" cordX="-46">
+            cordY="+23" cordY="-46">
             Sao Paulo
             </City>
             <City trainStation="false">Rio de Janeiro</City>
             <City trainStation="false">Salvador</City>
             <City 
             trainStation="true"
-            cordX="+3" cordY="-38">
+            cordY="+3" cordX="-38">
             Fortaleza
             </City>
             <City trainStation="false">Belo Horizonte</City>
             <City 
             trainStation="true"
-            cordX="+3" cordY="-60">
+            cordY="+3" cordX="-60">
             Manaus
             </City>
             <City trainStation="false">Curitiba</City>
@@ -1042,7 +1042,7 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-14" cordY="-90">
+            cordY="-14" cordX="-90">
             Ciudad
             </City>
             <City trainStation="false">Mixco</City>
@@ -1053,32 +1053,32 @@
             <City trainStation="false">Quetzaltenango</City>
             <City 
             trainStation="true"
-            cordX="-14" cordY="-87">
+            cordY="-14" cordX="-87">
             Tegucigalpa
             </City>
             <City trainStation="false">Sula</City>
             <City trainStation="false">Choloma</City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="-86">
+            cordY="-12" cordX="-86">
             Managua
             </City>
             <City trainStation="false">Leon</City>
             <City 
             trainStation="true"
-            cordX="-10" cordY="-84">
+            cordY="-10" cordX="-84">
             San Jose
             </City>
             <City trainStation="false">Cartago</City>
             <City trainStation="false">Puerto Limon</City>
             <City 
             trainStation="true"
-            cordX="-9" cordY="-79">
+            cordY="-9" cordX="-79">
             Panama
             </City>
             <City 
             trainStation="true"
-            cordX="-23" cordY="-82">
+            cordY="-23" cordX="-82">
             La Habana
             </City>
             <City trainStation="false">Cuba</City>
@@ -1087,12 +1087,12 @@
             <City trainStation="false">Guantanamo</City>
             <City 
             trainStation="true"
-            cordX="-18" cordY="-72">
+            cordY="-18" cordX="-72">
             Port-au-Prince
             </City>
             <City 
             trainStation="true"
-            cordX="-18" cordY="-70">
+            cordY="-18" cordX="-70">
             Santo Domingo
             </City>
             <City trainStation="false">Este</City>
@@ -1128,17 +1128,17 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-55" cordY="+37">
+            cordY="-55" cordX="+37">
             Moska
             </City>
             <City 
             trainStation="true"
-            cordX="-60" cordY="+30">
+            cordY="-60" cordX="+30">
             Sankt-Peterburg
             </City>
             <City 
             trainStation="true"
-            cordX="-55" cordY="+83">
+            cordY="-55" cordX="+83">
             Novosibirsk
             </City>
             <City trainStation="false">Ekaterimburg</City>
@@ -1157,23 +1157,23 @@
             <City trainStation="false">Togliatti</City>
             <City 
             trainStation="true"
-            cordX="-59" cordY="+24">
+            cordY="-59" cordX="+24">
             Tallin
             </City>
             <City 
             trainStation="true"
-            cordX="-57" cordY="+24">
+            cordY="-57" cordX="+24">
             Riga
             </City>
             <City 
             trainStation="true"
-            cordX="-54" cordY="+25">
+            cordY="-54" cordX="+25">
             Vilnjus
             </City>
             <City trainStation="false">Kaunas</City>
             <City 
             trainStation="true"
-            cordX="-54" cordY="+27">
+            cordY="-54" cordX="+27">
             Miensk
             </City>
             <City trainStation="false">Homel</City>
@@ -1202,14 +1202,14 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-45" cordY="-75">
+            cordY="-45" cordX="-75">
             Ottawa
             </City>
             <City trainStation="false">Toronto</City>
             <City trainStation="false">Montreal</City>
             <City 
             trainStation="true"
-            cordX="-49" cordY="-123">
+            cordY="-49" cordX="-123">
             Vancouver
             </City>
             <City trainStation="false">Calgary</City>
@@ -1217,7 +1217,7 @@
             <City trainStation="false">Quebec</City>
             <City 
             trainStation="true"
-            cordX="-50" cordY="-97">
+            cordY="-50" cordX="-97">
             Winnipeg
             </City>
             <City trainStation="false">Hamilton</City>
@@ -1255,19 +1255,19 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-9" cordY="+7">
+            cordY="-9" cordX="+7">
             Abuja
             </City>
             <City 
             trainStation="true"
-            cordX="-6" cordY="+3">
+            cordY="-6" cordX="+3">
             Lagos
             </City>
             <City trainStation="false">Ibadan</City>
             <City trainStation="false">Benin</City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="+8">
+            cordY="-12" cordX="+8">
             Kano
             </City>
             <City trainStation="false">Harcourt</City>
@@ -1277,7 +1277,7 @@
             <City trainStation="false">Ilorin</City>
             <City 
             trainStation="true"
-            cordX="-4" cordY="+11">
+            cordY="-4" cordX="+11">
             Yaounde
             </City>
             <City trainStation="false">Bafoussam</City>
@@ -1286,17 +1286,17 @@
             <City trainStation="false">Edea</City>
             <City 
             trainStation="true"
-            cordX="-9" cordY="+13">
+            cordY="-9" cordX="+13">
             Garoua
             </City>
             <City 
             trainStation="true"
-            cordX="-12" cordY="+15">
+            cordY="-12" cordX="+15">
             N'Dajmena
             </City>
             <City 
             trainStation="true"
-            cordX="-13" cordY="+2">
+            cordY="-13" cordX="+2">
             Niamey
             </City>
             <City trainStation="false">Zinder</City>
@@ -1325,17 +1325,17 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-40" cordY="+116">
+            cordY="-40" cordX="+116">
             Beijing
             </City>
             <City 
             trainStation="true"
-            cordX="-31" cordY="+121">
+            cordY="-31" cordX="+121">
             Shanghai
             </City>
             <City 
             trainStation="true"
-            cordX="-22" cordY="+114">
+            cordY="-22" cordX="+114">
             Hong Kong
             </City>
             <City trainStation="false">Wuhan</City>
@@ -1358,7 +1358,7 @@
             <City trainStation="false">Qingdao</City>
             <City 
             trainStation="true"
-            cordX="-48" cordY="+107">
+            cordY="-48" cordX="+107">
             Ulan Bator
             </City>
         </Cities>
@@ -1384,7 +1384,7 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-4" cordY="-74">
+            cordY="-4" cordX="-74">
             Bogota
             </City>
             <City trainStation="false">Medellin</City>
@@ -1394,7 +1394,7 @@
             <City trainStation="false">Manizales</City>
             <City 
             trainStation="true"
-            cordX="-2" cordY="-75">
+            cordY="-2" cordX="-75">
             Popayan
             </City>
             <City trainStation="false">Valledupar</City>
@@ -1412,12 +1412,12 @@
             <City trainStation="true">Cali</City>
             <City 
             trainStation="true"
-            cordX="-10" cordY="-67">
+            cordY="-10" cordX="-67">
             Caracas
             </City>
             <City 
             trainStation="true"
-            cordX="-10" cordX="-71">
+            cordY="-10" cordY="-71">
             Maracaibo
             </City>
             <City trainStation="false">Valencia</City>
@@ -1426,7 +1426,7 @@
             <City trainStation="false">Guayana</City>
             <City 
             trainStation="true"
-            cordX="+0" cordY="-78">
+            cordY="+0" cordX="-78">
             Quito
             </City>
             <City trainStation="false">Guayaquil</City>
@@ -1454,12 +1454,12 @@
         <Cities>
             <City 
             trainStation="true"
-            cordX="-38" cordY="+23">
+            cordY="-38" cordX="+23">
             Athene
             </City>
             <City 
             trainStation="true"
-            cordX="-40" cordY="+23">
+            cordY="-40" cordX="+23">
             Thessaloniki
             </City>
             <City trainStation="false">Patra</City>
@@ -1468,7 +1468,7 @@
             <City trainStation="false">Peristeri</City>
             <City 
             trainStation="true"
-            cordX="-35" cordY="+25">
+            cordY="-35" cordX="+25">
             Candia
             </City>
             <City trainStation="false">Kallithea</City>
@@ -1480,7 +1480,7 @@
             <City trainStation="false">Mitilene</City>
             <City 
             trainStation="true"
-            cordX="-42" cordY="+21">
+            cordY="-42" cordX="+21">
             Skopje
             </City>
         </Cities>
@@ -1505,11 +1505,27 @@
             <Border SeaBorder="true">SU</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Berlin</City>
-            <City trainStation="true">Hamburg</City>
-            <City trainStation="false">Munchen</City>
-            <City trainStation="false">Koln</City>
-            <City trainStation="true">Frankfurt</City>
+            <City 
+            trainStation="true"
+            cordY="-52" cordX="+13">
+            Berlin
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-53" cordX="+10">
+            Hamburg
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-48" cordX="+11">
+            Munchen
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-51" cordX="+7">
+            Koln
+            </City>
+            <City trainStation="false">Frankfurt</City>
             <City trainStation="false">Stuttgart</City>
             <City trainStation="false">Dusseldorf</City>
             <City trainStation="false">Leipzig</City>
@@ -1526,7 +1542,11 @@
             <City trainStation="false">Bonn</City>
             <City trainStation="false">Munster</City>
             <City trainStation="false">Freiburg</City>
-            <City trainStation="true">Kopenaghen</City>
+            <City 
+            trainStation="true"
+            cordY="-55" cordX="+12">
+            Kopenaghen
+            </City>
             <City trainStation="false">Aarhus</City>
             <City trainStation="false">Aalborg</City>
             <City trainStation="false">Odense</City>
@@ -1552,17 +1572,29 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false">al-Rabat</City>
+            <City 
+            trainStation="true"
+            cordY="-34" cordX="-7">
+            al-Rabat
+            </City>
             <City trainStation="true">Casablanca</City>
             <City trainStation="false">Fas</City>
             <City trainStation="false">Tanja</City>
-            <City trainStation="true">Marrakech</City>
+            <City 
+            trainStation="true"
+            cordY="-31" cordX="+8">
+            Marrakech
+            </City>
             <City trainStation="false">Agadir</City>
             <City trainStation="false">Miknas</City>
             <City trainStation="false">Wujda</City>
             <City trainStation="false">Tittawan</City>
             <City trainStation="false">Asfi</City>
-            <City trainStation="false">al-Jaza'ir</City>
+            <City 
+            trainStation="true"
+            cordY="-36" cordX="+3">
+            al-Jaza'ir
+            </City>
             <City trainStation="false">Wahran</City>
             <City trainStation="false">Qusantina</City>
             <City trainStation="false">Annaba</City>
@@ -1591,26 +1623,50 @@
             <Border SeaBorder="true">ID</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Addis Abeba</City>
+            <City 
+            trainStation="true"
+            cordY="-9" cordX="+38">
+            Addis Abeba
+            </City>
             <City trainStation="false">Adaama</City>
             <City trainStation="false">Gondar</City>
             <City trainStation="false">Maqalle</City>
             <City trainStation="false">Auasa</City>
-            <City trainStation="false">Mahrdar</City>
+            <City trainStation="false">Bahrdar</City>
             <City trainStation="false">Diredaua</City>
-            <City trainStation="false">Muqdisho</City>
-            <City trainStation="false">Hargeysa</City>
-            <City trainStation="true">Boosaaso</City>
+            <City 
+            trainStation="true"
+            cordY="-2" cordX="+45">
+            Muqdisho
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-9" cordX="+44">
+            Hargeysa
+            </City>
+            <City trainStation="false">Boosaaso</City>
             <City trainStation="false">Gaalkacyo</City>
-            <City trainStation="false">Marka</City>
+            <City 
+            trainStation="true"
+            cordY="-1" cordX="+44">
+            Marka
+            </City>
             <City trainStation="false">Berbera</City>
-            <City trainStation="false">Kismayoo</City>
+            <City trainStation="false">Kismaayo</City>
             <City trainStation="false">Jamaame</City>
-            <City trainStation="true">Nairobi</City>
+            <City 
+            trainStation="true"
+            cordY="+1" cordX="+36">
+            Nairobi
+            </City>
             <City trainStation="false">Mombasa</City>
             <City trainStation="false">Nakuru</City>
             <City trainStation="false">Kakamega</City>
-            <City trainStation="true">Kampala</City>
+            <City 
+            trainStation="true"
+            cordY="-0" cordX="+32">
+            Kampala
+            </City>
     </State>
 
     <State Id="SP">
@@ -1632,29 +1688,53 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Madrid</City>
-            <City trainStation="true">Barcelona</City>
+            <City 
+            trainStation="true"
+            cordY="-40" cordX="-3">
+            Madrid
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-41" cordX="+2">
+            Barcelona
+            </City>
             <City trainStation="false">Valencia</City>
-            <City trainStation="false">Sevilla</City>
+            <City 
+            trainStation="true"
+            cordY="-37" cordX="-6">
+            Sevilla
+            </City>
             <City trainStation="false">Zaragoza</City>
             <City trainStation="false">Malaga</City>
             <City trainStation="false">Murcia</City>
             <City trainStation="false">Mallorca</City>
             <City trainStation="false">Las Palmas</City>
-            <City trainStation="true">Bilbao</City>
+            <City trainStation="false">Bilbao</City>
             <City trainStation="false">Alicante</City>
             <City trainStation="false">Cordoba</City>
             <City trainStation="false">Valladolid</City>
-            <City trainStation="false">Vigo</City>
+            <City 
+            trainStation="true"
+            cordY="-42" cordX="-8">
+            Vigo
+            </City>
             <City trainStation="false">Gijon</City>
             <City trainStation="false">La Coruna</City>
             <City trainStation="false">Llobregat</City>
             <City trainStation="false">Tenerife</City>
             <City trainStation="true">Granada</City>
             <City trainStation="false">Vitoria</City>
-            <City trainStation="true">Lisboa</City>
+            <City 
+            trainStation="true"
+            cordY="-38" cordX="-9">
+            Lisboa
+            </City>
             <City trainStation="false">Villa Nova</City>
-            <City trainStation="true">Porto</City>
+            <City 
+            trainStation="true"
+            cordY="-41" cordX="-8">
+            Porto
+            </City>
             <City trainStation="false">Braga</City>
             <City trainStation="false">Setubal</City>
             <City trainStation="false">Guimaraes</City>
@@ -1683,19 +1763,39 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Stockholm</City>
+            <City 
+            trainStation="true"
+            cordY="-59" cordX="+18">
+            Stockholm
+            </City>
             <City trainStation="false">Goteborg</City>
             <City trainStation="false">Malmo</City>
             <City trainStation="false">Uppsala</City>
-            <City trainStation="true">Helsinki</City>
+            <City 
+            trainStation="true"
+            cordY="-60" cordX="+25">
+            Helsinki
+            </City>
             <City trainStation="false">Espoo</City>
             <City trainStation="false">Tampere</City>
             <City trainStation="false">Vantaa</City>
             <City trainStation="false">Salo</City>
-            <City trainStation="true">Oslo</City>
-            <City trainStation="false">Bodo</City>
+            <City 
+            trainStation="true"
+            cordY="-60" cordX="+10">
+            Oslo
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-67" cordX="+14">
+            Bodo
+            </City>
             <City trainStation="false">Bergen</City>
-            <City trainStation="true">Reykjavik</City>
+            <City 
+            trainStation="true"
+            cordY="-64" cordX="-22">
+            Reykjavik
+            </City>
         </Cities>
     </State>
 
@@ -1720,10 +1820,18 @@
             <Border SeaBorder="true">KO</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Jakarta</City>
+            <City 
+            trainStation="true"
+            cordY="+6" cordX="+106">
+            Jakarta
+            </City>
             <City trainStation="false">Surabaya</City>
             <City trainStation="false">Bandung</City>
-            <City trainStation="false">Medan</City>
+            <City 
+            trainStation="true"
+            cordY="-3" cordX="+98">
+            Medan
+            </City>
             <City trainStation="false">Padang</City>
             <City trainStation="false">Palembang</City>
             <City trainStation="false">Jambi</City>
@@ -1733,13 +1841,33 @@
             <City trainStation="false">Semarang</City>
             <City trainStation="false">Yogyakarta</City>
             <City trainStation="false">Denpasar</City>
-            <City trainStation="false">Mataram</City>
-            <City trainStation="false">Kupang</City>
-            <City trainStation="false">Pontianak</City>
+            <City 
+            trainStation="true"
+            cordY="+8" cordX="+116">
+            Mataram
+            </City>
+            <City 
+            trainStation="true"
+            cordY="+10" cordX="+123">
+            Kupang
+            </City>
+            <City 
+            trainStation="true"
+            cordY="+0" cordY="+109">
+            Pontianak
+            </City>
             <City trainStation="false">Banjarmasin</City>
             <City trainStation="false">Samarinda</City>
-            <City trainStation="false">Manado</City>
-            <City trainStation="false">Makassar</City>
+            <City 
+            trainStation="true"
+            cordY="-1" cordX="+125">
+            Manado
+            </City>
+            <City 
+            trainStation="true"
+            cordY="+5" cordX="+119">
+            Makassar
+            </City>
         </Cities>
     </State>
 
@@ -1762,8 +1890,15 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">London</City>
-            <City trainStation="true">Manchester</City>
+            <City 
+            trainStation="true"
+            cordY="-51" cordX="-0">
+            London</City>
+            <City 
+            trainStation="true"
+            cordY="-53" cordX="-2">
+            Manchester
+            </City>
             <City trainStation="false">Liverpool</City>
             <City trainStation="false">Sheffield</City>
             <City trainStation="false">Newcastle</City>
@@ -1783,16 +1918,36 @@
             <City trainStation="false">Canterbury</City>
             <City trainStation="false">Northampton</City>
             <City trainStation="false">Oxford</City>
-            <City trainStation="true">Cardiff</City>
+            <City 
+            trainStation="true"
+            cordY="-51" cordX="-3">
+            Cardiff
+            </City>
             <City trainStation="false">Swansea</City>
-            <City trainStation="true">Edimburgh</City>
+            <City 
+            trainStation="true"
+            cordY="-56" cordX="-3">
+            Edimburgh
+            </City>
             <City trainStation="false">Glasgow</City>
             <City trainStation="false">Aberdeen</City>
             <City trainStation="false">Dumfries</City>
-            <City trainStation="true">Belfast</City>
+            <City 
+            trainStation="true"
+            cordY="-54" cordX="-6">
+            Belfast
+            </City>
             <City trainStation="false">Derry</City>
-            <City trainStation="true">Dublin</City>
-            <City trainStation="false">Cork</City>
+            <City 
+            trainStation="true"
+            cordY="-53" cordX="-6">
+            Dublin
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-54" cordX="-8">
+            Cork
+            </City>
             <City trainStation="false">Limerick</City>
             <City trainStation="false">Drogheda</City>
         </Cities>
@@ -1816,7 +1971,11 @@
             <Border SeaBorder="true">ATL</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Nuuk</City>
+            <City 
+            trainStation="true"
+            cordY="-64" cordX="-51">
+            Nuuk
+            </City>
             <City trainStation="false">Ilulissat</City>
             <City trainStation="false">Qaqortoq</City>
             <City trainStation="false">Qeqqata</City>
@@ -1842,26 +2001,56 @@
             <Border SeaBorder="true">LY</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Yerushalaim</City>
-            <City trainStation="false">Natzrat</City>
+            <City 
+            trainStation="true"
+            cordY="-31" cordX="+35">
+            Yerushalaim
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-32" cordX="+35">
+            Natzrat
+            </City>
             <City trainStation="false">Hefa</City>
-            <City trainStation="true">Tel Aviv</City>
+            <City trainStation="false">Tel Aviv</City>
             <City trainStation="false">Be'er Sheva</City>
-            <City trainStation="true">Ramallah</City>
+            <City 
+            trainStation="true"
+            cordY="-31" cordX="+35">Ramallah</City>
             <City trainStation="false">Bayt Lahm</City>
-            <City trainStation="false">Gaza</City>
-            <City trainStation="true">Dimasq</City>
-            <City trainStation="false">Halab</City>
+            <City 
+            trainStation="true"
+            cordY="-31" cordX="+34">
+            Gaza
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-33" cordX="+36">
+            Dimasq
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-36" cordX="+37">
+            Halab
+            </City>
             <City trainStation="false">Hims</City>
             <City trainStation="false">Hama</City>
             <City trainStation="false">Ladhiqqiyyaa</City>
-            <City trainStation="true">Baghdad</City>
+            <City 
+            trainStation="true"
+            cordY="-33" cordX="+44">
+            Baghdad
+            </City>
             <City trainStation="false">Ba'quba</City>
             <City trainStation="false">al-Basra</City>
             <City trainStation="false">al-Falluja</City>
             <City trainStation="false">Kerbela</City>
             <City trainStation="false">Kirkuk</City>
-            <City trainStation="false">al-Mawsil</City>
+            <City 
+            trainStation="true"
+            cordY="-36" cordX="+43">
+            al-Mawsil
+            </City>
             <City trainStation="false">al-Najaf</City>
             <City trainStation="false">al-Nasiriyya</City>
             <City trainStation="false">Samarra</City>
@@ -1887,13 +2076,29 @@
             <Border SeaBorder="true">CA</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Tokyo</City>
+            <City 
+            trainStation="true"
+            cordY="-35" cordX="+139">
+            Tokyo
+            </City>
             <City trainStation="false">Yokohama</City>
-            <City trainStation="true">Osaka</City>
+            <City 
+            trainStation="true"
+            cordY="-34" cordX="+135">
+            Osaka
+            </City>
             <City trainStation="false">Nagoya</City>
-            <City trainStation="true">Sapporo</City>
+            <City 
+            trainStation="true"
+            cordY="-43" cordX="+141">
+            Sapporo
+            </City>
             <City trainStation="false">Kobe</City>
-            <City trainStation="true">Fukuoka</City>
+            <City 
+            trainStation="true"
+            cordY="-33" cordX="+130">
+            Fukuoka
+            </City>
             <City trainStation="false">Kawasaki</City>
             <City trainStation="false">Kyoto</City>
             <City trainStation="false">Saitama</City>
@@ -1920,13 +2125,29 @@
             <Border SeaBorder="false">CN</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Astana</City>
-            <City trainStation="true">Almaty</City>
-            <City trainStation="false">Bajkonur</City>
-            <City trainStation="true">Ashq-abad</City>
+            <City 
+            trainStation="true"
+            cordY="-51" cordX="+71">
+            Astana
+            </City>
+            <City 
+            trainStation="true"
+            cordX="-43" cordX="+77">
+            Almaty
+            </City>
+            <City trainStation="false">Bajqonir</City>
+            <City 
+            trainStation="true"
+            cordY="-38" cordX="+58">
+            Ashq-abad
+            </City>
             <City trainStation="false">Dasoguz</City>
             <City trainStation="false">Turkmenabat</City>
-            <City trainStation="true">Toshkent</City>
+            <City 
+            trainStation="true"
+            cordY="-41" cordX="+69">
+            Toshkent
+            </City>
             <City trainStation="false">Andijon</City>
             <City trainStation="false">Bukhara</City>
             <City trainStation="false">Farg'ona</City>
@@ -1954,37 +2175,85 @@
             <Border SeaBorder="true">AU</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Bangkok</City>
+            <City 
+            trainStation="true"
+            cordY="-13" cordX="+100">
+            Bangkok
+            </City>
             <City trainStation="false">Phatthaya</City>
             <City trainStation="false">Nonthaburi</City>
             <City trainStation="false">Pak Kret</City>
-            <City trainStation="true">Naypyjdaw</City>
+            <City 
+            trainStation="true"
+            cordY="-19" cordX="+96">
+            Naypyjdaw
+            </City>
             <City trainStation="false">Yangon</City>
-            <City trainStation="true">Mandalay</City>
+            <City 
+            trainStation="true"
+            cordY="-22" cordX="+96">
+            Mandalay
+            </City>
             <City trainStation="false">Bagan</City>
             <City trainStation="false">Pegu</City>
             <City trainStation="false">Mawlamyine</City>
             <City trainStation="false">Sagaing</City>
             <City trainStation="false">Pathein</City>
-            <City trainStation="true">Viangchan</City>
-            <City trainStation="true">Pak Se</City>
-            <City trainStation="true">Ha Noi</City>
-            <City trainStation="true">Ho Chi Minh</City>
+            <City 
+            trainStation="true"
+            cordY="-18" cordX="+102">
+            Viangchan
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-15" cordX="+105">
+            Pak Se
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-21" cordX="+106">
+            Ha Noi
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-10" cordX="+106">
+            Ho Chi Minh
+            </City>
             <City trainStation="false">Da Nang</City>
             <City trainStation="false">Hue</City>
             <City trainStation="false">Hai Phong</City>
-            <City trainStation="true">Lumpur</City>
+            <City 
+            trainStation="true"
+            cordY="-3" cordX="+101">
+            Lumpur
+            </City>
             <City trainStation="false">Sepang</City>
             <City trainStation="false">Petaling</City>
             <City trainStation="false">Bahru</City>
             <City trainStation="false">Langat</City>
             <City trainStation="false">Klang</City>
-            <City trainStation="true">Kuching</City>
-            <City trainStation="true">Maynila</City>
+            <City 
+            trainStation="true"
+            cordY="-1" cordX="+110">
+            Kuching
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-14" cordX="+121">
+            Maynila
+            </City>
             <City trainStation="false">Quezon</City>
             <City trainStation="false">Caloocan</City>
-            <City trainStation="true">Davao</City>
-            <City trainStation="true">Cebu</City>
+            <City 
+            trainStation="true"
+            cordY="-7" cordX="+125">
+            Davao
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-10" cordX="+124">
+            Cebu
+            </City>
             <City trainStation="false">Zamboanga</City>
             <City trainStation="false">Antipolo</City>
             <City trainStation="false">Pasig</City>
@@ -2012,22 +2281,37 @@
             <Border SeaBorder="true"IN></Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Seoul</City>
-            <City trainStation="true">Busan</City>
+            <City 
+            trainStation="true"
+            cordY="-37" cordX="+127">
+            Seoul
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-35" cordX="+129">
+            Busan
+            </City>
             <City trainStation="false">Daegu</City>
             <City trainStation="false">Incheon</City>
             <City trainStation="false">Gwanju</City>
             <City trainStation="false">Daejeon</City>
             <City trainStation="false">Ulsan</City>
-            <City trainStation="true">Jeju</City>
             <City trainStation="false">Sejong</City>
             <City trainStation="false">Suwon</City>
             <City trainStation="false">Chuncheon</City>
             <City trainStation="false">Cheongju</City>
             <City trainStation="false">Jeonju</City>
             <City trainStation="false">Changwon</City>
-            <City trainStation="true">Pyongyang</City>
-            <City trainStation="true">Rason</City>
+            <City 
+            trainStation="true"
+            cordY="-39" cordX="+125">
+            Pyongyang
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-42" cordX="+130">
+            Rason
+            </City>
             <City trainStation="false">Namp'o</City>
             <City trainStation="false">Kaesong</City>
             <City trainStation="false">Kanggye</City>
@@ -2062,14 +2346,25 @@
             <Border SeaBorder="true">PT</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Tarabulus</City>
-            <City trainStation="true">Banghazi</City>
+            <City 
+            trainStation="true"
+            cordY="-33" cordX="+13">
+            Tarabulus
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-32" cordX="+20">
+            Banghazi</City>
             <City trainStation="false">Misrata</City>
             <City trainStation="false">el-Azizia</City>
             <City trainStation="false">Tarhunah</City>
             <City trainStation="false">al-Bayda</City>
             <City trainStation="false">al-Khums</City>
-            <City trainStation="true">Tunis</City>
+            <City 
+            trainStation="true"
+            cordY="-36" cordX="+10">
+            Tunis
+            </City>
             <City trainStation="false">Safaquis</City>
             <City trainStation="false">Susa</City>
         </Cities>
@@ -2094,24 +2389,50 @@
             <Border SeaBorder="true">GR</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Bucuresti</City>
+            <City 
+            trainStation="true"
+            cordY="-44" cordX="+26">
+            Bucuresti
+            </City>
             <City trainStation="false">Iasi</City>
-            <City trainStation="true">Timisoara</City>
+            <City 
+            trainStation="true"
+            cordY="-45" cordX="+21">
+            Timisoara
+            </City>
             <City trainStation="false">Napoca</City>
             <City trainStation="false">Consanta</City>
             <City trainStation="false">Craiova</City>
             <City trainStation="false">Brasov</City>
             <City trainStation="false">Galati</City>
             <City trainStation="false">Ploiesti</City>
-            <City trainStation="true">Kisinev</City>
+            <City 
+            trainStation="true"
+            cordY="-47" cordX="+29">
+            Chinisau
+            </City>
             <City trainStation="false">Tiraspol</City>
-            <City trainStation="true">Kyiv</City>
+            <City 
+            trainStation="true"
+            cordY="-50" cordX="+30">
+            Kyiv
+            </City>
             <City trainStation="false">Charkiv</City>
             <City trainStation="false">Dnipro</City>
-            <City trainStation="true">Odesa</City>
-            <City trainStation="true">Donec'k</City>
+            <City 
+            trainStation="true"
+            cordY="-46" cordX="+30">
+            Odesa
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-48" cordX="+37">Donec'k</City>
             <City trainStation="false">Zaporizzja</City>
-            <City trainStation="true">L'viv</City>
+            <City 
+            trainStation="true"
+            cordY="-50" cordX="+24">
+            L'viv
+            </City>
             <City trainStation="false">Kryvyj</City>
             <City trainStation="false">Mykolaiv</City>
             <City trainStation="false">Mariupol</City>
@@ -2138,12 +2459,20 @@
             <Border SeaBorder="true">CI</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Mexico</City>
+            <City 
+            trainStation="true"
+            cordY="-19" cordX="-99">
+            Mexico
+            </City>
             <City trainStation="false">Guadalajara</City>
             <City trainStation="false">Monterrey</City>
             <City trainStation="false">Puebla</City>
             <City trainStation="false">Toluca</City>
-            <City trainStation="true">Juarez</City>
+            <City 
+            trainStation="true"
+            cordY="-31" cordX="-106">
+            Juarez
+            </City>
             <City trainStation="false">Tijuana</City>
             <City trainStation="false">Leon</City>
             <City trainStation="false">Torreon</City>
@@ -2161,7 +2490,11 @@
             <City trainStation="false">Veracruz</City>
             <City trainStation="false">Centro</City>
             <City trainStation="false">Reynosa</City>
-            <City trainStation="true">Tuxtla</City>
+            <City 
+            trainStation="true"
+            cordY="-16" cordY="-93">
+            Tuxtla
+            </City>
         </Cities>
     </State>
 
@@ -2180,11 +2513,19 @@
             <Border SeaBorder="true">CI</Border> 
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Wellington</City>
+            <City 
+            trainStation="true"
+            cordY="+41" cordX="+174">
+            Wellington
+            </City>
             <City trainStation="false">Auckland</City>
             <City trainStation="false">Tauranga</City>
             <City trainStation="false">Christchurch</City>
-            <City trainStation="true">Dunedin</City>
+            <City 
+            trainStation="true"
+            cordY="+46" cordY="+170">
+            Dunedin
+            </City>
             <City trainStation="false">Hamilton</City>
     </State>
 
@@ -2205,22 +2546,42 @@
             <Border SeaBorder="true">SC</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="true">Warszava</City>
+            <City 
+            trainStation="true"
+            cordY="-52" cordX="+21">
+            Warszava
+            </City>
             <City trainStation="false">Krakow</City>
             <City trainStation="false">Lodz</City>
             <City trainStation="false">Wroclaw</City>
             <City trainStation="false">Poznan</City>
-            <City trainStation="true">Gdansk</City>
-            <City trainStation="true">Stettino</City>
+            <City 
+            trainStation="true"
+            cordY="-54" cordX="+18">
+            Gdansk
+            </City>
+            <City 
+            trainStation="true"
+            cordY="-53" cordX="+14">
+            Stettino
+            </City>
             <City trainStation="false">Bydgoszcz</City>
             <City trainStation="false">Lublin</City>
             <City trainStation="false">Katowicy</City>
-            <City trainStation="true">Bialystok</City>
+            <City 
+            trainStation="true"
+            cordY="-53" cordX="+23">
+            Bialystok
+            </City>
             <City trainStation="false">Gdynia</City>
             <City trainStation="false">Czestochowa</City>
             <City trainStation="false">Radom</City>
             <City trainStation="false">Sosnowjec</City>
-            <City trainStation="true">Aushwitz</City>
+            <City 
+            trainStation="true"
+            cordY="-50" cordX="+19">
+            Auschwitz
+            </City>
         </Cities>
     </State>
 

@@ -22,8 +22,13 @@ public class MapIconManager {
 
     public void addIcon(City city) {
         
-        double posX = (this.mapContainer.getPrefWidth() / 2) + city.getLongitude();
-        double posY = (this.mapContainer.getPrefHeight() / 2) + city.getLatitude();
+        double yUnit = this.mapContainer.getPrefHeight()/180;
+        double xUnit = this.mapContainer.getPrefWidth()/360;
+
+        double posX = (this.mapContainer.getPrefWidth() / 2 -25) + city.getLongitude() * (xUnit / 2) * 1.8 - 5;              //*2.75 -30;
+        double posY = (this.mapContainer.getPrefHeight() / 2 +75) + city.getLatitude() * yUnit;
+
+        
 
         Circle newIcon = new Circle(posX, posY, 3); 
 
@@ -37,6 +42,10 @@ public class MapIconManager {
         Circle lastIcon = this.icons.get(this.icons.size() - 1);
 
         this.mapContainer.getChildren().add(lastIcon);
+
+       // Circle franco = new Circle(this.mapContainer.getPrefWidth() / 2 -25, this.mapContainer.getPrefHeight() / 2 + 75, 6);
+
+       // this.mapContainer.getChildren().add(franco);
 
         Tooltip curTooltip = new Tooltip(city.getName());
 

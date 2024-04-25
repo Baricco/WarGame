@@ -21,14 +21,19 @@ public class MapIconManager {
     }
 
     public void addIcon(City city) {
-        
-        double yUnit = this.mapContainer.getPrefHeight()/180;
-        double xUnit = this.mapContainer.getPrefWidth()/360;
 
-        double posX = (this.mapContainer.getPrefWidth() / 2 -25) + city.getLongitude() * (xUnit / 2) * 1.8 - 5;              //*2.75 -30;
-        double posY = (this.mapContainer.getPrefHeight() / 2 +75) + city.getLatitude() * yUnit;
+        if (city.getLongitude() == -1 || city.getLatitude() == -1) return;
 
-        
+        double xUnit = this.mapContainer.getPrefWidth()/360f;
+        double yUnit = this.mapContainer.getPrefHeight()/360f;
+
+
+        double posX = (this.mapContainer.getPrefWidth() / 2f) + city.getLongitude() * xUnit;
+        double posY = (this.mapContainer.getPrefHeight() / 2f) + (Math.log(Math.tan((45f + (double)Math.abs(city.getLatitude() / 2f)) * Math.PI / 180))) * yUnit;
+
+
+        System.out.println(Math.log(Math.tan((45f + (double)Math.abs(city.getLatitude() / 2f)) * Math.PI / 180)));
+        System.out.println(city.getName() + " { long: " + city.getLongitude() + ", lat: " + city.getLatitude() + "; x: " + posX + ", y: " + posY + " }");
 
         Circle newIcon = new Circle(posX, posY, 3); 
 

@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
+import javafx.scene.Node;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,13 +53,15 @@ public class StartPageController {
     @FXML
     void switchToMainPage(ActionEvent event) {
         
-        Scene scene = startGameButton.getScene();
-
-        Stage stage = (Stage)scene.getWindow();
+        Scene scene;
+        
+        Stage stage;
                 
-        System.out.println(getClass().getClassLoader().getResource("/com/assets/fxml/mainPage"));
-
-        try { scene.setRoot(FXMLLoader.load(getClass().getClassLoader().getResource("/com/assets/fxml/mainPage"))); } catch (IOException e) { e.printStackTrace(); }
+        try { 
+            Parent root = App.createRoot("/com/assets/fxml/mainPage");
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+         } catch (IOException e) { e.printStackTrace(); return; }
 
         initMainPage(scene);
 

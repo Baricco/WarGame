@@ -24,7 +24,7 @@ public class App extends Application {
 
         scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
         stage.setScene(scene);
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.setTitle("WarGame");
         stage.show();
 

@@ -64,6 +64,7 @@ public class XMLParser {
             0,
             0,
             0,
+            0,
             null,
             cities
         );

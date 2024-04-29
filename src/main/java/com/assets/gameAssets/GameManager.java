@@ -87,8 +87,8 @@ public class GameManager {
         setTrapezoidXScale("#sideMenu", curState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
 
         setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(curState.getMoney())));
-        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(curState.getPopulation())));
-
+        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(curState.getArmy())));
+        
 
     }
     

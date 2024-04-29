@@ -21,6 +21,7 @@ public class State {
     private double reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria (-5 ; +5)
     private int army;
     private int workForce;
+    private int stageArmy;
     private ArrayList<City> cities;
 
     
@@ -30,7 +31,7 @@ public class State {
     private int population;
     private int level; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, SVGPath path, ArrayList<City> cities) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -44,6 +45,7 @@ public class State {
         this.level = level;
         this.path = path;
         this.army = army;
+        this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>(cities);
     }
@@ -73,7 +75,9 @@ public class State {
 
         // Qui settiamo le variabili che non si trovano nell'XML
 
-        this.army = 0;
+        this.army = (int)(((this.population + this.workForce) / 2) * ((this.money / 2) * ((this.naturalResources + this.refinedResources) / 4)));
+        this.stageArmy = (int)(((this.population + this.workForce) / 2) * ((this.money / 2) * ((this.naturalResources + this.refinedResources) / 4)) * ((this.reputation + 5) / 5));
+
 
         this.level  = 0;
 

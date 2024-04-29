@@ -220,9 +220,7 @@ public class MainPageController implements Initializable{
     @FXML
     private Label sideMenuStateMoneyLabel;
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {       
+    private void attachTooltips() {
         Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
         Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));
         Tooltip.install(playerStateNaturalResourcesImageView, new Tooltip("Stage Natural Resources: "));
@@ -231,6 +229,26 @@ public class MainPageController implements Initializable{
 
         Tooltip.install(sideMenuStateMoneyLabel, new Tooltip("Stage Money: "));
         Tooltip.install(sideMenuStateArmyLabel, new Tooltip("Stage Army: "));
+    }
+
+    private void hidePlayerMenu() {
+        playerMenu.getChildren().forEach(node -> { node.setVisible(false); });
+    }
+
+    private void showPlayerMenu() {
+        playerMenu.getChildren().forEach(node -> { node.setVisible(true); });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {       
+        
+        hidePlayerMenu();
+
+        // qui in mezzo ci va il codice che permette al player di scegliere lo stato con cui vuole partire
+
+        showPlayerMenu();
+
+        attachTooltips();
 
 
     }

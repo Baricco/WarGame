@@ -1,11 +1,26 @@
 package com.assets.generalAssets;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.SVGPath;
 
-public class startPageController {
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.assets.SVGAssets.SVGPathElement;
+import com.assets.SVGAssets.SVGPathLoader;
+import com.assets.gameAssets.GameManager;
+
+public class StartPageController {
 
     @FXML
     private Button quitGameButton;
@@ -18,5 +33,69 @@ public class startPageController {
 
     @FXML
     private Label startGameTitle;
+    
+    private static GameManager gameManager;
+
+
+    @FXML
+    void quitGame(ActionEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
+    void setPlayerColor(ActionEvent event) {
+        System.out.println("Prima di scrivere il codice qui dentro vorrei modificare il colorpicker perchè fa schifo");
+
+    }
+
+    @FXML
+    void switchToMainPage(ActionEvent event) {
+        
+        Scene scene = startGameButton.getScene();
+
+        Stage stage = (Stage)scene.getWindow();
+                
+        System.out.println(getClass().getClassLoader().getResource("/com/assets/fxml/mainPage"));
+
+        try { scene.setRoot(FXMLLoader.load(getClass().getClassLoader().getResource("/com/assets/fxml/mainPage"))); } catch (IOException e) { e.printStackTrace(); }
+
+        initMainPage(scene);
+
+        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/mainPageStyle.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+
+    
+    }
+
+    private void initMainPage(Scene scene) {
+
+        gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
+
+        SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
+        ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
+        Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
+        double xShift = 50, yShift = -110;
+        
+
+        for(SVGPathElement p : paths) {
+            try {
+                SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
+                gameManager.addState(p.getId(), curPath);
+                curPath.setContent(p.getContent());
+                curPath.setLayoutX(xShift);
+                curPath.setLayoutY(yShift);
+                curPath.getStyleClass().add("State");
+                curPath.setOnMouseClicked(e -> gameManager.manageClick(curPath.getId()));
+                curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
+            } catch(Exception e) {
+                System.out.println("Error on " + p.getId() + "\n");
+                e.printStackTrace();
+            }
+        }
+
+
+
+    }
 
 }

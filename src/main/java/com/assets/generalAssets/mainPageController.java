@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
 
 
 
-public class mainPageController implements Initializable{
+public class MainPageController implements Initializable{
 
     @FXML
     private SVGPath AE;

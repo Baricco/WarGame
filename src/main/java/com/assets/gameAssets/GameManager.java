@@ -21,7 +21,7 @@ public class GameManager {
     private Scene scene;
     private Calendar calendar;
     private ArrayList<Player> players;
-    private MapIconManager mapIconManager;
+    //private MapIconManager mapIconManager;
 
 
     public GameManager(String fileName, Scene scene) {
@@ -30,7 +30,7 @@ public class GameManager {
         this.scene = scene;
         this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
         this.players = new ArrayList<>();
-        this.mapIconManager = new MapIconManager((Pane)scene.lookup("#mapContainer"));
+        //this.mapIconManager = new MapIconManager((Pane)scene.lookup("#mapContainer"));
     }
 
     public void addPlayer(Player newPlayer) throws Exception {
@@ -51,7 +51,7 @@ public class GameManager {
         try { 
             this.states.put(id, new State(this.fileName, id, path));
 
-            for (City city : this.states.get(id).getCities()) { if (city.hasTrainStation()) this.mapIconManager.addIcon(city); }
+            // for (City city : this.states.get(id).getCities()) { if (city.hasTrainStation()) this.mapIconManager.addIcon(city); }
 
         } catch(Exception e) { e.printStackTrace(); }
         

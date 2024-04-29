@@ -23,12 +23,23 @@ import com.assets.gameAssets.GameManager;
 public class App extends Application {
 
     private static Scene scene;
+    private static GameManager gameManager;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(createRoot("/com/assets/fxml/mainPage"), 1280, 720);
+        scene = new Scene(createRoot("/com/assets/fxml/startPage"), 1280, 720);
 
-        GameManager gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
+        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/startPageStyle.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("WarGame");
+        stage.show();
+
+    }
+
+    static void initMainPage() {
+
+        gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
 
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
@@ -53,13 +64,6 @@ public class App extends Application {
         }
 
 
-
-
-        scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/mainPageStyle.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("WarGame");
-        stage.show();
 
     }
 

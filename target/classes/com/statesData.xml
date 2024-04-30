@@ -1366,7 +1366,7 @@
 
     <State Id="CO">
         <Name>Colombia</Name>
-        <Money>4200000000</Money>
+        <Money>420000000</Money>
         <StageMoney>17000000</StageMoney>
         <NaturalResources>167000</NaturalResources>
         <StageNaturalResources>28000</StageNaturalResources>

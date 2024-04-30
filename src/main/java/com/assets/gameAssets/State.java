@@ -75,9 +75,10 @@ public class State {
 
         // Qui settiamo le variabili che non si trovano nell'XML
 
-        this.army = (int)(((this.population + this.workForce) / 2) * ((this.money / 2) * ((this.naturalResources + this.refinedResources) / 4)));
-        this.stageArmy = (int)(((this.population + this.workForce) / 2) * ((this.money / 2) * ((this.naturalResources + this.refinedResources) / 4)) * ((this.reputation + 5) / 5));
+        this.army = (int)((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) / 20)))) / 50;
+        this.stageArmy = (int)(((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) / 90))) / 50) * ((this.reputation + 5) / 5));
 
+        this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)) + (((this.level + 20) * 2) / 20));
 
         this.level  = 0;
 
@@ -168,6 +169,10 @@ public class State {
 
     public void increaseLevel(int increase) {
         this.level += increase;
+    }
+
+    public int getWorkForce() {
+        return this.workForce;
     }
 
 

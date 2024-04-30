@@ -55,7 +55,6 @@ Label {
     -fx-text-fill: #FFFFFF;
 }
 
-
 ListView {
     -fx-background-color: -darkGray;
     -fx-text-fill: #FFFFFF;

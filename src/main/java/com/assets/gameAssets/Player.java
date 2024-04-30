@@ -21,9 +21,9 @@ public abstract class Player {
     private ArrayList<State> occupiedStates;    // the states that are occupied by the Player
     private ArrayList<Player> allies;           // this Player allies
 
-    public Player(State state, String name, String hexColor) {
+    public Player(String name, String hexColor) {
 
-        this.originalState = state;
+        this.originalState = null;
 
         this.name = name;
         this.hexColor =  hexColor;
@@ -36,9 +36,9 @@ public abstract class Player {
     
     }
 
-    public Player(State state, String name, String hexColor, PlayerType playerType) {
+    public Player(String name, String hexColor, PlayerType playerType) {
 
-        this.originalState = state;
+        this.originalState = null;
 
         this.name = name;
         this.hexColor =  hexColor;
@@ -61,6 +61,64 @@ public abstract class Player {
         this.occupiedStates = occupiedStates;
         this.allies = allies;
         this.active = false;
+    }
+
+    public boolean hasOriginalState() {
+        return (this.originalState != null);
+    }
+
+    public State getTotalState() {
+
+        double money = this.originalState.getMoney();
+        double stageMoney = this.originalState.getStageMoney();
+        double naturalResources = this.originalState.getNaturalResources();
+        double stageNaturalResources = this.originalState.getStageNaturalResources();
+        double refinedResources = this.originalState.getRefinedResources();
+        double stageRefinedResources = this.originalState.getStageRefinedResources();
+        double reputation = this.originalState.getReputation();
+        int population = this.originalState.getPopulation();
+        int level = this.originalState.getLevel();
+        int army = this.originalState.getArmy();
+        int workForce = this.originalState.getWorkForce();
+        int stageArmy = this.originalState.getStageArmy();
+
+        for (State s : this.occupiedStates) {
+
+            money = s.getMoney();
+            stageMoney = s.getStageMoney();
+            naturalResources = s.getNaturalResources();
+            stageNaturalResources = s.getStageNaturalResources();
+            refinedResources = s.getRefinedResources();
+            stageRefinedResources = s.getStageRefinedResources();
+            reputation = s.getReputation();
+            population = s.getPopulation();
+            level = s.getLevel();
+            army = s.getArmy();
+            workForce = s.getWorkForce();
+            stageArmy = s.getStageArmy();
+
+        }
+
+        return new State(
+                this.originalState.getName(),
+                "", 
+                money, 
+                stageMoney, 
+                naturalResources, 
+                stageNaturalResources, 
+                refinedResources, 
+                stageRefinedResources, 
+                reputation, 
+                population, 
+                level, 
+                army, 
+                workForce, 
+                stageArmy
+            );
+    }
+
+    public void setOriginalState(State originalState) {
+        if (this.originalState == null) this.originalState = originalState;
     }
 
     public boolean isActive() {

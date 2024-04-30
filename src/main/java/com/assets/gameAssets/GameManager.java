@@ -1,7 +1,9 @@
 package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class GameManager {
     private String fileName;
     private Scene scene;
     private Calendar calendar;
-    private ArrayList<Player> players;
+    private ArrayList<Player> players;      // the first player is ALWAYS the Human Player
     //private MapIconManager mapIconManager;
 
 
@@ -61,6 +63,15 @@ public class GameManager {
         return this.scene.lookup(selector);
     }
 
+    private void addStringToListView(String listViewSelector, String newString) {
+        Node element = (Node)getElementByCssSelector(listViewSelector);
+        ListView<String> curListView;
+        if (!(element instanceof ListView)) return;
+        curListView = (ListView<String>)element;
+        curListView.getItems().add(newString);
+        curListView.refresh();
+    }
+
     private void setLabelContent(String labelSelector, String content) {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
@@ -77,33 +88,59 @@ public class GameManager {
         return String.valueOf(value);
     }
 
+    private Human getHumanPlayer() {
+        Human curPlayer = null;
+        
+        try { curPlayer = (Human)this.players.get(0); } catch (IndexOutOfBoundsException e) {  }
+
+        return curPlayer; 
+    }
+
+    private void refreshSideMenu(State selectedState) {
+        setLabelContent("#menuStateNameLabel", selectedState.getName());
+        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(selectedState.getLevel())));
+        
+        setTrapezoidXScale("#sideMenu", selectedState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
+
+        setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(selectedState.getMoney())));
+        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(selectedState.getArmy())));
+        
+    }
+
+
+    private void refreshPlayerMenu() {
+
+        State playerState = this.getHumanPlayer().getTotalState();
+
+        setLabelContent("#playerStateNameLabel", playerState.getName());
+        setLabelContent("#playerStateLvlLabel", String.valueOf(playerState.getLevel()));
+        setTrapezoidXScale("#playerMenu", playerState.getName().length() * 0.12);
+        setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(playerState.getMoney())));
+        setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(playerState.getArmy())));
+        setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(playerState.getNaturalResources())));
+        setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(playerState.getRefinedResources())));
+        setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(playerState.getWorkForce())));
+
+    }
+
     public void manageClick(String id) {
-        
-        
+                
         State curState = this.states.get(id);
 
-        //if (Player.occupiedStates.isEmpty()) {
-            //Human human = new Human(curState, curState.getName(), id);
-            //occupyState(curState);
-           // setLabelContent("#playerStateNameLabel", curState.getName());
-           // setLabelContent("#playerStateLvlLabel", String.valueOf(curState.getLevel()));
-           // setTrapezoidXScale("#playerMenu", curState.getName().length() * 0.12);
-           // setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(curState.getMoney())));
-            //setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(curState.getArmy())));
-            //setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(curState.getNaturalResources())));
-            //setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(curState.getRefinedResources())));
-            //setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(curState.getWorkForce())));
-           // return;
-      //  }
-        
-        setLabelContent("#menuStateNameLabel", curState.getName());
-        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(curState.getLevel())));
-        
-        setTrapezoidXScale("#sideMenu", curState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
+        if (!this.getHumanPlayer().hasOriginalState()) {
+            
+            // qui si può mettere la roba per chiedere al player se è sicuro, ma secondo me sporca il codice ed è inutile
 
-        setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(curState.getMoney())));
-        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(curState.getArmy())));
+            this.getHumanPlayer().setOriginalState(curState);
+            
+            addStringToListView("#playerStateAlliedStatesListView", curState.getName());
+
+            refreshPlayerMenu();
+            
+            return;
+        }
         
+       refreshSideMenu(curState);
 
     }
     

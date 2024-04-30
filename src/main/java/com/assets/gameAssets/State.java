@@ -50,6 +50,25 @@ public class State {
         this.cities = new ArrayList<City>(cities);
     }
 
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, int army, int workForce, int stageArmy) {
+        this.name = name;
+        this.Id = Id;
+        this.money = money;
+        this.stageMoney = stageMoney;
+        this.naturalResources = naturalResources;
+        this.stageNaturalResources = stageNaturalResources;
+        this.refinedResources = refinedResources;
+        this.stageRefinedResources = stageRefinedResources;
+        this.reputation = reputation;
+        this.population = population;
+        this.level = level;
+        this.path = null;
+        this.army = army;
+        this.stageArmy = stageArmy;
+        this.workForce = workForce;
+        this.cities = new ArrayList<City>();
+    }
+
     public State(String fileName, String id, SVGPath path) throws Exception {
         
         XMLParser xmlParser = new XMLParser(fileName);
@@ -88,6 +107,10 @@ public class State {
     
     
     } 
+
+    public int getStageArmy() {
+        return this.stageArmy;
+    }
 
     public String getName() {
         return this.name;

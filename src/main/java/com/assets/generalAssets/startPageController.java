@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
 import com.assets.gameAssets.GameManager;
+import com.assets.gameAssets.Human;
 
 public class StartPageController {
 
@@ -81,6 +82,13 @@ public class StartPageController {
         Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
         double xShift = 50, yShift = -110;
         
+
+        // Add the Human Player to the gameManager
+        try { gameManager.addPlayer(new Human("Human Player", "#FF0000")); } catch(Exception e) { e.printStackTrace(); }
+
+        // TODO: Add Bots to the gameManager
+        
+
 
         for(SVGPathElement p : paths) {
             try {

@@ -240,10 +240,8 @@ public class MainPageController implements Initializable{
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {       
-        
+    public void initialize(URL url, ResourceBundle rb) {  
         hidePlayerMenu();
-
         // qui in mezzo ci va il codice che permette al player di scegliere lo stato con cui vuole partire
 
         showPlayerMenu();

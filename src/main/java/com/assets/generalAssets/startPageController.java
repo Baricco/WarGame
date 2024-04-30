@@ -55,18 +55,19 @@ public class StartPageController {
         Scene scene;
         
         Stage stage;
-                
+               
         try { 
             Parent root = App.createRoot("/com/assets/fxml/mainPage");
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
          } catch (IOException e) { e.printStackTrace(); return; }
-
+         
         initMainPage(scene);
 
         scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/mainPageStyle.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+        
 
     
     }

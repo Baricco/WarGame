@@ -71,15 +71,18 @@ public class GameManager {
 
     private String formatHighNumber(double value) {
         int billion = 1000000000, million = 1000000, thousand = 1000;
-        if (value >= billion) return (int)(value / billion) + " Bln";
-        if (value >= million) return (int)(value / million) + " Mln";
-        if (value >= thousand) return (int)(value / thousand) + " K";
+        if (value >= billion) return Math.round(value / billion) + " Bln";
+        if (value >= million) return Math.round(value / million) + " Mln";
+        if (value >= thousand) return Math.round(value / thousand) + " K";
         return String.valueOf(value);
     }
 
     public void manageClick(String id) {
         
+        
         State curState = this.states.get(id);
+
+        
         
         setLabelContent("#menuStateNameLabel", curState.getName());
         setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(curState.getLevel())));

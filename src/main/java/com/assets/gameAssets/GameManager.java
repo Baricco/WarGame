@@ -82,7 +82,19 @@ public class GameManager {
         
         State curState = this.states.get(id);
 
-        
+        //if (Player.occupiedStates.isEmpty()) {
+            //Human human = new Human(curState, curState.getName(), id);
+            //occupyState(curState);
+           // setLabelContent("#playerStateNameLabel", curState.getName());
+           // setLabelContent("#playerStateLvlLabel", String.valueOf(curState.getLevel()));
+           // setTrapezoidXScale("#playerMenu", curState.getName().length() * 0.12);
+           // setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(curState.getMoney())));
+            //setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(curState.getArmy())));
+            //setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(curState.getNaturalResources())));
+            //setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(curState.getRefinedResources())));
+            //setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(curState.getWorkForce())));
+           // return;
+      //  }
         
         setLabelContent("#menuStateNameLabel", curState.getName());
         setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(curState.getLevel())));

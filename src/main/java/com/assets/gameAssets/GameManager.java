@@ -250,15 +250,24 @@ public class GameManager {
         ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
 
+    private void removeHoverHandler() {
+        Pane mapContainer = (Pane)getElementByCssSelector("#mapContainer");
+        mapContainer.getChildren().forEach(svgPath -> svgPath.setOnMouseEntered(e -> {}));
+    
+    }
+
     private void setPlayerOriginalState(State clickedState) {
         
         this.getHumanPlayer().setOriginalState(clickedState);
             
         addStringToListView("#playerStateAlliedStatesListView", clickedState.getName());
 
-        refreshPlayerMenu();
+        refreshPlayerMenuByState(clickedState.getId());
         refreshSideMenu(clickedState);
         showPlayerMenu();
+
+        removeHoverHandler();
+
     }
 
     public void manageStateClicked(String id) {

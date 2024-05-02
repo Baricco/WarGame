@@ -248,7 +248,7 @@ public class MainPageController implements Initializable{
         Tooltip.install(sideMenuStateArmyLabel, new Tooltip("Stage Army: "));
     }
 
-    private void hidePlayerMenu() {
+    public void hidePlayerMenu() {
         playerMenu.getChildren().forEach(node -> { node.setVisible(false); });
     }
 

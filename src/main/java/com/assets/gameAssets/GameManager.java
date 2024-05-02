@@ -226,25 +226,29 @@ public class GameManager {
 
 
     private void refreshPlayerMenu() {
+        refreshPlayerMenuByState(this.getHumanPlayer().getTotalState().getId());
+    }
 
-        State playerState = this.getHumanPlayer().getTotalState();
+    public void refreshPlayerMenuByState(String stateId) {
 
-        setLabelContent("#playerStateNameLabel", playerState.getName());
-        setLabelContent("#playerStateLvlLabel", String.valueOf(playerState.getLevel()));
-        setTrapezoidXScale("#playerMenu", playerState.getName().length() * 0.12);
-        setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(playerState.getMoney())));
-        setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(playerState.getArmy())));
-        setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(playerState.getNaturalResources())));
-        setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(playerState.getRefinedResources())));
-        setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(playerState.getWorkForce())));
+        State state = this.states.get(stateId);
+
+        setLabelContent("#playerStateNameLabel", state.getName());
+        setLabelContent("#playerStateLvlLabel", String.valueOf(state.getLevel()));
+        setTrapezoidXScale("#playerMenu", state.getName().length() * 0.12);
+        setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(state.getMoney())));
+        setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(state.getArmy())));
+        setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(state.getNaturalResources())));
+        setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(state.getRefinedResources())));
+        setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(state.getWorkForce())));
+
+        showPlayerMenu();
 
     }
 
     private void showPlayerMenu() {
         ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
-
-
 
     private void setPlayerOriginalState(State clickedState) {
         

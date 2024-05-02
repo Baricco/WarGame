@@ -40,6 +40,17 @@ VBox {
     -fx-border-width: 2;
 }
 
+Button {
+    -fx-background-color: -darkGray;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+}
+
+Button:hover {
+    -fx-background-color: -lightGray;
+}
+
 #playerMenu {
     -fx-background-color: -black;
     -fx-border-color: -black -transparent -transparent -transparent;
@@ -58,7 +69,6 @@ Label {
 ListView {
     -fx-background-color: -darkGray;
     -fx-text-fill: #FFFFFF;
-
 }
 
 #sideMenuTopPane {

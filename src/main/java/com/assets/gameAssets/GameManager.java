@@ -2,6 +2,8 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Button;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +13,9 @@ import java.util.Map;
 import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.City;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -76,6 +81,15 @@ public class GameManager {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
 
+    private void setButton(String buttonSelector, String buttonText, EventHandler<ActionEvent> clickHandler) {
+        
+        Button btn = ((Button)getElementByCssSelector(buttonSelector));
+        btn.setVisible(true);
+        btn.setOnAction(clickHandler);
+        btn.setText(buttonText);        
+
+    }
+
     private void setTrapezoidXScale(String paneSelector, double xScale) {
         ((SVGPath)(((Pane)scene.lookup(paneSelector)).lookup(".trapezoid-shape"))).setScaleX(xScale < 1 ? 1 : xScale);
     }
@@ -96,9 +110,96 @@ public class GameManager {
         return curPlayer; 
     }
 
-    private void refreshSideMenu(State selectedState) {
+    private void showOccupiedStateSideMenu(State state) {
+        
+        
+        EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE IL RIFORNIMENTO
+                    System.out.println("Adesso Rifornisco " + state.getName());
+            }
+        };
 
-        // TODO: Mettere il controllo dello stato selezionato e mostrare cose diverse se lo stato è del player o è nemico
+        EventHandler<ActionEvent> citizenWorkHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE L'OPERA PER I CITTADINI
+                    System.out.println("Adesso Faccio un'opera per i cittadini del " + state.getName());
+            }
+        };
+
+        EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA RECLUTA DEI CITTADINI
+                    System.out.println("Adesso Recluto i cittadini del " + state.getName());
+            }
+        };
+
+        EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA FORTIFICAZIONE DELLO STATO
+                    System.out.println("Adesso Fortifico " + state.getName());
+            }
+        };
+
+        // LA LEVA OBBLIGATORIA SI GESTISCE SEPARATAMENTE
+
+        setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
+        setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
+        setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
+        setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
+
+    }
+
+    private void hideButton(String buttonSelector) {
+        ((Button)getElementByCssSelector(buttonSelector)).setVisible(false);
+    }
+
+    private void showAllySideMenu(State state) {
+       
+        EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE IL RIFORNIMENTO DEGLI ALLEATI
+                    System.out.println("Adesso Rifornisco il mio caro amico " + state.getName());
+            }
+        };
+
+        setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
+        hideButton("#sideMenuSecondButton");
+        hideButton("#sideMenuThirdButton");
+        hideButton("#sideMenuFourthButton");
+    }
+
+    private void showEnemySideMenu(State state) {
+       
+        EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE L'ATTACCO
+                    System.out.println("Adesso Attacco " + state.getName());
+            }
+        };
+
+        EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA NEGOZIAZIONE CON GLI ALTRI STATI
+                    System.out.println("Adesso Negozio con " + state.getName());
+            }
+        };
+
+        setButton("#sideMenuFirstButton", "Attack", attackHandler);
+        setButton("#sideMenuSecondButton", "Negotiate", negotiateHandler);
+        hideButton("#sideMenuThirdButton");
+        hideButton("#sideMenuFourthButton");
+    
+    }
+
+    private void refreshSideMenu(State selectedState) {
 
         setLabelContent("#menuStateNameLabel", selectedState.getName());
         setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(selectedState.getLevel())));
@@ -107,6 +208,19 @@ public class GameManager {
 
         setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(selectedState.getMoney())));
         setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(selectedState.getArmy())));
+
+        if (getHumanPlayer().hasOccupied(selectedState)) {
+            showOccupiedStateSideMenu(selectedState);
+        }
+        else if (getHumanPlayer().isAllied(selectedState)) {
+            showAllySideMenu(selectedState);
+        }
+        else {
+            // TODO: AGGIUGERE EVENTUALMENTE IL CONTROLLO PER VEDERE SE LO STATO E' DI UN BOT (NEMICO) O SE GIOCA PER SE' (NEUTRALE)
+            showEnemySideMenu(selectedState);
+            
+        }
+        
         
     }
 
@@ -126,6 +240,12 @@ public class GameManager {
 
     }
 
+    private void showPlayerMenu() {
+        ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
+    }
+
+
+
     private void setPlayerOriginalState(State clickedState) {
         
         this.getHumanPlayer().setOriginalState(clickedState);
@@ -133,6 +253,8 @@ public class GameManager {
         addStringToListView("#playerStateAlliedStatesListView", clickedState.getName());
 
         refreshPlayerMenu();
+        refreshSideMenu(clickedState);
+        showPlayerMenu();
     }
 
     public void manageStateClicked(String id) {

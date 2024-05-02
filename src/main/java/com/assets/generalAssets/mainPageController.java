@@ -1,8 +1,10 @@
 package com.assets.generalAssets;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -220,6 +222,21 @@ public class MainPageController implements Initializable{
     @FXML
     private Label sideMenuStateMoneyLabel;
 
+    @FXML
+    private Button sideMenuFirstButton;
+
+    @FXML
+    private Button sideMenuSecondButton;
+
+    @FXML
+    private Button sideMenuThirdButton;
+
+    @FXML
+    private Button sideMenuFourthButton;
+
+    @FXML
+    private ToggleButton sideMenuToggleSwitch;
+
     private void attachTooltips() {
         Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
         Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));
@@ -235,19 +252,10 @@ public class MainPageController implements Initializable{
         playerMenu.getChildren().forEach(node -> { node.setVisible(false); });
     }
 
-    private void showPlayerMenu() {
-        playerMenu.getChildren().forEach(node -> { node.setVisible(true); });
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {  
-        
+                
         hidePlayerMenu();
-        
-        // qui in mezzo ci va il codice che permette al player di scegliere lo stato con cui vuole partire
-
-        showPlayerMenu();
-
         attachTooltips();
 
 

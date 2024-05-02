@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,7 +64,7 @@
             <SVGPath fx:id="SA" content="M40,60 C42,48 44,30 25,32" layoutX="343.0" layoutY="52.0" />
             <SVGPath fx:id="IT" content="M40,60 C42,48 44,30 25,32" layoutX="539.0" layoutY="48.0" />
             <SVGPath fx:id="IR" content="M40,60 C42,48 44,30 25,32" layoutX="748.0" layoutY="23.0" />
-            <Pane fx:id="sideMenu" layoutX="1101.0" prefHeight="556.0" prefWidth="179.0">
+            <AnchorPane fx:id="sideMenu" layoutX="1101.0" prefHeight="557.0" prefWidth="184.0">
                <children>
                   <AnchorPane fx:id="sideMenuTopPane" prefHeight="45.0" prefWidth="183.0">
                      <children>
@@ -72,20 +74,25 @@
                         <Label fx:id="menuStateNameLabel" alignment="CENTER" layoutX="76.8" layoutY="22.0" text="State" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="32.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="25.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/moneyIcon.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="32.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="25.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../src/main/resources/com/icons/tankIcon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="sideMenuStateMoneyLabel" contentDisplay="CENTER" layoutX="80.0" layoutY="104.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
-                  <Label fx:id="sideMenuStateArmyLabel" contentDisplay="CENTER" layoutX="80.0" layoutY="154.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
+                  <Label fx:id="sideMenuStateMoneyLabel" contentDisplay="CENTER" layoutX="83.0" layoutY="144.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
+                  <Label fx:id="sideMenuStateArmyLabel" contentDisplay="CENTER" layoutX="83.0" layoutY="99.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
+                  <Button fx:id="sideMenuFirstButton" alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="222.0" maxWidth="120.0" minWidth="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="First Button" textAlignment="CENTER" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="222.0" />
+                  <Button fx:id="sideMenuSecondButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Second Button" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="270.0" />
+                  <Button fx:id="sideMenuThirdButton" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Third Button" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="320.0" />
+                  <ToggleButton fx:id="sideMenuToggleSwitch" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Switch" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="420.0" />
+                  <Button fx:id="sideMenuFourthButton" layoutX="10.0" layoutY="10.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Fourth Button" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="370.0" />
                </children>
-            </Pane>
+            </AnchorPane>
          </children>
       </Pane>
       <Pane fx:id="playerMenu" prefHeight="176.0" prefWidth="1280.0">

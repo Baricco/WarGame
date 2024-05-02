@@ -117,6 +117,22 @@ public abstract class Player {
             );
     }
 
+    public boolean isAllied(State state) {
+        
+        if (this.hasOccupied(state)) return false;
+
+        for(Player ally : this.allies) if (ally.hasOccupied(state)) return true;
+
+        return false;
+
+
+    }
+
+    public boolean hasOccupied(State state) {
+        if (this.originalState.getId() == state.getId()) return true;
+        return this.occupiedStates.contains(state);
+    }
+
     public void setOriginalState(State originalState) {
         if (this.originalState == null) this.originalState = originalState;
     }

@@ -97,6 +97,9 @@ public class GameManager {
     }
 
     private void refreshSideMenu(State selectedState) {
+
+        // TODO: Mettere il controllo dello stato selezionato e mostrare cose diverse se lo stato è del player o è nemico
+
         setLabelContent("#menuStateNameLabel", selectedState.getName());
         setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(selectedState.getLevel())));
         
@@ -123,19 +126,22 @@ public class GameManager {
 
     }
 
-    public void manageClick(String id) {
+    private void setPlayerOriginalState(State clickedState) {
+        
+        this.getHumanPlayer().setOriginalState(clickedState);
+            
+        addStringToListView("#playerStateAlliedStatesListView", clickedState.getName());
+
+        refreshPlayerMenu();
+    }
+
+    public void manageStateClicked(String id) {
                 
         State curState = this.states.get(id);
 
         if (!this.getHumanPlayer().hasOriginalState()) {
             
-            // qui si può mettere la roba per chiedere al player se è sicuro, ma secondo me sporca il codice ed è inutile
-
-            this.getHumanPlayer().setOriginalState(curState);
-            
-            addStringToListView("#playerStateAlliedStatesListView", curState.getName());
-
-            refreshPlayerMenu();
+            setPlayerOriginalState(curState);
             
             return;
         }

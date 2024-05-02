@@ -98,7 +98,7 @@ public class StartPageController {
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
-                curPath.setOnMouseClicked(e -> gameManager.manageClick(curPath.getId()));
+                curPath.setOnMouseClicked(e -> gameManager.manageStateClicked(curPath.getId()));
                 curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");

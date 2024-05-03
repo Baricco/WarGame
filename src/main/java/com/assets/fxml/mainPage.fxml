@@ -132,7 +132,7 @@
             <Label contentDisplay="CENTER" layoutX="611.0" layoutY="75.0" prefHeight="20.0" prefWidth="120.0" text="Territories" textAlignment="CENTER" />
             <Label contentDisplay="CENTER" layoutX="851.0" layoutY="73.0" prefHeight="20.0" prefWidth="60.0" text="Alliances" textAlignment="CENTER" />
             <ListView fx:id="playerStateConqueredTerritoriesListView" layoutX="781.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
-            <ListView fx:id="playerStateAlliedStatesListView" layoutX="541.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" />
+            <ListView fx:id="playerStateAlliedStatesListView" layoutX="541.0" layoutY="100.0" prefHeight="59.0" prefWidth="200.0" stylesheets="@mainPageStyle.css" />
             <Label fx:id="playerStateMoneyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="44.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
             <Label fx:id="playerStateArmyLabel" contentDisplay="CENTER" layoutX="96.0" layoutY="111.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />
             <Label fx:id="playerStateNaturalResourcesLabel" contentDisplay="CENTER" layoutX="294.0" layoutY="44.0" prefHeight="20.0" prefWidth="100.0" text="0" textAlignment="CENTER" />

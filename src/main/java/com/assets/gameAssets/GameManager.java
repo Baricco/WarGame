@@ -74,7 +74,6 @@ public class GameManager {
         if (!(element instanceof ListView)) return;
         curListView = (ListView<String>)element;
         curListView.getItems().add(newString);
-        curListView.refresh();
     }
 
     private void setLabelContent(String labelSelector, String content) {

@@ -8,6 +8,7 @@
     -lightGray: #474747;
     -darkGray: #272727;
     -black: #171219;
+    -white: #FFFFFF;
 }
 
 VBox {
@@ -42,7 +43,7 @@ VBox {
 
 Button {
     -fx-background-color: -darkGray;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: -white;
     -fx-background-radius: 0px;
     -fx-border-radius: 0px;
 }
@@ -63,12 +64,17 @@ Button:hover {
 
 Label {
     -fx-background-color: -transparent;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: -white;
 }
 
 ListView {
     -fx-background-color: -darkGray;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: -white;
+}
+
+.list-cell {
+    -fx-background-color: -darkGray;
+    -fx-text-fill: -white;
 }
 
 #sideMenuTopPane {

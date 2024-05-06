@@ -3,6 +3,7 @@ package com.assets.generalAssets;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,19 +11,24 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.Node;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
 import com.assets.gameAssets.GameManager;
 import com.assets.gameAssets.Human;
+import com.assets.generalAssets.graphics.CustomColorPicker;
+import com.assets.generalAssets.graphics.ToggleSwitch;
 
-public class StartPageController {
+public class StartPageController implements Initializable {
 
     @FXML
     private Button quitGameButton;
@@ -31,7 +37,9 @@ public class StartPageController {
     private Button startGameButton;
 
     @FXML
-    private ColorPicker startGameColorPicker;
+    private AnchorPane startGameColorPickerContainer;
+
+    private CustomColorPicker startGameColorPicker;
 
     @FXML
     private Label startGameTitle;
@@ -48,6 +56,25 @@ public class StartPageController {
     void setPlayerColor(ActionEvent event) {
         System.out.println("Prima di scrivere il codice qui dentro vorrei modificare il colorpicker perchè fa schifo");
 
+    }
+
+    private void initColorPicker() {
+    
+        startGameColorPicker = new CustomColorPicker();
+        
+        startGameColorPicker.setId("startGameColorPicker");
+        
+        startGameColorPickerContainer.getChildren().add(startGameColorPicker);
+
+        startGameColorPicker.setVisible(true);
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {  
+        
+        initColorPicker();
+        
     }
 
     @FXML

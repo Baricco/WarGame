@@ -1,4 +1,4 @@
-package com.assets.gameAssets.basics;
+package com.assets.generalAssets.graphics;
 
 
 import javafx.beans.property.SimpleBooleanProperty;

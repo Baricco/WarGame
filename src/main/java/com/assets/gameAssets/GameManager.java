@@ -14,7 +14,7 @@ import java.util.Map;
 
 import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.City;
-import com.assets.gameAssets.basics.ToggleSwitch;
+import com.assets.generalAssets.graphics.ToggleSwitch;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;

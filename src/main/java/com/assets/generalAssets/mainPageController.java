@@ -13,7 +13,7 @@ import javafx.scene.shape.SVGPath;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.assets.gameAssets.basics.ToggleSwitch;
+import com.assets.generalAssets.graphics.ToggleSwitch;
 
 import javafx.fxml.Initializable;
 

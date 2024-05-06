@@ -8,7 +8,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 public class ToggleSwitch extends HBox {
@@ -24,6 +24,12 @@ public class ToggleSwitch extends HBox {
     public boolean isOn() {
         return this.switchedOn.get();
     } 
+
+	public void attachTooltip(Tooltip tooltip) {
+		Tooltip.install(button, tooltip);
+		Tooltip.install(label, tooltip);
+		Tooltip.install(this, tooltip);
+	}
 
 	private void init() {
 		

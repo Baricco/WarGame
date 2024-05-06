@@ -29,21 +29,39 @@ public class ColorPickerManager {
     }
 
     public void setHueValue(double newHueValue) {
-        this.hueValue = newHueValue;
+        this.hueValue = (360 * newHueValue) / this.hueSlider.getMax(); 
         setGradient();
     }
 
     public void setGradient() {
 
     // Creazione del gradiente lineare
-    LinearGradient gradient = new LinearGradient(0, 0, 1, 1, true, CycleMethod.NO_CYCLE,
+    LinearGradient gradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
     new Stop(0, Color.BLACK),
-    new Stop(1, Color.hsb(this.hueValue, 1, 1)));
+    new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
+    new Stop(1, Color.WHITE));
     
     System.out.println(Color.hsb(this.hueValue, 1, 1));
 
     // Applicazione del gradiente come sfondo
     hexColorSelector.setBackground(new Background(new BackgroundFill(gradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
-
+    
 }
+
+public void setColorValue(double posX, double posY) {
+    if(posX <= hexColorSelector.getWidth() / 2) {
+        this.curColor = Color.hsb(this.hueValue, 1, (2 * posX) / hexColorSelector.getWidth());
+    }
+    else {
+        this.curColor = Color.hsb(this.hueValue, (double)(1 - (posX / hexColorSelector.getWidth())), 1);
+        System.out.println((double)(1 - (posX / hexColorSelector.getWidth())));
+        //TOCCA CAPI PERCHE' LA SATURAZIONE E' SBAGLIATA DEH PEFFORZA D'ALTRONDE SIVALLETTOH NICOLAAAAAAAAAA
+    }
+}
+
+public Color getCurColor() {
+    return this.curColor;
+}
+
+
 }

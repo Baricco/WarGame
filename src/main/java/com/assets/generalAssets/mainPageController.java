@@ -7,10 +7,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.SVGPath;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.assets.gameAssets.basics.ToggleSwitch;
+
 import javafx.fxml.Initializable;
 
 
@@ -235,7 +239,9 @@ public class MainPageController implements Initializable{
     private Button sideMenuFourthButton;
 
     @FXML
-    private ToggleButton sideMenuToggleSwitch;
+    private AnchorPane sideMenuSwitchContainer;
+
+    private ToggleSwitch sideMenuToggleSwitch;
 
     private void attachTooltips() {
         Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
@@ -252,11 +258,30 @@ public class MainPageController implements Initializable{
         playerMenu.getChildren().forEach(node -> { node.setVisible(false); });
     }
 
+    private void hideSideMenu() {
+        sideMenu.getChildren().forEach(node -> { node.setVisible(false); });
+    }
+
+    private void initToggleSwitch() {
+        
+        sideMenuToggleSwitch = new ToggleSwitch();
+        
+        sideMenuToggleSwitch.setId("sideMenuToggleSwitch");
+        
+        sideMenuSwitchContainer.getChildren().add(sideMenuToggleSwitch);
+
+        sideMenuToggleSwitch.setVisible(true);
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {  
                 
+        initToggleSwitch();
         hidePlayerMenu();
+        hideSideMenu();
         attachTooltips();
+
 
 
     }

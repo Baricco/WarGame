@@ -2,6 +2,8 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Toggle;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 
 
@@ -12,8 +14,10 @@ import java.util.Map;
 
 import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.City;
+import com.assets.gameAssets.basics.ToggleSwitch;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.Node;
@@ -80,6 +84,11 @@ public class GameManager {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
 
+    private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler) {
+        ToggleSwitch toggleSwitch = ((ToggleSwitch)getElementByCssSelector(toggleSwitchSelector));
+        toggleSwitch.setAction(actionHandler);
+    }
+
     private void setButton(String buttonSelector, String buttonText, EventHandler<ActionEvent> clickHandler) {
         
         Button btn = ((Button)getElementByCssSelector(buttonSelector));
@@ -144,12 +153,33 @@ public class GameManager {
             }
         };
 
-        // LA LEVA OBBLIGATORIA SI GESTISCE SEPARATAMENTE
+        EventHandler<Event> militaryConscriptionHandler = new EventHandler<Event>() {
+            @Override
+            public void handle(Event event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA LEVA OBBLIGATORIA
+
+                    ToggleSwitch toggleSwitch;
+                    
+                    try { toggleSwitch = ((ToggleSwitch)event.getSource()); }
+                    catch(ClassCastException e) { toggleSwitch = ((ToggleSwitch)((Button)event.getSource()).getParent()); }
+                    catch(Exception e) { e.printStackTrace(); return; }
+
+                    if (toggleSwitch.isOn()) {
+                        System.out.println("Adesso c'è la Leva Obbligatoria in " + state.getName());
+                    }
+                    else {
+                        System.out.println("Adesso non c'è la Leva Obbligatoria in " + state.getName());
+                    }
+            }
+        };
+
+        
 
         setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
         setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
         setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
         setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
+        setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler);
 
     }
 
@@ -245,6 +275,11 @@ public class GameManager {
 
     }
 
+
+    private void showSideMenu() {
+        ((Pane)getElementByCssSelector("#sideMenu")).getChildren().forEach(node -> { node.setVisible(true); });
+    }
+
     private void showPlayerMenu() {
         ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
@@ -264,7 +299,7 @@ public class GameManager {
         refreshPlayerMenuByState(clickedState.getId());
         refreshSideMenu(clickedState);
         showPlayerMenu();
-
+        showSideMenu();
         removeHoverHandler();
 
     }

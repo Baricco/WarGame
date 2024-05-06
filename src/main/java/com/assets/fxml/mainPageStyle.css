@@ -72,6 +72,20 @@ ListView {
     -fx-text-fill: -white;
 }
 
+.toggleSwitchOFF {
+    -fx-background-color: -lightGray;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 4;
+}
+
+.toggleSwitchON {
+    -fx-background-color: -lightContinent;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 4;
+}
+
+
+
 .list-cell {
     -fx-background-color: -darkGray;
     -fx-text-fill: -white;

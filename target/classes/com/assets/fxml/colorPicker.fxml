@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" stylesheets="@app/../colorPickerStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.generalAssets.ColorPickerController">
+   <children>
+      <Pane fx:id="hexColorSelector" layoutX="14.0" layoutY="14.0" prefHeight="130.0" prefWidth="250.0" />
+      <Slider fx:id="hueSlider" layoutX="272.0" layoutY="14.0" onDragDetected="#changeHue" orientation="VERTICAL" prefHeight="174.0" prefWidth="14.0" />
+      <TextField fx:id="hexColorTextField" layoutX="14.0" layoutY="161.0" prefHeight="26.0" prefWidth="250.0" />
+   </children>
+</AnchorPane>

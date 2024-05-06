@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
@@ -25,7 +27,7 @@ import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
 import com.assets.gameAssets.GameManager;
 import com.assets.gameAssets.Human;
-import com.assets.generalAssets.graphics.CustomColorPicker;
+import com.assets.generalAssets.graphics.ColorPickerManager;
 import com.assets.generalAssets.graphics.ToggleSwitch;
 
 public class StartPageController implements Initializable {
@@ -39,14 +41,12 @@ public class StartPageController implements Initializable {
     @FXML
     private AnchorPane startGameColorPickerContainer;
 
-    private CustomColorPicker startGameColorPicker;
-
     @FXML
     private Label startGameTitle;
     
     private static GameManager gameManager;
 
-
+    private ColorPickerManager colorPickerManager;
     @FXML
     void quitGame(ActionEvent event) {
         Platform.exit();
@@ -59,7 +59,19 @@ public class StartPageController implements Initializable {
     }
 
     private void initColorPicker() {
+        AnchorPane colorPicker;
+                       
+        try { 
+            colorPicker = (AnchorPane)App.createRoot("/com/assets/fxml/colorPicker");
+        } catch (IOException e) { e.printStackTrace(); return; }
+        
     
+
+        startGameColorPickerContainer.getChildren().add(colorPicker);
+
+        
+
+       /*
         startGameColorPicker = new CustomColorPicker();
         
         startGameColorPicker.setId("startGameColorPicker");
@@ -67,7 +79,7 @@ public class StartPageController implements Initializable {
         startGameColorPickerContainer.getChildren().add(startGameColorPicker);
 
         startGameColorPicker.setVisible(true);
-
+        */
     }
 
     @Override

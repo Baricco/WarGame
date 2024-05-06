@@ -2,18 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@startPageStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.generalAssets.StartPageController">
    <children>
-      <Button fx:id="startGameButton" layoutX="490.0" layoutY="389.0" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="40.0" prefWidth="100.0" text="Start Game" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="490.0" />
-      <AnchorPane fx:id="startGameColorPickerContainer" layoutX="494.0" layoutY="462.0" prefHeight="117.0" prefWidth="300.0" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="486.0" AnchorPane.topAnchor="462.0" />
+      <Button fx:id="startGameButton" layoutX="490.0" layoutY="288.0" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="40.0" prefWidth="100.0" text="Start Game" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="490.79999999999995" />
+      <AnchorPane fx:id="startGameColorPickerContainer" layoutX="491.0" layoutY="387.0" prefHeight="200.0" prefWidth="300.0" AnchorPane.leftAnchor="491.0" AnchorPane.rightAnchor="491.4000000000001" AnchorPane.topAnchor="387.0" />
       <Label fx:id="startGameTitle" alignment="CENTER" layoutX="552.0" layoutY="97.0" prefHeight="53.0" prefWidth="174.0" text="DYSTOPIA" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
       <Button fx:id="quitGameButton" layoutX="597.0" layoutY="525.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="40.0" prefWidth="100.0" text="Quit" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="600.0" />
+      <Slider layoutX="570.0" layoutY="339.0" />
    </children>
 </AnchorPane>

@@ -86,6 +86,9 @@ public class GameManager {
 
     private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler) {
         ToggleSwitch toggleSwitch = ((ToggleSwitch)getElementByCssSelector(toggleSwitchSelector));
+        
+        toggleSwitch.setVisible(true);
+
         toggleSwitch.setAction(actionHandler);
     }
 
@@ -187,6 +190,10 @@ public class GameManager {
         ((Button)getElementByCssSelector(buttonSelector)).setVisible(false);
     }
 
+    private void hideToggleSwitch(String switchSelector) {
+        ((ToggleSwitch)getElementByCssSelector(switchSelector)).setVisible(false);
+    }
+
     private void showAllySideMenu(State state) {
        
         EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {
@@ -201,6 +208,7 @@ public class GameManager {
         hideButton("#sideMenuSecondButton");
         hideButton("#sideMenuThirdButton");
         hideButton("#sideMenuFourthButton");
+        hideToggleSwitch("#sideMenuToggleSwitch");
     }
 
     private void showEnemySideMenu(State state) {
@@ -225,6 +233,7 @@ public class GameManager {
         setButton("#sideMenuSecondButton", "Negotiate", negotiateHandler);
         hideButton("#sideMenuThirdButton");
         hideButton("#sideMenuFourthButton");
+        hideToggleSwitch("#sideMenuToggleSwitch");
     
     }
 

@@ -252,6 +252,7 @@ public class MainPageController implements Initializable{
 
         Tooltip.install(sideMenuStateMoneyLabel, new Tooltip("Stage Money: "));
         Tooltip.install(sideMenuStateArmyLabel, new Tooltip("Stage Army: "));
+        Tooltip.install(sideMenuToggleSwitch, new Tooltip("Military Conscription"));
     }
 
     public void hidePlayerMenu() {

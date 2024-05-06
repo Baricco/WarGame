@@ -34,6 +34,7 @@ public class ToggleSwitch extends HBox {
 		});
 		label.setOnMouseClicked((e) -> {
 			switchedOn.set(!switchedOn.get());
+
 		});
 		setStyle();
 		bindProperties();
@@ -67,6 +68,7 @@ public class ToggleSwitch extends HBox {
             @Override
             public void handle(ActionEvent event) {
                 // Esegui la gestione dell'evento usando actionHandler
+				switchedOn.set(!switchedOn.get());
                 actionHandler.handle(event);
             }
         }));

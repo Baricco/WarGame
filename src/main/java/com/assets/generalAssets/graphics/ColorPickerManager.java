@@ -35,16 +35,26 @@ public class ColorPickerManager {
 
     public void setGradient() {
 
-    // Creazione del gradiente lineare
-    LinearGradient gradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
-    new Stop(0, Color.BLACK),
-    new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
-    new Stop(1, Color.WHITE));
+    // Creazione del gradiente orizzontale
+
+    LinearGradient horizontalGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+        new Stop(0, Color.BLACK),
+        new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
+        new Stop(1, Color.WHITE)
+    );
+
+    // Creazione del gradiente verticale
+    // TODO: CAMBIARE QUESTO GRADIENTE IN MODO CHE VADA DA ROSSO A ROSSO PASSANDO PER TUTTE LE TONALITA' (HUE) IN MODO DA SOSTITUIRE LO SLIDER A DESTRA
+    LinearGradient verticalGradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
+        new Stop(0, Color.BLACK),
+        new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
+        new Stop(1, Color.WHITE)
+    );
     
     System.out.println(Color.hsb(this.hueValue, 1, 1));
 
     // Applicazione del gradiente come sfondo
-    hexColorSelector.setBackground(new Background(new BackgroundFill(gradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
+    hexColorSelector.setBackground(new Background(new BackgroundFill(horizontalGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
     
 }
 

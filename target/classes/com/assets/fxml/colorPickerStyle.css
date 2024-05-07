@@ -1,2 +1,15 @@
 #hexColorSelector{
+    -fx-border-color: #000000;
+}
+
+#hexColorTextField {
+    
+}
+
+#hueSlider {
+
+}
+
+#colorSelector {
+
 }

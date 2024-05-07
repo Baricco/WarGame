@@ -51,7 +51,8 @@ public class ColorPickerController implements Initializable {
                     colorPickerManager.setHueValue(new_val.intValue());
                     refreshColor(colorSelector.getLayoutX(), colorSelector.getLayoutY());
                 }
-        });       
+        });   
+        
     }
 
     @FXML
@@ -64,7 +65,6 @@ public class ColorPickerController implements Initializable {
     void refreshColor(double posX, double posY) {
         colorPickerManager.setColorValue(posX, posY);
         colorSelector.setFill(colorPickerManager.getCurColor());
-        System.out.println("dionegro");
     }
 
 }

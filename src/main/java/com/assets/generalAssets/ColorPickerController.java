@@ -1,5 +1,6 @@
 package com.assets.generalAssets;
 
+import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,6 +22,7 @@ import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 
 public class ColorPickerController implements Initializable {
 
@@ -42,7 +44,7 @@ public class ColorPickerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        this.colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider);
+        this.colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider, colorSelector);
 
         colorPickerManager.setGradient();
 
@@ -60,6 +62,14 @@ public class ColorPickerController implements Initializable {
             };
         });
         
+    }
+    
+    @FXML
+    void setColorFromTextField(ActionEvent event) {
+        String hexCode = this.hexColorTextField.getText().startsWith("#") ? this.hexColorTextField.getText().substring(1) : this.hexColorTextField.getText();
+        System.out.println(hexCode);
+        // non capisco perchè questa cosa non vada
+        colorPickerManager.setColorByHex(hexCode);
     }
 
     public static ColorPickerManager getColorPickerManager() { return colorPickerManager; }

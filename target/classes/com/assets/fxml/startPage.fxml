@@ -10,7 +10,7 @@
    <children>
       <Button fx:id="startGameButton" layoutX="490.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToMainPage" prefHeight="40.0" prefWidth="100.0" text="Start Game" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="490.79999999999995" />
       <AnchorPane fx:id="startGameColorPickerContainer" layoutX="491.0" layoutY="438.0" prefHeight="200.0" prefWidth="300.0" AnchorPane.leftAnchor="491.0" AnchorPane.rightAnchor="491.6666666666665" AnchorPane.topAnchor="438.0" />
-      <Label fx:id="startGameTitle" alignment="CENTER" layoutX="552.0" layoutY="97.0" prefHeight="53.0" prefWidth="174.0" text="FABRIZIO" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <Label fx:id="startGameTitle" alignment="CENTER" layoutX="552.0" layoutY="97.0" prefHeight="53.0" prefWidth="174.0" text="GERMANO" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <font>
             <Font size="36.0" />
          </font>

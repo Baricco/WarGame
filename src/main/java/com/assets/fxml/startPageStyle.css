@@ -21,6 +21,10 @@ VBox {
     -fx-background-color: -darkGray;
 }
 
+#botSlider .axis{
+    -fx-tick-label-fill: -white;
+}
+
 #botSlider .thumb {
     -fx-background-color: -borderGray;
 }

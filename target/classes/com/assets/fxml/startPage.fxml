@@ -16,8 +16,8 @@
          </font>
       </Label>
       <Button fx:id="quitGameButton" layoutX="488.0" layoutY="651.0" mnemonicParsing="false" onAction="#quitGame" prefHeight="40.0" prefWidth="100.0" text="Quit" AnchorPane.leftAnchor="488.0" AnchorPane.rightAnchor="492.0" AnchorPane.topAnchor="651.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="330.0" text="Number of Bots" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Slider fx:id="botSlider" blockIncrement="1.0" layoutX="490.0" layoutY="348.0" majorTickUnit="10.0" max="50.0" minorTickCount="1" prefHeight="14.0" prefWidth="297.0" showTickLabels="true" showTickMarks="true" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="493.33333333333326" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="330.0" text="Bot Number" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Slider fx:id="botSlider" blockIncrement="1.0" layoutX="490.0" layoutY="348.0" majorTickUnit="1.0" max="8.0" minorTickCount="0" prefHeight="14.0" prefWidth="297.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" AnchorPane.leftAnchor="490.0" AnchorPane.rightAnchor="493.33333333333326" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="414.0" text="Player Color" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
    </children>
 </AnchorPane>

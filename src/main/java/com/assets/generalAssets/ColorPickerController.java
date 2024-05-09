@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import com.assets.generalAssets.graphics.ColorPickerManager;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -32,7 +33,7 @@ public class ColorPickerController implements Initializable {
     @FXML
     private Slider hueSlider;
 
-    private ColorPickerManager colorPickerManager;
+    private static ColorPickerManager colorPickerManager;
 
     @FXML
     private Circle colorSelector;
@@ -51,9 +52,11 @@ public class ColorPickerController implements Initializable {
                     colorPickerManager.setHueValue(new_val.intValue());
                     refreshColor(colorSelector.getLayoutX(), colorSelector.getLayoutY());
                 }
-        });   
+        });       
         
     }
+
+    public static ColorPickerManager getColorPickerManager() { return colorPickerManager; }
 
     @FXML
     void changeColor(MouseEvent event) {

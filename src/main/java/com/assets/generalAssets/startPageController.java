@@ -47,15 +47,10 @@ public class StartPageController implements Initializable {
     private static GameManager gameManager;
 
     private ColorPickerManager colorPickerManager;
+
     @FXML
     void quitGame(ActionEvent event) {
         Platform.exit();
-    }
-
-    @FXML
-    void setPlayerColor(ActionEvent event) {
-        System.out.println("Prima di scrivere il codice qui dentro vorrei modificare il colorpicker perchè fa schifo");
-
     }
 
     private void initColorPicker() {
@@ -69,8 +64,6 @@ public class StartPageController implements Initializable {
 
         startGameColorPickerContainer.getChildren().add(colorPicker);
 
-        
-
        /*
         startGameColorPicker = new CustomColorPicker();
         
@@ -82,6 +75,7 @@ public class StartPageController implements Initializable {
         */
     }
 
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {  
         
@@ -123,7 +117,7 @@ public class StartPageController implements Initializable {
         
 
         // Add the Human Player to the gameManager
-        try { gameManager.addPlayer(new Human("Human Player", "#FF0000")); } catch(Exception e) { e.printStackTrace(); }
+        try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
         // TODO: Add Bots to the gameManager
         

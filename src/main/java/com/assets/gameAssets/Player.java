@@ -33,6 +33,8 @@ public abstract class Player {
         this.allies = new ArrayList<>();
 
         this.active = false;
+
+        System.out.println(hexColor);
     
     }
 

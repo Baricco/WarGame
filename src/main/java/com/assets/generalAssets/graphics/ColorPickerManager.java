@@ -43,34 +43,35 @@ public class ColorPickerManager {
         new Stop(1, Color.WHITE)
     );
 
-    // Creazione del gradiente verticale
-    // TODO: CAMBIARE QUESTO GRADIENTE IN MODO CHE VADA DA ROSSO A ROSSO PASSANDO PER TUTTE LE TONALITA' (HUE) IN MODO DA SOSTITUIRE LO SLIDER A DESTRA
-    LinearGradient verticalGradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-        new Stop(0, Color.BLACK),
-        new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
-        new Stop(1, Color.WHITE)
-    );
-    
-    System.out.println(Color.hsb(this.hueValue, 1, 1));
-
     // Applicazione del gradiente come sfondo
     hexColorSelector.setBackground(new Background(new BackgroundFill(horizontalGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
     
 }
 
 public void setColorValue(double posX, double posY) {
-    if(posX <= hexColorSelector.getWidth() / 2) {
-        this.curColor = Color.hsb(this.hueValue, 1, (2 * posX) / hexColorSelector.getWidth());
-    }
-    else {
-        this.curColor = Color.hsb(this.hueValue, (double)(1 - (posX / hexColorSelector.getWidth())), 1);
-        System.out.println((double)(1 - (posX / hexColorSelector.getWidth())));
-        //TOCCA CAPI PERCHE' LA SATURAZIONE E' SBAGLIATA DEH PEFFORZA D'ALTRONDE SIVALLETTOH NICOLAAAAAAAAAA
-    }
+    if(posX <= hexColorSelector.getWidth() / 2) this.curColor = Color.hsb(this.hueValue, 1, (2 * posX) / hexColorSelector.getWidth());
+    else this.curColor = Color.hsb(this.hueValue, (double)(1 - (posX / hexColorSelector.getWidth())) * 2, 1);
+
+    refreshTextField();
+
+}
+
+private void refreshTextField() {
+    hexColorTextField.setPromptText(getCurHexColor());
 }
 
 public Color getCurColor() {
     return this.curColor;
+}
+
+private String formatColorValue(double val) {
+    String in = Integer.toHexString((int) Math.round(val * 255));
+    return in.length() == 1 ? "0" + in : in;
+}
+
+public String getCurHexColor() {
+    return "#" + (formatColorValue(this.curColor.getRed()) + formatColorValue(this.curColor.getGreen()) + formatColorValue(this.curColor.getBlue()))
+            .toUpperCase();
 }
 
 

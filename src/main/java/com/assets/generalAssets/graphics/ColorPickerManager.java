@@ -6,6 +6,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
@@ -47,14 +48,15 @@ public class ColorPickerManager {
     hexColorSelector.setBackground(new Background(new BackgroundFill(horizontalGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
 
     LinearGradient hueSliderGradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
-    new Stop(0, Color.RED),
-    new Stop(0.2, Color.YELLOW),
-    new Stop(0.4, Color.GREEN),
-    new Stop(0.6, Color.BLUE),
-    new Stop(0.8, Color.MAGENTA),
-    new Stop(1, Color.RED));
+        new Stop(0, Color.RED),
+        new Stop(0.2, Color.MAGENTA),
+        new Stop(0.4, Color.BLUE),
+        new Stop(0.6, Color.GREEN),
+        new Stop(0.8, Color.YELLOW),
+        new Stop(1, Color.RED)
+    );
 
-    hueSlider.setBackground(new Background(new BackgroundFill(hueSliderGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
+    this.hueSlider.setBackground(new Background(new BackgroundFill(hueSliderGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
     
 }
 
@@ -67,7 +69,7 @@ public void setColorValue(double posX, double posY) {
 }
 
 private void refreshTextField() {
-    hexColorTextField.setPromptText(getCurHexColor());
+    hexColorTextField.setText(getCurHexColor());
 }
 
 public Color getCurColor() {

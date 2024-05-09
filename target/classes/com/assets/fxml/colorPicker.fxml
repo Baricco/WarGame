@@ -13,6 +13,6 @@
             <Circle fx:id="colorSelector" fill="WHITE" layoutX="117.0" layoutY="57.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
          </children></Pane>
       <Slider fx:id="hueSlider" layoutX="272.0" layoutY="14.0" orientation="VERTICAL" prefHeight="174.0" prefWidth="14.0" />
-      <TextField fx:id="hexColorTextField" layoutX="14.0" layoutY="161.0" prefHeight="26.0" prefWidth="250.0" />
+      <TextField fx:id="hexColorTextField" editable="false" focusTraversable="false" layoutX="14.0" layoutY="161.0" mouseTransparent="true" prefHeight="26.0" prefWidth="250.0" />
    </children>
 </AnchorPane>

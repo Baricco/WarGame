@@ -52,7 +52,13 @@ public class ColorPickerController implements Initializable {
                     colorPickerManager.setHueValue(new_val.intValue());
                     refreshColor(colorSelector.getLayoutX(), colorSelector.getLayoutY());
                 }
-        });       
+        });
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                refreshColor(colorSelector.getLayoutX(), colorSelector.getLayoutY());
+            };
+        });
         
     }
 

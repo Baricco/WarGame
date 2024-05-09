@@ -64,6 +64,8 @@ public class StartPageController implements Initializable {
 
         startGameColorPickerContainer.getChildren().add(colorPicker);
 
+        colorPickerManager = ColorPickerController.getColorPickerManager();
+
        /*
         startGameColorPicker = new CustomColorPicker();
         

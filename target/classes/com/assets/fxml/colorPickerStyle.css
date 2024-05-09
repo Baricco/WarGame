@@ -1,9 +1,24 @@
 #hexColorSelector{
-    -fx-border-color: #000000;
+    -fx-border-color: #555555;
 }
 
 #hexColorTextField {
-    
+    -fx-text-fill: #000000;
+}
+
+#hueSlider .track {
+    -fx-color: transparent;
+    -fx-background-color: transparent;
+}
+
+
+#hueSlider .thumb {
+    -fx-pref-width: 20px;
+    -fx-pref-height: 10px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #FFFFFF;
+    -fx-border-radius: 25%;
+
 }
 
 #hueSlider {

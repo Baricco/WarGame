@@ -43,6 +43,9 @@ public class StartPageController implements Initializable {
 
     @FXML
     private Label startGameTitle;
+
+    @FXML
+    private Slider botSlider;
     
     private static GameManager gameManager;
 
@@ -60,21 +63,10 @@ public class StartPageController implements Initializable {
             colorPicker = (AnchorPane)App.createRoot("/com/assets/fxml/colorPicker");
         } catch (IOException e) { e.printStackTrace(); return; }
         
-    
-
         startGameColorPickerContainer.getChildren().add(colorPicker);
 
         colorPickerManager = ColorPickerController.getColorPickerManager();
 
-       /*
-        startGameColorPicker = new CustomColorPicker();
-        
-        startGameColorPicker.setId("startGameColorPicker");
-        
-        startGameColorPickerContainer.getChildren().add(startGameColorPicker);
-
-        startGameColorPicker.setVisible(true);
-        */
     }
 
     
@@ -121,7 +113,8 @@ public class StartPageController implements Initializable {
         // Add the Human Player to the gameManager
         try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
-        // TODO: Add Bots to the gameManager
+        // TODO: Add Bots to the gameManager, change the bot slider to make it look better
+        // TODO: Add a Label somewhere that tells the number of bots currently selected from the slider
         
 
 

@@ -14,7 +14,7 @@
 VBox {
     -fx-font-family:'Space Grotesk Light';
     -fx-font-weight: 300;
-    -fx-background-color: #EEFCFE;
+    -fx-background-color: -white;
     -fx-align: center;
 }
 
@@ -74,13 +74,13 @@ ListView {
 
 .toggleSwitchOFF {
     -fx-background-color: -lightGray;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: -white;
     -fx-background-radius: 4;
 }
 
 .toggleSwitchON {
     -fx-background-color: -lightContinent;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: -white;
     -fx-background-radius: 4;
 }
 

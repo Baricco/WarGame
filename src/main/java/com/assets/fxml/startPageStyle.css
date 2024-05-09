@@ -7,11 +7,41 @@
     -lightGray: #474747;
     -darkGray: #272727;
     -black: #171219;
+    -white: #FFFFFF;
 }
 
 VBox {
     -fx-font-family:'Space Grotesk Light';
     -fx-font-weight: 300;
-    -fx-background-color: #EEFCFE;
+    -fx-background-color: -white;
     -fx-align: center;
+}
+
+#botSlider .track {
+    -fx-background-color: -darkGray;
+}
+
+#botSlider .thumb {
+    -fx-background-color: -borderGray;
+}
+
+
+* {
+    -fx-text-fill: -white;
+}
+
+Button {
+    -fx-background-color: -darkGray;
+    -fx-text-fill: -white;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+}
+
+Button:hover {
+    -fx-background-color: -lightGray;
+}
+
+
+AnchorPane {
+    -fx-background-color: -black;
 }

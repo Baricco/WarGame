@@ -1,9 +1,22 @@
+.root {
+    -transparent: #FFFFFF00;
+    -seaBlue: #8ac0c6;
+    -lightContinent: #4d6555;
+    -darkContinent: #2d4535;
+    -borderGray: #838383;
+    -lightGray: #474747;
+    -darkGray: #272727;
+    -black: #171219;
+    -white: #FFFFFF;
+}
+
 #hexColorSelector{
-    -fx-border-color: #555555;
+    -fx-border-color: -darkGray;
 }
 
 #hexColorTextField {
-    -fx-text-fill: #000000;
+    -fx-text-fill: -white;
+    -fx-background-color: -darkGray;
 }
 
 #hueSlider .track {
@@ -15,8 +28,8 @@
 #hueSlider .thumb {
     -fx-pref-width: 20px;
     -fx-pref-height: 10px;
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #FFFFFF;
+    -fx-background-color: -white;
+    -fx-border-color: -white;
     -fx-border-radius: 25%;
 
 }

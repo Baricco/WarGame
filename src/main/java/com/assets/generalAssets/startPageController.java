@@ -22,6 +22,7 @@ import javafx.scene.Node;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.random.RandomGenerator;
 
@@ -137,13 +138,17 @@ public class StartPageController implements Initializable {
         try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
         // TODO: Add Bots to the gameManager
-        for(int i=0; i<=botSlider.getValue(); i++) {
+        for (int i = 1; i <= botSlider.getValue(); i++) {
+            
             State state = null;
+            
             do {
                 state = gameManager.getRandomState(); 
-            } while(!isValid(state));
+            } while (!isValid(state));
 
-            try { gameManager.addPlayer(new Bot(state, "Bot Player" + i, ColorPickerManager.getHexColor(Color.hsb(RandomGenerator.getDefault().nextDouble(), 1, 1)))); } catch(Exception e) { e.printStackTrace(); }
+            RandomGenerator rnd = RandomGenerator.getDefault();
+
+            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(Color.hsb(rnd.nextDouble(), 1, 1, 0.7)))); } catch(Exception e) { e.printStackTrace(); }
         }
 
 
@@ -153,6 +158,7 @@ public class StartPageController implements Initializable {
         if(state == null) {return false;}
         if(state.getId() == "ATL") {return false;}
         for(Player p : gameManager.getPlayers()) {
+            if (p.getOriginalState() == null) continue;
             if(state.getId() == p.getOriginalState().getId()) {
                 return false;
             }

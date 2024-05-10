@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.assets.SVGAssets.XMLParser;
 import com.assets.gameAssets.basics.City;
 
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 
 public class State {
@@ -107,6 +108,10 @@ public class State {
     
     
     } 
+
+    public void setColor(String hexColor) {
+        this.path.setFill(Paint.valueOf(hexColor));
+    }
 
     public int getStageArmy() {
         return this.stageArmy;

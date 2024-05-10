@@ -52,7 +52,7 @@ public class GameManager {
     public void addPlayer(Player newPlayer) throws Exception {
         if (this.players.contains(newPlayer)) throw new Exception("Error, tried to had: " + newPlayer.getName() + " in the game, but it is already been added");
         
-        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName());
+        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName() + " color: " + newPlayer.getHexColor());
 
     }
 
@@ -70,6 +70,8 @@ public class GameManager {
             // for (City city : this.states.get(id).getCities()) { if (city.hasTrainStation()) this.mapIconManager.addIcon(city); }
 
         } catch(Exception e) { e.printStackTrace(); }
+
+
         
     }
 
@@ -198,7 +200,7 @@ public class GameManager {
     private void hideToggleSwitch(String switchSelector) {
         ((ToggleSwitch)getElementByCssSelector(switchSelector)).setVisible(false);
     }
-
+    
     private void showAllySideMenu(State state) {
        
         EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {

@@ -135,8 +135,13 @@ public abstract class Player {
         return this.occupiedStates.contains(state);
     }
 
+    private void setStateColor(State state) {
+        state.setColor(this.getHexColor());
+    }
+
     public void setOriginalState(State originalState) {
         if (this.originalState == null) this.originalState = originalState;
+        this.setStateColor(originalState);
     }
 
     public boolean isActive() {
@@ -184,6 +189,8 @@ public abstract class Player {
         if (this.occupiedStates.contains(occupiedState)) throw new Exception("Error on " + this.name + ": Tried to occupy: " + occupiedState.getName() + "But that state results already occupied");
         
         this.occupiedStates.add(occupiedState);
+
+        this.setStateColor(occupiedState);
         
     }
 

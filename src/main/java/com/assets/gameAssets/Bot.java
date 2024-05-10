@@ -4,7 +4,7 @@ public class Bot extends Player {
     
     public Bot(State originalState, String name, String hexColor) {
 
-        super(name, hexColor, Player.PlayerType.TYPE_PLAYER);        
+        super(name, hexColor, Player.PlayerType.TYPE_BOT);        
         setOriginalState(originalState);
     }
 

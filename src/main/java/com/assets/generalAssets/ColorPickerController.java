@@ -11,6 +11,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -44,7 +45,7 @@ public class ColorPickerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        this.colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider, colorSelector);
+        this.colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider);
 
         colorPickerManager.setGradient();
 
@@ -62,14 +63,6 @@ public class ColorPickerController implements Initializable {
             };
         });
         
-    }
-    
-    @FXML
-    void setColorFromTextField(ActionEvent event) {
-        String hexCode = this.hexColorTextField.getText().startsWith("#") ? this.hexColorTextField.getText().substring(1) : this.hexColorTextField.getText();
-        System.out.println(hexCode);
-        // non capisco perchè questa cosa non vada
-        colorPickerManager.setColorByHex(hexCode);
     }
 
     public static ColorPickerManager getColorPickerManager() { return colorPickerManager; }

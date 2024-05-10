@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.Node;
 
@@ -22,11 +23,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.random.RandomGenerator;
 
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
+import com.assets.gameAssets.Bot;
 import com.assets.gameAssets.GameManager;
 import com.assets.gameAssets.Human;
+import com.assets.gameAssets.Player;
+import com.assets.gameAssets.State;
 import com.assets.generalAssets.graphics.ColorPickerManager;
 import com.assets.generalAssets.graphics.ToggleSwitch;
 
@@ -108,14 +113,6 @@ public class StartPageController implements Initializable {
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
         Pane mapContainer = (Pane)(scene.lookup("#mapContainer"));
         double xShift = 50, yShift = -110;
-        
-
-        // Add the Human Player to the gameManager
-        try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
-
-        // TODO: Add Bots to the gameManager, change the bot slider to make it look better
-        // TODO: Add a Label somewhere that tells the number of bots currently selected from the slider
-        
 
 
         for(SVGPathElement p : paths) {
@@ -135,7 +132,32 @@ public class StartPageController implements Initializable {
             }
         }
 
+        
+        // Add the Human Player to the gameManager
+        try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
+        // TODO: Add Bots to the gameManager
+        for(int i=0; i<=botSlider.getValue(); i++) {
+            State state = null;
+            do {
+                state = gameManager.getRandomState(); 
+            } while(!isValid(state));
+
+            try { gameManager.addPlayer(new Bot(state, "Bot Player" + i, ColorPickerManager.getHexColor(Color.hsb(RandomGenerator.getDefault().nextDouble(), 1, 1)))); } catch(Exception e) { e.printStackTrace(); }
+        }
+
+
+    }
+
+    private boolean isValid(State state) {
+        if(state == null) {return false;}
+        if(state.getId() == "ATL") {return false;}
+        for(Player p : gameManager.getPlayers()) {
+            if(state.getId() == p.getOriginalState().getId()) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

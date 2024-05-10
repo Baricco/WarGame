@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.random.RandomGenerator;
 
 import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.City;
@@ -344,6 +345,14 @@ public class GameManager {
         toString += "\t]\n}";
 
         return toString;
+    }
+
+    public State getRandomState() {
+        return this.states.get(states.keySet().toArray()[RandomGenerator.getDefault().nextInt(states.size())]);
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return this.players;
     }
 
 }

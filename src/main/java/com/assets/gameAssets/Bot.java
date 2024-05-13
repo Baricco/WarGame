@@ -2,10 +2,9 @@ package com.assets.gameAssets;
 
 public class Bot extends Player {
     
-    public Bot(State originalState, String name, String hexColor) {
+    public Bot(String name, String hexColor) {
 
         super(name, hexColor, Player.PlayerType.TYPE_BOT);        
-        setOriginalState(originalState);
     }
 
     public void play() {

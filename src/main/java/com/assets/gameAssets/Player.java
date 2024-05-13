@@ -141,6 +141,7 @@ public abstract class Player {
 
     public void setOriginalState(State originalState) {
         if (this.originalState == null) this.originalState = originalState;
+        System.out.println(this.name + " starts from " + originalState.getName());
         this.setStateColor(originalState);
     }
 

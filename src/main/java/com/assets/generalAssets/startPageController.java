@@ -141,17 +141,12 @@ public class StartPageController implements Initializable {
         RandomGenerator rnd = RandomGenerator.getDefault();
 
         for (int i = 1; i <= botSlider.getValue(); i++) {
-            
-            State state = null;
-            
-            do { state = gameManager.getRandomState(); } while (!stateIsValid(state));
-
-
+        
             Color nextColor;
             
             do { nextColor = Color.hsb(rnd.nextInt(361), 0.5, 1); } while (!colorIsValid(nextColor));
 
-            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
+            try { gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
         }
 
 
@@ -165,22 +160,9 @@ public class StartPageController implements Initializable {
 
             Color playerColor = Color.valueOf(p.getHexColor());
 
-            if (Math.abs(playerColor.getHue() - color.getHue()) <= 10) return false;
+            if (Math.abs(playerColor.getHue() - color.getHue()) <= 20) return false;
         }
 
-        return true;
-    }
-
-    private boolean stateIsValid(State state) {
-        if(state == null) return false;
-        if(state.getId().equalsIgnoreCase("ATL")) return false;
-
-        for(Player p : gameManager.getPlayers()) {
-            if (p.getOriginalState() == null) continue;
-            if(state.getId() == p.getOriginalState().getId()) {
-                return false;
-            }
-        }
         return true;
     }
 

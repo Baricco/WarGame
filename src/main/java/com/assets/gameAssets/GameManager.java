@@ -320,6 +320,32 @@ public class GameManager {
         showSideMenu();
         changeHoverHandler();
 
+        setBotsOriginalState();
+
+    }
+
+    private boolean stateIsValid(State state) {
+        if(state == null) return false;
+        if(state.getId().equalsIgnoreCase("ATL")) return false;
+
+        for(Player p : this.getPlayers()) {
+            if (p.getOriginalState() == null) continue;
+            if(state.getId() == p.getOriginalState().getId()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void setBotsOriginalState() {
+        
+        for(int i = 1; i < this.getPlayers().size(); i++) {
+            State state = null;
+            
+            do { state = this.getRandomState(); } while (!stateIsValid(state));
+            
+            this.getPlayers().get(i).setOriginalState(state); 
+        }
     }
 
     public void manageStateClicked(String id) {
@@ -354,8 +380,6 @@ public class GameManager {
     public State getRandomState() { 
         return this.states.get(states.keySet().toArray()[RandomGenerator.getDefault().nextInt(states.size())]);
     }
-
-    public State getAtlantis() { return this.states.get("ATL"); }
 
     public ArrayList<Player> getPlayers() {
         return this.players;

@@ -325,11 +325,6 @@ public class GameManager {
 
     }
 
-    public void attachTooltip(String message, Node ...elems) {
-        for (Node elem : elems) { Tooltip.install(elem, new Tooltip(message)); }  // DA FINIRE IN MODO CHE STAMPI IL VALORE OLTRE AL MESSAGGIO
-    } 
-
-
 
     private boolean stateIsValid(State state) {
         if(state == null) return false;

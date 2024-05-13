@@ -239,12 +239,14 @@ public class MainPageController implements Initializable{
     private Button sideMenuFourthButton;
 
     @FXML
+    private Button  sideMenuNextTurnButton;
+
+    @FXML
     private AnchorPane sideMenuSwitchContainer;
 
     private ToggleSwitch sideMenuToggleSwitch;
 
     private void attachTooltips() {
-        
 
         Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
         Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));

@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.random.RandomGenerator;
 import java.util.Random;
 
 import com.assets.SVGAssets.SVGPathElement;
@@ -137,25 +138,43 @@ public class StartPageController implements Initializable {
         // Add the Human Player to the gameManager
         try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
+        RandomGenerator rnd = RandomGenerator.getDefault();
+
         for (int i = 1; i <= botSlider.getValue(); i++) {
             
             State state = null;
             
-            do {
-                state = gameManager.getRandomState(); 
-            } while (!isValid(state));
+            do { state = gameManager.getRandomState(); } while (!stateIsValid(state));
 
-            Random rnd = new Random();
 
-            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(Color.hsb(rnd.nextInt(361), 1, 1, 0.7)))); } catch(Exception e) { e.printStackTrace(); }
+            Color nextColor;
+            
+            do { nextColor = Color.hsb(rnd.nextInt(361), 0.5, 1); } while (!colorIsValid(nextColor));
+
+            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
         }
 
 
     }
 
-    private boolean isValid(State state) {
-        if(state == null) {return false;}
-        if(state.getId() == "ATL") {return false;}
+    private boolean colorIsValid(Color color) {
+        if (color == null) return false;
+
+        for(Player p : gameManager.getPlayers()) {
+            if (p.getHexColor().isEmpty()) continue;
+
+            Color playerColor = Color.valueOf(p.getHexColor());
+
+            if (Math.abs(playerColor.getHue() - color.getHue()) <= 10) return false;
+        }
+
+        return true;
+    }
+
+    private boolean stateIsValid(State state) {
+        if(state == null) return false;
+        if(state.getId() == "ATL") return false;
+
         for(Player p : gameManager.getPlayers()) {
             if (p.getOriginalState() == null) continue;
             if(state.getId() == p.getOriginalState().getId()) {

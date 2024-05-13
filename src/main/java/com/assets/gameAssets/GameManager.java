@@ -41,7 +41,7 @@ public class GameManager {
     public void addPlayer(Player newPlayer) throws Exception {
         if (this.players.contains(newPlayer)) throw new Exception("Error, tried to had: " + newPlayer.getName() + " in the game, but it is already been added");
         
-        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName() + " color: " + newPlayer.getHexColor());
+        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName());
 
     }
 
@@ -297,13 +297,12 @@ public class GameManager {
     }
 
     public void handleHover(SVGPath curPath) {
-
         curPath.setFill(((Color)(curPath.getFill())).darker());
     }
 
     private void changeHoverHandler() {
         Pane mapContainer = (Pane)getElementByCssSelector("#mapContainer");
-        try { mapContainer.getChildren().forEach(svgPath -> svgPath.setOnMouseEntered(e -> { handleHover((SVGPath)svgPath); })); } catch(Exception e) { }
+        mapContainer.getChildren().forEach(svgPath -> svgPath.setOnMouseEntered(e -> { try { handleHover((SVGPath)svgPath); } catch(ClassCastException exception) { } }));
     
     }
 

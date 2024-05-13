@@ -39,7 +39,7 @@ public class ColorPickerManager {
 
     LinearGradient horizontalGradient = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
         new Stop(0, Color.BLACK),
-        new Stop(0.5, Color.hsb(this.hueValue, 1, 1)),
+        new Stop(0.5, Color.hsb(this.hueValue, 0.5, 1)),
         new Stop(1, Color.WHITE)
     );
 
@@ -59,8 +59,8 @@ public class ColorPickerManager {
 }
 
 public void setColorValue(double posX, double posY) {
-    if(posX <= hexColorSelector.getWidth() / 2) this.curColor = Color.hsb(this.hueValue, 1, (2 * posX) / hexColorSelector.getWidth());
-    else this.curColor = Color.hsb(this.hueValue, (double)(1 - (posX / hexColorSelector.getWidth())) * 2, 1);
+    if(posX <= hexColorSelector.getWidth() / 2) this.curColor = Color.hsb(this.hueValue, 0.5, (2 * posX) / hexColorSelector.getWidth());
+    else this.curColor = Color.hsb(this.hueValue, (double)(1 - (posX / hexColorSelector.getWidth())), 1);
 
     refreshTextField();
 

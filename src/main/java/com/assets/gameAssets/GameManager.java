@@ -2,7 +2,6 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Tooltip;
 import javafx.scene.control.Button;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 
 public class GameManager {

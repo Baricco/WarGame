@@ -21,10 +21,8 @@ import javafx.scene.Node;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.random.RandomGenerator;
-import java.util.Random;
 
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
@@ -32,7 +30,6 @@ import com.assets.gameAssets.Bot;
 import com.assets.gameAssets.GameManager;
 import com.assets.gameAssets.Human;
 import com.assets.gameAssets.Player;
-import com.assets.gameAssets.State;
 import com.assets.generalAssets.graphics.ColorPickerManager;
 
 public class StartPageController implements Initializable {

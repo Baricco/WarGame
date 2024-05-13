@@ -1,6 +1,4 @@
 package com.assets.generalAssets;
-
-import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -11,19 +9,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 
 public class ColorPickerController implements Initializable {
 

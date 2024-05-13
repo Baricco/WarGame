@@ -23,6 +23,8 @@ public class Dice {
     
     public static Dice getD12() { return new Dice(12); }
 
+    public static Dice getD20() { return new Dice(20); }
+
     public int getFaceNumber() { return this.faceNumber; }
 
     public int throwDice() { return this.randomGenerator.nextInt(1, this.faceNumber); }

@@ -109,6 +109,8 @@ public class State {
     
     } 
 
+    public SVGPath getPath() { return this.path; }
+
     public void setColor(String hexColor) {
         this.path.setFill(Paint.valueOf(hexColor));
     }

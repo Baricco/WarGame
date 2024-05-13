@@ -15,6 +15,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 
 public class GameManager {
@@ -261,6 +263,8 @@ public class GameManager {
         refreshPlayerMenuByState(this.getHumanPlayer().getTotalState().getId());
     }
 
+
+
     public void refreshPlayerMenuByState(String stateId) {
 
         State state = this.states.get(stateId);
@@ -275,6 +279,7 @@ public class GameManager {
         setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(state.getWorkForce())));
 
         showPlayerMenu();
+        handleHover(state.getPath());
 
     }
 
@@ -287,9 +292,18 @@ public class GameManager {
         ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
 
-    private void removeHoverHandler() {
+    public void handleHoverEnd(SVGPath curPath) {
+        curPath.setFill(((Color)(curPath.getFill())).brighter());
+    }
+
+    public void handleHover(SVGPath curPath) {
+
+        curPath.setFill(((Color)(curPath.getFill())).darker());
+    }
+
+    private void changeHoverHandler() {
         Pane mapContainer = (Pane)getElementByCssSelector("#mapContainer");
-        mapContainer.getChildren().forEach(svgPath -> svgPath.setOnMouseEntered(e -> {}));
+        try { mapContainer.getChildren().forEach(svgPath -> svgPath.setOnMouseEntered(e -> { handleHover((SVGPath)svgPath); })); } catch(Exception e) { }
     
     }
 
@@ -303,7 +317,7 @@ public class GameManager {
         refreshSideMenu(clickedState);
         showPlayerMenu();
         showSideMenu();
-        removeHoverHandler();
+        changeHoverHandler();
 
     }
 

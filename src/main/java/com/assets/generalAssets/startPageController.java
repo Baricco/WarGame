@@ -14,6 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.Node;
 
@@ -121,8 +122,10 @@ public class StartPageController implements Initializable {
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
+                curPath.setFill(Paint.valueOf("#4D6555"));
                 curPath.setOnMouseClicked(e -> gameManager.manageStateClicked(curPath.getId()));
                 curPath.setOnMouseEntered(e -> gameManager.refreshPlayerMenuByState(curPath.getId()));
+                curPath.setOnMouseExited(e -> gameManager.handleHoverEnd(curPath));
                 curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");
@@ -134,7 +137,6 @@ public class StartPageController implements Initializable {
         // Add the Human Player to the gameManager
         try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
-        // TODO: Add Bots to the gameManager
         for (int i = 1; i <= botSlider.getValue(); i++) {
             
             State state = null;
@@ -145,7 +147,7 @@ public class StartPageController implements Initializable {
 
             Random rnd = new Random();
 
-            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(Color.hsb(rnd.nextDouble(), 1, 1, 0.7)))); } catch(Exception e) { e.printStackTrace(); }
+            try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(Color.hsb(rnd.nextInt(361), 1, 1, 0.7)))); } catch(Exception e) { e.printStackTrace(); }
         }
 
 

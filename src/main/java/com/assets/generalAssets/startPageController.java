@@ -7,10 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
@@ -24,7 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.random.RandomGenerator;
+import java.util.Random;
 
 import com.assets.SVGAssets.SVGPathElement;
 import com.assets.SVGAssets.SVGPathLoader;
@@ -34,7 +32,6 @@ import com.assets.gameAssets.Human;
 import com.assets.gameAssets.Player;
 import com.assets.gameAssets.State;
 import com.assets.generalAssets.graphics.ColorPickerManager;
-import com.assets.generalAssets.graphics.ToggleSwitch;
 
 public class StartPageController implements Initializable {
 
@@ -146,7 +143,7 @@ public class StartPageController implements Initializable {
                 state = gameManager.getRandomState(); 
             } while (!isValid(state));
 
-            RandomGenerator rnd = RandomGenerator.getDefault();
+            Random rnd = new Random();
 
             try { gameManager.addPlayer(new Bot(state, "Bot Player " + i, ColorPickerManager.getHexColor(Color.hsb(rnd.nextDouble(), 1, 1, 0.7)))); } catch(Exception e) { e.printStackTrace(); }
         }

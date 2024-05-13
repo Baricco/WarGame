@@ -2,32 +2,19 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Toggle;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
-
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.random.RandomGenerator;
-
 import com.assets.gameAssets.basics.Calendar;
-import com.assets.gameAssets.basics.City;
-import com.assets.generalAssets.ColorPickerController;
-import com.assets.generalAssets.graphics.ColorPickerManager;
 import com.assets.generalAssets.graphics.ToggleSwitch;
-
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 
 public class GameManager {

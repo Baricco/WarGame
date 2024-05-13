@@ -48,10 +48,10 @@ public class ColorPickerManager {
 
     LinearGradient hueSliderGradient = new LinearGradient(0, 0, 0, 1, true, CycleMethod.NO_CYCLE,
     new Stop(0, Color.RED),
-    new Stop(0.2, Color.YELLOW),
-    new Stop(0.4, Color.GREEN),
-    new Stop(0.6, Color.BLUE),
-    new Stop(0.8, Color.MAGENTA),
+    new Stop(0.2, Color.MAGENTA),
+    new Stop(0.4, Color.BLUE),
+    new Stop(0.6, Color.GREEN),
+    new Stop(0.8, Color.YELLOW),
     new Stop(1, Color.RED));
 
     hueSlider.setBackground(new Background(new BackgroundFill(hueSliderGradient, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));

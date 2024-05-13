@@ -131,7 +131,7 @@ public abstract class Player {
     }
 
     public boolean hasOccupied(State state) {
-        if (this.originalState.getId() == state.getId()) return true;
+        if (this.originalState != null && this.originalState.getId() == state.getId()) return true;
         return this.occupiedStates.contains(state);
     }
 

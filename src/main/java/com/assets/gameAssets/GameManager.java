@@ -307,6 +307,8 @@ public class GameManager {
     }
 
     private void setPlayerOriginalState(State clickedState) {
+
+        for (Player p : this.players) if (p.hasOccupied(clickedState)) return;
         
         this.getHumanPlayer().setOriginalState(clickedState);
             
@@ -349,9 +351,11 @@ public class GameManager {
         return toString;
     }
 
-    public State getRandomState() {
+    public State getRandomState() { 
         return this.states.get(states.keySet().toArray()[RandomGenerator.getDefault().nextInt(states.size())]);
     }
+
+    public State getAtlantis() { return this.states.get("ATL"); }
 
     public ArrayList<Player> getPlayers() {
         return this.players;

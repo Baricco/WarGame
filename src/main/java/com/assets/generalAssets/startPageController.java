@@ -173,7 +173,7 @@ public class StartPageController implements Initializable {
 
     private boolean stateIsValid(State state) {
         if(state == null) return false;
-        if(state.getId() == "ATL") return false;
+        if(state.getId().equalsIgnoreCase("ATL")) return false;
 
         for(Player p : gameManager.getPlayers()) {
             if (p.getOriginalState() == null) continue;

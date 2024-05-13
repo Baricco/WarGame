@@ -2,6 +2,7 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.Button;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -324,6 +325,12 @@ public class GameManager {
 
     }
 
+    public void attachTooltip(String message, Node ...elems) {
+        for (Node elem : elems) { Tooltip.install(elem, new Tooltip(message)); }  // DA FINIRE IN MODO CHE STAMPI IL VALORE OLTRE AL MESSAGGIO
+    } 
+
+
+
     private boolean stateIsValid(State state) {
         if(state == null) return false;
         if(state.getId().equalsIgnoreCase("ATL")) return false;
@@ -341,7 +348,7 @@ public class GameManager {
         
         for(int i = 1; i < this.getPlayers().size(); i++) {
             State state = null;
-            
+
             do { state = this.getRandomState(); } while (!stateIsValid(state));
             
             this.getPlayers().get(i).setOriginalState(state); 

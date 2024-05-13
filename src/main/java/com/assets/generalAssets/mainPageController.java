@@ -244,6 +244,8 @@ public class MainPageController implements Initializable{
     private ToggleSwitch sideMenuToggleSwitch;
 
     private void attachTooltips() {
+        
+
         Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
         Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));
         Tooltip.install(playerStateNaturalResourcesImageView, new Tooltip("Stage Natural Resources: "));

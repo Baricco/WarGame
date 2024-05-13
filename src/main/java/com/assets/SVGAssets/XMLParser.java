@@ -12,6 +12,7 @@ import org.jsoup.parser.Parser;
 import org.jsoup.select.Elements;
 
 import com.assets.gameAssets.State;
+import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.City;
 
 public class XMLParser {
@@ -62,7 +63,7 @@ public class XMLParser {
             0, 
             Integer.parseInt(state.getElementsByTag("Population").text()), 
             0,
-            0,
+            new Army(0),
             0,
             0,
             null,

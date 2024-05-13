@@ -6,27 +6,24 @@ public class Army {
     private double artillery;
     private double tanks;
     private double apaches;
-    private int attackValue;
     private int modifierValue;
+
+    public enum ARMY_TYPE {
+        INFANTRY,
+        ARTILLERY,
+        TANK,
+        APACHE,
+        CHTULHU
+    }
 
     private Dice dice;
 
-    private boolean isAtlantis;
-
     public Army(double army) {
         this.infantry = army * 0.5;
-        this.artillery = army * 0.35;
+        this.artillery = army * 0.25;
         this.tanks = army * 0.15;
         this.apaches = army * 0.1;
         this.modifierValue = 0;
-    }
-
-    public Army(double army, int modifierValue) {
-        this.infantry = 0;
-        this.artillery = 0;
-        this.tanks = 0;
-        this.apaches = army;
-        this.modifierValue = 5;
     }
 
     public double getInfantry() {
@@ -49,28 +46,24 @@ public class Army {
         this.modifierValue = modifierValue;
     }
 
-    public void infantryAttack() {
-        dice = Dice.getD6();
-        attackValue = dice.throwDice() + this.modifierValue;
+    public int attack(ARMY_TYPE type) {
+        
+        dice = getDiceByArmyType(type);
+
+        return dice.throwDice() + this.modifierValue;
+    }   
+
+    private Dice getDiceByArmyType(ARMY_TYPE type) {
+        if (type == ARMY_TYPE.INFANTRY) return Dice.getD6();
+        if (type == ARMY_TYPE.ARTILLERY) return Dice.getD8();
+        if (type == ARMY_TYPE.TANK) return Dice.getD10();
+        if (type == ARMY_TYPE.APACHE) return Dice.getD12();
+        if (type == ARMY_TYPE.CHTULHU) return Dice.getD20();
+        throw new IllegalArgumentException("Army Type doesn't exist");
     }
 
-    public void artilleryAttack() {
-        dice = Dice.getD8();
-        attackValue = dice.throwDice() + this.modifierValue;
+    public int getTotal() {
+        return (int)Math.round(this.artillery + this.apaches + this.tanks + this.apaches);
     }
 
-    public void tankAttack() {
-        dice = Dice.getD10();
-        attackValue = dice.throwDice() + this.modifierValue;
-    }
-
-    public void apacheAttack() {
-        dice = Dice.getD12();
-        attackValue = dice.throwDice() + this.modifierValue;
-    }
-
-    public void atlantisAttack() {
-        dice = Dice.getD20();
-        attackValue = dice.getFaceNumber() + this.modifierValue;
-    }
 }

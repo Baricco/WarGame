@@ -2,6 +2,9 @@ package com.assets.gameAssets;
 
 import java.util.ArrayList;
 
+import com.assets.gameAssets.basics.Army;
+import com.assets.gameAssets.basics.Army.ARMY_TYPE;
+
 
 public abstract class Player {
 
@@ -80,7 +83,7 @@ public abstract class Player {
         double reputation = this.originalState.getReputation();
         int population = this.originalState.getPopulation();
         int level = this.originalState.getLevel();
-        int army = this.originalState.getArmy();
+        Army army = this.originalState.getArmy();
         int workForce = this.originalState.getWorkForce();
         int stageArmy = this.originalState.getStageArmy();
 
@@ -124,8 +127,10 @@ public abstract class Player {
         if (this.hasOccupied(state)) return false;
 
         for(Player ally : this.allies) if (ally.hasOccupied(state)) return true;
-
+        
         return false;
+
+
 
 
     }

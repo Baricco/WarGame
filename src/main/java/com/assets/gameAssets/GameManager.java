@@ -240,7 +240,7 @@ public class GameManager {
         setTrapezoidXScale("#sideMenu", selectedState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
 
         setLabelContent("#sideMenuStateMoneyLabel", String.valueOf(formatHighNumber(selectedState.getMoney())));
-        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(selectedState.getArmy())));
+        setLabelContent("#sideMenuStateArmyLabel", String.valueOf(formatHighNumber(selectedState.getTotalArmy())));
 
         if (getHumanPlayer().hasOccupied(selectedState)) {
             showOccupiedStateSideMenu(selectedState);
@@ -272,7 +272,7 @@ public class GameManager {
         setLabelContent("#playerStateLvlLabel", String.valueOf(state.getLevel()));
         setTrapezoidXScale("#playerMenu", state.getName().length() * 0.12);
         setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(state.getMoney())));
-        setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(state.getArmy())));
+        setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(state.getTotalArmy())));
         setLabelContent("#playerStateNaturalResourcesLabel" , String.valueOf(formatHighNumber(state.getNaturalResources())));
         setLabelContent("#playerStateRefinedResourcesLabel", String.valueOf(formatHighNumber(state.getRefinedResources())));
         setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(state.getWorkForce())));

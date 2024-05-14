@@ -7,7 +7,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.random.RandomGenerator;
+
+import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.Calendar;
+import com.assets.gameAssets.basics.Army.ARMY_TYPE;
 import com.assets.generalAssets.graphics.ToggleSwitch;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -383,6 +386,37 @@ public class GameManager {
 
     public ArrayList<Player> getPlayers() {
         return this.players;
+    }
+
+    private boolean attackState(State attacker, State defender) {
+        Army attackingArmy = attacker.getArmy();
+        Army defendingArmy = defender.getArmy();
+        for(int i = 0; i < attackingArmy.getInfantry() / Army.DICE_VALUE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defense(ARMY_TYPE.INFANTRY)) {  //da fare la funzione che calcola le truppe migliori del difensore
+                return true;
+            }
+        }
+        for(int i = 0; i < attackingArmy.getArtillery() / Army.DICE_VALUE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defense(ARMY_TYPE.ARTILLERY)) {  //da fare la funzione che calcola le truppe migliori del difensore
+                return true;
+            }
+        }
+        for(int i = 0; i < attackingArmy.getTanks() / Army.DICE_VALUE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defense(ARMY_TYPE.TANK)) {  //da fare la funzione che calcola le truppe migliori del difensore
+                return true;
+            }
+        }
+        for(int i = 0; i < attackingArmy.getApaches() / Army.DICE_VALUE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defense(ARMY_TYPE.APACHE)) {  //da fare la funzione che calcola le truppe migliori del difensore
+                return true;
+            }
+        }
+        for(int i = 0; i < attackingArmy.getApaches() / Army.DICE_VALUE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defense(ARMY_TYPE.APACHE)) {  //da fare la funzione che calcola le truppe migliori del difensore
+                return true;
+            }
+        }
+        return false;
     }
 
 }

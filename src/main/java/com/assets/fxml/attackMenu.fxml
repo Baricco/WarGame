@@ -5,14 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="availableDIceLabel" alignment="CENTER" layoutX="14.0" layoutY="85.0" prefHeight="18.0" prefWidth="66.0" text="Label" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="85.0" />
       <Label fx:id="infantryLabel" layoutX="27.0" layoutY="15.0" text="Label" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="15.0" />
-      <Label layoutX="27.0" layoutY="53.0" text="Label" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="15.0" />
-      <Label layoutX="27.0" layoutY="98.0" text="Label" AnchorPane.leftAnchor="760.0" AnchorPane.topAnchor="15.0" />
-      <Label layoutX="27.0" layoutY="139.0" text="Label" AnchorPane.leftAnchor="1080.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="artilleryLabel" layoutX="27.0" layoutY="53.0" text="Label" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="tankLabel" layoutX="27.0" layoutY="98.0" text="Label" AnchorPane.leftAnchor="760.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="apacheLabel" layoutX="27.0" layoutY="139.0" text="Label" AnchorPane.leftAnchor="1080.0" AnchorPane.topAnchor="15.0" />
       <Slider layoutX="64.0" layoutY="47.0" />
       <Slider layoutX="384.0" layoutY="47.0" />
       <Slider layoutX="704.0" layoutY="47.0" />
@@ -22,13 +21,22 @@
       <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="582.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="339.0" />
       <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="837.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="837.0" />
       <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="1042.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1042.0" AnchorPane.rightAnchor="95.0" />
-      <Label fx:id="selectedInfantryLabel" layoutX="212.0" layoutY="46.0" text="Label" />
-      <Label layoutX="533.0" layoutY="46.0" text="Label" />
-      <Label layoutX="852.0" layoutY="46.0" text="Label" />
+      <Label fx:id="maxInfantryLabel" layoutX="212.0" layoutY="46.0" text="Label" />
+      <Label fx:id="maxArtilleryLabel" layoutX="533.0" layoutY="46.0" text="Label" />
+      <Label fx:id="maxTankLabel" layoutX="852.0" layoutY="46.0" text="Label" />
       <Label layoutX="1170.0" layoutY="46.0" text="Label" />
-      <Label fx:id="totalInfantryLabel" layoutX="27.0" layoutY="46.0" text="Label" />
-      <Label layoutX="339.0" layoutY="46.0" text="Label" />
-      <Label layoutX="663.0" layoutY="46.0" text="Label" />
-      <Label layoutX="978.0" layoutY="46.0" text="Label" />
+      <Label fx:id="minInfantryLabel" layoutX="27.0" layoutY="46.0" text="Label" />
+      <Label fx:id="minTankLabel" layoutX="663.0" layoutY="46.0" text="Label" />
+      <AnchorPane layoutX="339.0" layoutY="9.0" prefHeight="75.0" prefWidth="230.0">
+         <children>
+            <Label layoutX="8.0" layoutY="38.0" text="Label" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="659.0" layoutY="8.0" prefHeight="75.0" prefWidth="230.0" />
+      <AnchorPane layoutX="979.0" layoutY="8.0" prefHeight="75.0" prefWidth="230.0">
+         <children>
+            <Label layoutX="6.0" layoutY="31.0" text="Label" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

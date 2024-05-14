@@ -6,9 +6,12 @@ public class Army {
     private double artillery;
     private double tanks;
     private double apaches;
-    private int modifierValue;
+    private int attackModifierValue;
+    private int defenseModifierValue;
+    public static final int DICE_VALUE = 1000000;
 
     public enum ARMY_TYPE {
+        EMPTY,
         INFANTRY,
         ARTILLERY,
         TANK,
@@ -23,7 +26,8 @@ public class Army {
         this.artillery = army * 0.25;
         this.tanks = army * 0.15;
         this.apaches = army * 0.1;
-        this.modifierValue = 0;
+        this.attackModifierValue = 0;
+        this.defenseModifierValue = 0;
     }
 
     public double getInfantry() {
@@ -42,18 +46,34 @@ public class Army {
         return this.apaches;
     }
 
-    public void setModifierValue(int modifierValue) {
-        this.modifierValue = modifierValue;
+    public void setAttackModifierValue(int modifierValue) {
+        this.attackModifierValue = modifierValue;
+    }
+
+    public void setDefenseModifierValue(int modifierValue) {
+        this.defenseModifierValue = modifierValue;
     }
 
     public int attack(ARMY_TYPE type) {
-        
+        if(type == ARMY_TYPE.EMPTY) {
+            return 0;
+        }
         dice = getDiceByArmyType(type);
 
-        return dice.throwDice() + this.modifierValue;
+        return dice.throwDice() + this.attackModifierValue;
     }   
 
+    public int defense(ARMY_TYPE type) {
+        if(type == ARMY_TYPE.EMPTY) {
+            return 0;
+        }
+        dice = getDiceByArmyType(type);
+
+        return dice.throwDice() + this.defenseModifierValue;
+    }
+
     private Dice getDiceByArmyType(ARMY_TYPE type) {
+        if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
         if (type == ARMY_TYPE.INFANTRY) return Dice.getD6();
         if (type == ARMY_TYPE.ARTILLERY) return Dice.getD8();
         if (type == ARMY_TYPE.TANK) return Dice.getD10();
@@ -63,7 +83,23 @@ public class Army {
     }
 
     public int getTotal() {
-        return (int)Math.round(this.artillery + this.apaches + this.tanks + this.apaches);
+        return (int)Math.round(this.infantry + this.artillery + this.tanks + this.apaches);
+    }
+
+    public ARMY_TYPE getBestArmyType() {
+        if(this.apaches >= DICE_VALUE) {
+            return ARMY_TYPE.APACHE;
+        }
+        if(this.tanks >= DICE_VALUE) {
+            return ARMY_TYPE.TANK;
+        }
+        if(this.artillery >= DICE_VALUE) {
+            return ARMY_TYPE.ARTILLERY;
+        }
+        if(this.infantry >= DICE_VALUE) {
+            return ARMY_TYPE.INFANTRY;
+        }
+        return ARMY_TYPE.EMPTY;
     }
 
 }

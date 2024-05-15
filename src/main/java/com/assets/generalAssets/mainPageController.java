@@ -8,6 +8,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.SVGPath;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -242,6 +243,9 @@ public class MainPageController implements Initializable{
 
     @FXML
     private AnchorPane sideMenuSwitchContainer;
+
+    @FXML
+    private StackPane bottomMenu;
 
     private ToggleSwitch sideMenuToggleSwitch;
 

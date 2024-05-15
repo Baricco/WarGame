@@ -30,7 +30,7 @@ public class App extends Application {
 
     }
 
-    static Parent createRoot(String fxml) throws IOException {
+    public static Parent createRoot(String fxml) throws IOException {
         
         Parent root = loadFXML(fxml);
         return root;

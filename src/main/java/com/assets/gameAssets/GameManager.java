@@ -2,7 +2,11 @@ package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
 import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,24 +19,42 @@ import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.Army.ARMY_TYPE;
 import com.assets.generalAssets.App;
 import com.assets.generalAssets.graphics.ToggleSwitch;
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 
 public class GameManager {
+
+    @FXML
+    private AnchorPane ArmySelectorContainer;
+
+    @FXML
+    private AnchorPane DiceIconContainer;
+
+    @FXML
+    private Label maxSoldiersLabel;
+
+    @FXML
+    private Label selectedSoldiersLabel;
+
+    @FXML
+    private Slider soldierSlider;
+
+    @FXML
+    private AnchorPane attackMenu;
     
     private HashMap<String, State> states;
     private String fileName;
     private Scene scene;
     private Calendar calendar;
     private ArrayList<Player> players;      // the first player is ALWAYS the Human Player
-    //private MapIconManager mapIconManager;
+
+    public GameManager() { }
 
 
     public GameManager(String fileName, Scene scene) {
@@ -237,6 +259,46 @@ public class GameManager {
         return false;
     }
 
+    @FXML
+    void cancelAttack(ActionEvent event) {
+        System.out.println("Attacco Cancellato");
+
+        // unire il mainPageController al GameManager per togliere questa rottura di cazzo di dover sempre usare il getElementByCssSelector
+
+        attackMenu.setVisible(false);
+
+        getElementByCssSelector("#playerMenu").setVisible(true); 
+        // questo errore si risolve mettendo il mainPageController dentro il gameManager, quindi per adesso ciccia 
+
+
+    }
+
+    @FXML
+    void attack(ActionEvent event) {
+        System.out.println("Attacco Confermato");
+
+        Army attackerArmy = calcArmyFromSliders();
+
+        // non possiamo richiamare la funzione attackState perchè non sappiamo quale cazzo di stato stiamo attaccando da qui
+
+    }
+
+    private Army calcArmyFromSliders() {
+        
+        double values[] = {0, 0, 0, 0};
+
+        int i = 0;
+        for (Node elem : ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren()) {
+            values[i] = ((Slider)((AnchorPane)elem).getChildren().get(1)).getValue();
+            i++;
+        }
+
+        return new Army(values[0], values[1], values[2], values[3], 0); // aggiungere il calcolo del modificatore per cui si prende il modificatore piu alto tra i modificatori degli stati confinanti allo stato attaccato appartenenti al player
+
+
+
+    }
+
     private void showEnemySideMenu(State state) {
        
         EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
@@ -245,17 +307,25 @@ public class GameManager {
                 // TODO: INSERIRE FUNZIONE CHE GESTISCE L'ATTACCO
                 System.out.println("Adesso Attacco " + state.getName());
 
-                Pane curPlayerMenu = (Pane)getElementByCssSelector("#playerMenu");
+                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+
+                // ottimizzare il codice perchè in questo momento ad ogni attacco viene aggiunto nuovamente l'attackMenu al bottomMenu
+
+                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+                AnchorPane attackMenu;
 
                 try { 
-                    AnchorPane attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
+                    attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
                 } catch (IOException e) { e.printStackTrace(); return; }
 
-                // setta curPlayerMenu = attackMenu senza sminchiare tutto
+                bottomMenu.getChildren().add(attackMenu);
+
+                playerMenu.setVisible(false);
+
+                attackMenu.setVisible(true);
+
                 
-                                
-                // Quando viene premuto questo pulsante deve comparire nel playerMenu l'fxml dell'attacco, con cui
-                // il giocatore sceglierà quante e quali truppe usare
 
                 // Una volta scelte le truppe viene richiamata la funzione attackState qui sopra
 

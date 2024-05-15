@@ -10,6 +10,18 @@
     -white: #FFFFFF;
 }
 
+Button {
+    -fx-background-color: -darkGray;
+    -fx-text-fill: -white;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+}
+
+Button:hover {
+    -fx-background-color: -lightGray;
+}
+
+
 AnchorPane {
     -fx-font-family:'Space Grotesk Light';
     -fx-font-weight: 300;

@@ -8,7 +8,7 @@ public class Army {
     private double apaches;
     private int attackModifierValue;
     private int defenseModifierValue;
-    public static final int DICE_VALUE = 1000000;
+    public static final int SOLDIERS_PER_DICE = 1000000;
 
     public enum ARMY_TYPE {
         EMPTY,
@@ -63,7 +63,7 @@ public class Army {
         return dice.throwDice() + this.attackModifierValue;
     }   
 
-    public int defense(ARMY_TYPE type) {
+    public int defend(ARMY_TYPE type) {
         if(type == ARMY_TYPE.EMPTY) {
             return 0;
         }
@@ -87,16 +87,16 @@ public class Army {
     }
 
     public ARMY_TYPE getBestArmyType() {
-        if(this.apaches >= DICE_VALUE) {
+        if(this.apaches >= SOLDIERS_PER_DICE) {
             return ARMY_TYPE.APACHE;
         }
-        if(this.tanks >= DICE_VALUE) {
+        if(this.tanks >= SOLDIERS_PER_DICE) {
             return ARMY_TYPE.TANK;
         }
-        if(this.artillery >= DICE_VALUE) {
+        if(this.artillery >= SOLDIERS_PER_DICE) {
             return ARMY_TYPE.ARTILLERY;
         }
-        if(this.infantry >= DICE_VALUE) {
+        if(this.infantry >= SOLDIERS_PER_DICE) {
             return ARMY_TYPE.INFANTRY;
         }
         return ARMY_TYPE.EMPTY;

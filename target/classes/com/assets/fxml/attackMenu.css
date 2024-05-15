@@ -1,0 +1,33 @@
+.root {
+    -transparent: #FFFFFF00;
+    -seaBlue: #8ac0c6;
+    -lightContinent: #4d6555;
+    -darkContinent: #2d4535;
+    -borderGray: #838383;
+    -lightGray: #474747;
+    -darkGray: #272727;
+    -black: #171219;
+    -white: #FFFFFF;
+}
+
+AnchorPane {
+    -fx-font-family:'Space Grotesk Light';
+    -fx-font-weight: 300;
+    -fx-align: center;
+    -fx-text-fill: -white;
+    -fx-background-color: -black;
+}
+
+Slider .track {
+    -fx-background-color: -darkGray;
+}
+
+Slider .axis{
+    -fx-tick-label-fill: -white;
+}
+
+Slider .thumb {
+    -fx-background-color: -borderGray;
+}
+
+

@@ -5,37 +5,51 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1280.0" stylesheets="@app/../attackMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="availableDIceLabel" alignment="CENTER" layoutX="14.0" layoutY="85.0" prefHeight="18.0" prefWidth="66.0" text="Label" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="85.0" />
-      <Label fx:id="infantryLabel" layoutX="27.0" layoutY="15.0" text="Label" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="15.0" />
-      <Label fx:id="artilleryLabel" layoutX="27.0" layoutY="53.0" text="Label" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="15.0" />
-      <Label fx:id="tankLabel" layoutX="27.0" layoutY="98.0" text="Label" AnchorPane.leftAnchor="760.0" AnchorPane.topAnchor="15.0" />
-      <Label fx:id="apacheLabel" layoutX="27.0" layoutY="139.0" text="Label" AnchorPane.leftAnchor="1080.0" AnchorPane.topAnchor="15.0" />
-      <Slider layoutX="64.0" layoutY="47.0" />
-      <Slider layoutX="384.0" layoutY="47.0" />
-      <Slider layoutX="704.0" layoutY="47.0" />
-      <Slider layoutX="1024.0" layoutY="47.0" />
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="906.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="588.0" />
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="96.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="95.0" />
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="582.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="339.0" />
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="837.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="837.0" />
-      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="1042.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1042.0" AnchorPane.rightAnchor="95.0" />
-      <Label fx:id="maxInfantryLabel" layoutX="212.0" layoutY="46.0" text="Label" />
-      <Label fx:id="maxArtilleryLabel" layoutX="533.0" layoutY="46.0" text="Label" />
-      <Label fx:id="maxTankLabel" layoutX="852.0" layoutY="46.0" text="Label" />
-      <Label layoutX="1170.0" layoutY="46.0" text="Label" />
-      <Label fx:id="minInfantryLabel" layoutX="27.0" layoutY="46.0" text="Label" />
-      <Label fx:id="minTankLabel" layoutX="663.0" layoutY="46.0" text="Label" />
-      <AnchorPane layoutX="339.0" layoutY="9.0" prefHeight="75.0" prefWidth="230.0">
+      <AnchorPane fx:id="ArmySelectorContainer" layoutX="251.33333333333334" layoutY="15.0" prefHeight="60.0" prefWidth="1029.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="8.0" layoutY="38.0" text="Label" />
+            <AnchorPane layoutX="50.0" prefHeight="60.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Infantry" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  <Slider fx:id="soldierSlider" layoutX="37.0" layoutY="30.0" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="325.0" prefHeight="60.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Artillery" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  <Slider fx:id="soldierSlider1" layoutX="37.0" layoutY="30.0" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="650.0" prefHeight="60.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Tanks" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  <Slider fx:id="soldierSlider11" layoutX="37.0" layoutY="30.0" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="975.0" prefHeight="60.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Apaches" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  <Slider fx:id="soldierSlider111" layoutX="37.0" layoutY="30.0" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="659.0" layoutY="8.0" prefHeight="75.0" prefWidth="230.0" />
-      <AnchorPane layoutX="979.0" layoutY="8.0" prefHeight="75.0" prefWidth="230.0">
+      <AnchorPane fx:id="DiceIconContainer" layoutX="95.33333587646484" layoutY="84.66666412353516" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <children>
-            <Label layoutX="6.0" layoutY="31.0" text="Label" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="244.00000762939453" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="492.66666412353516" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="741.9999771118164" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="946.6666641235352" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>

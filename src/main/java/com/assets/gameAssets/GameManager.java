@@ -3,6 +3,8 @@ package com.assets.gameAssets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +13,14 @@ import java.util.random.RandomGenerator;
 import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.Calendar;
 import com.assets.gameAssets.basics.Army.ARMY_TYPE;
+import com.assets.generalAssets.App;
 import com.assets.generalAssets.graphics.ToggleSwitch;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
@@ -208,22 +212,64 @@ public class GameManager {
         hideButton("#sideMenuFourthButton");
         hideToggleSwitch("#sideMenuToggleSwitch");
     }
+    private boolean attackState(Army attackingArmy, Army defendingArmy) {
+
+        for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        }
+
+        for(int i = 0; i < attackingArmy.getArtillery() / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        }
+
+        for(int i = 0; i < attackingArmy.getTanks() / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        }
+
+        for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        }
+
+        for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        }
+
+        return false;
+    }
 
     private void showEnemySideMenu(State state) {
        
         EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE L'ATTACCO
-                    System.out.println("Adesso Attacco " + state.getName());
+                // TODO: INSERIRE FUNZIONE CHE GESTISCE L'ATTACCO
+                System.out.println("Adesso Attacco " + state.getName());
+
+                Pane curPlayerMenu = (Pane)getElementByCssSelector("#playerMenu");
+
+                try { 
+                    AnchorPane attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
+                } catch (IOException e) { e.printStackTrace(); return; }
+
+                // setta curPlayerMenu = attackMenu senza sminchiare tutto
+                
+                                
+                // Quando viene premuto questo pulsante deve comparire nel playerMenu l'fxml dell'attacco, con cui
+                // il giocatore sceglierà quante e quali truppe usare
+
+                // Una volta scelte le truppe viene richiamata la funzione attackState qui sopra
+
+                // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
+                // dominio del player, quindi verrà colorato del colore del player
+
             }
         };
 
         EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA NEGOZIAZIONE CON GLI ALTRI STATI
-                    System.out.println("Adesso Negozio con " + state.getName());
+                // TODO: INSERIRE FUNZIONE CHE GESTISCE LA NEGOZIAZIONE CON GLI ALTRI STATI
+                System.out.println("Adesso Negozio con " + state.getName());
             }
         };
 
@@ -386,37 +432,6 @@ public class GameManager {
 
     public ArrayList<Player> getPlayers() {
         return this.players;
-    }
-
-    private boolean attackState(State attacker, State defender) {
-        Army attackingArmy = attacker.getArmy();
-        Army defendingArmy = defender.getArmy();
-        for(int i = 0; i < attackingArmy.getInfantry() / Army.DICE_VALUE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defense(ARMY_TYPE.INFANTRY)) {  //da fare la funzione che calcola le truppe migliori del difensore
-                return true;
-            }
-        }
-        for(int i = 0; i < attackingArmy.getArtillery() / Army.DICE_VALUE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defense(ARMY_TYPE.ARTILLERY)) {  //da fare la funzione che calcola le truppe migliori del difensore
-                return true;
-            }
-        }
-        for(int i = 0; i < attackingArmy.getTanks() / Army.DICE_VALUE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defense(ARMY_TYPE.TANK)) {  //da fare la funzione che calcola le truppe migliori del difensore
-                return true;
-            }
-        }
-        for(int i = 0; i < attackingArmy.getApaches() / Army.DICE_VALUE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defense(ARMY_TYPE.APACHE)) {  //da fare la funzione che calcola le truppe migliori del difensore
-                return true;
-            }
-        }
-        for(int i = 0; i < attackingArmy.getApaches() / Army.DICE_VALUE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defense(ARMY_TYPE.APACHE)) {  //da fare la funzione che calcola le truppe migliori del difensore
-                return true;
-            }
-        }
-        return false;
     }
 
 }

@@ -3,6 +3,7 @@ package com.assets.gameAssets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,6 +55,8 @@ public class GameManager {
     private Calendar calendar;
     private ArrayList<Player> players;      // the first player is ALWAYS the Human Player
 
+    private static State curSelectedState;
+
     public GameManager() { }
 
 
@@ -93,7 +96,7 @@ public class GameManager {
     }
 
     private Node getElementByCssSelector(String selector) {
-        return this.scene.lookup(selector);
+        return App.gameManager.scene.lookup(selector);
     }
 
     private void addStringToListView(String listViewSelector, String newString) {
@@ -263,13 +266,11 @@ public class GameManager {
     void cancelAttack(ActionEvent event) {
         System.out.println("Attacco Cancellato");
 
-        // unire il mainPageController al GameManager per togliere questa rottura di cazzo di dover sempre usare il getElementByCssSelector
-
         attackMenu.setVisible(false);
 
-        getElementByCssSelector("#playerMenu").setVisible(true); 
-        // questo errore si risolve mettendo il mainPageController dentro il gameManager, quindi per adesso ciccia 
+        attackMenu = null;
 
+        getElementByCssSelector("#playerMenu").setVisible(true); 
 
     }
 
@@ -279,7 +280,14 @@ public class GameManager {
 
         Army attackerArmy = calcArmyFromSliders();
 
-        // non possiamo richiamare la funzione attackState perchè non sappiamo quale cazzo di stato stiamo attaccando da qui
+        Army defenderArmy = GameManager.curSelectedState.getArmy();
+
+        if (attackState(attackerArmy, defenderArmy)) {
+            System.out.println("Attacker Won");
+            // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
+            // dominio del player, quindi verrà colorato del colore del player
+        }
+        else System.out.println("Defender Won");
 
     }
 
@@ -296,7 +304,6 @@ public class GameManager {
         return new Army(values[0], values[1], values[2], values[3], 0); // aggiungere il calcolo del modificatore per cui si prende il modificatore piu alto tra i modificatori degli stati confinanti allo stato attaccato appartenenti al player
 
 
-
     }
 
     private void showEnemySideMenu(State state) {
@@ -309,8 +316,6 @@ public class GameManager {
 
                 Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
 
-                // ottimizzare il codice perchè in questo momento ad ogni attacco viene aggiunto nuovamente l'attackMenu al bottomMenu
-
                 StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
 
                 AnchorPane attackMenu;
@@ -321,16 +326,14 @@ public class GameManager {
 
                 bottomMenu.getChildren().add(attackMenu);
 
+                GameManager.curSelectedState = state;
+
+                refreshAttackMenu();
+
                 playerMenu.setVisible(false);
 
                 attackMenu.setVisible(true);
 
-                
-
-                // Una volta scelte le truppe viene richiamata la funzione attackState qui sopra
-
-                // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
-                // dominio del player, quindi verrà colorato del colore del player
 
             }
         };
@@ -349,6 +352,15 @@ public class GameManager {
         hideButton("#sideMenuFourthButton");
         hideToggleSwitch("#sideMenuToggleSwitch");
     
+    }
+
+    @FXML
+    void refreshVoidAttackMenu(MouseEvent event) {
+        App.gameManager.refreshAttackMenu();
+    }
+
+    private void refreshAttackMenu() {
+        // bisogna fare il codice che refresha le label dell'attackMenu
     }
 
     private void refreshSideMenu(State selectedState) {
@@ -481,8 +493,6 @@ public class GameManager {
        refreshSideMenu(curState);
 
     }
-    
-
 
     @Override
     public String toString() {

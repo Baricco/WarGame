@@ -49,8 +49,6 @@ public class StartPageController implements Initializable {
     @FXML
     private Slider botSlider;
     
-    private static GameManager gameManager;
-
     private ColorPickerManager colorPickerManager;
 
     @FXML
@@ -104,7 +102,7 @@ public class StartPageController implements Initializable {
 
     private void initMainPage(Scene scene) {
 
-        gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
+        App.gameManager = new GameManager("src/main/resources/com/statesData.xml", scene);
 
         SVGPathLoader svgPathLoader = new SVGPathLoader("src\\main\\resources\\com\\worldLow.svg");
         ArrayList<SVGPathElement> paths = svgPathLoader.loadPaths();
@@ -115,15 +113,15 @@ public class StartPageController implements Initializable {
         for(SVGPathElement p : paths) {
             try {
                 SVGPath curPath = (SVGPath)(scene.lookup("#" + p.getId()));
-                gameManager.addState(p.getId(), curPath);
+                App.gameManager.addState(p.getId(), curPath);
                 curPath.setContent(p.getContent());
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
                 curPath.setFill(Paint.valueOf("#4D6555"));
-                curPath.setOnMouseClicked(e -> gameManager.manageStateClicked(curPath.getId()));
-                curPath.setOnMouseEntered(e -> gameManager.refreshPlayerMenuByState(curPath.getId()));
-                curPath.setOnMouseExited(e -> gameManager.handleHoverEnd(curPath));
+                curPath.setOnMouseClicked(e -> App.gameManager.manageStateClicked(curPath.getId()));
+                curPath.setOnMouseEntered(e -> App.gameManager.refreshPlayerMenuByState(curPath.getId()));
+                curPath.setOnMouseExited(e -> App.gameManager.handleHoverEnd(curPath));
                 curPath.setClip(new Rectangle(mapContainer.getLayoutX() - xShift, mapContainer.getLayoutY() - yShift, mapContainer.getPrefWidth(), mapContainer.getPrefHeight()));
             } catch(Exception e) {
                 System.out.println("Error on " + p.getId() + "\n");
@@ -132,8 +130,8 @@ public class StartPageController implements Initializable {
         }
 
         
-        // Add the Human Player to the gameManager
-        try { gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
+        // Add the Human Player to the App.gameManager
+        try { App.gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
         RandomGenerator rnd = RandomGenerator.getDefault();
 
@@ -143,7 +141,7 @@ public class StartPageController implements Initializable {
             
             do { nextColor = Color.hsb(rnd.nextInt(361), 0.5, 1); } while (!colorIsValid(nextColor));
 
-            try { gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
+            try { App.gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
         }
 
 
@@ -152,7 +150,7 @@ public class StartPageController implements Initializable {
     private boolean colorIsValid(Color color) {
         if (color == null) return false;
 
-        for(Player p : gameManager.getPlayers()) {
+        for(Player p : App.gameManager.getPlayers()) {
             if (p.getHexColor().isEmpty()) continue;
 
             Color playerColor = Color.valueOf(p.getHexColor());

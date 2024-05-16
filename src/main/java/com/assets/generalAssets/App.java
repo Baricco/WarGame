@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.assets.gameAssets.GameManager;
+
 
 /**
  * JavaFX App
@@ -17,6 +19,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    public static GameManager gameManager;
 
     @Override
     public void start(Stage stage) throws IOException {

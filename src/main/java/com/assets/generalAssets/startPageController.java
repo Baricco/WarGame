@@ -118,7 +118,7 @@ public class StartPageController implements Initializable {
                 curPath.setLayoutX(xShift);
                 curPath.setLayoutY(yShift);
                 curPath.getStyleClass().add("State");
-                curPath.setFill(Paint.valueOf("#4D6555"));
+                if (p.getId().equals("ATL")) curPath.setFill(Paint.valueOf("#82B8BD")); else curPath.setFill(Paint.valueOf("#4D6555"));
                 curPath.setOnMouseClicked(e -> App.gameManager.manageStateClicked(curPath.getId()));
                 curPath.setOnMouseEntered(e -> App.gameManager.refreshPlayerMenuByState(curPath.getId()));
                 curPath.setOnMouseExited(e -> App.gameManager.handleHoverEnd(curPath));
@@ -129,7 +129,6 @@ public class StartPageController implements Initializable {
             }
         }
 
-        
         // Add the Human Player to the App.gameManager
         try { App.gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 

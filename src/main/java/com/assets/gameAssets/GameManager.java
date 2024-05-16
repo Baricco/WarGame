@@ -560,6 +560,8 @@ public class GameManager {
 
     public void refreshPlayerMenuByState(String stateId) {
 
+        if (stateId.equals("ATL") && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
+
         State state = this.states.get(stateId);
 
         setLabelContent("#playerStateNameLabel", state.getName());
@@ -586,10 +588,20 @@ public class GameManager {
     }
 
     public void handleHoverEnd(SVGPath curPath) {
+
+        if (App.gameManager.getState("ATL").getPath().equals(curPath) && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
+
         curPath.setFill(((Color)(curPath.getFill())).brighter());
     }
 
+    public State getState(String Id) {
+        return this.states.get(Id);
+    }
+
     public void handleHover(SVGPath curPath) {
+
+        if (App.gameManager.getState("ATL").getPath().equals(curPath) && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
+
         curPath.setFill(((Color)(curPath.getFill())).darker());
     }
 

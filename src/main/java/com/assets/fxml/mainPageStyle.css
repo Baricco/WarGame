@@ -28,6 +28,15 @@ VBox {
     -fx-stroke: -borderGray;
 }
 
+#ATL {
+    -fx-stroke: -seaBlue !important;
+}
+
+#ATL:hover {
+    -fx-stroke: -seaBlue !important;
+}
+
+
 .State:hover {    
     -fx-stroke: -darkContinent;
 }

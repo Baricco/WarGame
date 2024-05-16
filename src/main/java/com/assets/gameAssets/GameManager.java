@@ -291,6 +291,8 @@ public class GameManager {
     }
     private boolean attackState(Army attackingArmy, Army defendingArmy) {
 
+        // bisogna mettere a posto questa funzione perchè non calcola correttamente il modo in cui si vince
+
         for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
             if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
         }
@@ -347,15 +349,16 @@ public class GameManager {
         if (outcome) {
             System.out.println("Attacker Won");
 
-            // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
-            // dominio del player, quindi verrà colorato del colore del player
+            try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
+
+            // Si aggiornano le truppe perse
         }
         else {
             System.out.println("Defender Won");
 
         }
 
-        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + " " + (outcome ? "Won" : "Lost"), outcome);
+        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"), outcome);
 
         ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
 
@@ -364,6 +367,8 @@ public class GameManager {
         attackMenu = null;
     
         ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
+
+        enableButton("#sideMenuFirstButton");
 
 
     }
@@ -378,7 +383,17 @@ public class GameManager {
             i++;
         }
 
-        return new Army(values[0], values[1], values[2], values[3], 0); // aggiungere il calcolo del modificatore per cui si prende il modificatore piu alto tra i modificatori degli stati confinanti allo stato attaccato appartenenti al player
+        int highestAttackModifier = 0;
+
+        for (State s : getHumanPlayer().getNeighboringStates(curSelectedState)) {
+
+            int curAttackModifier = s.getArmy().getAttackModifier();
+
+            if (curAttackModifier > highestAttackModifier) highestAttackModifier = curAttackModifier;
+
+        }
+
+        return new Army(values[0], values[1], values[2], values[3], highestAttackModifier);
 
 
     }

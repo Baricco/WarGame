@@ -46,6 +46,14 @@ public class Army {
         this.apaches += apaches;
     }
 
+    public int getAttackModifier() {
+        return this.attackModifierValue;
+    }
+
+    public int getDefenseModifier() {
+        return this.defenseModifierValue;
+    }
+
     public double getInfantry() {
         return this.infantry;
     }

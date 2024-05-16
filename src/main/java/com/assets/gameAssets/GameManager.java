@@ -1,6 +1,7 @@
 package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -31,6 +32,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
+import javafx.util.Callback;
 
 public class GameManager {
 
@@ -110,15 +112,42 @@ public class GameManager {
         curListView.getItems().add(newString);
     }
 
-    private void setListViewCellColor(String listViewSelector, int cellIndex, String hexColor) {
-        // bisogna capire come settare il colore di una cella della listview
-        //((ListView<String>)getElementByCssSelector(listViewSelector))
+    private void setListViewCellColor(String listViewSelector, int cellIndex, boolean outcome) {
+        // bisogna capire come settare il colore di una cella della listview DA RISOLVERE
+
+        String curClass = outcome ? "list-cellWon" : "list-cellLost";
+        String otherClass = !outcome ? "list-cellWon" : "list-cellLost";
+
+        ((ListView<String>)getElementByCssSelector(listViewSelector)).setCellFactory(new Callback<>() {
+            @Override
+            public ListCell<String> call(ListView<String> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            getStyleClass().remove("list-cellWon");
+                            getStyleClass().remove("list-cellLost");
+                        } else {
+                            setText(item);
+                            if (getIndex() == cellIndex) {
+                                getStyleClass().add(curClass);
+                                getStyleClass().remove(otherClass);
+                            } else {
+                                getStyleClass().remove("list-cellWon");
+                                getStyleClass().remove("list-cellLost");
+                            }
+                        }
+                    }
+                };
+            }
+        });
     }
 
-    private void addStringToListView(String listViewSelector, String newString, String hexColor) {
+    private void addStringToListView(String listViewSelector, String newString, boolean outcome) {
         addStringToListView(listViewSelector, newString);
         int cellIndex = ((ListView<String>)getElementByCssSelector(listViewSelector)).getItems().size();
-        setListViewCellColor(listViewSelector, cellIndex, hexColor);
+        setListViewCellColor(listViewSelector, cellIndex, outcome);
     }
 
     private void setLabelContent(String labelSelector, String content) {
@@ -302,9 +331,11 @@ public class GameManager {
 
         System.out.println(getHumanPlayer().getName() + " Attacks " + curSelectedState.getName());
 
-        if (attackState(attackerArmy, defenderArmy)) {
-            System.out.println("Attacker Won");
+        boolean outcome = attackState(attackerArmy, defenderArmy);
 
+        if (outcome) {
+            System.out.println("Attacker Won");
+            
 
 
             // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
@@ -315,7 +346,7 @@ public class GameManager {
 
         }
 
-        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName());
+        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName(), outcome);
 
         ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
     
@@ -586,6 +617,10 @@ public class GameManager {
 
     public ArrayList<Player> getPlayers() {
         return this.players;
+    }
+
+    public void refreshLevelLabel() {
+        ((Label)getElementByCssSelector("#playerStateLvlLabel")).setText(String.valueOf(getHumanPlayer().getOriginalState().getLevel()));
     }
 
 }

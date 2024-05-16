@@ -1,4 +1,3 @@
-
 .root {
     -transparent: #FFFFFF00;
     -seaBlue: #8ac0c6;
@@ -87,6 +86,16 @@ ListView {
 .list-cell {
     -fx-background-color: -darkGray;
     -fx-text-fill: -white;
+}
+
+.list-cellWon {
+    -fx-background-color: -black;
+    -fx-text-fill: -#1ab015;
+}
+
+.list-cellLost {
+    -fx-background-color: -black;
+    -fx-text-fill: -#d03d3d;
 }
 
 #sideMenuTopPane {

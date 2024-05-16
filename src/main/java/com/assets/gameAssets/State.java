@@ -6,11 +6,16 @@ import java.util.random.RandomGenerator;
 import com.assets.SVGAssets.XMLParser;
 import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.City;
+import com.assets.generalAssets.App;
 
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 
 public class State {
+
+    public static final int MAX_LEVEL = 20;
+    public static final int MAX_REPUTATION = 50;
+    public static final int MIN_REPUTATION = -50;
 
     private String name;
     private String Id;
@@ -21,7 +26,7 @@ public class State {
     private double stageNaturalResources;   // risorse naturali generate per ogni turno
     private double refinedResources;        // risorse lavorate totali
     private double stageRefinedResources;   // risorse lavorate generate per ogni turno
-    private double reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria (-5 ; +5)
+    private int reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria
     private Army army;
     private int workForce;
     private int stageArmy;
@@ -35,7 +40,7 @@ public class State {
     private int population;
     private int level; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -55,7 +60,7 @@ public class State {
         this.neighboringStates = new ArrayList<String>(neighboringStates);
     }
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double reputation, int population, int level, Army army, int workForce, int stageArmy) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int level, Army army, int workForce, int stageArmy) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -101,19 +106,26 @@ public class State {
 
         // Qui settiamo le variabili che non si trovano nell'XML
 
-        this.army = new Army((int)((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) / 20)))) / 50);
-        this.stageArmy = (int)(((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) / 90))) / 50) * ((this.reputation + 5) / 5));
+        this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) / 20)))) / 50) / 5);
+        this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) / 90))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
         this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)) + (((this.level + 20) * 2) / 20));
 
-        this.level  = 0;
+        this.level  = 1;
 
-        this.reputation = -5;
+        this.reputation = 0;
 
         this.path = path;
     
     
     } 
+
+    public void increaseLevel () {
+        if(this.level < MAX_LEVEL) {
+            this.level++;
+            App.gameManager.refreshLevelLabel();
+        }
+    }
 
     public ArrayList<String> getNeighboringStates() { return this.neighboringStates; }
 
@@ -197,12 +209,20 @@ public class State {
         this.refinedResources += this.stageRefinedResources;
     }
 
-    public double getReputation() {
+    public int getReputation() {
         return this.reputation;
     }
 
-    public void setReputation(double reputation) {
-        this.reputation = reputation;
+    public void increaseReputation() {
+        if(this.reputation < MAX_REPUTATION) {
+            this.reputation++;
+        }
+    }
+
+    public void decreaseReputation() {
+        if(this.reputation > MIN_REPUTATION) {
+            this.reputation--;
+        }
     }
 
     public int getPopulation() {
@@ -211,10 +231,6 @@ public class State {
 
     public int getLevel() {
         return this.level;
-    }
-
-    public void increaseLevel(int increase) {
-        this.level += increase;
     }
 
     public int getWorkForce() {

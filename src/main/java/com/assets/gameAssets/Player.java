@@ -80,7 +80,7 @@ public abstract class Player {
         double stageNaturalResources = this.originalState.getStageNaturalResources();
         double refinedResources = this.originalState.getRefinedResources();
         double stageRefinedResources = this.originalState.getStageRefinedResources();
-        double reputation = this.originalState.getReputation();
+        int reputation = this.originalState.getReputation();
         int population = this.originalState.getPopulation();
         int level = this.originalState.getLevel();
         Army army = this.originalState.getArmy();
@@ -200,6 +200,13 @@ public abstract class Player {
         this.occupiedStates.add(occupiedState);
 
         this.setStateColor(occupiedState);
+
+        if(this.occupiedStates.size() == this.originalState.getLevel() * 2) {
+            this.originalState.increaseLevel();
+            for(State state : this.occupiedStates) {
+                state.increaseLevel();
+            }
+        }
         
     }
 

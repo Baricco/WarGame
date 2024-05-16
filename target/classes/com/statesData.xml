@@ -548,9 +548,9 @@
 
     <State Id="ID">
         <Name>India</Name>
-        <Money>50000000</Money>
+        <Money>5000000</Money>
         <StageMoney>3900000</StageMoney>
-        <NaturalResources>104000</NaturalResources>
+        <NaturalResources>10400</NaturalResources>
         <StageNaturalResources>18000</StageNaturalResources>
         <RefinedResources>23000</RefinedResources>
         <StageRefinedResources>8300</StageRefinedResources>
@@ -1307,11 +1307,11 @@
         <Name>China</Name>
         <Money>1250000000</Money>
         <StageMoney>49000000</StageMoney>
-        <NaturalResources>203000</NaturalResources>
+        <NaturalResources>20300</NaturalResources>
         <StageNaturalResources>18000</StageNaturalResources>
-        <RefinedResources>194000</RefinedResources>
+        <RefinedResources>178000</RefinedResources>
         <StageRefinedResources>37000</StageRefinedResources>
-        <Population>1435000000</Population>
+        <Population>1135000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">TH</Border>
             <Border SeaBorder="false">ID</Border>
@@ -2736,16 +2736,53 @@
         <StageRefinedResources>2147483647</StageRefinedResources>
         <Population>2147483647</Population>
         <NeighboringStates>
-            <Border SeaBorder="false"></Border>
-            <Border SeaBorder="false"></Border>
-            <Border SeaBorder="false"></Border>
-            <Border SeaBorder="false"></Border>
-            <Border SeaBorder="true"></Border>
-            <Border SeaBorder="true"></Border>
-            <Border SeaBorder="true"></Border>
+            <Border SeaBorder="true">US</Border>
+            <Border SeaBorder="true">CA</Border>
+            <Border SeaBorder="true">MX</Border>
+            <Border SeaBorder="true">AC</Border>
+            <Border SeaBorder="true">CO</Border>
+            <Border SeaBorder="true">CI</Border>
+            <Border SeaBorder="true">BR</Border>
+            <Border SeaBorder="true">AR</Border>
+            <Border SeaBorder="true">GL</Border>
+            <Border SeaBorder="true">SC</Border>
+            <Border SeaBorder="true">GB</Border>
+            <Border SeaBorder="true">SP</Border>
+            <Border SeaBorder="true">FR</Border>
+            <Border SeaBorder="true">GE</Border>
+            <Border SeaBorder="true">IT</Border>
+            <Border SeaBorder="true">AT</Border>
+            <Border SeaBorder="true">PL</Border>
+            <Border SeaBorder="true">RO</Border>
+            <Border SeaBorder="true">JG</Border>
+            <Border SeaBorder="true">GR</Border>
+            <Border SeaBorder="true">SU</Border>
+            <Border SeaBorder="true">TR</Border>
+            <Border SeaBorder="true">PT</Border>
+            <Border SeaBorder="true">AE</Border>
+            <Border SeaBorder="true">IR</Border>
+            <Border SeaBorder="true">KZ</Border>
+            <Border SeaBorder="true">AF</Border>
+            <Border SeaBorder="true">ID</Border>
+            <Border SeaBorder="true">CN</Border>
+            <Border SeaBorder="true">KO</Border>
+            <Border SeaBorder="true">JP</Border>
+            <Border SeaBorder="true">TH</Border>
+            <Border SeaBorder="true">IN</Border>
+            <Border SeaBorder="true">AU</Border>
+            <Border SeaBorder="true">NZ</Border>
+            <Border SeaBorder="true">MO</Border>
+            <Border SeaBorder="true">LY</Border>
+            <Border SeaBorder="true">EG</Border>
+            <Border SeaBorder="true">SE</Border>
+            <Border SeaBorder="true">NI</Border>
+            <Border SeaBorder="true">ET</Border>
+            <Border SeaBorder="true">CG</Border>
+            <Border SeaBorder="true">MZ</Border>
+            <Border SeaBorder="true">SA</Border>
         </NeighboringStates>
         <Cities>
-            <City trainStation="false"></City>
+            <City trainStation="false">R'yleh</City>
             <City trainStation="false"></City>
             <City trainStation="false"></City>
             <City trainStation="false"></City>

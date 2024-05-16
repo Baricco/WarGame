@@ -138,6 +138,15 @@ public abstract class Player {
         return false;
     }
 
+    public ArrayList<State> getNeighboringStates(State state) {
+
+        ArrayList<State> neighboringStates = new ArrayList<>();
+
+        if (this.originalState.isNeighboring(state)) neighboringStates.add(originalState);
+        for (State s : this.occupiedStates) if (s.isNeighboring(state)) neighboringStates.add(s);
+        return neighboringStates;
+    }
+
     public boolean hasOccupied(State state) {
         if (this.originalState != null && this.originalState.getId() == state.getId()) return true;
         return this.occupiedStates.contains(state);
@@ -216,6 +225,17 @@ public abstract class Player {
         
         this.occupiedStates.remove(lostState);
         
+    }
+
+    public ArrayList<State> getAllStates() {
+
+        ArrayList<State> allStates = new ArrayList<>();
+        
+        allStates.add(originalState);
+
+        allStates.addAll(occupiedStates);
+
+        return this.occupiedStates;
     }
 
     public void addAlly(Player newAlly) throws Exception {

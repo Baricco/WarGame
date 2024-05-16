@@ -39,7 +39,12 @@ public class Army {
         this.defenseModifierValue = 0;
     }
 
-    
+    public void addSoldiers(double infantry, double artillery, double tanks, double apaches) {
+        this.infantry += infantry;
+        this.artillery += artillery;
+        this.tanks += tanks;
+        this.apaches += apaches;
+    }
 
     public double getInfantry() {
         return this.infantry;

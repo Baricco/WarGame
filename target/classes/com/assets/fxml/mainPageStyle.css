@@ -88,14 +88,14 @@ ListView {
     -fx-text-fill: -white;
 }
 
-.list-cellWon {
-    -fx-background-color: -black;
-    -fx-text-fill: -#1ab015;
+.list-cell .wonBattle {
+    -fx-background-color: #1ab015 !important;
+    -fx-text-fill: -white;
 }
 
-.list-cellLost {
-    -fx-background-color: -black;
-    -fx-text-fill: -#d03d3d;
+.list-cell .lostBattle {
+    -fx-background-color: #d03d3d !important;
+    -fx-text-fill: -white;
 }
 
 #sideMenuTopPane {

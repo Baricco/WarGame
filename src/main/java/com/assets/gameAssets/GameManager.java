@@ -113,12 +113,14 @@ public class GameManager {
     }
 
     private void setListViewCellColor(String listViewSelector, int cellIndex, boolean outcome) {
-        // bisogna capire come settare il colore di una cella della listview DA RISOLVERE
 
-        String curClass = outcome ? "list-cellWon" : "list-cellLost";
-        String otherClass = !outcome ? "list-cellWon" : "list-cellLost";
+        // Bisogna risolvere il fatto che sta funzione non va
 
-        ((ListView<String>)getElementByCssSelector(listViewSelector)).setCellFactory(new Callback<>() {
+        String curClass = outcome ? "wonBattle" : "lostBattle";
+        String otherClass = !outcome ? "lostBattle" : "wonBattle";
+
+        ListView<String> listView = (ListView<String>) getElementByCssSelector(listViewSelector);
+        listView.setCellFactory(new Callback<>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
                 return new ListCell<>() {
@@ -126,22 +128,29 @@ public class GameManager {
                     protected void updateItem(String item, boolean empty) {
                         super.updateItem(item, empty);
                         if (empty || item == null) {
-                            getStyleClass().remove("list-cellWon");
-                            getStyleClass().remove("list-cellLost");
+                            setText(null);
+                            getStyleClass().remove(curClass);
+                            getStyleClass().remove(otherClass);
                         } else {
                             setText(item);
                             if (getIndex() == cellIndex) {
-                                getStyleClass().add(curClass);
+                                if (!getStyleClass().contains(curClass)) {
+                                    getStyleClass().add(curClass);
+                                }
                                 getStyleClass().remove(otherClass);
                             } else {
-                                getStyleClass().remove("list-cellWon");
-                                getStyleClass().remove("list-cellLost");
+                                getStyleClass().remove(curClass);
+                                getStyleClass().remove(otherClass);
                             }
                         }
                     }
                 };
             }
         });
+
+        listView.refresh();
+        listView.applyCss();
+
     }
 
     private void addStringToListView(String listViewSelector, String newString, boolean outcome) {
@@ -316,6 +325,8 @@ public class GameManager {
         attackMenu = null;
 
         getElementByCssSelector("#playerMenu").setVisible(true);
+
+        enableButton("#sideMenuFirstButton");
         
 
     }
@@ -335,8 +346,6 @@ public class GameManager {
 
         if (outcome) {
             System.out.println("Attacker Won");
-            
-
 
             // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
             // dominio del player, quindi verrà colorato del colore del player
@@ -346,9 +355,13 @@ public class GameManager {
 
         }
 
-        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName(), outcome);
+        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + " " + (outcome ? "Won" : "Lost"), outcome);
 
         ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
+
+        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
+        
+        attackMenu = null;
     
         ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
 
@@ -370,6 +383,14 @@ public class GameManager {
 
     }
 
+    private void disableButton(String selector) {
+        ((Button)getElementByCssSelector(selector)).setMouseTransparent(true);
+    }
+
+    private void enableButton(String selector) {
+        ((Button)getElementByCssSelector(selector)).setMouseTransparent(false);
+    }
+
     private void showEnemySideMenu(State state) {
 
         EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
@@ -386,7 +407,7 @@ public class GameManager {
 
             EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
                 @Override
-                public void handle(ActionEvent event){
+                public void handle(ActionEvent event) {
     
                     Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
     
@@ -424,6 +445,8 @@ public class GameManager {
                     playerMenu.setVisible(false);
     
                     attackMenu.setVisible(true);
+
+                    disableButton("#sideMenuFirstButton");
     
     
                 }
@@ -456,11 +479,31 @@ public class GameManager {
     private void refreshAttackMenu() {
         ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
 
+
+        ArrayList<State> neighboringStates = getHumanPlayer().getNeighboringStates(curSelectedState);
+
+        Army totalArmy = new Army(0);
+
+        for (State s : neighboringStates) {
+
+            Army curStateArmy = s.getArmy();
+
+            totalArmy.addSoldiers(curStateArmy.getInfantry(), curStateArmy.getArtillery(), curStateArmy.getTanks(), curStateArmy.getApaches());
+        }
+
         int i = 0; 
         for (Node armySelector : armySelectors) {
-            double maxSoldiers = curSelectedState.getArmy().toArray()[i];
+
+            double maxSoldiers = totalArmy.toArray()[i];
             
-            ((Slider)armySelector.lookup("#soldierSlider")).setMax(maxSoldiers);
+            Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+
+            curSlider.setMax(maxSoldiers);
+            curSlider.setMajorTickUnit(Army.SOLDIERS_PER_DICE);
+            curSlider.setMinorTickCount(0);
+            curSlider.setShowTickMarks(true);
+            curSlider.setSnapToTicks(true);
+
             ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             

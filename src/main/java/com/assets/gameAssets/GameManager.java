@@ -350,6 +350,7 @@ public class GameManager {
             System.out.println("Attacker Won");
 
             try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
+            try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName());} catch(Exception e) { }
 
             // Si aggiornano le truppe perse
         }
@@ -617,7 +618,7 @@ public class GameManager {
         
         this.getHumanPlayer().setOriginalState(clickedState);
             
-        addStringToListView("#playerStateAlliedStatesListView", clickedState.getName());
+        addStringToListView("#playerStateConqueredTerritoriesListView", clickedState.getName());
 
         refreshPlayerMenuByState(clickedState.getId());
         refreshSideMenu(clickedState);

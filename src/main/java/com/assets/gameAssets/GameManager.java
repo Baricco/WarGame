@@ -110,6 +110,17 @@ public class GameManager {
         curListView.getItems().add(newString);
     }
 
+    private void setListViewCellColor(String listViewSelector, int cellIndex, String hexColor) {
+        // bisogna capire come settare il colore di una cella della listview
+        //((ListView<String>)getElementByCssSelector(listViewSelector))
+    }
+
+    private void addStringToListView(String listViewSelector, String newString, String hexColor) {
+        addStringToListView(listViewSelector, newString);
+        int cellIndex = ((ListView<String>)getElementByCssSelector(listViewSelector)).getItems().size();
+        setListViewCellColor(listViewSelector, cellIndex, hexColor);
+    }
+
     private void setLabelContent(String labelSelector, String content) {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
@@ -140,13 +151,13 @@ public class GameManager {
         if (value >= billion) return Math.round(value / billion) + " Bln";
         if (value >= million) return Math.round(value / million) + " Mln";
         if (value >= thousand) return Math.round(value / thousand) + " K";
-        return String.valueOf(value);
+        return String.valueOf(Math.round(value));
     }
 
     private Human getHumanPlayer() {
         Human curPlayer = null;
         
-        try { curPlayer = (Human)this.players.get(0); } catch (IndexOutOfBoundsException e) {  }
+        try { curPlayer = (Human)App.gameManager.players.get(0); } catch (IndexOutOfBoundsException e) {  }
 
         return curPlayer; 
     }
@@ -282,18 +293,34 @@ public class GameManager {
 
     @FXML
     void attack(ActionEvent event) {
-        System.out.println("Attacco Confermato");
 
         Army attackerArmy = calcArmyFromSliders();
 
+        if (!attackerArmy.isEnoughBig()) return;
+
         Army defenderArmy = GameManager.curSelectedState.getArmy();
+
+        System.out.println(getHumanPlayer().getName() + " Attacks " + curSelectedState.getName());
 
         if (attackState(attackerArmy, defenderArmy)) {
             System.out.println("Attacker Won");
+
+
+
             // Si aggiornano le truppe perse e, eventualmente lo stato attaccato passa sotto il 
             // dominio del player, quindi verrà colorato del colore del player
         }
-        else System.out.println("Defender Won");
+        else {
+            System.out.println("Defender Won");
+
+        }
+
+        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName());
+
+        ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
+    
+        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
+
 
     }
 
@@ -313,53 +340,6 @@ public class GameManager {
     }
 
     private void showEnemySideMenu(State state) {
-       
-        EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event){
-                // TODO: INSERIRE FUNZIONE CHE GESTISCE L'ATTACCO
-                System.out.println("Adesso Attacco " + state.getName());
-
-                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
-
-                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
-
-                AnchorPane attackMenu;
-
-                try { 
-                    attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
-                } catch (IOException e) { e.printStackTrace(); return; }
-
-
-                ObservableList<Node> armySelectors = ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren();
-
-        
-                for (Node armySelector : armySelectors) {                    
-
-                    Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
-                    curSlider.valueProperty().addListener(new ChangeListener<Number>() {
-                        public void changed(ObservableValue<? extends Number> ov,
-                            Number old_val, Number new_val) {
-                                App.gameManager.refreshAttackMenu();
-                            }
-                    });
-                }
-
-
-
-                bottomMenu.getChildren().add(attackMenu);
-
-                GameManager.curSelectedState = state;
-
-                refreshAttackMenu();
-
-                playerMenu.setVisible(false);
-
-                attackMenu.setVisible(true);
-
-
-            }
-        };
 
         EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
             @Override
@@ -369,11 +349,71 @@ public class GameManager {
             }
         };
 
-        setButton("#sideMenuFirstButton", "Attack", attackHandler);
-        setButton("#sideMenuSecondButton", "Negotiate", negotiateHandler);
+
+        if (getHumanPlayer().hasNeighboringState(state)) {  // The Player is Neighboring the selected State
+
+
+            EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event){
+    
+                    Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+    
+                    StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+    
+                    AnchorPane attackMenu;
+    
+                    try { 
+                        attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
+                    } catch (IOException e) { e.printStackTrace(); return; }
+    
+    
+                    ObservableList<Node> armySelectors = ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren();
+    
+            
+                    for (Node armySelector : armySelectors) {                    
+    
+                        Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                        curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                            public void changed(ObservableValue<? extends Number> ov,
+                                Number old_val, Number new_val) {
+                                    App.gameManager.refreshAttackMenu();
+                                }
+                        });
+                    }
+    
+    
+    
+                    bottomMenu.getChildren().add(attackMenu);
+    
+                    GameManager.curSelectedState = state;
+    
+                    refreshAttackMenu();
+    
+                    playerMenu.setVisible(false);
+    
+                    attackMenu.setVisible(true);
+    
+    
+                }
+            };
+    
+
+            setButton("#sideMenuFirstButton", "Attack", attackHandler);
+            setButton("#sideMenuSecondButton", "Negotiate", negotiateHandler);
+        
+        }
+        else {  // The Player isn't Neighboring the selected State
+
+            setButton("#sideMenuFirstButton", "Negotiate", negotiateHandler);
+            hideButton("#sideMenuSecondButton");
+
+        }
+
         hideButton("#sideMenuThirdButton");
         hideButton("#sideMenuFourthButton");
         hideToggleSwitch("#sideMenuToggleSwitch");
+
     
     }
 

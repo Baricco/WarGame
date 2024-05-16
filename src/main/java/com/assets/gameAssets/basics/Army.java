@@ -8,7 +8,7 @@ public class Army {
     private double apaches;
     private int attackModifierValue;
     private int defenseModifierValue;
-    public static final int SOLDIERS_PER_DICE = 1000000;
+    public static final int SOLDIERS_PER_DICE = 100000;
 
     public enum ARMY_TYPE {
         EMPTY,
@@ -115,6 +115,14 @@ public class Army {
 
     public double[] toArray() {
         return new double[] { this.getInfantry(), this.getArtillery(), this.getTanks(), this.getApaches() };
+    }
+
+    public boolean isEnoughBig() {
+        if (this.infantry >= SOLDIERS_PER_DICE) return true;
+        if (this.artillery >= SOLDIERS_PER_DICE) return true;
+        if (this.tanks >= SOLDIERS_PER_DICE) return true;
+        if (this.apaches >= SOLDIERS_PER_DICE) return true;
+        return false;
     }
 
 }

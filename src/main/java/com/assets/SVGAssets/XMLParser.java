@@ -28,8 +28,16 @@ public class XMLParser {
 
         ArrayList<City> cities = new ArrayList<>();
 
+        ArrayList<String> neighboringStates = new ArrayList<>();
+
         Elements xmlCities = state.getElementsByTag("Cities").first().getElementsByTag("City");
 
+        Elements xmlNeighboringStates = state.getElementsByTag("NeighboringStates").first().getElementsByTag("Border");
+
+        for (Element neighboringState : xmlNeighboringStates) {
+            String stateId = neighboringState.ownText();
+            neighboringStates.add(stateId);
+        }
 
         for (Element city : xmlCities) {
             
@@ -67,7 +75,8 @@ public class XMLParser {
             0,
             0,
             null,
-            cities
+            cities,
+            neighboringStates
         );
     }
 

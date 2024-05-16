@@ -130,9 +130,12 @@ public abstract class Player {
         
         return false;
 
+    }
 
-
-
+    public boolean hasNeighboringState(State state) {
+        if (this.originalState.isNeighboring(state)) return true;
+        for (State s : this.occupiedStates) if (s.isNeighboring(state)) return true;
+        return false;
     }
 
     public boolean hasOccupied(State state) {

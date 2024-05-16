@@ -5,6 +5,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -268,9 +271,12 @@ public class GameManager {
 
         attackMenu.setVisible(false);
 
+        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
+        
         attackMenu = null;
 
-        getElementByCssSelector("#playerMenu").setVisible(true); 
+        getElementByCssSelector("#playerMenu").setVisible(true);
+        
 
     }
 
@@ -324,6 +330,23 @@ public class GameManager {
                     attackMenu = (AnchorPane)App.createRoot("/com/assets/fxml/attackMenu");
                 } catch (IOException e) { e.printStackTrace(); return; }
 
+
+                ObservableList<Node> armySelectors = ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren();
+
+        
+                for (Node armySelector : armySelectors) {                    
+
+                    Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                    curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                        public void changed(ObservableValue<? extends Number> ov,
+                            Number old_val, Number new_val) {
+                                App.gameManager.refreshAttackMenu();
+                            }
+                    });
+                }
+
+
+
                 bottomMenu.getChildren().add(attackMenu);
 
                 GameManager.curSelectedState = state;
@@ -360,7 +383,18 @@ public class GameManager {
     }
 
     private void refreshAttackMenu() {
-        // bisogna fare il codice che refresha le label dell'attackMenu
+        ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
+
+        int i = 0; 
+        for (Node armySelector : armySelectors) {
+            double maxSoldiers = curSelectedState.getArmy().toArray()[i];
+            
+            ((Slider)armySelector.lookup("#soldierSlider")).setMax(maxSoldiers);
+            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
+            ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
+            
+            i++;
+        }
     }
 
     private void refreshSideMenu(State selectedState) {

@@ -113,4 +113,8 @@ public class Army {
         return ARMY_TYPE.EMPTY;
     }
 
+    public double[] toArray() {
+        return new double[] { this.getInfantry(), this.getArtillery(), this.getTanks(), this.getApaches() };
+    }
+
 }

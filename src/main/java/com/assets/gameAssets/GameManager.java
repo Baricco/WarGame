@@ -104,6 +104,8 @@ public class GameManager {
         return App.gameManager.scene.lookup(selector);
     }
 
+
+
     private void addStringToListView(String listViewSelector, String newString) {
         Node element = (Node)getElementByCssSelector(listViewSelector);
         ListView<String> curListView;
@@ -112,14 +114,20 @@ public class GameManager {
         curListView.getItems().add(newString);
     }
 
+/*
+
     private void setListViewCellColor(String listViewSelector, int cellIndex, boolean outcome) {
-
-        // Bisogna risolvere il fatto che sta funzione non va
-
         String curClass = outcome ? "wonBattle" : "lostBattle";
-        String otherClass = !outcome ? "lostBattle" : "wonBattle";
-
-        ListView<String> listView = (ListView<String>) getElementByCssSelector(listViewSelector);
+        String otherClass = outcome ? "lostBattle" : "wonBattle";
+    
+        ListView<String> listView = (ListView<String>)getElementByCssSelector(listViewSelector);
+        System.out.println("ListView: " + listView);
+    
+        if (listView == null) {
+            System.err.println("ListView not found with selector: " + listViewSelector);
+            return;
+        }
+    
         listView.setCellFactory(new Callback<>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
@@ -133,33 +141,47 @@ public class GameManager {
                             getStyleClass().remove(otherClass);
                         } else {
                             setText(item);
-                            if (getIndex() == cellIndex) {
+                            int index = getIndex();
+                            System.out.println("Cell index: " + index + ", Item: " + item);
+    
+                            // Clear any existing styles
+                            getStyleClass().remove(curClass);
+                            getStyleClass().remove(otherClass);
+    
+                            // Apply style if the index matches
+                            if (index == cellIndex) {
+                                System.out.println("Applying class at index " + index);
                                 if (outcome) {
-                                    getStyleClass().add(curClass);
-                                    getStyleClass().remove(otherClass);
-                                }
-                                else {
-                                    getStyleClass().remove(curClass);
-                                    getStyleClass().add(otherClass);
+                                    System.out.println("Applying " + curClass + " to cell " + cellIndex);
+                                    if (!getStyleClass().contains(curClass)) {
+                                        getStyleClass().add(curClass);
+                                    }
+                                } else {
+                                    System.out.println("Applying " + otherClass + " to cell " + cellIndex);
+                                    if (!getStyleClass().contains(otherClass)) {
+                                        getStyleClass().add(otherClass);
+                                    }
                                 }
                             }
                         }
-                        for (int i = 0; i < getStyleClass().size(); i++) System.out.println(getStyleClass().get(i));
+                        System.out.println("Cell styles: " + getStyleClass());
                     }
                 };
             }
         });
-
+    
         listView.refresh();
-        listView.applyCss();
-
     }
+
+
 
     private void addStringToListView(String listViewSelector, String newString, boolean outcome) {
         addStringToListView(listViewSelector, newString);
         int cellIndex = ((ListView<String>)getElementByCssSelector(listViewSelector)).getItems().size();
-        setListViewCellColor(listViewSelector, cellIndex, outcome);
+        //setListViewCellColor(listViewSelector, cellIndex, outcome);
     }
+
+*/
 
     private void setLabelContent(String labelSelector, String content) {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
@@ -361,7 +383,7 @@ public class GameManager {
 
         }
 
-        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"), outcome);
+        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
 
         ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
 

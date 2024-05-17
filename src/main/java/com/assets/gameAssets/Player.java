@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.Army.ARMY_TYPE;
+import com.assets.generalAssets.App;
 
 
 public abstract class Player {
+
+
+    public static final int MAX_LEVEL = 20;
 
     public enum PlayerType {
         TYPE_BOT,               // every bot Player must have this playerType
@@ -19,7 +23,8 @@ public abstract class Player {
 
     private String name;                        // the name of the Player
     private String hexColor;                    // the color (hex value) of the States in the mapContainer
-    private PlayerType playerType;                  // the type of the player (human, Bot)
+    private PlayerType playerType;              // the type of the player (human, Bot)
+    private int level;                          // the level of the player    
 
     private ArrayList<State> occupiedStates;    // the states that are occupied by the Player
     private ArrayList<Player> allies;           // this Player allies
@@ -36,6 +41,7 @@ public abstract class Player {
         this.allies = new ArrayList<>();
 
         this.active = false;
+        this.level = 1;
 
         System.out.println(hexColor);
     
@@ -54,6 +60,7 @@ public abstract class Player {
         this.allies = new ArrayList<>();
         
         this.active = false;
+        this.level = 1;
 
     }
 
@@ -66,6 +73,7 @@ public abstract class Player {
         this.occupiedStates = occupiedStates;
         this.allies = allies;
         this.active = false;
+        this.level = 1;
     }
 
     public boolean hasOriginalState() {
@@ -82,7 +90,7 @@ public abstract class Player {
         double stageRefinedResources = this.originalState.getStageRefinedResources();
         int reputation = this.originalState.getReputation();
         int population = this.originalState.getPopulation();
-        int level = this.originalState.getLevel();
+        int level = this.originalState.getlastTurnAttacksDone();
         Army army = this.originalState.getArmy();
         int workForce = this.originalState.getWorkForce();
         int stageArmy = this.originalState.getStageArmy();
@@ -97,7 +105,7 @@ public abstract class Player {
             stageRefinedResources = s.getStageRefinedResources();
             reputation = s.getReputation();
             population = s.getPopulation();
-            level = s.getLevel();
+            level = s.getlastTurnAttacksDone();
             army = s.getArmy();
             workForce = s.getWorkForce();
             stageArmy = s.getStageArmy();
@@ -136,6 +144,13 @@ public abstract class Player {
         if (this.originalState.isNeighboring(state)) return true;
         for (State s : this.occupiedStates) if (s.isNeighboring(state)) return true;
         return false;
+    }
+
+    public void increaseLevel () {
+        if(this.level < MAX_LEVEL) {
+            this.level++;
+            App.gameManager.refreshLevelLabel();
+        }
     }
 
     public ArrayList<State> getNeighboringStates(State state) {
@@ -210,12 +225,8 @@ public abstract class Player {
 
         this.setStateColor(occupiedState);
 
-        if(this.occupiedStates.size() == this.originalState.getLevel() * 2) {
-            this.originalState.increaseLevel();
-            for(State state : this.occupiedStates) {
-                state.increaseLevel();
-            }
-        }
+        if(this.occupiedStates.size() == level * 2) increaseLevel();
+        
         
     }
 
@@ -252,6 +263,10 @@ public abstract class Player {
         
         this.allies.remove(lostAlly);
         
+    }
+
+    public int getLevel() {
+        return this.level;
     }
     
 

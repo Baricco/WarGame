@@ -1,5 +1,6 @@
 package com.assets.generalAssets;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -269,6 +270,11 @@ public class MainPageController implements Initializable{
 
     private void hideSideMenu() {
         sideMenu.getChildren().forEach(node -> { node.setVisible(false); });
+    }
+
+    @FXML
+    void passTurn(ActionEvent event) {
+        App.gameManager.passTurn();
     }
 
     private void initToggleSwitch() {

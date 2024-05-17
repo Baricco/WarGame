@@ -13,7 +13,6 @@ import javafx.scene.shape.SVGPath;
 
 public class State {
 
-    public static final int MAX_LEVEL = 20;
     public static final int MAX_REPUTATION = 50;
     public static final int MIN_REPUTATION = -50;
 
@@ -38,7 +37,7 @@ public class State {
 
 
     private int population;
-    private int level; 
+    private int lastTurnAttacksDone; 
 
     public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
         this.name = name;
@@ -51,7 +50,7 @@ public class State {
         this.stageRefinedResources = stageRefinedResources;
         this.reputation = reputation;
         this.population = population;
-        this.level = level;
+        this.lastTurnAttacksDone = 0;
         this.path = path;
         this.army = army;
         this.stageArmy = stageArmy;
@@ -60,7 +59,7 @@ public class State {
         this.neighboringStates = new ArrayList<String>(neighboringStates);
     }
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int level, Army army, int workForce, int stageArmy) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int lastTurnAttacksDone, Army army, int workForce, int stageArmy) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -71,7 +70,7 @@ public class State {
         this.stageRefinedResources = stageRefinedResources;
         this.reputation = reputation;
         this.population = population;
-        this.level = level;
+        this.lastTurnAttacksDone = 0;
         this.path = null;
         this.army = army;
         this.stageArmy = stageArmy;
@@ -109,9 +108,9 @@ public class State {
         this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) / 20)))) / 50) / 5);
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) / 90))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
-        this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)) + (((this.level + 20) * 2) / 20));
+        this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)));
 
-        this.level  = 1;
+        this.lastTurnAttacksDone = 0;
 
         this.reputation = 0;
 
@@ -120,12 +119,7 @@ public class State {
     
     } 
 
-    public void increaseLevel () {
-        if(this.level < MAX_LEVEL) {
-            this.level++;
-            App.gameManager.refreshLevelLabel();
-        }
-    }
+
 
     public ArrayList<String> getNeighboringStates() { return this.neighboringStates; }
 
@@ -229,8 +223,8 @@ public class State {
         return this.population;
     }
 
-    public int getLevel() {
-        return this.level;
+    public int getlastTurnAttacksDone() {
+        return this.lastTurnAttacksDone;
     }
 
     public int getWorkForce() {
@@ -250,7 +244,7 @@ public class State {
             "stageRefinedResources='" + getStageRefinedResources() + "',\n" +
             "reputation='" + getReputation() + "',\n" +
             "population='" + getPopulation() + "',\n" +
-            "level='" + getLevel() + "',\n" +
+            "lastTurnAttacksDone='" + getlastTurnAttacksDone() + "',\n" +
             "}\n";
     }
 
@@ -259,6 +253,10 @@ public class State {
         RandomGenerator rnd = RandomGenerator.getDefault();
 
         return this.cities.get(rnd.nextInt(this.cities.size())).getName();
+    }
+
+    public void incrementAttacksDone() {
+        this.lastTurnAttacksDone++;
     }
 
 

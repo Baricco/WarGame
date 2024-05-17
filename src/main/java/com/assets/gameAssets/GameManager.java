@@ -61,6 +61,7 @@ public class GameManager {
     private ArrayList<Player> players;      // the first player is ALWAYS the Human Player
 
     private static State curSelectedState;
+    private int selectedPlayerIndex;
 
     public GameManager() { }
 
@@ -72,6 +73,7 @@ public class GameManager {
         this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
         this.players = new ArrayList<>();
         //this.mapIconManager = new MapIconManager((Pane)scene.lookup("#mapContainer"));
+        this.selectedPlayerIndex = 0;
     }
 
     public void addPlayer(Player newPlayer) throws Exception {
@@ -206,7 +208,7 @@ public class GameManager {
     }
 
     private void setTrapezoidXScale(String paneSelector, double xScale) {
-        ((SVGPath)(((Pane)scene.lookup(paneSelector)).lookup(".trapezoid-shape"))).setScaleX(xScale < 1 ? 1 : xScale);
+        ((SVGPath)(((Pane)getElementByCssSelector(paneSelector)).lookup(".trapezoid-shape"))).setScaleX(xScale < 1 ? 1 : xScale);
     }
 
     private String formatHighNumber(double value) {
@@ -428,6 +430,10 @@ public class GameManager {
 
         if (!attackerArmy.isEnoughBig()) return;
 
+        curSelectedState.incrementAttacksDone();
+
+        refreshSideMenu(curSelectedState);
+
         System.out.println(getHumanPlayer().getName() + " Attacks " + curSelectedState.getName());
 
         boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getHumanPlayer().getNeighboringStates(GameManager.curSelectedState));
@@ -503,8 +509,7 @@ public class GameManager {
             }
         };
 
-
-        if (getHumanPlayer().hasNeighboringState(state)) {  // The Player is Neighboring the selected State
+        if (getHumanPlayer().hasNeighboringState(state) && state.getlastTurnAttacksDone() <= getHumanPlayer().getLevel()) {  // The Player can attack the Selected State
 
 
             EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
@@ -616,7 +621,7 @@ public class GameManager {
     private void refreshSideMenu(State selectedState) {
 
         setLabelContent("#menuStateNameLabel", selectedState.getName());
-        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(selectedState.getLevel())));
+        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(getHumanPlayer().getLevel())));
         
         setTrapezoidXScale("#sideMenu", selectedState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
 
@@ -630,7 +635,6 @@ public class GameManager {
             showAllySideMenu(selectedState);
         }
         else {
-            // TODO: AGGIUGERE EVENTUALMENTE IL CONTROLLO PER VEDERE SE LO STATO E' DI UN BOT (NEMICO) O SE GIOCA PER SE' (NEUTRALE)
             showEnemySideMenu(selectedState);
             
         }
@@ -652,7 +656,7 @@ public class GameManager {
         State state = this.states.get(stateId);
 
         setLabelContent("#playerStateNameLabel", state.getName());
-        setLabelContent("#playerStateLvlLabel", String.valueOf(state.getLevel()));
+        setLabelContent("#playerStateLvlLabel", String.valueOf(getHumanPlayer().getLevel()));
         setTrapezoidXScale("#playerMenu", state.getName().length() * 0.12);
         setLabelContent("#playerStateMoneyLabel", String.valueOf(formatHighNumber(state.getMoney())));
         setLabelContent("#playerStateArmyLabel", String.valueOf(formatHighNumber(state.getTotalArmy())));
@@ -777,7 +781,40 @@ public class GameManager {
     }
 
     public void refreshLevelLabel() {
-        ((Label)getElementByCssSelector("#playerStateLvlLabel")).setText(String.valueOf(getHumanPlayer().getOriginalState().getLevel()));
+        ((Label)getElementByCssSelector("#playerStateLvlLabel")).setText(String.valueOf(getHumanPlayer().getLevel()));
+    }
+
+    public ArrayList<Player> getActivePlayers() {
+        
+        ArrayList<Player> activePlayers = new ArrayList<>();
+
+        for (Player p : this.getPlayers()) if (p.isActive()) activePlayers.add(p);
+
+        return activePlayers;
+
+    }
+
+    private void manageHumanTurn() {
+        // TODO: Qui dentro va programmata la parte di codice che gestisce il turno dell'umano (pressione dei tasti, visualizzazione dei menu)
+
+    }
+
+    private void playTurn() {
+
+        if (this.selectedPlayerIndex == 0) { manageHumanTurn(); return; }
+
+        ((Bot)this.players.get(selectedPlayerIndex)).play();
+        
+        return;
+
+    }
+
+    public void passTurn() {
+        
+        this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) %  this.getActivePlayers().size();
+
+        this.playTurn();
+        
     }
 
 }

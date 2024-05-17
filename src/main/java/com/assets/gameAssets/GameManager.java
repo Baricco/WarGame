@@ -134,15 +134,16 @@ public class GameManager {
                         } else {
                             setText(item);
                             if (getIndex() == cellIndex) {
-                                if (!getStyleClass().contains(curClass)) {
+                                if (outcome) {
                                     getStyleClass().add(curClass);
+                                    getStyleClass().remove(otherClass);
                                 }
-                                getStyleClass().remove(otherClass);
                             } else {
                                 getStyleClass().remove(curClass);
                                 getStyleClass().remove(otherClass);
                             }
                         }
+                        for (int i = 0; i < getStyleClass().size(); i++) System.out.println(getStyleClass().get(i));
                     }
                 };
             }

@@ -605,7 +605,7 @@ public class GameManager {
             
             Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
 
-            curSlider.setMax(maxSoldiers);
+            curSlider.setMax(((int)maxSoldiers / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE);
             curSlider.setMajorTickUnit(Army.SOLDIERS_PER_DICE);
             curSlider.setMinorTickCount(0);
             curSlider.setShowTickMarks(true);

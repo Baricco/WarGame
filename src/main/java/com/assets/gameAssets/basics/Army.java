@@ -78,6 +78,21 @@ public class Army {
         this.defenseModifierValue = modifierValue;
     }
 
+    public void looseSoldiers(double lostSoldiers, ARMY_TYPE type) {
+        if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
+        if (type == ARMY_TYPE.INFANTRY) this.infantry -= lostSoldiers;
+        if (type == ARMY_TYPE.ARTILLERY) this.artillery -= lostSoldiers;
+        if (type == ARMY_TYPE.TANK) this.tanks -= lostSoldiers;
+        if (type == ARMY_TYPE.APACHE) this.apaches -= lostSoldiers;
+        if (type == ARMY_TYPE.CHTULHU) this.apaches -= lostSoldiers;
+
+        if (this.infantry < 0) this.infantry = 0;
+        if (this.artillery < 0) this.artillery = 0;
+        if (this.tanks < 0) this.tanks = 0;
+        if (this.apaches < 0) this.apaches = 0;
+
+    }
+
     public int attack(ARMY_TYPE type) {
         if(type == ARMY_TYPE.EMPTY) {
             return 0;

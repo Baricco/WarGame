@@ -112,6 +112,7 @@ public class GameManager {
         if (!(element instanceof ListView)) return;
         curListView = (ListView<String>)element;
         curListView.getItems().add(newString);
+        curListView.scrollTo(curListView.getItems().size());
     }
 
 /*
@@ -313,30 +314,93 @@ public class GameManager {
         hideButton("#sideMenuFourthButton");
         hideToggleSwitch("#sideMenuToggleSwitch");
     }
-    private boolean attackState(Army attackingArmy, Army defendingArmy) {
 
-        // bisogna mettere a posto questa funzione perchè non calcola correttamente il modo in cui si vince
+    private void looseStateArmy(State state, double soldiersNumber, ARMY_TYPE type) {
+        state.getArmy().looseSoldiers(soldiersNumber, type);
+    }
+
+    private void looseStateArmy(ArrayList<State> states, double soldiersNumber, ARMY_TYPE type) {
+        for (State state : states) {
+            looseStateArmy(state, soldiersNumber / states.size(), type);
+        }
+    }
+
+
+    private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates) {
+
+        Army defendingArmy = defenderState.getArmy();
+
+        int attackerThrowsWon = 0;
+        int defenderThrowsWon = 0;
 
         for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                attackerThrowsWon++;
+                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
+            } else {
+                defenderThrowsWon++;
+                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
+            }
         }
 
         for(int i = 0; i < attackingArmy.getArtillery() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                attackerThrowsWon++; 
+                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
+            } else {
+                defenderThrowsWon++;
+                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
+            }
         }
 
         for(int i = 0; i < attackingArmy.getTanks() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                attackerThrowsWon++;
+                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
+            }
+            else {
+                defenderThrowsWon++;
+                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
+            }
         }
 
-        for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
+        if (attackingStates.contains(App.gameManager.getState("ATL"))) {
+        
+            for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
+                if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                    attackerThrowsWon++;
+                    looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                } else {
+                    defenderThrowsWon++;
+                    looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                }
+            }
+
+            if (attackingStates.size() > 1) {
+                for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
+                    if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                        attackerThrowsWon++;
+                        looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                    } else {
+                        defenderThrowsWon++;
+                        looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                    }
+                }   
+            }
+        } else {
+            for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
+                if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
+                    attackerThrowsWon++;
+                    looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+
+                } else {
+                    defenderThrowsWon++;
+                    looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                }
+            }
         }
 
-        for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defend(defendingArmy.getBestArmyType())) return true;
-        }
-
+        if (attackerThrowsWon > defenderThrowsWon) return true;
         return false;
     }
 
@@ -364,17 +428,15 @@ public class GameManager {
 
         if (!attackerArmy.isEnoughBig()) return;
 
-        Army defenderArmy = GameManager.curSelectedState.getArmy();
-
         System.out.println(getHumanPlayer().getName() + " Attacks " + curSelectedState.getName());
 
-        boolean outcome = attackState(attackerArmy, defenderArmy);
+        boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getHumanPlayer().getNeighboringStates(GameManager.curSelectedState));
 
         if (outcome) {
             System.out.println("Attacker Won");
 
             try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
-            try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName());} catch(Exception e) { }
+            try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); } catch(Exception e) { }
 
             // Si aggiornano le truppe perse
         }

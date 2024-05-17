@@ -95,8 +95,6 @@ public class StartPageController implements Initializable {
         scene.getStylesheets().add(this.getClass().getResource("/com/assets/fxml/mainPageStyle.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
-        
-
     
     }
 

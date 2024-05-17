@@ -138,9 +138,10 @@ public class GameManager {
                                     getStyleClass().add(curClass);
                                     getStyleClass().remove(otherClass);
                                 }
-                            } else {
-                                getStyleClass().remove(curClass);
-                                getStyleClass().remove(otherClass);
+                                else {
+                                    getStyleClass().remove(curClass);
+                                    getStyleClass().add(otherClass);
+                                }
                             }
                         }
                         for (int i = 0; i < getStyleClass().size(); i++) System.out.println(getStyleClass().get(i));

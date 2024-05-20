@@ -35,11 +35,11 @@ public class State {
     
     private SVGPath path;
 
-
+    private double armyMultiplier;
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -51,6 +51,7 @@ public class State {
         this.reputation = reputation;
         this.population = population;
         this.lastTurnAttacksDone = 0;
+        this.armyMultiplier = armyMultiplier;
         this.path = path;
         this.army = army;
         this.stageArmy = stageArmy;
@@ -71,6 +72,7 @@ public class State {
         this.reputation = reputation;
         this.population = population;
         this.lastTurnAttacksDone = 0;
+        this.armyMultiplier = 1;
         this.path = null;
         this.army = army;
         this.stageArmy = stageArmy;
@@ -96,6 +98,7 @@ public class State {
             this.stageNaturalResources = state.getStageNaturalResources();
             this.refinedResources = state.getRefinedResources();
             this.stageRefinedResources = state.getStageRefinedResources();
+            this.armyMultiplier = state.getArmyMultiplier();
             this.population = state.getPopulation();
             this.cities = state.getCities();
             this.neighboringStates = state.getNeighboringStates();
@@ -105,7 +108,7 @@ public class State {
 
         // Qui settiamo le variabili che non si trovano nell'XML
 
-        this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5);
+        this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5 * this.armyMultiplier);
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
         this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)));
@@ -119,7 +122,7 @@ public class State {
     
     } 
 
-
+    public double getArmyMultiplier() { return this.armyMultiplier; }
 
     public ArrayList<String> getNeighboringStates() { return this.neighboringStates; }
 

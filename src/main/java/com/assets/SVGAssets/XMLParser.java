@@ -59,6 +59,10 @@ public class XMLParser {
 
         }
 
+        double armyMultiplier = 1;
+
+        try { armyMultiplier = Double.parseDouble(state.getElementsByTag("ArmyMultiplier").text()); } catch (Exception e) { armyMultiplier = 1; }
+
         return new State(
             state.getElementsByTag("Name").text(),
             id,
@@ -68,6 +72,7 @@ public class XMLParser {
             Double.parseDouble(state.getElementsByTag("StageNaturalResources").text()), 
             Double.parseDouble(state.getElementsByTag("RefinedResources").text()), 
             Double.parseDouble(state.getElementsByTag("StageRefinedResources").text()),
+            armyMultiplier,
             0, 
             Integer.parseInt(state.getElementsByTag("Population").text()), 
             0,

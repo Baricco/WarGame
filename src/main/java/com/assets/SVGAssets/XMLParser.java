@@ -15,6 +15,8 @@ import com.assets.gameAssets.State;
 import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.City;
 
+import javafx.util.Pair;
+
 public class XMLParser {
     
     Document document;
@@ -28,7 +30,7 @@ public class XMLParser {
 
         ArrayList<City> cities = new ArrayList<>();
 
-        ArrayList<String> neighboringStates = new ArrayList<>();
+        ArrayList<Pair<String, Boolean>> neighboringStates = new ArrayList<>();
 
         Elements xmlCities = state.getElementsByTag("Cities").first().getElementsByTag("City");
 
@@ -36,7 +38,8 @@ public class XMLParser {
 
         for (Element neighboringState : xmlNeighboringStates) {
             String stateId = neighboringState.ownText();
-            neighboringStates.add(stateId);
+            boolean isSeaBorder = Boolean.parseBoolean(neighboringState.attr("SeaBorder"));
+            neighboringStates.add(new Pair<String, Boolean>(stateId, isSeaBorder));
         }
 
         for (Element city : xmlCities) {

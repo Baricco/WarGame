@@ -10,6 +10,7 @@ import com.assets.generalAssets.App;
 
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
+import javafx.util.Pair;
 
 public class State {
 
@@ -30,7 +31,7 @@ public class State {
     private int workForce;
     private int stageArmy;
     private ArrayList<City> cities;
-    private ArrayList<String> neighboringStates;
+    private ArrayList<Pair<String, Boolean>> neighboringStates;
 
     
     private SVGPath path;
@@ -39,7 +40,7 @@ public class State {
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<String> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -57,7 +58,7 @@ public class State {
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>(cities);
-        this.neighboringStates = new ArrayList<String>(neighboringStates);
+        this.neighboringStates = new ArrayList<>(neighboringStates);
     }
 
     public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, int reputation, int population, int lastTurnAttacksDone, Army army, int workForce, int stageArmy) {
@@ -78,7 +79,7 @@ public class State {
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>();
-        this.neighboringStates = new ArrayList<>();
+        this.neighboringStates = new ArrayList<Pair<String, Boolean>>();
     }
 
     public State(String fileName, String id, SVGPath path) throws Exception {
@@ -124,7 +125,7 @@ public class State {
 
     public double getArmyMultiplier() { return this.armyMultiplier; }
 
-    public ArrayList<String> getNeighboringStates() { return this.neighboringStates; }
+    public ArrayList<Pair<String, Boolean>> getNeighboringStates() { return this.neighboringStates; }
 
     public SVGPath getPath() { return this.path; }
 
@@ -145,7 +146,10 @@ public class State {
     }
 
     public boolean isNeighboring(State state) {
-        return this.neighboringStates.contains(state.getId());
+        if (this.neighboringStates.contains(new Pair<String, Boolean>(state.getId(), true))) return true;
+        if (this.neighboringStates.contains(new Pair<String, Boolean>(state.getId(), false))) return true;
+        return false;
+
     }
 
     public String getId() {
@@ -186,6 +190,11 @@ public class State {
 
     public double getStageNaturalResources() {
         return this.stageNaturalResources;
+    }
+
+    public boolean hasSeaBorder(State state) {
+        for (Pair<String, Boolean> s : neighboringStates) if (s.getKey().equals(state.getId()) && s.getValue()) return true;
+        return false;
     }
 
     // questa funzione va richiamata ad ogni turno per far aumentare le risorse naturali

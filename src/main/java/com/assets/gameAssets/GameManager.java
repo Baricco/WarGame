@@ -33,6 +33,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
 import javafx.util.Callback;
+import javafx.util.Pair;
 
 public class GameManager {
 
@@ -327,13 +328,33 @@ public class GameManager {
         }
     }
 
+    private int calcAttackPrice(ArrayList<Pair<State, Boolean>> attackingStates, State defenderState) {
+        for (Pair<State, Boolean> s : attackingStates) {
+            if (s.getKey().hasSeaBorder(defenderState)) return Price.SEA_ATTACK_PRICE_PER_DICE;
+        }
+        return Price.LAND_ATTACK_PRICE_PER_DICE;
+    }
 
-    private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates) {
+    private void payAttackCost(ArrayList<State> attackingStates, int cost) {
+        double totalMoney = 0;
+        for(State s : attackingStates) {
+            totalMoney += s.getMoney();
+        }
+        for (State s : attackingStates) {
+            s.subMoney(cost * s.getMoney() / totalMoney);
+        }
+    }
+
+
+    private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
         Army defendingArmy = defenderState.getArmy();
 
         int attackerThrowsWon = 0;
         int defenderThrowsWon = 0;
+
+        // every Attacking State splits proportionally the cost
+        payAttackCost(attackingStates, attackCost);
 
         for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
             if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
@@ -423,6 +444,16 @@ public class GameManager {
 
     }
 
+    public ArrayList<State> getArrayListFromArrayListPair(ArrayList<Pair<State, Boolean>> input) {
+        ArrayList<State> states = new ArrayList<>();
+
+        for (Pair<State, Boolean> s : input) {
+            states.add(s.getKey());
+        }
+
+        return states;
+    }
+
     @FXML
     void attack(ActionEvent event) {
 
@@ -435,8 +466,12 @@ public class GameManager {
         refreshSideMenu(curSelectedState);
 
         System.out.println(getHumanPlayer().getName() + " Attacks " + curSelectedState.getName());
+        
+        ArrayList<Pair<State, Boolean>> attackingStates = getHumanPlayer().getNeighboringStates(GameManager.curSelectedState);
 
-        boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getHumanPlayer().getNeighboringStates(GameManager.curSelectedState));
+        int attackCost = calcAttackPrice(attackingStates, curSelectedState);
+
+        boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getArrayListFromArrayListPair(attackingStates), attackCost);
 
         if (outcome) {
             System.out.println("Attacker Won");
@@ -475,12 +510,13 @@ public class GameManager {
             values[i] = ((Slider)((AnchorPane)elem).getChildren().get(1)).getValue();
             i++;
         }
+        
 
         int highestAttackModifier = 0;
 
-        for (State s : getHumanPlayer().getNeighboringStates(curSelectedState)) {
+        for (Pair<State, Boolean> s : getHumanPlayer().getNeighboringStates(curSelectedState)) {
 
-            int curAttackModifier = s.getArmy().getAttackModifier();
+            int curAttackModifier = s.getKey().getArmy().getAttackModifier();
 
             if (curAttackModifier > highestAttackModifier) highestAttackModifier = curAttackModifier;
 
@@ -586,14 +622,13 @@ public class GameManager {
     private void refreshAttackMenu() {
         ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
 
-
-        ArrayList<State> neighboringStates = getHumanPlayer().getNeighboringStates(curSelectedState);
+        ArrayList<Pair<State, Boolean>> neighboringStates = getHumanPlayer().getNeighboringStates(curSelectedState);
 
         Army totalArmy = new Army(0);
 
-        for (State s : neighboringStates) {
+        for (Pair<State, Boolean> s : neighboringStates) {
 
-            Army curStateArmy = s.getArmy();
+            Army curStateArmy = s.getKey().getArmy();
 
             totalArmy.addSoldiers(curStateArmy.getInfantry(), curStateArmy.getArtillery(), curStateArmy.getTanks(), curStateArmy.getApaches());
         }
@@ -608,7 +643,7 @@ public class GameManager {
             curSlider.setMax(((int)maxSoldiers / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE);
             curSlider.setMajorTickUnit(Army.SOLDIERS_PER_DICE);
             curSlider.setMinorTickCount(0);
-            curSlider.setShowTickMarks(true);
+            curSlider.setShowTickMarks(false);
             curSlider.setSnapToTicks(true);
 
             ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
@@ -618,10 +653,18 @@ public class GameManager {
         }
     }
 
+    private Player getOwner(State state) {
+        for (Player p : App.gameManager.players) if (p.hasOccupied(state)) return p;
+        return null;
+    }
+
     private void refreshSideMenu(State selectedState) {
 
         setLabelContent("#menuStateNameLabel", selectedState.getName());
-        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf(getHumanPlayer().getLevel())));
+
+        Player selectedStateOwner = getOwner(selectedState);
+
+        setLabelContent("#menuStateLvlLabel", String.valueOf(String.valueOf((selectedStateOwner == null) ? 1 : selectedStateOwner.getLevel())));
         
         setTrapezoidXScale("#sideMenu", selectedState.getName().length() * 0.12);    // 0.12 è un numero magico che ho calcolato
 
@@ -811,9 +854,14 @@ public class GameManager {
 
     public void passTurn() {
         
-        this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) %  this.getActivePlayers().size();
+        this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
+
+        App.gameManager.calendar.update();
 
         this.playTurn();
+
+
+        // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
         
     }
 

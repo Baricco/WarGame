@@ -14,32 +14,32 @@
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Infantry" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
                   <Slider fx:id="soldierSlider" layoutX="37.0" layoutY="30.0" onDragDetected="#refreshVoidAttackMenu" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="325.0" prefHeight="60.0" prefWidth="225.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Artillery" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
                   <Slider fx:id="soldierSlider" layoutX="37.0" layoutY="30.0" onDragDetected="#refreshVoidAttackMenu" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="650.0" prefHeight="60.0" prefWidth="225.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Tanks" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
                   <Slider fx:id="soldierSlider" layoutX="37.0" layoutY="30.0" onDragDetected="#refreshVoidAttackMenu" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="975.0" prefHeight="60.0" prefWidth="225.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Apaches" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
                   <Slider fx:id="soldierSlider" layoutX="37.0" layoutY="30.0" onDragDetected="#refreshVoidAttackMenu" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" prefWidth="35.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="5.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.bottomAnchor="4.799999999999997" />
                </children>
             </AnchorPane>
          </children>

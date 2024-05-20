@@ -6,6 +6,8 @@ import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.Army.ARMY_TYPE;
 import com.assets.generalAssets.App;
 
+import javafx.util.Pair;
+
 
 public abstract class Player {
 
@@ -40,7 +42,7 @@ public abstract class Player {
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
 
-        this.active = false;
+        this.active = true;
         this.level = 1;
 
         System.out.println(hexColor);
@@ -59,7 +61,7 @@ public abstract class Player {
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
         
-        this.active = false;
+        this.active = true;
         this.level = 1;
 
     }
@@ -72,7 +74,7 @@ public abstract class Player {
         this.playerType = playerType;
         this.occupiedStates = occupiedStates;
         this.allies = allies;
-        this.active = false;
+        this.active = true;
         this.level = 1;
     }
 
@@ -153,12 +155,12 @@ public abstract class Player {
         }
     }
 
-    public ArrayList<State> getNeighboringStates(State state) {
+    public ArrayList<Pair<State, Boolean>> getNeighboringStates(State state) {
 
-        ArrayList<State> neighboringStates = new ArrayList<>();
+        ArrayList<Pair<State, Boolean>> neighboringStates = new ArrayList<>();
 
-        if (this.originalState.isNeighboring(state)) neighboringStates.add(originalState);
-        for (State s : this.occupiedStates) if (s.isNeighboring(state)) neighboringStates.add(s);
+        if (this.originalState.isNeighboring(state)) neighboringStates.add(new Pair<State, Boolean>(this.originalState, true));
+        for (State s : this.occupiedStates) if (s.isNeighboring(state)) neighboringStates.add(new Pair<State, Boolean>(s, s.hasSeaBorder(state)));
         return neighboringStates;
     }
 

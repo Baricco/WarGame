@@ -348,13 +348,21 @@ public class GameManager {
     }
 
 
+    // if return value is > 0 attacker wins, else defender wins
+    // TODO: Usare questa funzione in attackState perchè è stata scritta in maniera vergognosa
+    private int attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
+        int attackerThrow = attackingArmy.attack(type);
+        int defenderThrow = defendingArmy.defend(defendingArmy.getBestArmyType());
+        return attackerThrow - defenderThrow;
+    }
+
     private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
         Army defendingArmy = defenderState.getArmy();
 
         int attackerThrowsWon = 0;
         int defenderThrowsWon = 0;
-        
+
         // every Attacking State splits proportionally the cost
         payAttackCost(attackingStates, attackCost);
 

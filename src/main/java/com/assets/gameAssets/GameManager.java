@@ -4,6 +4,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.beans.value.ChangeListener;
@@ -352,7 +354,7 @@ public class GameManager {
 
         int attackerThrowsWon = 0;
         int defenderThrowsWon = 0;
-
+        
         // every Attacking State splits proportionally the cost
         payAttackCost(attackingStates, attackCost);
 
@@ -620,6 +622,7 @@ public class GameManager {
     }
 
     private void refreshAttackMenu() {
+
         ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
 
         ArrayList<Pair<State, Boolean>> neighboringStates = getHumanPlayer().getNeighboringStates(curSelectedState);
@@ -632,6 +635,8 @@ public class GameManager {
 
             totalArmy.addSoldiers(curStateArmy.getInfantry(), curStateArmy.getArtillery(), curStateArmy.getTanks(), curStateArmy.getApaches());
         }
+
+        double curSliderValues[] = { 0, 0, 0, 0};
 
         int i = 0; 
         for (Node armySelector : armySelectors) {
@@ -646,12 +651,40 @@ public class GameManager {
             curSlider.setShowTickMarks(false);
             curSlider.setSnapToTicks(true);
 
-            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
+            curSliderValues[i] = ((Slider)armySelector.lookup("#soldierSlider")).getValue();
+
+            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(curSliderValues[i]));
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             
             i++;
         }
+
+        refreshAttackMenuDices(curSliderValues);
     }
+
+    private void refreshAttackMenuDices(double[] sliderValues) {
+        
+        ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
+
+        String dirNames[] = { "d6", "d8", "d10", "d12", "d20" };
+
+        // TODO: Ovviamente l'URL che ho messo non è valido, ovviamente non so cosa metterci, ovviamente odio JavaFX
+
+        int i = 0;
+        for (Node curImageView : diceImageView) {
+            
+            ((ImageView)curImageView).setImage(new Image("../../../../../src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_0.png"));
+
+            if (sliderValues[i] <= 0) curImageView.setOpacity(0.5);
+            else curImageView.setOpacity(1);
+
+            i++;
+        }
+
+
+    }
+
+
 
     private Player getOwner(State state) {
         for (Player p : App.gameManager.players) if (p.hasOccupied(state)) return p;

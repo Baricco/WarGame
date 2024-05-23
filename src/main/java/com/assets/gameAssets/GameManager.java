@@ -357,9 +357,6 @@ public class GameManager {
         }
     }
 
-
-    // if return value is > 0 attacker wins, else defender wins
-    // TODO: Usare questa funzione in attackState perchè è stata scritta in maniera vergognosa
     private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
         int attackerWon = 0;
         int defenderWon = 0;
@@ -384,77 +381,51 @@ public class GameManager {
         for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
         for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
 
+        totalPoints += curPoints.getKey();
 
-        //TODO: da finire di riparare
+        curPoints = attackByArmyType(ARMY_TYPE.ARTILLERY, attackingArmy, defendingArmy);
+        
+        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
+        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
 
-        for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                attackerThrowsWon++;
-                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
-            } else {
-                defenderThrowsWon++;
-                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
-            }
-        }
+        totalPoints += curPoints.getKey();
 
-        for(int i = 0; i < attackingArmy.getArtillery() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.ARTILLERY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                attackerThrowsWon++; 
-                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
-            } else {
-                defenderThrowsWon++;
-                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
-            }
-        }
+        curPoints = attackByArmyType(ARMY_TYPE.TANK, attackingArmy, defendingArmy);
+        
+        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
+        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
 
-        for(int i = 0; i < attackingArmy.getTanks() / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(ARMY_TYPE.TANK) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                attackerThrowsWon++;
-                looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
-            }
-            else {
-                defenderThrowsWon++;
-                looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
-            }
-        }
+        totalPoints += curPoints.getKey();
 
         if (attackingStates.contains(App.gameManager.getState("ATL"))) {
         
-            for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
-                if(attackingArmy.attack(ARMY_TYPE.CHTULHU) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                    attackerThrowsWon++;
-                    looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                } else {
-                    defenderThrowsWon++;
-                    looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                }
-            }
+            curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
+        
+            for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+            for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+    
+            totalPoints += curPoints.getKey();
 
             if (attackingStates.size() > 1) {
-                for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
-                    if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                        attackerThrowsWon++;
-                        looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                    } else {
-                        defenderThrowsWon++;
-                        looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                    }
-                }   
+                
+                curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
+        
+                for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+        
+                totalPoints += curPoints.getKey(); 
             }
         } else {
-            for(int i = 0; i < attackingArmy.getApaches() / Army.SOLDIERS_PER_DICE; i++) {
-                if(attackingArmy.attack(ARMY_TYPE.APACHE) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
-                    attackerThrowsWon++;
-                    looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-
-                } else {
-                    defenderThrowsWon++;
-                    looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                }
-            }
+            
+            curPoints = attackByArmyType(ARMY_TYPE.APACHE, attackingArmy, defendingArmy);
+        
+            for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+            for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+    
+            totalPoints += curPoints.getKey(); 
         }
 
-        if (attackerThrowsWon > 0) return true;
+        if (totalPoints > 0) return true;
         return false;
     }
 

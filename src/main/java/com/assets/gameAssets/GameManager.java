@@ -366,6 +366,11 @@ public class GameManager {
         return new Pair<Integer,Integer>(attackerWon, defenderWon);
     }
 
+    private void refreshArmiesAfterBattle(ArrayList<State> attackingStates, State defenderState, int attackerWon, int defenderWon, ARMY_TYPE type) {
+        for (int i = 0; i < attackerWon; i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, type);
+        for (int i = 0; i < defenderWon; i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, type);
+    }
+
     private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
         Army defendingArmy = defenderState.getArmy();
@@ -378,22 +383,20 @@ public class GameManager {
 
         curPoints = attackByArmyType(ARMY_TYPE.INFANTRY, attackingArmy, defendingArmy);
         
-        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
-        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
+        refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.INFANTRY);
 
         totalPoints += curPoints.getKey();
 
         curPoints = attackByArmyType(ARMY_TYPE.ARTILLERY, attackingArmy, defendingArmy);
         
-        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
-        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.ARTILLERY);
+        refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.ARTILLERY);
+
 
         totalPoints += curPoints.getKey();
 
         curPoints = attackByArmyType(ARMY_TYPE.TANK, attackingArmy, defendingArmy);
         
-        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
-        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.TANK);
+        refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.TANK);
 
         totalPoints += curPoints.getKey();
 
@@ -401,26 +404,23 @@ public class GameManager {
         
             curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
         
-            for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-            for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-    
+            refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
+
             totalPoints += curPoints.getKey();
 
             if (attackingStates.size() > 1) {
                 
                 curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
         
-                for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-                for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+                refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
         
                 totalPoints += curPoints.getKey(); 
             }
         } else {
-            
+
             curPoints = attackByArmyType(ARMY_TYPE.APACHE, attackingArmy, defendingArmy);
         
-            for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
-            for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.APACHE);
+            refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
     
             totalPoints += curPoints.getKey(); 
         }

@@ -120,7 +120,6 @@ public class StartPageController implements Initializable {
 
         // Add the Human Player to the App.gameManager
         try { App.gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
-        System.out.println(colorPickerManager.getCurHexColor());
 
         RandomGenerator rnd = RandomGenerator.getDefault();
 
@@ -131,7 +130,6 @@ public class StartPageController implements Initializable {
             do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); } while (!colorIsValid(nextColor));
 
             try { App.gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
-            System.out.println(ColorPickerManager.getHexColor(nextColor));
         }
 
 

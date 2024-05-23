@@ -1,7 +1,6 @@
 package com.assets.gameAssets;
 
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
@@ -14,7 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,9 +32,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
-import javafx.util.Callback;
 import javafx.util.Pair;
 
 public class GameManager {
@@ -896,11 +892,7 @@ public class GameManager {
     }
 
     private void manageHumanTurn() {
-        // TODO: Qui dentro va programmata la parte di codice che gestisce il turno dell'umano (pressione dei tasti, visualizzazione dei menu)
-
         showSideMenu();
-        showPlayerMenu();
-
     }
 
     private void playTurn() {
@@ -915,7 +907,6 @@ public class GameManager {
         }
 
         hideSideMenu();
-        hidePlayerMenu();
 
         GameManager.botThread.interrupt();
 

@@ -2,6 +2,7 @@ package com.assets.gameAssets.basics;
 
 import java.time.LocalDateTime;
 
+import javafx.application.Platform;
 import javafx.scene.control.Label;
 
 public class Calendar {
@@ -23,7 +24,7 @@ public class Calendar {
     }
 
     private void updateLabel() {
-        this.calendarLabel.setText(formatDate(this.date.getDayOfMonth(), this.date.getMonthValue(), this.date.getYear()));
+        Platform.runLater(() -> this.calendarLabel.setText(formatDate(this.date.getDayOfMonth(), this.date.getMonthValue(), this.date.getYear())));
     }
 
     public void update() {

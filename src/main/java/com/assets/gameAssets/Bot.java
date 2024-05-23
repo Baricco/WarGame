@@ -4,7 +4,7 @@ import java.util.random.RandomGenerator;
 
 import com.assets.generalAssets.App;
 
-public class Bot extends Player {
+public class Bot extends Player implements Runnable {
     
     private String[] stringozze = { 
         "Sei stato adottato",
@@ -23,12 +23,17 @@ public class Bot extends Player {
         super(name, hexColor, Player.PlayerType.TYPE_BOT);   
     }
 
+    public void run() {
+        play();
+    }
+
     public void play() {
 
-        // TODO: Bisognerà creare un timer per fare in modo che i bot non finiscano istantaneamente il turno
         // TODO: Qui ci vanno tutte le cose che fa il bot quando gioca
 
         System.out.println(this.getName() + " says: " + stringozze[rnd.nextInt(stringozze.length)]);
+
+        try { Thread.sleep(rnd.nextLong(100, 200)); } catch (InterruptedException e) { return; }
 
         App.gameManager.passTurn();
     }

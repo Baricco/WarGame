@@ -73,6 +73,8 @@ public class GameManager {
 
     private static State curSelectedState;
     private int selectedPlayerIndex;
+    public static Thread botThread = new Thread(); 
+    
 
     public GameManager() { }
 
@@ -587,6 +589,7 @@ public class GameManager {
                     for (Node armySelector : armySelectors) {                    
     
                         Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                       
                         curSlider.valueProperty().addListener(new ChangeListener<Number>() {
                             public void changed(ObservableValue<? extends Number> ov,
                                 Number old_val, Number new_val) {
@@ -679,8 +682,12 @@ public class GameManager {
         
         AnchorPane diceContainer = ((AnchorPane)getElementByCssSelector(diceContainerSelector));
 
-        if (diceContainerSelector.startsWith("#attacker")) diceContainer.setStyle("-fx-background-color: " + players.get(selectedPlayerIndex).getHexColor() + ";");
-        else if (diceContainerSelector.startsWith("#defender")) diceContainer.setStyle("-fx-background-color: " + getOwner(curSelectedState).getHexColor() + ";");
+        String diceContainerHexColor = "#4d6555";
+
+        if (diceContainerSelector.startsWith("#attacker")) diceContainerHexColor = players.get(selectedPlayerIndex).getHexColor();
+        else if (diceContainerSelector.startsWith("#defender")) try { diceContainerHexColor = getOwner(curSelectedState).getHexColor(); } catch (Exception e) { }
+
+        diceContainer.setStyle("-fx-background-color: " + diceContainerHexColor + ";");
 
         String dirNames[] = { "d6", "d8", "d10", "d12", "d20" };
 
@@ -882,11 +889,11 @@ public class GameManager {
     }
 
     private void hideSideMenu() {
-        getElementByCssSelector("#sideMenu").setVisible(false);
+        ((AnchorPane)getElementByCssSelector("#sideMenu")).getChildren().forEach(node -> { node.setVisible(false); });
     }
 
     private void hidePlayerMenu() {
-        getElementByCssSelector("#playerMenu").setVisible(false);
+        ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(false); });
     }
 
 
@@ -926,9 +933,11 @@ public class GameManager {
         hideSideMenu();
         hidePlayerMenu();
 
-        ((Bot)this.players.get(selectedPlayerIndex)).play();
+        GameManager.botThread.interrupt();
 
+        GameManager.botThread = new Thread((Bot)players.get(selectedPlayerIndex));
 
+        botThread.start();
         
         return;
 

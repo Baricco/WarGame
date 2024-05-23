@@ -2,6 +2,7 @@ package com.assets.generalAssets;
 
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,6 +31,14 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setTitle("WarGame");
         stage.show();
+        
+    }
+
+    public void stop() {
+        
+        try { GameManager.botThread.interrupt(); } catch (Exception e) { e.printStackTrace(); }
+                
+        Platform.exit();
 
     }
 

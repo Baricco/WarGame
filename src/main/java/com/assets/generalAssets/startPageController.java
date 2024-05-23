@@ -1,6 +1,5 @@
 package com.assets.generalAssets;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,9 +34,6 @@ import com.assets.generalAssets.graphics.ColorPickerManager;
 public class StartPageController implements Initializable {
 
     @FXML
-    private Button quitGameButton;
-
-    @FXML
     private Button startGameButton;
 
     @FXML
@@ -50,11 +46,6 @@ public class StartPageController implements Initializable {
     private Slider botSlider;
     
     private ColorPickerManager colorPickerManager;
-
-    @FXML
-    void quitGame(ActionEvent event) {
-        Platform.exit();
-    }
 
     private void initColorPicker() {
         AnchorPane colorPicker;
@@ -136,7 +127,7 @@ public class StartPageController implements Initializable {
         
             Color nextColor;
             
-            do { nextColor = Color.hsb(rnd.nextInt(361), 0.5, 1); } while (!colorIsValid(nextColor));
+            do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); } while (!colorIsValid(nextColor));
 
             try { App.gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
         }
@@ -152,7 +143,7 @@ public class StartPageController implements Initializable {
 
             Color playerColor = Color.valueOf(p.getHexColor());
 
-            if (Math.abs(playerColor.getHue() - color.getHue()) <= 20) return false;
+            if (Math.abs(playerColor.getHue() - color.getHue()) <= 30) return false;
         }
 
         return true;

@@ -360,21 +360,32 @@ public class GameManager {
 
     // if return value is > 0 attacker wins, else defender wins
     // TODO: Usare questa funzione in attackState perchè è stata scritta in maniera vergognosa
-    private int attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
-        int attackerThrow = attackingArmy.attack(type);
-        int defenderThrow = defendingArmy.defend(defendingArmy.getBestArmyType());
-        return attackerThrow - defenderThrow;
+    private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
+        int attackerWon = 0;
+        int defenderWon = 0;
+        for(int i = 0; i < attackingArmy.getTroupsByType(type) / Army.SOLDIERS_PER_DICE; i++) {
+            if(attackingArmy.attack(type) > defendingArmy.defend(defendingArmy.getBestArmyType())) attackerWon++; else defenderWon++;
+        }
+        return new Pair<Integer,Integer>(attackerWon, defenderWon);
     }
 
     private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
         Army defendingArmy = defenderState.getArmy();
 
-        int attackerThrowsWon = 0;
-        int defenderThrowsWon = 0;
+        int totalPoints = 0;
+        Pair<Integer, Integer> curPoints;
 
         // every Attacking State splits proportionally the cost
         payAttackCost(attackingStates, attackCost);
+
+        curPoints = attackByArmyType(ARMY_TYPE.INFANTRY, attackingArmy, defendingArmy);
+        
+        for (int i = 0; i < curPoints.getKey(); i++) looseStateArmy(attackingStates, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
+        for (int i = 0; i < curPoints.getValue(); i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, ARMY_TYPE.INFANTRY);
+
+
+        //TODO: da finire di riparare
 
         for(int i = 0; i < attackingArmy.getInfantry() / Army.SOLDIERS_PER_DICE; i++) {
             if(attackingArmy.attack(ARMY_TYPE.INFANTRY) > defendingArmy.defend(defendingArmy.getBestArmyType())) {
@@ -443,7 +454,7 @@ public class GameManager {
             }
         }
 
-        if (attackerThrowsWon > defenderThrowsWon) return true;
+        if (attackerThrowsWon > 0) return true;
         return false;
     }
 
@@ -696,11 +707,9 @@ public class GameManager {
         int i = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(new Image("../../../../../src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_0.png"));
+            ((ImageView)curImageView).setImage(new Image("/../../../../resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_0.png"));
             i++;
         }
-        
-
         
     }
 

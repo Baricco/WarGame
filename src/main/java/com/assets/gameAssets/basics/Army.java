@@ -111,6 +111,16 @@ public class Army {
         return dice.throwDice() + this.defenseModifierValue;
     }
 
+    public double getTroupsByType(ARMY_TYPE type) {
+        if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
+        if (type == ARMY_TYPE.INFANTRY) return this.getInfantry();
+        if (type == ARMY_TYPE.ARTILLERY) return this.getArtillery();
+        if (type == ARMY_TYPE.TANK) return this.getTanks();
+        if (type == ARMY_TYPE.APACHE) return this.getApaches();
+        if (type == ARMY_TYPE.CHTULHU) return this.getApaches();
+        throw new IllegalArgumentException("Army Type doesn't exist");
+    }
+
     private Dice getDiceByArmyType(ARMY_TYPE type) {
         if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
         if (type == ARMY_TYPE.INFANTRY) return Dice.getD6();

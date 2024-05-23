@@ -130,8 +130,8 @@ public class GameManager {
         curListView.scrollTo(curListView.getItems().size());
     }
 
-/*
 
+/*
     private void setListViewCellColor(String listViewSelector, int cellIndex, boolean outcome) {
         String curClass = outcome ? "wonBattle" : "lostBattle";
         String otherClass = outcome ? "lostBattle" : "wonBattle";
@@ -143,48 +143,49 @@ public class GameManager {
             System.err.println("ListView not found with selector: " + listViewSelector);
             return;
         }
-    
-        listView.setCellFactory(new Callback<>() {
+
+
+        listView.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
-            public ListCell<String> call(ListView<String> param) {
-                return new ListCell<>() {
+            public ListCell<String> call(ListView<String> listView) {
+                return new ListCell<String>() {
                     @Override
                     protected void updateItem(String item, boolean empty) {
                         super.updateItem(item, empty);
-                        if (empty || item == null) {
-                            setText(null);
-                            getStyleClass().remove(curClass);
-                            getStyleClass().remove(otherClass);
+                        if (outcome) {
+                            setTextFill(Color.GREEN);
                         } else {
-                            setText(item);
-                            int index = getIndex();
-                            System.out.println("Cell index: " + index + ", Item: " + item);
-    
-                            // Clear any existing styles
-                            getStyleClass().remove(curClass);
-                            getStyleClass().remove(otherClass);
-    
-                            // Apply style if the index matches
-                            if (index == cellIndex) {
-                                System.out.println("Applying class at index " + index);
-                                if (outcome) {
-                                    System.out.println("Applying " + curClass + " to cell " + cellIndex);
-                                    if (!getStyleClass().contains(curClass)) {
-                                        getStyleClass().add(curClass);
-                                    }
-                                } else {
-                                    System.out.println("Applying " + otherClass + " to cell " + cellIndex);
-                                    if (!getStyleClass().contains(otherClass)) {
-                                        getStyleClass().add(otherClass);
-                                    }
-                                }
-                            }
+                            setTextFill(Color.RED);
                         }
-                        System.out.println("Cell styles: " + getStyleClass());
+                        setText(item);
                     }
                 };
             }
         });
+
+        // listView.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+        //     @Override
+        //     public ListCell<String> call(ListView<String> param) {
+        //         return updateItem(item, empty) -> {
+        //             super.updateItem(item, empty);
+        //             if (index == cellIndex) {
+        //                 System.out.println("Applying class at index " + index);
+        //                 if (outcome) {
+        //                     System.out.println("Applying " + curClass + " to cell " + cellIndex);
+        //                     if (!getStyleClass().contains(curClass)) {
+        //                         getStyleClass().add(curClass);
+        //                     }
+        //                 } else {
+        //                     System.out.println("Applying " + otherClass + " to cell " + cellIndex);
+        //                     if (!getStyleClass().contains(otherClass)) {
+        //                         getStyleClass().add(otherClass);
+        //                     }
+        //                 }
+        //             }
+        //                 }
+        //                 System.out.println("Cell styles: " + getStyleClass());
+        //             }
+        //         });
     
         listView.refresh();
     }
@@ -194,11 +195,11 @@ public class GameManager {
     private void addStringToListView(String listViewSelector, String newString, boolean outcome) {
         addStringToListView(listViewSelector, newString);
         int cellIndex = ((ListView<String>)getElementByCssSelector(listViewSelector)).getItems().size();
-        //setListViewCellColor(listViewSelector, cellIndex, outcome);
+        setListViewCellColor(listViewSelector, cellIndex, outcome);
     }
 
-*/
 
+*/
     private void setLabelContent(String labelSelector, String content) {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
@@ -479,7 +480,10 @@ public class GameManager {
             System.out.println("Attacker Won");
 
             try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
-            try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); } catch(Exception e) { }
+            try {
+                 addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); 
+                System.out.println("colorato");
+                } catch(Exception e) { }
 
             // Si aggiornano le truppe perse
         }

@@ -4,13 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.SVGPath;
+import javafx.util.Callback;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -300,5 +304,8 @@ public class MainPageController implements Initializable{
 
 
     }
+
+
+
 
 }

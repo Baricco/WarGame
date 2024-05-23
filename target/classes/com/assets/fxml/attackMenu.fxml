@@ -46,11 +46,24 @@
       </AnchorPane>
       <AnchorPane fx:id="DiceIconContainer" layoutX="95.33333587646484" layoutY="84.66666412353516" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <children>
-            <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="244.00000762939453" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="492.66666412353516" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="741.9999771118164" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="946.6666641235352" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane fx:id="attackerDiceContainer" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="300.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="defenderDiceContainer" layoutX="10.0" layoutY="10.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="300.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="400.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <Button layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#cancelAttack" prefWidth="70.0" text="Cancel" AnchorPane.leftAnchor="15.0" />

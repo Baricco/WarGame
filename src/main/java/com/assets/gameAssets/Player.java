@@ -24,7 +24,7 @@ public abstract class Player {
     private State originalState;                // the State that the Player starts with
 
     private String name;                        // the name of the Player
-    private String hexColor;                    // the color (hex value) of the States in the mapContainer
+    private String hexColor;                    // the color (hex value) of the States in the mapContainer (starts with # character)
     private PlayerType playerType;              // the type of the player (human, Bot)
     private int level;                          // the level of the player    
 

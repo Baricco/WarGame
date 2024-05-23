@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.util.Callback;
 import javafx.util.Pair;
@@ -56,6 +58,12 @@ public class GameManager {
 
     @FXML
     private AnchorPane attackMenu;
+
+    @FXML
+    private AnchorPane attackerDiceContainer;
+
+    @FXML
+    private AnchorPane defenderDiceContainer;
     
     private HashMap<String, State> states;
     private String fileName;
@@ -644,7 +652,6 @@ public class GameManager {
             totalArmy.addSoldiers(curStateArmy.getInfantry(), curStateArmy.getArtillery(), curStateArmy.getTanks(), curStateArmy.getApaches());
         }
 
-        double curSliderValues[] = { 0, 0, 0, 0};
 
         int i = 0; 
         for (Node armySelector : armySelectors) {
@@ -659,36 +666,44 @@ public class GameManager {
             curSlider.setShowTickMarks(false);
             curSlider.setSnapToTicks(true);
 
-            curSliderValues[i] = ((Slider)armySelector.lookup("#soldierSlider")).getValue();
-
-            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(curSliderValues[i]));
+            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             
             i++;
         }
 
-        refreshAttackMenuDices(curSliderValues);
+        refreshAttackMenuDices();
     }
 
-    private void refreshAttackMenuDices(double[] sliderValues) {
+    private void refreshDiceContainer(String diceContainerSelector) {
         
-        ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
+        AnchorPane diceContainer = ((AnchorPane)getElementByCssSelector(diceContainerSelector));
+
+        if (diceContainerSelector.startsWith("#attacker")) diceContainer.setStyle("-fx-background-color: " + players.get(selectedPlayerIndex).getHexColor() + ";");
+        else if (diceContainerSelector.startsWith("#defender")) diceContainer.setStyle("-fx-background-color: " + getOwner(curSelectedState).getHexColor() + ";");
 
         String dirNames[] = { "d6", "d8", "d10", "d12", "d20" };
 
         // TODO: Ovviamente l'URL che ho messo non è valido, ovviamente non so cosa metterci, ovviamente odio JavaFX
 
         int i = 0;
-        for (Node curImageView : diceImageView) {
+        for (Node curImageView : diceContainer.getChildren()) {
             
             ((ImageView)curImageView).setImage(new Image("../../../../../src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_0.png"));
-
-            if (sliderValues[i] <= 0) curImageView.setOpacity(0.5);
-            else curImageView.setOpacity(1);
-
             i++;
         }
+        
 
+        
+    }
+
+    private void refreshAttackMenuDices() {
+        
+        ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
+
+        refreshDiceContainer("#attackerDiceContainer");
+
+        refreshDiceContainer("#defenderDiceContainer");
 
     }
 
@@ -755,10 +770,12 @@ public class GameManager {
 
 
     private void showSideMenu() {
+        getElementByCssSelector("#sideMenu").setVisible(true);
         ((Pane)getElementByCssSelector("#sideMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
 
     private void showPlayerMenu() {
+        getElementByCssSelector("#playerMenu").setVisible(true);
         ((Pane)getElementByCssSelector("#playerMenu")).getChildren().forEach(node -> { node.setVisible(true); });
     }
 
@@ -864,6 +881,15 @@ public class GameManager {
         return this.players;
     }
 
+    private void hideSideMenu() {
+        getElementByCssSelector("#sideMenu").setVisible(false);
+    }
+
+    private void hidePlayerMenu() {
+        getElementByCssSelector("#playerMenu").setVisible(false);
+    }
+
+
     public void refreshLevelLabel() {
         ((Label)getElementByCssSelector("#playerStateLvlLabel")).setText(String.valueOf(getHumanPlayer().getLevel()));
     }
@@ -881,13 +907,28 @@ public class GameManager {
     private void manageHumanTurn() {
         // TODO: Qui dentro va programmata la parte di codice che gestisce il turno dell'umano (pressione dei tasti, visualizzazione dei menu)
 
+        showSideMenu();
+        showPlayerMenu();
+
     }
 
     private void playTurn() {
 
-        if (this.selectedPlayerIndex == 0) { manageHumanTurn(); return; }
+        System.out.println(players.get(selectedPlayerIndex).getName() + " is Playing");
+
+        if (this.selectedPlayerIndex == 0) { 
+            App.gameManager.calendar.update();
+            manageHumanTurn();
+            return;
+            
+        }
+
+        hideSideMenu();
+        hidePlayerMenu();
 
         ((Bot)this.players.get(selectedPlayerIndex)).play();
+
+
         
         return;
 
@@ -897,10 +938,7 @@ public class GameManager {
         
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 
-        App.gameManager.calendar.update();
-
         this.playTurn();
-
 
         // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
         

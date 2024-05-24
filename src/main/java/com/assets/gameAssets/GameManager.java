@@ -773,11 +773,13 @@ public class GameManager {
         // TODO: Ovviamente l'URL che ho messo non è valido, ovviamente non so cosa metterci, ovviamente odio JavaFX
 
         int i = 0;
+        int faceNumber = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(new Image("/../../../../resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_0.png"));
-            i++;
+            ((ImageView)curImageView).setImage(new Image("src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_" + faceNumber + ".png"));
+            faceNumber++;
         }
+        i++;
         
     }
 

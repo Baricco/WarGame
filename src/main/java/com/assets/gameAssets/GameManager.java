@@ -57,6 +57,9 @@ public class GameManager {
     private AnchorPane attackMenu;
 
     @FXML
+    private AnchorPane recruitMenu;
+
+    @FXML
     private AnchorPane attackerDiceContainer;
 
     @FXML
@@ -238,6 +241,33 @@ public class GameManager {
         return curPlayer; 
     }
 
+    private void refreshRecruitMenu() {
+        
+        ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
+
+        int maxSoldiers = curSelectedState.getStageArmy() / 4;
+
+        int i = 0; 
+        for (Node armySelector : armySelectors) {
+            
+            Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+
+            curSlider.setMax(((int)maxSoldiers / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE);
+            curSlider.setMajorTickUnit(Army.SOLDIERS_PER_DICE);
+            curSlider.setMinorTickCount(0);
+            curSlider.setShowTickMarks(false);
+            curSlider.setSnapToTicks(true);
+
+            ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
+            ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
+            
+            // TODO: AGGIUNGERE IL PEZZO DI CODICE CHE AGGIORNA LE LABEL PER L'ATTACKMODFIER E GESTISCE LA PRESSIONE DEI TASTI
+
+            i++;
+        }
+
+    }
+
     private void showOccupiedStateSideMenu(State state) {
         
         
@@ -259,9 +289,46 @@ public class GameManager {
 
         EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA RECLUTA DEI CITTADINI
-                    System.out.println("Adesso Recluto i cittadini del " + state.getName());
+            public void handle(ActionEvent event) {
+
+                    Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+    
+                    StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+    
+                    AnchorPane recruitMenu;
+    
+                    try { 
+                        recruitMenu = (AnchorPane)App.createRoot("/com/assets/fxml/recruitMenu");
+                    } catch (IOException e) { e.printStackTrace(); return; }
+    
+    
+                    ObservableList<Node> armySelectors = ((AnchorPane)recruitMenu.lookup("#ArmySelectorContainer")).getChildren();
+            
+                    for (Node armySelector : armySelectors) {                    
+    
+                        Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                       
+                        curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                            public void changed(ObservableValue<? extends Number> ov,
+                                Number old_val, Number new_val) {
+                                    App.gameManager.refreshRecruitMenu();
+                                }
+                        });
+                    }
+    
+    
+    
+                    bottomMenu.getChildren().add(recruitMenu);
+    
+                    GameManager.curSelectedState = state;
+    
+                    refreshRecruitMenu();
+    
+                    playerMenu.setVisible(false);
+    
+                    recruitMenu.setVisible(true);
+
+                    disableButton("#sideMenuThirdButton");
             }
         };
 
@@ -429,7 +496,8 @@ public class GameManager {
 
     @FXML
     void cancelAttack(ActionEvent event) {
-        System.out.println("Attacco Cancellato");
+        
+        System.out.println("Attack Canceled");
 
         attackMenu.setVisible(false);
 
@@ -441,8 +509,24 @@ public class GameManager {
 
         enableButton("#sideMenuFirstButton");
         
-
     }
+
+    @FXML
+    void cancelRecruit(ActionEvent event) {
+        
+        System.out.println("Recruit Canceled");
+
+        recruitMenu.setVisible(false);
+
+        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitMenu);
+        
+        recruitMenu = null;
+
+        getElementByCssSelector("#playerMenu").setVisible(true);
+
+        enableButton("#sideMenuThirdButton");
+    }
+
 
     public ArrayList<State> getArrayListFromArrayListPair(ArrayList<Pair<State, Boolean>> input) {
         ArrayList<State> states = new ArrayList<>();
@@ -452,6 +536,12 @@ public class GameManager {
         }
 
         return states;
+    }
+
+
+    @FXML
+    void recruit(ActionEvent event) {
+        // TODO: Scrivere la funzione che effettua il reclutamento
     }
 
     @FXML
@@ -617,6 +707,11 @@ public class GameManager {
         hideToggleSwitch("#sideMenuToggleSwitch");
 
     
+    }
+
+    @FXML
+    void refreshVoidRecruitMenu(MouseEvent event) {
+        App.gameManager.refreshRecruitMenu();
     }
 
     @FXML
@@ -921,6 +1016,16 @@ public class GameManager {
 
     }
 
+    public void passTurn() {
+        
+        this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
+
+        this.playTurn();
+
+        // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
+        
+    }
+
     public void refreshTooltips() {
 
         Tooltip.install(getElementByCssSelector("#playerStateMoneyImageView"), new Tooltip("Stage Money: " + formatHighNumber(getHumanPlayer().getTotalState().getStageMoney())));
@@ -935,14 +1040,5 @@ public class GameManager {
 
     }
 
-    public void passTurn() {
-        
-        this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
-
-        this.playTurn();
-
-        // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
-        
-    }
 
 }

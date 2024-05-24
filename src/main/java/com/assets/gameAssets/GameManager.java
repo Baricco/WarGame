@@ -3,6 +3,7 @@ package com.assets.gameAssets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -500,6 +501,7 @@ public class GameManager {
 
         enableButton("#sideMenuFirstButton");
 
+        refreshTooltips();
 
     }
 
@@ -801,6 +803,7 @@ public class GameManager {
         refreshPlayerMenuByState(clickedState.getId());
         refreshSideMenu(clickedState);
         showPlayerMenu();
+        refreshTooltips();
         showSideMenu();
         changeHoverHandler();
 
@@ -915,6 +918,20 @@ public class GameManager {
         botThread.start();
         
         return;
+
+    }
+
+    public void refreshTooltips() {
+
+        Tooltip.install(getElementByCssSelector("#playerStateMoneyImageView"), new Tooltip("Stage Money: " + formatHighNumber(getHumanPlayer().getTotalState().getStageMoney())));
+        Tooltip.install(getElementByCssSelector("#playerStateArmyImageView"), new Tooltip("Stage Army: "  + formatHighNumber(getHumanPlayer().getTotalState().getStageArmy())));
+        Tooltip.install(getElementByCssSelector("#playerStateNaturalResourcesImageView"), new Tooltip("Stage Natural Resources: " + formatHighNumber(getHumanPlayer().getTotalState().getStageNaturalResources())));
+        Tooltip.install(getElementByCssSelector("#playerStateRefinedResourcesImageView"), new Tooltip("Stage Refined Resources: " + formatHighNumber(getHumanPlayer().getTotalState().getStageRefinedResources())));
+
+        Tooltip.install(getElementByCssSelector("#sideMenuStateMoneyLabel"), new Tooltip("Stage Money: " + formatHighNumber(getHumanPlayer().getTotalState().getStageMoney())));
+        Tooltip.install(getElementByCssSelector("#sideMenuStateArmyLabel"), new Tooltip("Stage Army: " + formatHighNumber(getHumanPlayer().getTotalState().getStageArmy())));
+
+        ((ToggleSwitch)getElementByCssSelector("#sideMenuToggleSwitch")).attachTooltip(new Tooltip("Military Conscription"));
 
     }
 

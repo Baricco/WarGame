@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
+import javafx.scene.text.Font;
 import javafx.scene.Node;
 
 import java.io.IOException;
@@ -124,12 +125,13 @@ public class StartPageController implements Initializable {
         RandomGenerator rnd = RandomGenerator.getDefault();
 
         for (int i = 1; i <= botSlider.getValue(); i++) {
-        
+            
             Color nextColor;
             
             do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); } while (!colorIsValid(nextColor));
 
             try { App.gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
+        
         }
 
 
@@ -139,11 +141,13 @@ public class StartPageController implements Initializable {
         if (color == null) return false;
 
         for(Player p : App.gameManager.getPlayers()) {
-            if (p.getHexColor().isEmpty()) return false;
+            if (p.getHexColor().isEmpty()) continue;
 
             Color playerColor = Color.valueOf(p.getHexColor());
 
-            if (Math.abs(playerColor.getHue() - color.getHue()) <= 30) return false;
+            double colorDistance = Math.min(Math.abs(playerColor.getHue() - color.getHue() + 360),  Math.abs(playerColor.getHue() - color.getHue()));
+
+            if (colorDistance <= 30) return false;
         }
 
         return true;

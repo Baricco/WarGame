@@ -254,20 +254,6 @@ public class MainPageController implements Initializable{
 
     private ToggleSwitch sideMenuToggleSwitch;
 
-    private void attachTooltips() {
-
-        Tooltip.install(playerStateMoneyImageView, new Tooltip("Stage Money: "));
-        Tooltip.install(playerStateArmyImageView, new Tooltip("Stage Army: "));
-        Tooltip.install(playerStateNaturalResourcesImageView, new Tooltip("Stage Natural Resources: "));
-        Tooltip.install(playerStateRefinedResourcesImageView, new Tooltip("Stage Refined Resources: "));
-        Tooltip.install(playerStateWorkForceImageView, new Tooltip("Stage Work Force: "));
-
-        Tooltip.install(sideMenuStateMoneyLabel, new Tooltip("Stage Money: "));
-        Tooltip.install(sideMenuStateArmyLabel, new Tooltip("Stage Army: "));
-        sideMenuToggleSwitch.attachTooltip(new Tooltip("Military Conscription"));
-
-    }
-
     public void hidePlayerMenu() {
         playerMenu.getChildren().forEach(node -> { node.setVisible(false); });
     }
@@ -299,9 +285,6 @@ public class MainPageController implements Initializable{
         initToggleSwitch();
         hidePlayerMenu();
         hideSideMenu();
-        attachTooltips();
-
-
 
     }
 

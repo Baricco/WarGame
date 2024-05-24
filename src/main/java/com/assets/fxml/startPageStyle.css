@@ -11,8 +11,6 @@
 }
 
 VBox {
-    -fx-font-family:'Space Grotesk Light';
-    -fx-font-weight: 300;
     -fx-background-color: -white;
     -fx-align: center;
 }
@@ -32,6 +30,8 @@ VBox {
 
 * {
     -fx-text-fill: -white;
+    -fx-font-family:'Josefin Sans Thin';
+    -fx-font-weight: 400;
 }
 
 Button {

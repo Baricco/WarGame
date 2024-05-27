@@ -15,7 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
-import javafx.scene.text.Font;
 import javafx.scene.Node;
 
 import java.io.IOException;
@@ -166,7 +165,7 @@ public class StartPageController implements Initializable {
 
             double colorDistance = Math.min(Math.abs(playerColor.getHue() - color.getHue() + 360),  Math.abs(playerColor.getHue() - color.getHue()));
 
-            if (colorDistance <= 30) return false;
+            if (colorDistance <= 25) return false;
         }
 
         return true;

@@ -13,7 +13,11 @@ public class Bot extends Player implements Runnable {
         "Nano del cazzo",
         "Noi Bot facciamo sesso con tua mamma",
         "Dio, Patria e Famiglia",
-        "Falce e Martello, Effige di Mao"
+        "Falce e Martello, Effige di Mao",
+        "Palemmo mmedda",
+        "Fanculo i carabinieri, mi scopo Giusy Ferreri",
+        "Vannacci >> Tolstoj",
+        "Vedi te se mi devo fa dì male dal figlio di Totò Riina"
     };
 
     private static RandomGenerator rnd = RandomGenerator.getDefault();

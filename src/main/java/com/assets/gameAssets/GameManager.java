@@ -983,7 +983,7 @@ public class GameManager {
        refreshSideMenu(curState);
 
     }
-
+    
     @Override
     public String toString() {
 

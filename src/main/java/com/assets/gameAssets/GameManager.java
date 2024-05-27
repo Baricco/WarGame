@@ -64,6 +64,12 @@ public class GameManager {
 
     @FXML
     private AnchorPane defenderDiceContainer;
+
+    @FXML
+    private Button decrementAttackButton;
+
+    @FXML
+    private Button incrementAttackButton;
     
     private HashMap<String, State> states;
     private String fileName;
@@ -241,6 +247,28 @@ public class GameManager {
         return curPlayer; 
     }
 
+    @FXML
+    void refreshRecruitMenuAttackModifier(ActionEvent event) {
+        
+        Button clickedBtn = ((Button)event.getSource());
+        
+        Label modifierLabel = ((Label)((AnchorPane)clickedBtn.getParent()).lookup("Label"));
+
+        int curModifier = Integer.parseInt(modifierLabel.getText());
+
+        if (clickedBtn.getId().equals("incrementAttackButton")) {
+            curModifier++;
+            if (curModifier >= Army.MAX_MODIFIER) curModifier = Army.MAX_MODIFIER;
+        }
+        else if (clickedBtn.getId().equals("decrementAttackButton")) {
+            curModifier--;
+            if (curModifier <= Army.MIN_MODIFIER) curModifier = Army.MIN_MODIFIER;
+        }
+
+        modifierLabel.setText(String.valueOf(curModifier));
+        
+    }
+
     private void refreshRecruitMenu() {
         
         ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
@@ -261,8 +289,6 @@ public class GameManager {
             ((Label)armySelector.lookup("#selectedSoldiersLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#soldierSlider")).getValue()));
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             
-            // TODO: AGGIUNGERE IL PEZZO DI CODICE CHE AGGIORNA LE LABEL PER L'ATTACKMODFIER E GESTISCE LA PRESSIONE DEI TASTI
-
             i++;
         }
 
@@ -542,6 +568,7 @@ public class GameManager {
     @FXML
     void recruit(ActionEvent event) {
         // TODO: Scrivere la funzione che effettua il reclutamento
+        
     }
 
     @FXML

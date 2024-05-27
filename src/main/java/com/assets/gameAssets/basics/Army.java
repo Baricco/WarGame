@@ -9,6 +9,8 @@ public class Army {
     private int attackModifierValue;
     private int defenseModifierValue;
     public static final int SOLDIERS_PER_DICE = 100000;
+    public static final int MAX_MODIFIER = 3;
+    public static final int MIN_MODIFIER = 0;
 
     public enum ARMY_TYPE {
         EMPTY,
@@ -71,10 +73,14 @@ public class Army {
     }
 
     public void setAttackModifierValue(int modifierValue) {
+        if (modifierValue > MAX_MODIFIER) modifierValue = MAX_MODIFIER;
+        if (modifierValue < MIN_MODIFIER) modifierValue = MIN_MODIFIER;
         this.attackModifierValue = modifierValue;
     }
 
     public void setDefenseModifierValue(int modifierValue) {
+        if (modifierValue > MAX_MODIFIER) modifierValue = MAX_MODIFIER;
+        if (modifierValue < MIN_MODIFIER) modifierValue = MIN_MODIFIER;
         this.defenseModifierValue = modifierValue;
     }
 

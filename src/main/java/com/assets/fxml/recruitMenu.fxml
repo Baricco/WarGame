@@ -19,7 +19,7 @@
                   <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-9.0" layoutY="50.0" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
                   <AnchorPane layoutX="44.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -28,7 +28,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>
@@ -50,7 +50,7 @@
                   <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
                   <AnchorPane layoutX="42.0" layoutY="70.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -59,7 +59,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>
@@ -81,7 +81,7 @@
                   <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
                   <AnchorPane layoutX="46.0" layoutY="75.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -90,7 +90,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>
@@ -112,7 +112,7 @@
                   <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
                   <AnchorPane layoutX="45.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -121,7 +121,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshVoidRecruitMenu" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>

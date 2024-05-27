@@ -1029,6 +1029,7 @@ public class GameManager {
 
     private void manageHumanTurn() {
         showSideMenu();
+        passTurn();
     }
 
     private void playTurn() {

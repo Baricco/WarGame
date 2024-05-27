@@ -33,7 +33,7 @@ public class Bot extends Player implements Runnable {
 
         System.out.println(this.getName() + " says: " + stringozze[rnd.nextInt(stringozze.length)]);
 
-        try { Thread.sleep(rnd.nextLong(100, 200)); } catch (InterruptedException e) { return; }
+        try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
 
         App.gameManager.passTurn();
     }

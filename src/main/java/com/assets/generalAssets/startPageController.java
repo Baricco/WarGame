@@ -48,6 +48,11 @@ public class StartPageController implements Initializable {
     
     private ColorPickerManager colorPickerManager;
 
+    private static final int MAX_CYCLE_NUMBER = 1000000;
+
+    private int cycleCounter = 0;
+
+
     private void initColorPicker() {
         AnchorPane colorPicker;
                        
@@ -122,22 +127,36 @@ public class StartPageController implements Initializable {
         // Add the Human Player to the App.gameManager
         try { App.gameManager.addPlayer(new Human("Human Player", colorPickerManager.getCurHexColor())); } catch(Exception e) { e.printStackTrace(); }
 
+        ArrayList<Bot> bots = null;
+        do { bots = generateBots(); } while(bots == null);
+
+        for (Bot curBot : bots) try { App.gameManager.addPlayer(curBot); } catch(Exception e) { e.printStackTrace(); }
+
+    }
+
+    private ArrayList<Bot> generateBots() {
+
+        ArrayList<Bot> bots = new ArrayList<>();
+
         RandomGenerator rnd = RandomGenerator.getDefault();
 
         for (int i = 1; i <= botSlider.getValue(); i++) {
             
             Color nextColor;
             
-            do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); } while (!colorIsValid(nextColor));
+            do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); cycleCounter++; } while (!colorIsValid(nextColor));
 
-            try { App.gameManager.addPlayer(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor))); } catch(Exception e) { e.printStackTrace(); }
-        
+            bots.add(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor)));
+
+            if (cycleCounter > MAX_CYCLE_NUMBER) return null;
         }
 
+        return bots;
 
     }
 
     private boolean colorIsValid(Color color) {
+
         if (color == null) return false;
 
         for(Player p : App.gameManager.getPlayers()) {

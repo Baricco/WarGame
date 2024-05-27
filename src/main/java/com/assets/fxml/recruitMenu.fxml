@@ -14,10 +14,10 @@
             <AnchorPane layoutX="125.0" prefHeight="140.0" prefWidth="231.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Infantry" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-                  <Slider fx:id="soldierSlider" layoutX="43.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="52.333333333333336" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-9.0" layoutY="50.0" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <AnchorPane layoutX="44.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
+                  <Slider fx:id="soldierSlider" layoutX="43.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-9.0" layoutY="50.0" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <AnchorPane fx:id="attackModifierPane" layoutX="44.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
                         <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
@@ -40,15 +40,16 @@
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
                      </children>
                   </AnchorPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="53.0" text="Weeks of Training" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="400.0" prefHeight="140.0" prefWidth="225.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Artillery" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-                  <Slider fx:id="soldierSlider" layoutX="42.0" layoutY="51.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="51.333333333333336" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <AnchorPane layoutX="42.0" layoutY="70.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
+                  <Slider fx:id="soldierSlider" layoutX="42.0" layoutY="51.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <AnchorPane fx:id="attackModifierPane" layoutX="42.0" layoutY="70.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
                         <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
@@ -71,17 +72,18 @@
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
                      </children>
                   </AnchorPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="44.0" text="Weeks of Training" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="675.0" prefHeight="140.0" prefWidth="225.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Tanks" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-                  <Slider fx:id="soldierSlider" layoutX="40.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="52.333333333333336" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <AnchorPane layoutX="46.0" layoutY="75.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="5.0" text="Tanks" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  <Slider fx:id="soldierSlider" layoutX="40.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <AnchorPane fx:id="attackModifierPane" layoutX="46.0" layoutY="75.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="57.0" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -90,7 +92,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="57.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>
@@ -99,20 +101,21 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
                      </children>
                   </AnchorPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="53.0" text="Weeks of Training" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="950.0" prefHeight="140.0" prefWidth="225.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Apaches" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-                  <Slider fx:id="soldierSlider" layoutX="41.0" layoutY="51.666666666666664" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="51.666666666666664" />
-                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="50.0" />
-                  <AnchorPane layoutX="45.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
+                  <Slider fx:id="soldierSlider" layoutX="41.0" layoutY="51.666666666666664" onDragDetected="#refreshVoidRecruitMenu" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="maxSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <Label fx:id="selectedSoldiersLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" AnchorPane.topAnchor="35.0" />
+                  <AnchorPane fx:id="attackModifierPane" layoutX="45.0" layoutY="76.0" prefHeight="70.0" prefWidth="140.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Button fx:id="incrementAttackButton" layoutX="61.0" layoutY="0.33333333333333326" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
+                        <Button fx:id="incrementAttackButton" layoutX="58.0" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.topAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -121,7 +124,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="decrementAttackButton" layoutX="61.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
+                        <Button fx:id="decrementAttackButton" layoutX="58.0" layoutY="46.66666666666667" mnemonicParsing="false" onAction="#refreshRecruitMenuAttackModifier" prefHeight="10.0" prefWidth="10.0" AnchorPane.bottomAnchor="0.0">
                            <graphic>
                               <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                  <image>
@@ -130,9 +133,10 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="25.0" prefHeight="20.0" prefWidth="26.0" text="1" textAlignment="JUSTIFY" />
                      </children>
                   </AnchorPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="53.0" text="Weeks of Training" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
                </children>
             </AnchorPane>
          </children>

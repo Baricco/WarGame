@@ -3,7 +3,6 @@ package com.assets.gameAssets;
 import java.util.ArrayList;
 
 import com.assets.gameAssets.basics.Army;
-import com.assets.gameAssets.basics.Army.ARMY_TYPE;
 import com.assets.generalAssets.App;
 
 import javafx.util.Pair;

@@ -66,6 +66,9 @@ public class GameManager {
     private AnchorPane defenderDiceContainer;
 
     @FXML
+    private AnchorPane attackModifierPane;
+
+    @FXML
     private Button decrementAttackButton;
 
     @FXML
@@ -266,8 +269,10 @@ public class GameManager {
         }
 
         modifierLabel.setText(String.valueOf(curModifier));
-        
+        attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + String.valueOf(curModifier - 1));
     }
+
+    
 
     private void refreshRecruitMenu() {
         
@@ -290,6 +295,10 @@ public class GameManager {
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             
             i++;
+
+            String modifierValue = ((Label)armySelector.lookup("#attackModifierPane").lookup("Label")).getText();
+
+            attachTooltip(armySelector.lookup("#attackModifierPane"), "Weeks of Training: " + modifierValue + "\nAttack Modifier: " + String.valueOf(Integer.parseInt(modifierValue) - 1));
         }
 
     }
@@ -568,7 +577,7 @@ public class GameManager {
     @FXML
     void recruit(ActionEvent event) {
         // TODO: Scrivere la funzione che effettua il reclutamento
-        
+
     }
 
     @FXML
@@ -1053,6 +1062,14 @@ public class GameManager {
 
         // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
         
+    }
+
+    public void attachTooltip(String selector, String tooltipText) {
+        Tooltip.install(getElementByCssSelector(selector), new Tooltip(tooltipText));
+    }
+
+    public void attachTooltip(Node node, String tooltipText) {
+        Tooltip.install(node, new Tooltip(tooltipText));
     }
 
     public void refreshTooltips() {

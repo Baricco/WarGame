@@ -586,13 +586,7 @@ public class GameManager {
 
         Label attackModifierLabel = ((Label)App.gameManager.scene.lookup("#attackModifierLabel"));
 
-        ((AnchorPane)getElementByCssSelector("#recruitMenu")).setVisible(false);
-
-        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitMenu);
-        
-        recruitMenu = null;
-    
-        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
+        removeBottomMenuPane("#recruitMenu");
 
         curSelectedState.recruitArmy(recruitArmy, Integer.parseInt(attackModifierLabel.getText()));  
 
@@ -639,14 +633,8 @@ public class GameManager {
 
         addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
 
-        ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
-
-        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
-        
-        attackMenu = null;
+        removeBottomMenuPane("#attackMenu");
     
-        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
-
         enableButton("#sideMenuFirstButton");
 
         refreshPlayerMenu();
@@ -654,6 +642,19 @@ public class GameManager {
 
         refreshTooltips();
 
+    }
+
+    private void removeBottomMenuPane(String paneSelector) {
+
+        Pane pane = ((Pane)getElementByCssSelector(paneSelector));
+
+        pane.setVisible(false);
+
+        ((StackPane)pane.getParent()).getChildren().remove(pane);
+        
+        pane = null;
+        
+        showPlayerMenu();
     }
 
     private Army calcArmyFromSliders() {
@@ -1055,8 +1056,33 @@ public class GameManager {
 
     }
 
+    private void disableAllButtons() {
+        disableButton("#sideMenuFirstButton");
+        disableButton("#sideMenuSecondButton");
+        disableButton("#sideMenuThirdButton");
+        disableButton("#sideMenuFourthButton");
+    }
+
+    private void enableAllButtons() {
+        enableButton("#sideMenuFirstButton");
+        enableButton("#sideMenuSecondButton");
+        enableButton("#sideMenuThirdButton");
+        enableButton("#sideMenuFourthButton");
+    }
+
+    private void disableAllClicks() {
+        disableAllButtons();
+        for (State s : this.states.values()) s.getPath().setMouseTransparent(true);
+    }
+
+    private void enableAllClicks() {
+        enableAllButtons();
+        for (State s : this.states.values()) s.getPath().setMouseTransparent(false);
+    }
+
     private void manageHumanTurn() {
         showSideMenu();
+        enableAllClicks();
     }
 
     private void playTurn() {
@@ -1068,9 +1094,10 @@ public class GameManager {
         if (this.selectedPlayerIndex == 0) { 
             App.gameManager.calendar.update();
             manageHumanTurn();
-            return;
-            
+            return;   
         }
+
+        disableAllClicks();
 
         hideSideMenu();
 
@@ -1085,6 +1112,10 @@ public class GameManager {
     }
 
     public void passTurn() {
+
+        try { removeBottomMenuPane("#attackMenu"); } catch(Exception e) {}
+        try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
+
         
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 

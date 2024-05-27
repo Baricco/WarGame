@@ -47,7 +47,7 @@ public class StartPageController implements Initializable {
     
     private ColorPickerManager colorPickerManager;
 
-    private static final int MAX_CYCLE_NUMBER = 1000000;
+    private static final int MAX_CYCLE_NUMBER = 100000;
 
     private int cycleCounter = 0;
 
@@ -143,29 +143,37 @@ public class StartPageController implements Initializable {
             
             Color nextColor;
             
-            do { nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1); cycleCounter++; } while (!colorIsValid(nextColor));
+            do { 
+                nextColor = Color.hsb(rnd.nextInt(360), 0.5, 1);
+                cycleCounter++;
+                if (cycleCounter > MAX_CYCLE_NUMBER) { cycleCounter = 0; return null; }
+            } while (!colorIsValid(nextColor, bots));
 
             bots.add(new Bot("Bot Player " + i, ColorPickerManager.getHexColor(nextColor)));
 
-            if (cycleCounter > MAX_CYCLE_NUMBER) return null;
         }
 
         return bots;
 
     }
 
-    private boolean colorIsValid(Color color) {
+    private boolean colorIsValid(Color color, ArrayList<Bot> bots) {
 
         if (color == null) return false;
 
-        for(Player p : App.gameManager.getPlayers()) {
+        ArrayList<Player> players = new ArrayList<>(bots);
+
+        players.add(App.gameManager.getPlayers().get(0));
+
+        for(Player p : players) {
             if (p.getHexColor().isEmpty()) continue;
 
             Color playerColor = Color.valueOf(p.getHexColor());
 
             double colorDistance = Math.min(Math.abs(playerColor.getHue() - color.getHue() + 360),  Math.abs(playerColor.getHue() - color.getHue()));
 
-            if (colorDistance <= 25) return false;
+            if (colorDistance <= 30) return false;
+
         }
 
         return true;

@@ -17,7 +17,10 @@ public class Bot extends Player implements Runnable {
         "Palemmo mmedda",
         "Fanculo i carabinieri, mi scopo Giusy Ferreri",
         "Vannacci >> Tolstoj",
-        "Vedi te se mi devo fa dì male dal figlio di Totò Riina"
+        "Vedi te se mi devo fa dì male dal figlio di Totò Riina",
+        "Meglio fare la cacca nella doccia che fare la doccia nella cacca",
+        "I <3 Dittatura del Proletariato",
+        "Meglio un giorno in pretura che vent'anni di dittatura"
     };
 
     private static RandomGenerator rnd = RandomGenerator.getDefault();

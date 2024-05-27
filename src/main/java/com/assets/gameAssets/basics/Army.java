@@ -23,6 +23,10 @@ public class Army {
 
     private Dice dice;
 
+    public Army() {
+        this(0);
+    }
+
     public Army(double army) {
         this.infantry = army * 0.5;
         this.artillery = army * 0.25;
@@ -46,6 +50,13 @@ public class Army {
         this.artillery += artillery;
         this.tanks += tanks;
         this.apaches += apaches;
+    }
+
+    public void addSoldiers(Army army) {
+        this.infantry += army.infantry;
+        this.artillery += army.artillery;
+        this.tanks += army.tanks;
+        this.apaches += army.apaches;
     }
 
     public int getAttackModifier() {

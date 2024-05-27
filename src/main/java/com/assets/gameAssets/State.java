@@ -28,6 +28,7 @@ public class State {
     private double stageRefinedResources;   // risorse lavorate generate per ogni turno
     private int reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria
     private Army army;
+    private Pair<Army, Pair<Integer, Integer>> recruitingArmy;
     private int workForce;
     private int stageArmy;
     private ArrayList<City> cities;
@@ -40,7 +41,7 @@ public class State {
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -55,6 +56,7 @@ public class State {
         this.armyMultiplier = armyMultiplier;
         this.path = path;
         this.army = army;
+        this.recruitingArmy = recruitingArmy;
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>(cities);
@@ -76,6 +78,7 @@ public class State {
         this.armyMultiplier = 1;
         this.path = null;
         this.army = army;
+        this.recruitingArmy = new Pair<Army, Pair<Integer, Integer>>(new Army(), new Pair<>(0, 0));
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>();
@@ -110,6 +113,9 @@ public class State {
         // Qui settiamo le variabili che non si trovano nell'XML
 
         this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5 * this.armyMultiplier);
+        
+        this.recruitingArmy = new Pair<>(new Army(), new Pair<>(0, 0));
+
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
         this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)));
@@ -124,6 +130,30 @@ public class State {
     } 
 
     public double getArmyMultiplier() { return this.armyMultiplier; }
+
+    public void recruitArmy(Army recruitingArmy, int turnCount) {
+        if (this.isRecruiting()) return;
+        this.recruitingArmy = new Pair<>(recruitingArmy, new Pair<>(turnCount - 1, turnCount));
+    }
+
+    public boolean isRecruiting() { 
+        return (this.recruitingArmy == null || this.recruitingArmy.getValue().getValue() <= 0);
+    }
+
+    public void updateRecruitingArmy() {
+        this.recruitingArmy = new Pair<>(this.recruitingArmy.getKey(), new Pair<>(this.recruitingArmy.getValue().getKey(), this.recruitingArmy.getValue().getValue() - 1));
+        
+        if (this.recruitingArmy.getValue().getValue() <= 0) {
+            
+            System.out.println(this.getName() + " has finished the training of new soldiers, they now have: \n" + this.recruitingArmy.getKey().getInfantry() + " More Infantry\n" + this.recruitingArmy.getKey().getArtillery() + " More Artillery\n" + this.recruitingArmy.getKey().getTanks() + " More Tanks\n " + this.recruitingArmy.getKey().getApaches() + " More Apaches");
+
+            this.army.addSoldiers(this.recruitingArmy.getKey());
+
+            if (this.recruitingArmy.getValue().getKey() < this.army.getAttackModifier()) this.army.setAttackModifierValue(this.recruitingArmy.getValue().getKey());
+            
+        }
+
+    }
 
     public ArrayList<Pair<String, Boolean>> getNeighboringStates() { return this.neighboringStates; }
 

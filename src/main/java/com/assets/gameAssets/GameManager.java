@@ -73,6 +73,9 @@ public class GameManager {
 
     @FXML
     private Button incrementAttackButton;
+
+    @FXML
+    private Label attackModifierLabel;
     
     private HashMap<String, State> states;
     private String fileName;
@@ -269,7 +272,7 @@ public class GameManager {
         }
 
         modifierLabel.setText(String.valueOf(curModifier));
-        attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + String.valueOf(curModifier - 1));
+        attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + (curModifier == 0 ? "0" : String.valueOf(curModifier - 1)));
     }
 
     
@@ -295,11 +298,13 @@ public class GameManager {
             ((Label)armySelector.lookup("#maxSoldiersLabel")).setText(formatHighNumber(maxSoldiers));
             
             i++;
-
-            String modifierValue = ((Label)armySelector.lookup("#attackModifierPane").lookup("Label")).getText();
-
-            attachTooltip(armySelector.lookup("#attackModifierPane"), "Weeks of Training: " + modifierValue + "\nAttack Modifier: " + String.valueOf(Integer.parseInt(modifierValue) - 1));
         }
+
+        AnchorPane attackModifierPane = ((AnchorPane)App.gameManager.scene.lookup("#attackModifierPane"));
+
+        String modifierValue = ((Label)attackModifierPane.lookup("Label")).getText();
+
+        attachTooltip(attackModifierPane, "Weeks of Training: " + modifierValue + "\nAttack Modifier: " + String.valueOf(Integer.parseInt(modifierValue) - 1));
 
     }
 
@@ -578,6 +583,22 @@ public class GameManager {
     void recruit(ActionEvent event) {
         // TODO: Scrivere la funzione che effettua il reclutamento
 
+        Army recruitArmy = calcArmyFromSliders();
+
+        Label attackModifierLabel = ((Label)App.gameManager.scene.lookup("#attackModifierLabel"));
+
+        ((AnchorPane)getElementByCssSelector("#recruitMenu")).setVisible(false);
+
+        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitArmy);
+        
+        recruitMenu = null;
+    
+        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
+
+        curSelectedState.recruitArmy(recruitArmy, Integer.parseInt(attackModifierLabel.getText()));  
+
+        System.out.println(curSelectedState.getName() + " Recruited some Soldiers, new Army will be available in " + attackModifierLabel.getText() + " Turns");
+
     }
 
     @FXML
@@ -636,7 +657,7 @@ public class GameManager {
         double values[] = {0, 0, 0, 0};
 
         int i = 0;
-        for (Node elem : ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren()) {
+        for (Node elem : ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren()) {
             values[i] = ((Slider)((AnchorPane)elem).getChildren().get(1)).getValue();
             i++;
         }
@@ -1029,12 +1050,13 @@ public class GameManager {
 
     private void manageHumanTurn() {
         showSideMenu();
-        passTurn();
     }
 
     private void playTurn() {
 
         System.out.println(players.get(selectedPlayerIndex).getName() + " is Playing");
+
+        players.get(selectedPlayerIndex).updateTurnActions();
 
         if (this.selectedPlayerIndex == 0) { 
             App.gameManager.calendar.update();

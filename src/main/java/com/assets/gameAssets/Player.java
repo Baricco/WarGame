@@ -81,6 +81,14 @@ public abstract class Player {
         return (this.originalState != null);
     }
 
+    public void updateTurnActions() {
+        
+        for (State s : this.getAllStates()) {
+            s.updateRecruitingArmy();
+        }
+
+    }
+
     public State getTotalState() {
 
         double money = this.originalState.getMoney();

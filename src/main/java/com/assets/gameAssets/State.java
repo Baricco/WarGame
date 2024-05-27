@@ -8,6 +8,7 @@ import com.assets.gameAssets.basics.Army;
 import com.assets.gameAssets.basics.City;
 import com.assets.generalAssets.App;
 
+import javafx.application.Platform;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.SVGPath;
 import javafx.util.Pair;
@@ -78,7 +79,7 @@ public class State {
         this.armyMultiplier = 1;
         this.path = null;
         this.army = army;
-        this.recruitingArmy = new Pair<Army, Pair<Integer, Integer>>(new Army(), new Pair<>(0, 0));
+        this.recruitingArmy = null;
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>();
@@ -114,7 +115,7 @@ public class State {
 
         this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5 * this.armyMultiplier);
         
-        this.recruitingArmy = new Pair<>(new Army(), new Pair<>(0, 0));
+        this.recruitingArmy = null;
 
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
@@ -156,8 +157,12 @@ public class State {
             
             this.recruitingArmy = null;
 
-        }
+            try {
+                Platform.runLater(() -> { App.gameManager.refreshSideMenu(); App.gameManager.refreshPlayerMenu(); });
+            } catch(Exception e) { } 
 
+
+        }
     }
 
     public ArrayList<Pair<String, Boolean>> getNeighboringStates() { return this.neighboringStates; }

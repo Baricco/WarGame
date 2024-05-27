@@ -581,7 +581,6 @@ public class GameManager {
 
     @FXML
     void recruit(ActionEvent event) {
-        // TODO: Scrivere la funzione che effettua il reclutamento
 
         Army recruitArmy = calcArmyFromSliders();
 
@@ -589,7 +588,7 @@ public class GameManager {
 
         ((AnchorPane)getElementByCssSelector("#recruitMenu")).setVisible(false);
 
-        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitArmy);
+        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitMenu);
         
         recruitMenu = null;
     
@@ -598,6 +597,8 @@ public class GameManager {
         curSelectedState.recruitArmy(recruitArmy, Integer.parseInt(attackModifierLabel.getText()));  
 
         System.out.println(curSelectedState.getName() + " Recruited some Soldiers, new Army will be available in " + attackModifierLabel.getText() + " Turns");
+
+        enableButton("#sideMenuThirdButton");
 
     }
 
@@ -647,6 +648,9 @@ public class GameManager {
         ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
 
         enableButton("#sideMenuFirstButton");
+
+        refreshPlayerMenu();
+        refreshSideMenu();
 
         refreshTooltips();
 
@@ -857,6 +861,8 @@ public class GameManager {
         return null;
     }
 
+    public void refreshSideMenu() { refreshSideMenu(curSelectedState); }
+
     private void refreshSideMenu(State selectedState) {
 
         setLabelContent("#menuStateNameLabel", selectedState.getName());
@@ -880,23 +886,14 @@ public class GameManager {
             showEnemySideMenu(selectedState);
             
         }
-        
-        
     }
 
-
-    private void refreshPlayerMenu() {
-        refreshPlayerMenuByState(this.getHumanPlayer().getTotalState().getId());
+    public void refreshPlayerMenu() {
+        refreshPlayerMenuByState(this.getHumanPlayer().getTotalState());
     }
 
-
-
-    public void refreshPlayerMenuByState(String stateId) {
-
-        if (stateId.equals("ATL") && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
-
-        State state = this.states.get(stateId);
-
+    public void refreshPlayerMenuByState(State state) {
+        
         setLabelContent("#playerStateNameLabel", state.getName());
         setLabelContent("#playerStateLvlLabel", String.valueOf(getHumanPlayer().getLevel()));
         setTrapezoidXScale("#playerMenu", state.getName().length() * 0.12);
@@ -907,7 +904,15 @@ public class GameManager {
         setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(state.getWorkForce())));
 
         showPlayerMenu();
+
         handleHover(state.getPath());
+    }
+
+    public void refreshPlayerMenuByState(String stateId) {
+
+        if (stateId.equals("ATL") && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
+
+        refreshPlayerMenuByState(this.states.get(stateId));
 
     }
 
@@ -934,6 +939,8 @@ public class GameManager {
     }
 
     public void handleHover(SVGPath curPath) {
+
+        if (curPath == null) return;
 
         if (App.gameManager.getState("ATL").getPath().equals(curPath) && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
 

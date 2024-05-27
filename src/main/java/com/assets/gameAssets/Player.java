@@ -82,7 +82,7 @@ public abstract class Player {
     }
 
     public void updateTurnActions() {
-        for (State s : this.getAllStates()) {   // getAllStates è vuoto anche se non ha senso porcoddio
+        for (State s : this.getAllStates()) {
             s.updateRecruitingArmy();
         }
 
@@ -105,18 +105,18 @@ public abstract class Player {
 
         for (State s : this.occupiedStates) {
 
-            money = s.getMoney();
-            stageMoney = s.getStageMoney();
-            naturalResources = s.getNaturalResources();
-            stageNaturalResources = s.getStageNaturalResources();
-            refinedResources = s.getRefinedResources();
-            stageRefinedResources = s.getStageRefinedResources();
-            reputation = s.getReputation();
-            population = s.getPopulation();
-            level = s.getlastTurnAttacksDone();
-            army = s.getArmy();
-            workForce = s.getWorkForce();
-            stageArmy = s.getStageArmy();
+            money += s.getMoney();
+            stageMoney += s.getStageMoney();
+            naturalResources += s.getNaturalResources();
+            stageNaturalResources += s.getStageNaturalResources();
+            refinedResources += s.getRefinedResources();
+            stageRefinedResources += s.getStageRefinedResources();
+            reputation += s.getReputation();
+            population += s.getPopulation();
+            level += s.getlastTurnAttacksDone();
+            army.addSoldiers(s.getArmy());
+            workForce += s.getWorkForce();
+            stageArmy += s.getStageArmy();
 
         }
 

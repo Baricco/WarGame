@@ -137,20 +137,25 @@ public class State {
     }
 
     public boolean isRecruiting() { 
-        return (this.recruitingArmy == null || this.recruitingArmy.getValue().getValue() <= 0);
+        return this.recruitingArmy != null;
     }
 
     public void updateRecruitingArmy() {
+
+        if (!this.isRecruiting()) return;
+
         this.recruitingArmy = new Pair<>(this.recruitingArmy.getKey(), new Pair<>(this.recruitingArmy.getValue().getKey(), this.recruitingArmy.getValue().getValue() - 1));
         
         if (this.recruitingArmy.getValue().getValue() <= 0) {
             
-            System.out.println(this.getName() + " has finished the training of new soldiers, they now have: \n" + this.recruitingArmy.getKey().getInfantry() + " More Infantry\n" + this.recruitingArmy.getKey().getArtillery() + " More Artillery\n" + this.recruitingArmy.getKey().getTanks() + " More Tanks\n " + this.recruitingArmy.getKey().getApaches() + " More Apaches");
+            System.out.println(this.getName() + " has finished the training of new soldiers, they now have: \n\t" + this.recruitingArmy.getKey().getInfantry() + " More Infantry\n\t" + this.recruitingArmy.getKey().getArtillery() + " More Artillery\n\t" + this.recruitingArmy.getKey().getTanks() + " More Tanks\n\t" + this.recruitingArmy.getKey().getApaches() + " More Apaches");
 
             this.army.addSoldiers(this.recruitingArmy.getKey());
 
             if (this.recruitingArmy.getValue().getKey() < this.army.getAttackModifier()) this.army.setAttackModifierValue(this.recruitingArmy.getValue().getKey());
             
+            this.recruitingArmy = null;
+
         }
 
     }

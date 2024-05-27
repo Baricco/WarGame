@@ -82,8 +82,7 @@ public abstract class Player {
     }
 
     public void updateTurnActions() {
-        
-        for (State s : this.getAllStates()) {
+        for (State s : this.getAllStates()) {   // getAllStates è vuoto anche se non ha senso porcoddio
             s.updateRecruitingArmy();
         }
 
@@ -251,11 +250,11 @@ public abstract class Player {
 
         ArrayList<State> allStates = new ArrayList<>();
         
-        allStates.add(originalState);
+        allStates.add(this.originalState);
 
-        allStates.addAll(occupiedStates);
+        allStates.addAll(this.occupiedStates);
 
-        return this.occupiedStates;
+        return allStates;
     }
 
     public void addAlly(Player newAlly) throws Exception {

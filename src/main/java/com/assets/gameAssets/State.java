@@ -160,6 +160,8 @@ public class State {
 
             if (this.recruitingArmy.getValue().getKey() < this.army.getAttackModifier()) this.army.setAttackModifierValue(this.recruitingArmy.getValue().getKey());
             
+            this.subMoney(Price.RECRUIT_PRICE_PER_DICE * this.recruitingArmy.getKey().getTotal() / Army.SOLDIERS_PER_DICE);
+
             this.recruitingArmy = null;
 
             try {

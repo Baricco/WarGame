@@ -323,7 +323,13 @@ public class State {
     }
 
     public void updateMilitaryConscription() {
-        // TODO: scrivere la funzione che gestisce la leva obbligatoria ad ogni turno
+
+        if (!hasMilitaryConscription()) return;
+        
+        recruitArmy(new Army(stageArmy/2.0, stageArmy/2.0, stageArmy/2.0, stageArmy/2.0, 0), 1);
+
+        this.decreaseReputation();
+
     }
 
 

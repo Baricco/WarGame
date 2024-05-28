@@ -327,50 +327,6 @@ public class GameManager {
             }
         };
 
-        EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                    Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
-    
-                    StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
-    
-                    AnchorPane recruitMenu;
-    
-                    try { 
-                        recruitMenu = (AnchorPane)App.createRoot("/com/assets/fxml/recruitMenu");
-                    } catch (IOException e) { e.printStackTrace(); return; }
-    
-    
-                    ObservableList<Node> armySelectors = ((AnchorPane)recruitMenu.lookup("#ArmySelectorContainer")).getChildren();
-            
-                    for (Node armySelector : armySelectors) {                    
-    
-                        Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
-                       
-                        curSlider.valueProperty().addListener(new ChangeListener<Number>() {
-                            public void changed(ObservableValue<? extends Number> ov,
-                                Number old_val, Number new_val) {
-                                    App.gameManager.refreshRecruitMenu();
-                                }
-                        });
-                    }
-    
-    
-    
-                    bottomMenu.getChildren().add(recruitMenu);
-    
-                    GameManager.curSelectedState = state;
-    
-                    refreshRecruitMenu();
-    
-                    playerMenu.setVisible(false);
-    
-                    recruitMenu.setVisible(true);
-
-                    disableButton("#sideMenuThirdButton");
-            }
-        };
 
         EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
             @Override
@@ -399,15 +355,66 @@ public class GameManager {
                         System.out.println(state.getName() + " Disabled Military Conscription");
                         state.disableMilitaryConscription();
                     }
+                    refreshSideMenu(state);
             }
         };
 
+        if (!state.hasMilitaryConscription()) {
+
+            EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+
+                        Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
         
+                        StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+        
+                        AnchorPane recruitMenu;
+        
+                        try { 
+                            recruitMenu = (AnchorPane)App.createRoot("/com/assets/fxml/recruitMenu");
+                        } catch (IOException e) { e.printStackTrace(); return; }
+        
+        
+                        ObservableList<Node> armySelectors = ((AnchorPane)recruitMenu.lookup("#ArmySelectorContainer")).getChildren();
+                
+                        for (Node armySelector : armySelectors) {                    
+        
+                            Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                        
+                            curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                                public void changed(ObservableValue<? extends Number> ov,
+                                    Number old_val, Number new_val) {
+                                        App.gameManager.refreshRecruitMenu();
+                                    }
+                            });
+                        }
+        
+        
+        
+                        bottomMenu.getChildren().add(recruitMenu);
+        
+                        GameManager.curSelectedState = state;
+        
+                        refreshRecruitMenu();
+        
+                        playerMenu.setVisible(false);
+        
+                        recruitMenu.setVisible(true);
+
+                        disableButton("#sideMenuThirdButton");
+                }
+            };
+            setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
+            setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
+        }
+        else {
+            setButton("#sideMenuThirdButton", "Fortify", fortifyHandler);
+            hideButton("#sideMenuFourthButton");
+        }
 
         setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
         setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
-        setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
-        setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
         setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler);
 
     }
@@ -1002,16 +1009,16 @@ public class GameManager {
 
     public void manageStateClicked(String id) {
                 
-        State curState = this.states.get(id);
+        curSelectedState = this.states.get(id);
 
         if (!this.getHumanPlayer().hasOriginalState()) {
             
-            setPlayerOriginalState(curState);
+            setPlayerOriginalState(curSelectedState);
             
             return;
         }
         
-       refreshSideMenu(curState);
+       refreshSideMenu(curSelectedState);
 
     }
     

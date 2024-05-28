@@ -89,6 +89,11 @@ public class Army {
         this.attackModifierValue = modifierValue;
     }
 
+    public void incrementDefenseModifierValue() {
+        if (this.defenseModifierValue >= MAX_MODIFIER) return;
+        this.defenseModifierValue++;
+    }
+
     public void setDefenseModifierValue(int modifierValue) {
         if (modifierValue > MAX_MODIFIER) modifierValue = MAX_MODIFIER;
         if (modifierValue < MIN_MODIFIER) modifierValue = MIN_MODIFIER;

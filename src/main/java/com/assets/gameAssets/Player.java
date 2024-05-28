@@ -84,6 +84,7 @@ public abstract class Player {
     public void updateTurnActions() {
         for (State s : this.getAllStates()) {
             s.updateResources();
+            s.updateFortification();
             s.updateRecruitingArmy();
             s.updateMilitaryConscription();
         }

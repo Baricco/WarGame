@@ -330,15 +330,6 @@ public class GameManager {
             }
         };
 
-
-        EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA FORTIFICAZIONE DELLO STATO
-                    System.out.println("Adesso Fortifico " + state.getName());
-            }
-        };
-
         EventHandler<Event> militaryConscriptionHandler = new EventHandler<Event>() {
             @Override
             public void handle(Event event){
@@ -360,6 +351,8 @@ public class GameManager {
                     refreshSideMenu(state);
             }
         };
+
+        String fortifyButtonSelector = "";
 
         if (!state.hasMilitaryConscription()) {
 
@@ -408,11 +401,35 @@ public class GameManager {
                 }
             };
             setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
-            setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
+            fortifyButtonSelector = "#sideMenuFourthButton";
         }
         else {
-            setButton("#sideMenuThirdButton", "Fortify", fortifyHandler);
+            fortifyButtonSelector = "#sideMenuThirdButton";
             hideButton("#sideMenuFourthButton");
+        }
+
+        if (!state.isFortifiying()) {
+
+            EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event){
+
+                    if (state.isFortifiying()) return;
+
+                    System.out.println(state.getName() + " is going to be fortified in 2 turns");
+
+                    state.startFortification();
+
+                    refreshSideMenu(state);
+
+                }
+            };
+
+            setButton(fortifyButtonSelector, "Fortify", fortifyHandler);
+
+        }
+        else {
+            hideButton(fortifyButtonSelector);
         }
 
         setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);

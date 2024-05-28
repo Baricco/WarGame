@@ -30,6 +30,7 @@ public class State {
     private int reputation;              // questa variabile aumenta quando si fanno le opere per i cittadini e diminuisce quando si fa la leva obbligatoria
     private Army army;
     private Pair<Army, Pair<Integer, Integer>> recruitingArmy;
+    private int fortificationRemainingTurns;
     private int workForce;
     private int stageArmy;
     private ArrayList<City> cities;
@@ -43,7 +44,7 @@ public class State {
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int workForce, int stageArmy, boolean militaryConscription, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int fortificationRemainingTurns, int workForce, int stageArmy, boolean militaryConscription, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -60,6 +61,7 @@ public class State {
         this.path = path;
         this.army = army;
         this.recruitingArmy = recruitingArmy;
+        this.fortificationRemainingTurns = fortificationRemainingTurns;
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>(cities);
@@ -83,6 +85,7 @@ public class State {
         this.path = null;
         this.army = army;
         this.recruitingArmy = null;
+        this.fortificationRemainingTurns = 0;
         this.stageArmy = stageArmy;
         this.workForce = workForce;
         this.cities = new ArrayList<City>();
@@ -119,6 +122,8 @@ public class State {
         this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5 * this.armyMultiplier);
         
         this.recruitingArmy = null;
+
+        this.fortificationRemainingTurns = 0;
 
         this.militaryConscription = false;
 
@@ -226,7 +231,6 @@ public class State {
     }
 
     public void collectTax() {
-        System.out.println(this.getName() + " collects " + money + " Dystopian Dollars from taxes");
         this.addMoney(this.stageMoney);
     }
 
@@ -341,6 +345,34 @@ public class State {
         this.collectTax();
         this.genNewNaturalResources();
         this.genNewRefinedResources();
+    }
+
+    public boolean isFortifiying() {
+        return this.fortificationRemainingTurns > 0;
+    }
+
+    public void startFortification() {
+
+        if (this.isFortifiying()) return;
+
+        this.fortificationRemainingTurns = 2;
+    }
+
+    public void fortify() {
+        
+        System.out.println(this.getName() + " has finished Fortifying, it now has a defenseModifier of " + this.army.getDefenseModifier());
+
+        this.army.incrementDefenseModifierValue();
+        this.subMoney(Price.FORTIFICATION_PRICE_PER_LEVEL * this.army.getDefenseModifier());
+    }
+
+    public void updateFortification() {
+        if (!this.isFortifiying()) return;
+
+        this.fortificationRemainingTurns--;
+
+        if (this.fortificationRemainingTurns <= 0) this.fortify();
+
     }
 
 

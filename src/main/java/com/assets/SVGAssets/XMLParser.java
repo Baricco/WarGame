@@ -83,6 +83,7 @@ public class XMLParser {
             new Pair<Army,Pair<Integer, Integer>>(new Army(), new Pair<>(0, 0)),
             0,
             0,
+            false,
             null,
             cities,
             neighboringStates

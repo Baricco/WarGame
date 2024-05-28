@@ -392,10 +392,12 @@ public class GameManager {
                     catch(Exception e) { e.printStackTrace(); return; }
 
                     if (toggleSwitch.isOn()) {
-                        System.out.println("Adesso c'è la Leva Obbligatoria in " + state.getName());
+                        System.out.println(state.getName() + " Enabled Military Conscription");
+                        state.enableMilitaryConscription();
                     }
                     else {
-                        System.out.println("Adesso non c'è la Leva Obbligatoria in " + state.getName());
+                        System.out.println(state.getName() + " Disabled Military Conscription");
+                        state.disableMilitaryConscription();
                     }
             }
         };

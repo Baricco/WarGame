@@ -34,6 +34,7 @@ public class State {
     private int stageArmy;
     private ArrayList<City> cities;
     private ArrayList<Pair<String, Boolean>> neighboringStates;
+    private boolean militaryConscription;
 
     
     private SVGPath path;
@@ -42,7 +43,7 @@ public class State {
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int workForce, int stageArmy, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int workForce, int stageArmy, boolean militaryConscription, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -55,6 +56,7 @@ public class State {
         this.population = population;
         this.lastTurnAttacksDone = 0;
         this.armyMultiplier = armyMultiplier;
+        this.militaryConscription = militaryConscription;
         this.path = path;
         this.army = army;
         this.recruitingArmy = recruitingArmy;
@@ -77,6 +79,7 @@ public class State {
         this.population = population;
         this.lastTurnAttacksDone = 0;
         this.armyMultiplier = 1;
+        this.militaryConscription = false;
         this.path = null;
         this.army = army;
         this.recruitingArmy = null;
@@ -116,6 +119,8 @@ public class State {
         this.army = new Army((int)(((((this.population + this.workForce) / 10) + ((this.money / 10) + ((this.naturalResources + this.refinedResources) * 10)))) / 50) / 5 * this.armyMultiplier);
         
         this.recruitingArmy = null;
+
+        this.militaryConscription = false;
 
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
@@ -168,6 +173,12 @@ public class State {
     public ArrayList<Pair<String, Boolean>> getNeighboringStates() { return this.neighboringStates; }
 
     public SVGPath getPath() { return this.path; }
+
+    public void enableMilitaryConscription() { this.militaryConscription = true; }
+
+    public void disableMilitaryConscription() { this.militaryConscription = false; }
+
+    public boolean hasMilitaryConscription() { return this.militaryConscription; }
 
     public void setColor(String hexColor) {
         this.path.setFill(Paint.valueOf(hexColor));
@@ -309,6 +320,10 @@ public class State {
 
     public void incrementAttacksDone() {
         this.lastTurnAttacksDone++;
+    }
+
+    public void updateMilitaryConscription() {
+        // TODO: scrivere la funzione che gestisce la leva obbligatoria ad ogni turno
     }
 
 

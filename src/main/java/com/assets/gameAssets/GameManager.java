@@ -216,9 +216,12 @@ public class GameManager {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
 
-    private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler) {
+    private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler, boolean isOn) {
+
         ToggleSwitch toggleSwitch = ((ToggleSwitch)getElementByCssSelector(toggleSwitchSelector));
         
+        toggleSwitch.setState(isOn);
+
         toggleSwitch.setVisible(true);
 
         toggleSwitch.setAction(actionHandler);
@@ -414,7 +417,7 @@ public class GameManager {
 
         setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
         setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
-        setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler);
+        setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler, curSelectedState.hasMilitaryConscription());
 
     }
 

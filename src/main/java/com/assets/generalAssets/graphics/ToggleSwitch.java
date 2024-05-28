@@ -20,6 +20,9 @@ public class ToggleSwitch extends HBox {
 	public SimpleBooleanProperty switchOnProperty() { return switchedOn; }
 	
 
+	public void setState(boolean isOn) {
+		switchedOn.set(isOn);
+	}
 
     public boolean isOn() {
         return this.switchedOn.get();

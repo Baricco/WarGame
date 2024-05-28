@@ -339,7 +339,6 @@ public class GameManager {
         EventHandler<Event> militaryConscriptionHandler = new EventHandler<Event>() {
             @Override
             public void handle(Event event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA LEVA OBBLIGATORIA
 
                     ToggleSwitch toggleSwitch;
                     

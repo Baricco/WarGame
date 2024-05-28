@@ -226,14 +226,17 @@ public class State {
     }
 
     public void collectTax() {
+        System.out.println(this.getName() + " collects " + money + " Dystopian Dollars from taxes");
         this.addMoney(this.stageMoney);
     }
 
     public void addMoney(double money) {
+        System.out.println(this.getName() + " gains " + money + " Dystopian Dollars");
         this.money += money;
     }
 
     public void subMoney(double money) {
+        System.out.println(this.getName() + " pays " + money + " Dystopian Dollars");
         this.money -= money;
     }
 
@@ -332,6 +335,12 @@ public class State {
 
         this.decreaseReputation();
 
+    }
+
+    public void updateResources() {
+        this.collectTax();
+        this.genNewNaturalResources();
+        this.genNewRefinedResources();
     }
 
 

@@ -375,5 +375,10 @@ public class State {
 
     }
 
+    public void makeCitizenWork() {
+        this.increaseReputation();
+        
+    }
+
 
 }

@@ -60,6 +60,9 @@ public class GameManager {
     private AnchorPane recruitMenu;
 
     @FXML
+    private AnchorPane citizenWorkMenu;
+
+    @FXML
     private AnchorPane attackerDiceContainer;
 
     @FXML
@@ -278,7 +281,61 @@ public class GameManager {
         attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + (curModifier == 0 ? "0" : String.valueOf(curModifier - 1)));
     }
 
-    
+
+    @FXML
+    void doAgriculturalCampaign(ActionEvent event) {
+
+        
+
+        removeCitizenWorkMenu();
+    }
+
+    @FXML
+    void doEconomicIncentives(ActionEvent event) {
+
+
+
+        removeCitizenWorkMenu();
+    }
+
+    @FXML
+    void doIndustrializationCampaign(ActionEvent event) {
+
+
+
+        removeCitizenWorkMenu();
+    }
+
+    @FXML
+    void doInfrastractureConstruction(ActionEvent event) {
+
+
+
+        removeCitizenWorkMenu();
+    }
+
+    @FXML
+    void doInfrastractureRenovation(ActionEvent event) {
+
+
+
+        removeCitizenWorkMenu();
+    }
+
+    @FXML
+    void doTaxCut(ActionEvent event) {
+
+
+
+        removeCitizenWorkMenu();
+    }
+
+    private void removeCitizenWorkMenu() {
+
+        removeBottomMenuPane("#citizenWorkMenu");
+
+        enableButton("#sideMenuSecondButton");
+    }
 
     private void refreshRecruitMenu() {
         
@@ -325,8 +382,29 @@ public class GameManager {
         EventHandler<ActionEvent> citizenWorkHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE L'OPERA PER I CITTADINI
-                    System.out.println("Adesso Faccio un'opera per i cittadini del " + state.getName());
+                
+                System.out.println(state.getName() + " is making a Citizen Work");
+
+                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+        
+                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+                AnchorPane citizenWorkMenu;
+
+                try { 
+                    citizenWorkMenu = (AnchorPane)App.createRoot("/com/assets/fxml/citizenWorkMenu");
+                } catch (IOException e) { e.printStackTrace(); return; }
+
+                bottomMenu.getChildren().add(citizenWorkMenu);
+        
+                GameManager.curSelectedState = state;
+
+                playerMenu.setVisible(false);
+
+                citizenWorkMenu.setVisible(true);
+
+                disableButton("#sideMenuSecondButton");
+
             }
         };
 
@@ -567,16 +645,18 @@ public class GameManager {
         
         System.out.println("Attack Canceled");
 
-        attackMenu.setVisible(false);
-
-        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
-        
-        attackMenu = null;
-
-        getElementByCssSelector("#playerMenu").setVisible(true);
+        removeBottomMenuPane("#attackMenu");
 
         enableButton("#sideMenuFirstButton");
         
+    }
+
+    @FXML
+    void cancelCitizenWork(ActionEvent event) {
+        
+        System.out.println("Citizen Work Canceled");
+
+        removeCitizenWorkMenu();
     }
 
     @FXML
@@ -584,13 +664,8 @@ public class GameManager {
         
         System.out.println("Recruit Canceled");
 
-        recruitMenu.setVisible(false);
 
-        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitMenu);
-        
-        recruitMenu = null;
-
-        getElementByCssSelector("#playerMenu").setVisible(true);
+        removeBottomMenuPane("#recruitMenu");
 
         enableButton("#sideMenuThirdButton");
     }

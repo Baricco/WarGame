@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="citizenWorkMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1280.0" stylesheets="@app/../attackMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.gameAssets.GameManager">
+   <children>
+      <Button layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#cancelCitizenWork" prefWidth="70.0" text="Cancel" AnchorPane.leftAnchor="15.0" />
+      <Button layoutX="299.0" layoutY="59.0" mnemonicParsing="false" onAction="#doTaxCut" text="Tax Cut" />
+      <Button layoutX="830.0" layoutY="110.0" mnemonicParsing="false" onAction="#doIndustrializationCampaign" text="Industrialization Campaign" />
+      <Button layoutX="262.0" layoutY="109.0" mnemonicParsing="false" onAction="#doEconomicIncentives" text="Economic Incentives" />
+      <Button layoutX="529.0" layoutY="59.0" mnemonicParsing="false" onAction="#doInfrastractureRenovation" text="Infrastracture Renovation" />
+      <Button layoutX="524.0" layoutY="109.0" mnemonicParsing="false" onAction="#doInfrastractureConstruction" text="Infrastracture Construction" />
+      <Button layoutX="843.0" layoutY="59.0" mnemonicParsing="false" onAction="#doAgriculturalCampaign" text="Agricultural Campaign" />
+   </children>
+</AnchorPane>

@@ -326,7 +326,6 @@ public class GameManager {
     void doTaxCut(ActionEvent event) {
 
 
-
         removeCitizenWorkMenu();
     }
 

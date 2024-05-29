@@ -231,7 +231,39 @@ public class State {
     }
 
     public void collectTax() {
-        this.addMoney(this.stageMoney);
+        this.addMoney(this.stageMoney * ((this.reputation + 50) / 20));
+    }
+
+    public void cutTaxes() {
+        this.addMoney((this.stageMoney * ((this.reputation + 50) / 20)) / 2);
+        this.increaseReputation(7);
+    }
+
+    public void governmentIncentives() {
+        this.subMoney(Price.GOVERNMENT_INCENTIVES_PRICE * this.population);
+        this.increaseReputation(10);
+    }
+
+    public void infrastructureRenovation(int value) {
+        this.subMoney(Price.BUILDINGS_RENOVATION_PRICE * value);
+        this.increaseReputation(5);
+    }
+
+    public void infrastructureBuilding(int value) {
+        this.subMoney(Price.BUILDINGS_CONSTRUCTION_PRICE * value);
+        this.increaseReputation(7);
+    }
+
+    public void harvestImprovement() {
+        this.subMoney(Price.HARVESTING_IMPROVEMENT_TURN_PRICE);
+        this.increaseReputation(5);
+        this.workForce *= 1.2;
+    }
+
+    public void industrialImprovement() {
+        this.subMoney(Price.INDUSTRIAL_IMPROVEMENT_TURN_PRICE);
+        this.increaseReputation(5);
+        this.workForce *= 1.4;
     }
 
     public void addMoney(double money) {
@@ -279,9 +311,12 @@ public class State {
         return this.reputation;
     }
 
-    public void increaseReputation() {
-        if(this.reputation < MAX_REPUTATION) {
-            this.reputation++;
+    public void increaseReputation(int value) {
+        if(this.reputation + value < MAX_REPUTATION) {
+            this.reputation += value;
+        }
+        else {
+            this.reputation = 50;
         }
     }
 
@@ -373,11 +408,6 @@ public class State {
 
         if (this.fortificationRemainingTurns <= 0) this.fortify();
 
-    }
-
-    public void makeCitizenWork() {
-        this.increaseReputation();
-        
     }
 
 

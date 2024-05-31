@@ -285,7 +285,7 @@ public class GameManager {
     @FXML
     void doAgriculturalCampaign(ActionEvent event) {
 
-        
+        curSelectedState.harvestImprovement();
 
         removeCitizenWorkMenu();
     }
@@ -293,7 +293,7 @@ public class GameManager {
     @FXML
     void doEconomicIncentives(ActionEvent event) {
 
-
+        curSelectedState.governmentIncentives();
 
         removeCitizenWorkMenu();
     }
@@ -301,7 +301,7 @@ public class GameManager {
     @FXML
     void doIndustrializationCampaign(ActionEvent event) {
 
-
+        curSelectedState.industrialImprovement();
 
         removeCitizenWorkMenu();
     }
@@ -309,7 +309,11 @@ public class GameManager {
     @FXML
     void doInfrastractureConstruction(ActionEvent event) {
 
+        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
 
+        int infrastractureNumber = 0;
+
+        curSelectedState.infrastructureBuilding(infrastractureNumber);
 
         removeCitizenWorkMenu();
     }
@@ -317,7 +321,11 @@ public class GameManager {
     @FXML
     void doInfrastractureRenovation(ActionEvent event) {
 
+        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
 
+        int infrastractureNumber = 0;
+
+        curSelectedState.infrastructureRenovation(infrastractureNumber);
 
         removeCitizenWorkMenu();
     }
@@ -325,6 +333,9 @@ public class GameManager {
     @FXML
     void doTaxCut(ActionEvent event) {
 
+        // TODO: A questo punto potrebbe aver senso mettere uno Slider per indicare quanto si vuole tagliare (da 0% a 100%)
+
+        curSelectedState.cutTaxes();
 
         removeCitizenWorkMenu();
     }

@@ -40,11 +40,12 @@ public class State {
     
     private SVGPath path;
 
+    private double taxMultiplier;
     private double armyMultiplier;
     private int population;
     private int lastTurnAttacksDone; 
 
-    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int fortificationRemainingTurns, int workForce, int stageArmy, boolean militaryConscription, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
+    public State(String name, String Id, double money, double stageMoney, double naturalResources, double stageNaturalResources, double refinedResources, double stageRefinedResources, double armyMultiplier, int reputation, int population, int level, Army army, Pair<Army, Pair<Integer, Integer>> recruitingArmy, int fortificationRemainingTurns, int workForce, int stageArmy, double taxMultiplier, boolean militaryConscription, SVGPath path, ArrayList<City> cities, ArrayList<Pair<String, Boolean>> neighboringStates) {
         this.name = name;
         this.Id = Id;
         this.money = money;
@@ -57,6 +58,7 @@ public class State {
         this.population = population;
         this.lastTurnAttacksDone = 0;
         this.armyMultiplier = armyMultiplier;
+        this.taxMultiplier = taxMultiplier;
         this.militaryConscription = militaryConscription;
         this.path = path;
         this.army = army;
@@ -81,6 +83,7 @@ public class State {
         this.population = population;
         this.lastTurnAttacksDone = 0;
         this.armyMultiplier = 1;
+        this.taxMultiplier = 1;
         this.militaryConscription = false;
         this.path = null;
         this.army = army;
@@ -126,6 +129,8 @@ public class State {
         this.fortificationRemainingTurns = 0;
 
         this.militaryConscription = false;
+
+        this.taxMultiplier = 1;
 
         this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
 
@@ -210,6 +215,10 @@ public class State {
 
     }
 
+    public double getTaxMultiplier() {
+        return this.taxMultiplier;
+    }
+
     public String getId() {
         return this.Id;
     }
@@ -231,11 +240,16 @@ public class State {
     }
 
     public void collectTax() {
-        this.addMoney(this.stageMoney * ((this.reputation + 50) / 20));
+        this.addMoney((this.stageMoney * ((this.reputation + 50) / 20)) * this.taxMultiplier);
+    }
+
+    public void removeTaxCut() {
+        this.taxMultiplier = 1;
+        // TODO: Eventualmente si può fare che quando si toglie il taglio alle tasse, la reputazione scende di nuovo
     }
 
     public void cutTaxes() {
-        this.addMoney((this.stageMoney * ((this.reputation + 50) / 20)) / 2);
+        this.taxMultiplier = 0.5;
         this.increaseReputation(7);
     }
 
@@ -246,11 +260,16 @@ public class State {
 
     public void infrastructureRenovation(int value) {
         this.subMoney(Price.BUILDINGS_RENOVATION_PRICE * value);
+
+        // TODO: Io Modificherei questa cosa perchè non ha senso che la reputazione non aumenti all'aumentare di Value
+
         this.increaseReputation(5);
     }
 
     public void infrastructureBuilding(int value) {
         this.subMoney(Price.BUILDINGS_CONSTRUCTION_PRICE * value);
+
+        // TODO: Io Modificherei questa cosa perchè non ha senso che la reputazione non aumenti all'aumentare di Value
         this.increaseReputation(7);
     }
 

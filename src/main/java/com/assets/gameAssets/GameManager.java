@@ -58,7 +58,7 @@ public class GameManager {
 
     @FXML
     private AnchorPane recruitMenu;
-
+    
     @FXML
     private AnchorPane citizenWorkMenu;
 
@@ -219,12 +219,9 @@ public class GameManager {
         ((Label)getElementByCssSelector(labelSelector)).setText(content);
     }
 
-    private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler, boolean isOn) {
-
+    private void setToggleSwitch(String toggleSwitchSelector, EventHandler<Event> actionHandler) {
         ToggleSwitch toggleSwitch = ((ToggleSwitch)getElementByCssSelector(toggleSwitchSelector));
         
-        toggleSwitch.setState(isOn);
-
         toggleSwitch.setVisible(true);
 
         toggleSwitch.setAction(actionHandler);
@@ -281,71 +278,7 @@ public class GameManager {
         attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + (curModifier == 0 ? "0" : String.valueOf(curModifier - 1)));
     }
 
-
-    @FXML
-    void doAgriculturalCampaign(ActionEvent event) {
-
-        curSelectedState.harvestImprovement();
-
-        removeCitizenWorkMenu();
-    }
-
-    @FXML
-    void doEconomicIncentives(ActionEvent event) {
-
-        curSelectedState.governmentIncentives();
-
-        removeCitizenWorkMenu();
-    }
-
-    @FXML
-    void doIndustrializationCampaign(ActionEvent event) {
-
-        curSelectedState.industrialImprovement();
-
-        removeCitizenWorkMenu();
-    }
-
-    @FXML
-    void doInfrastractureConstruction(ActionEvent event) {
-
-        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
-
-        int infrastractureNumber = 0;
-
-        curSelectedState.infrastructureBuilding(infrastractureNumber);
-
-        removeCitizenWorkMenu();
-    }
-
-    @FXML
-    void doInfrastractureRenovation(ActionEvent event) {
-
-        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
-
-        int infrastractureNumber = 0;
-
-        curSelectedState.infrastructureRenovation(infrastractureNumber);
-
-        removeCitizenWorkMenu();
-    }
-
-    @FXML
-    void doTaxCut(ActionEvent event) {
-
-        // TODO: A questo punto potrebbe aver senso mettere uno Slider per indicare quanto si vuole tagliare (da 0% a 100%)
-
-        curSelectedState.cutTaxes();
-
-        removeCitizenWorkMenu();
-    }
-
-    private void removeCitizenWorkMenu() {
-
-        removeBottomMenuPane("#citizenWorkMenu");
-
-        enableButton("#sideMenuSecondButton");
-    }
+    
 
     private void refreshRecruitMenu() {
         
@@ -392,35 +325,68 @@ public class GameManager {
         EventHandler<ActionEvent> citizenWorkHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                
-                System.out.println(state.getName() + " is making a Citizen Work");
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE L'OPERA PER I CITTADINI
+                    System.out.println("Adesso Faccio un'opera per i cittadini del " + state.getName());
+            }
+        };
 
-                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
-        
-                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+        EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
 
-                AnchorPane citizenWorkMenu;
+                    Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+    
+                    StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+    
+                    AnchorPane recruitMenu;
+    
+                    try { 
+                        recruitMenu = (AnchorPane)App.createRoot("/com/assets/fxml/recruitMenu");
+                    } catch (IOException e) { e.printStackTrace(); return; }
+    
+    
+                    ObservableList<Node> armySelectors = ((AnchorPane)recruitMenu.lookup("#ArmySelectorContainer")).getChildren();
+            
+                    for (Node armySelector : armySelectors) {                    
+    
+                        Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
+                       
+                        curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                            public void changed(ObservableValue<? extends Number> ov,
+                                Number old_val, Number new_val) {
+                                    App.gameManager.refreshRecruitMenu();
+                                }
+                        });
+                    }
+    
+    
+    
+                    bottomMenu.getChildren().add(recruitMenu);
+    
+                    GameManager.curSelectedState = state;
+    
+                    refreshRecruitMenu();
+    
+                    playerMenu.setVisible(false);
+    
+                    recruitMenu.setVisible(true);
 
-                try { 
-                    citizenWorkMenu = (AnchorPane)App.createRoot("/com/assets/fxml/citizenWorkMenu");
-                } catch (IOException e) { e.printStackTrace(); return; }
+                    disableButton("#sideMenuThirdButton");
+            }
+        };
 
-                bottomMenu.getChildren().add(citizenWorkMenu);
-        
-                GameManager.curSelectedState = state;
-
-                playerMenu.setVisible(false);
-
-                citizenWorkMenu.setVisible(true);
-
-                disableButton("#sideMenuSecondButton");
-
+        EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA FORTIFICAZIONE DELLO STATO
+                    System.out.println("Adesso Fortifico " + state.getName());
             }
         };
 
         EventHandler<Event> militaryConscriptionHandler = new EventHandler<Event>() {
             @Override
             public void handle(Event event){
+                    // TODO: INSERIRE FUNZIONE CHE GESTISCE LA LEVA OBBLIGATORIA
 
                     ToggleSwitch toggleSwitch;
                     
@@ -429,100 +395,21 @@ public class GameManager {
                     catch(Exception e) { e.printStackTrace(); return; }
 
                     if (toggleSwitch.isOn()) {
-                        System.out.println(state.getName() + " Enabled Military Conscription");
-                        state.enableMilitaryConscription();
+                        System.out.println("Adesso c'è la Leva Obbligatoria in " + state.getName());
                     }
                     else {
-                        System.out.println(state.getName() + " Disabled Military Conscription");
-                        state.disableMilitaryConscription();
+                        System.out.println("Adesso non c'è la Leva Obbligatoria in " + state.getName());
                     }
-                    refreshSideMenu(state);
             }
         };
 
-        String fortifyButtonSelector = "";
-
-        if (!state.hasMilitaryConscription()) {
-
-            EventHandler<ActionEvent> manualRecruitHandler = new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-
-                        Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
         
-                        StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
-        
-                        AnchorPane recruitMenu;
-        
-                        try { 
-                            recruitMenu = (AnchorPane)App.createRoot("/com/assets/fxml/recruitMenu");
-                        } catch (IOException e) { e.printStackTrace(); return; }
-        
-        
-                        ObservableList<Node> armySelectors = ((AnchorPane)recruitMenu.lookup("#ArmySelectorContainer")).getChildren();
-                
-                        for (Node armySelector : armySelectors) {                    
-        
-                            Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
-                        
-                            curSlider.valueProperty().addListener(new ChangeListener<Number>() {
-                                public void changed(ObservableValue<? extends Number> ov,
-                                    Number old_val, Number new_val) {
-                                        App.gameManager.refreshRecruitMenu();
-                                    }
-                            });
-                        }
-        
-        
-        
-                        bottomMenu.getChildren().add(recruitMenu);
-        
-                        GameManager.curSelectedState = state;
-        
-                        refreshRecruitMenu();
-        
-                        playerMenu.setVisible(false);
-        
-                        recruitMenu.setVisible(true);
-
-                        disableButton("#sideMenuThirdButton");
-                }
-            };
-            setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
-            fortifyButtonSelector = "#sideMenuFourthButton";
-        }
-        else {
-            fortifyButtonSelector = "#sideMenuThirdButton";
-            hideButton("#sideMenuFourthButton");
-        }
-
-        if (!state.isFortifiying()) {
-
-            EventHandler<ActionEvent> fortifyHandler = new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event){
-
-                    if (state.isFortifiying()) return;
-
-                    System.out.println(state.getName() + " is going to be fortified in 2 turns");
-
-                    state.startFortification();
-
-                    refreshSideMenu(state);
-
-                }
-            };
-
-            setButton(fortifyButtonSelector, "Fortify", fortifyHandler);
-
-        }
-        else {
-            hideButton(fortifyButtonSelector);
-        }
 
         setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
         setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
-        setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler, curSelectedState.hasMilitaryConscription());
+        setButton("#sideMenuThirdButton", "Recruit", manualRecruitHandler);
+        setButton("#sideMenuFourthButton", "Fortify", fortifyHandler);
+        setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler);
 
     }
 
@@ -655,18 +542,16 @@ public class GameManager {
         
         System.out.println("Attack Canceled");
 
-        removeBottomMenuPane("#attackMenu");
+        attackMenu.setVisible(false);
+
+        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
+        
+        attackMenu = null;
+
+        getElementByCssSelector("#playerMenu").setVisible(true);
 
         enableButton("#sideMenuFirstButton");
         
-    }
-
-    @FXML
-    void cancelCitizenWork(ActionEvent event) {
-        
-        System.out.println("Citizen Work Canceled");
-
-        removeCitizenWorkMenu();
     }
 
     @FXML
@@ -674,8 +559,13 @@ public class GameManager {
         
         System.out.println("Recruit Canceled");
 
+        recruitMenu.setVisible(false);
 
-        removeBottomMenuPane("#recruitMenu");
+        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitMenu);
+        
+        recruitMenu = null;
+
+        getElementByCssSelector("#playerMenu").setVisible(true);
 
         enableButton("#sideMenuThirdButton");
     }
@@ -694,18 +584,23 @@ public class GameManager {
 
     @FXML
     void recruit(ActionEvent event) {
+        // TODO: Scrivere la funzione che effettua il reclutamento
 
         Army recruitArmy = calcArmyFromSliders();
 
         Label attackModifierLabel = ((Label)App.gameManager.scene.lookup("#attackModifierLabel"));
 
-        removeBottomMenuPane("#recruitMenu");
+        ((AnchorPane)getElementByCssSelector("#recruitMenu")).setVisible(false);
+
+        ((StackPane)recruitMenu.getParent()).getChildren().remove(recruitArmy);
+        
+        recruitMenu = null;
+    
+        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
 
         curSelectedState.recruitArmy(recruitArmy, Integer.parseInt(attackModifierLabel.getText()));  
 
         System.out.println(curSelectedState.getName() + " Recruited some Soldiers, new Army will be available in " + attackModifierLabel.getText() + " Turns");
-
-        enableButton("#sideMenuThirdButton");
 
     }
 
@@ -746,28 +641,18 @@ public class GameManager {
 
         addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
 
-        removeBottomMenuPane("#attackMenu");
-    
-        enableButton("#sideMenuFirstButton");
+        ((AnchorPane)getElementByCssSelector("#attackMenu")).setVisible(false);
 
-        refreshPlayerMenu();
-        refreshSideMenu();
+        ((StackPane)attackMenu.getParent()).getChildren().remove(attackMenu);
+        
+        attackMenu = null;
+    
+        ((Pane)getElementByCssSelector("#playerMenu")).setVisible(true);
+
+        enableButton("#sideMenuFirstButton");
 
         refreshTooltips();
 
-    }
-
-    private void removeBottomMenuPane(String paneSelector) {
-
-        Pane pane = ((Pane)getElementByCssSelector(paneSelector));
-
-        pane.setVisible(false);
-
-        ((StackPane)pane.getParent()).getChildren().remove(pane);
-        
-        pane = null;
-        
-        showPlayerMenu();
     }
 
     private Army calcArmyFromSliders() {
@@ -948,15 +833,14 @@ public class GameManager {
         // TODO: Ovviamente l'URL che ho messo non è valido, ovviamente non so cosa metterci, ovviamente odio JavaFX
 
         int i = 0;
-        int faceNumber = 0;
+        int faceNumber = 1;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            // le immagini devono trovarsi in un percorso uguale a quello di gamemanager da java in poi e poi vanno prese con getClass.getResource(nomeFile)
-
-            ((ImageView)curImageView).setImage(new Image("src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_" + faceNumber + ".png"));
+            ((ImageView)curImageView).setImage(new Image(getClass().getResource(dirNames[i] + "_" + faceNumber + ".png"));
             faceNumber++;
         }
         i++;
+        faceNumber = 1;
         
     }
 
@@ -976,8 +860,6 @@ public class GameManager {
         for (Player p : App.gameManager.players) if (p.hasOccupied(state)) return p;
         return null;
     }
-
-    public void refreshSideMenu() { refreshSideMenu(curSelectedState); }
 
     private void refreshSideMenu(State selectedState) {
 
@@ -1002,14 +884,23 @@ public class GameManager {
             showEnemySideMenu(selectedState);
             
         }
-    }
-
-    public void refreshPlayerMenu() {
-        refreshPlayerMenuByState(this.getHumanPlayer().getTotalState());
-    }
-
-    public void refreshPlayerMenuByState(State state) {
         
+        
+    }
+
+
+    private void refreshPlayerMenu() {
+        refreshPlayerMenuByState(this.getHumanPlayer().getTotalState().getId());
+    }
+
+
+
+    public void refreshPlayerMenuByState(String stateId) {
+
+        if (stateId.equals("ATL") && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
+
+        State state = this.states.get(stateId);
+
         setLabelContent("#playerStateNameLabel", state.getName());
         setLabelContent("#playerStateLvlLabel", String.valueOf(getHumanPlayer().getLevel()));
         setTrapezoidXScale("#playerMenu", state.getName().length() * 0.12);
@@ -1020,15 +911,7 @@ public class GameManager {
         setLabelContent("#playerStateWorkForceLabel", String.valueOf(formatHighNumber(state.getWorkForce())));
 
         showPlayerMenu();
-
         handleHover(state.getPath());
-    }
-
-    public void refreshPlayerMenuByState(String stateId) {
-
-        if (stateId.equals("ATL") && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
-
-        refreshPlayerMenuByState(this.states.get(stateId));
 
     }
 
@@ -1055,8 +938,6 @@ public class GameManager {
     }
 
     public void handleHover(SVGPath curPath) {
-
-        if (curPath == null) return;
 
         if (App.gameManager.getState("ATL").getPath().equals(curPath) && !getHumanPlayer().hasOccupied(App.gameManager.getState("ATL"))) return;
 
@@ -1115,16 +996,16 @@ public class GameManager {
 
     public void manageStateClicked(String id) {
                 
-        curSelectedState = this.states.get(id);
+        State curState = this.states.get(id);
 
         if (!this.getHumanPlayer().hasOriginalState()) {
             
-            setPlayerOriginalState(curSelectedState);
+            setPlayerOriginalState(curState);
             
             return;
         }
         
-       refreshSideMenu(curSelectedState);
+       refreshSideMenu(curState);
 
     }
     
@@ -1171,33 +1052,8 @@ public class GameManager {
 
     }
 
-    private void disableAllButtons() {
-        disableButton("#sideMenuFirstButton");
-        disableButton("#sideMenuSecondButton");
-        disableButton("#sideMenuThirdButton");
-        disableButton("#sideMenuFourthButton");
-    }
-
-    private void enableAllButtons() {
-        enableButton("#sideMenuFirstButton");
-        enableButton("#sideMenuSecondButton");
-        enableButton("#sideMenuThirdButton");
-        enableButton("#sideMenuFourthButton");
-    }
-
-    private void disableAllClicks() {
-        disableAllButtons();
-        for (State s : this.states.values()) s.getPath().setMouseTransparent(true);
-    }
-
-    private void enableAllClicks() {
-        enableAllButtons();
-        for (State s : this.states.values()) s.getPath().setMouseTransparent(false);
-    }
-
     private void manageHumanTurn() {
         showSideMenu();
-        enableAllClicks();
     }
 
     private void playTurn() {
@@ -1209,10 +1065,9 @@ public class GameManager {
         if (this.selectedPlayerIndex == 0) { 
             App.gameManager.calendar.update();
             manageHumanTurn();
-            return;   
+            return;
+            
         }
-
-        disableAllClicks();
 
         hideSideMenu();
 
@@ -1227,10 +1082,6 @@ public class GameManager {
     }
 
     public void passTurn() {
-
-        try { removeBottomMenuPane("#attackMenu"); } catch(Exception e) {}
-        try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
-
         
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 

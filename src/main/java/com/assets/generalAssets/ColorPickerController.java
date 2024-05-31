@@ -35,7 +35,7 @@ public class ColorPickerController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        this.colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider);
+        colorPickerManager = new ColorPickerManager(hexColorSelector, hexColorTextField, hueSlider);
 
         colorPickerManager.setGradient();
 

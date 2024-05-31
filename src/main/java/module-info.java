@@ -4,7 +4,7 @@ module com.assets {
     requires org.jsoup;
     requires java.desktop;
     requires java.logging;
-    requires javafx.graphics;
+    requires transitive javafx.graphics;
     requires javafx.base;
 
     opens com.assets.gameAssets to javafx.fxml;

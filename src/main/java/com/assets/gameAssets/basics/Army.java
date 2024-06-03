@@ -1,5 +1,9 @@
 package com.assets.gameAssets.basics;
 
+import java.util.ArrayList;
+
+import javafx.scene.image.Image;
+
 public class Army {
 
     private double infantry;
@@ -115,22 +119,34 @@ public class Army {
 
     }
 
-    public int attack(ARMY_TYPE type) {
+    public int attack(ARMY_TYPE type, ArrayList<Image> attackerDices) {
         if(type == ARMY_TYPE.EMPTY) {
             return 0;
         }
         dice = getDiceByArmyType(type);
 
-        return dice.throwDice() + this.attackModifierValue;
+        int attackValue = dice.throwDice();
+        attackerDices.add(dice.getIcon("D" + dice.getFaceNumber() + "_" + attackValue));
+
+        attackValue += this.attackModifierValue;
+
+        
+        return attackValue;
     }   
 
-    public int defend(ARMY_TYPE type) {
+    public int defend(ARMY_TYPE type, ArrayList<Image> defenderDices) {
         if(type == ARMY_TYPE.EMPTY) {
             return 0;
         }
         dice = getDiceByArmyType(type);
 
-        return dice.throwDice() + this.defenseModifierValue;
+        int defenceValue = dice.throwDice();
+        
+        defenderDices.add(dice.getIcon("D" + dice.getFaceNumber() + "_" + defenceValue));
+
+        defenceValue += this.defenseModifierValue;
+
+        return defenceValue;
     }
 
     public double getTroupsByType(ARMY_TYPE type) {

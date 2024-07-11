@@ -951,8 +951,6 @@ public class GameManager {
         int faceNumber = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            // le immagini devono trovarsi in un percorso uguale a quello di gamemanager da java in poi e poi vanno prese con getClass.getResource(nomeFile)
-
             ((ImageView)curImageView).setImage(new Image("src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_" + faceNumber + ".png"));
             faceNumber++;
         }

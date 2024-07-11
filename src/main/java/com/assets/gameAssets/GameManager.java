@@ -657,7 +657,7 @@ public class GameManager {
 
         removeBottomMenuPane("#attackMenu");
 
-        enableButton("#sideMenuFirstButton");
+        enableAllButtons();
         
     }
 
@@ -895,6 +895,8 @@ public class GameManager {
     }
 
     private void refreshAttackMenu() {
+
+        disableAllButtons();
 
         ObservableList<Node> armySelectors = ((AnchorPane)App.gameManager.scene.lookup("#ArmySelectorContainer")).getChildren();
 

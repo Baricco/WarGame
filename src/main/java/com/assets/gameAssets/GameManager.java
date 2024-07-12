@@ -114,6 +114,8 @@ public class GameManager {
     @FXML
     private Button incrementButton;
 
+    private static HashMap<String, Image> diceIcons;
+
     private HashMap<String, State> states;
     private String fileName;
     private Scene scene;
@@ -134,8 +136,45 @@ public class GameManager {
         this.scene = scene;
         this.calendar = new Calendar((Label)scene.lookup("#calendarLabel"));
         this.players = new ArrayList<>();
+        diceIcons = new HashMap<>();
         //this.mapIconManager = new MapIconManager((Pane)scene.lookup("#mapContainer"));
         this.selectedPlayerIndex = 0;
+        loadDiceIcons();
+    }
+
+    private void loadDiceIcons() {
+        
+        // loading D6 icons
+        for (int i = 1; i <= 6; i++) {
+            System.out.println("Loading D6_" + i);
+            diceIcons.put("D6_" + i, new Image(getClass().getResource("d6_" + i + ".png").toString()));
+        }
+
+        // loading D8 icons
+        for (int i = 1; i <= 8; i++) {
+            System.out.println("Loading D8_" + i);
+            diceIcons.put("D8_" + i, new Image(getClass().getResource("d8_" + i + ".png").toString()));
+        }
+
+        // loading D10 icons
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Loading D10_" + i);
+            diceIcons.put("D10_" + i, new Image(getClass().getResource("d10_" + i + ".png").toString()));
+        }
+
+        // loading D12 icons
+        for (int i = 1; i <= 12; i++) {
+            System.out.println("Loading D12_" + i);
+            diceIcons.put("D12_" + i, new Image(getClass().getResource("d12_" + i + ".png").toString()));
+        }
+
+        // loading D20 icons
+        for (int i = 1; i <= 20; i++) {
+            System.out.println("Loading D20_" + i);
+            diceIcons.put("D20_" + i, new Image(getClass().getResource("d20_" + i + ".png").toString()));
+        }
+        
+    
     }
 
     public void addPlayer(Player newPlayer) throws Exception {
@@ -1096,15 +1135,13 @@ public class GameManager {
 
         diceContainer.setStyle("-fx-background-color: " + diceContainerHexColor + ";");
 
-        String dirNames[] = { "d6", "d8", "d10", "d12", "d20" };
-
-        // TODO: Ovviamente l'URL che ho messo non è valido, ovviamente non so cosa metterci, ovviamente odio JavaFX
+        String diceNames[] = { "D6", "D8", "D10", "D12", "D20" };
 
         int i = 0;
         int faceNumber = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(new Image("src/main/resources/com/icons/dices/" + dirNames[i] + "/" +  dirNames[i] + "_" + faceNumber + ".png"));
+            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[i] + "_" + i));
             faceNumber++;
         }
         i++;

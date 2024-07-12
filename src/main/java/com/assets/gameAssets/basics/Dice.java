@@ -9,10 +9,10 @@ public class Dice {
     private RandomGenerator randomGenerator;
 
 
+
     private Dice(int faceNumber) {
         this.faceNumber = faceNumber;
         this.randomGenerator = RandomGenerator.getDefault();
-
     }
 
     public static Dice getD6() { return new Dice(6); }

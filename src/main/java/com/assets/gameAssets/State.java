@@ -248,9 +248,9 @@ public class State {
         // TODO: Eventualmente si può fare che quando si toglie il taglio alle tasse, la reputazione scende di nuovo
     }
 
-    public void cutTaxes() {
-        this.taxMultiplier = 0.5;
-        this.increaseReputation(7);
+    public void cutTaxes(double percentage) {
+        this.taxMultiplier = percentage;
+        this.increaseReputation((int)Math.round(percentage / 10));
     }
 
     public void governmentIncentives() {
@@ -260,17 +260,12 @@ public class State {
 
     public void infrastructureRenovation(int value) {
         this.subMoney(Price.BUILDINGS_RENOVATION_PRICE * value);
-
-        // TODO: Io Modificherei questa cosa perchè non ha senso che la reputazione non aumenti all'aumentare di Value
-
-        this.increaseReputation(5);
+        this.increaseReputation(Math.round(value / 100));
     }
 
     public void infrastructureBuilding(int value) {
         this.subMoney(Price.BUILDINGS_CONSTRUCTION_PRICE * value);
-
-        // TODO: Io Modificherei questa cosa perchè non ha senso che la reputazione non aumenti all'aumentare di Value
-        this.increaseReputation(7);
+        this.increaseReputation(Math.round(value / 50));
     }
 
     public void harvestImprovement() {
@@ -399,6 +394,7 @@ public class State {
         this.collectTax();
         this.genNewNaturalResources();
         this.genNewRefinedResources();
+        
     }
 
     public boolean isFortifiying() {

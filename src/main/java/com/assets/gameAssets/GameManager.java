@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.random.RandomGenerator;
 
 import com.assets.gameAssets.basics.Army;
@@ -79,7 +80,40 @@ public class GameManager {
 
     @FXML
     private Label attackModifierLabel;
+
+    @FXML
+    private Slider citizenWorkSlider;
     
+    @FXML
+    private AnchorPane CitizenWorkControlPane;
+
+    @FXML
+    private Button citizenWorkConfirmButton;
+
+    @FXML
+    private Label citizenWorkLabel;
+
+    @FXML
+    private Label citizenWorkNumberLabel;
+
+    @FXML
+    private Label citizenWorkTickValue;
+
+    @FXML
+    private Label citizenWorkMaxValue;
+    
+    @FXML
+    private Label citizenWorkMinValue;
+
+    @FXML
+    private AnchorPane citizenWorkSliderMenu;
+
+    @FXML
+    private Button decrementButton;
+
+    @FXML
+    private Button incrementButton;
+
     private HashMap<String, State> states;
     private String fileName;
     private Scene scene;
@@ -281,6 +315,59 @@ public class GameManager {
         attachTooltip(clickedBtn.getParent(), "Weeks of Training: " + curModifier + "\nAttack Modifier: " + (curModifier == 0 ? "0" : String.valueOf(curModifier - 1)));
     }
 
+    @FXML
+    void cancelCitizenSliderWork(ActionEvent event) {
+        
+        removeBottomMenuPane("#citizenWorkSliderMenu");
+
+        Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+        
+        StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+        AnchorPane citizenWorkMenu;
+
+        try { 
+            citizenWorkMenu = (AnchorPane)App.createRoot("/com/assets/fxml/citizenWorkMenu");
+        } catch (IOException e) { e.printStackTrace(); return; }
+
+        bottomMenu.getChildren().add(citizenWorkMenu);
+
+        playerMenu.setVisible(false);
+
+        citizenWorkMenu.setVisible(true);
+
+        disableButton("#sideMenuSecondButton");
+    }
+
+    @FXML
+    void refreshCitizenWorkPanel(ActionEvent event) {
+        
+        Button clickedBtn = ((Button)event.getSource());
+
+        int maxValue, minValue, tickValue;
+
+        maxValue = Integer.parseInt(((Label)((AnchorPane)clickedBtn.getParent().getParent()).lookup("#citizenWorkMaxValue")).getText());
+        minValue = Integer.parseInt(((Label)((AnchorPane)clickedBtn.getParent().getParent()).lookup("#citizenWorkMinValue")).getText());
+        tickValue = Integer.parseInt(((Label)((AnchorPane)clickedBtn.getParent().getParent()).lookup("#citizenWorkTickValue")).getText());
+
+        
+        Label modifierLabel = ((Label)((AnchorPane)clickedBtn.getParent()).lookup("Label"));
+
+        int curModifier = Integer.parseInt(modifierLabel.getText());
+
+        if (clickedBtn.getId().equals("incrementButton")) {
+            curModifier += tickValue;
+            if (curModifier >= maxValue) curModifier = maxValue;
+        }
+        else if (clickedBtn.getId().equals("decrementButton")) {
+            curModifier -= tickValue;
+            if (curModifier <= minValue) curModifier = minValue;
+        }
+
+        modifierLabel.setText(String.valueOf(curModifier));
+    
+    }
+
 
     @FXML
     void doAgriculturalCampaign(ActionEvent event) {
@@ -309,35 +396,99 @@ public class GameManager {
     @FXML
     void doInfrastractureConstruction(ActionEvent event) {
 
-        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
+        showCitizenWorkSliderMenu(
+            "Set how many infranstructures you want to construct",
+            curSelectedState.getWorkForce() / 2000000,
+            10,
+            50,
+            new EventHandler<MouseEvent>() {
 
-        int infrastractureNumber = 0;
+                @Override
+                public void handle(MouseEvent event) {
 
-        curSelectedState.infrastructureBuilding(infrastractureNumber);
+                    curSelectedState.infrastructureBuilding(Integer.parseInt(((Label)getElementByCssSelector("#CitizenWorkControlPane").lookup("Label")).getText()));
+            
+                    removeBottomMenuPane("#citizenWorkSliderMenu");
+                }
+                
+            }
+        );
 
-        removeCitizenWorkMenu();
     }
 
     @FXML
     void doInfrastractureRenovation(ActionEvent event) {
 
-        // TODO: Bisogna aggiungere la parte di codice che prende il numero di edifici da costruire dallo Slider
+        showCitizenWorkSliderMenu(
+            "Set how many infranstructures you want to renovate",
+            curSelectedState.getWorkForce() / 1000000,
+            10,
+            50,
+            new EventHandler<MouseEvent>() {
 
-        int infrastractureNumber = 0;
+                @Override
+                public void handle(MouseEvent event) {
 
-        curSelectedState.infrastructureRenovation(infrastractureNumber);
+                    curSelectedState.infrastructureRenovation((int)((Slider)getElementByCssSelector("citizenWorkSlider")).getValue());
+            
+                    removeBottomMenuPane("#citizenWorkSliderMenu");
+                }
+                
+            }
+        );
 
-        removeCitizenWorkMenu();
     }
 
     @FXML
     void doTaxCut(ActionEvent event) {
 
-        // TODO: A questo punto potrebbe aver senso mettere uno Slider per indicare quanto si vuole tagliare (da 0% a 100%)
+        showCitizenWorkSliderMenu(
+            "Set how much (percentage) taxes you want to cut",
+            100,
+            5,
+            5,
+            new EventHandler<MouseEvent>() {
 
-        curSelectedState.cutTaxes();
+                @Override
+                public void handle(MouseEvent event) {
 
+                    curSelectedState.cutTaxes(((Slider)getElementByCssSelector("citizenWorkSlider")).getValue() / 100);
+            
+                    removeBottomMenuPane("#citizenWorkSliderMenu");
+                }
+                
+            }
+        );
+    }
+
+    private void showCitizenWorkSliderMenu(String labelText, int maxValue, int minValue, int tick, EventHandler<MouseEvent> functionHandler) {
+                
         removeCitizenWorkMenu();
+
+        disableAllButtons();
+
+        StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+        AnchorPane citizenWorkSliderMenu;
+
+        try { 
+            citizenWorkSliderMenu = (AnchorPane)App.createRoot("/com/assets/fxml/citizenWorkSliderMenu");
+        } catch (IOException e) { e.printStackTrace(); return; }
+
+        bottomMenu.getChildren().add(citizenWorkSliderMenu);
+
+        ((Label)getElementByCssSelector("#citizenWorkLabel")).setText(labelText);
+
+        ((Label)getElementByCssSelector("#citizenWorkTickValue")).setText(String.valueOf(tick));
+        
+        ((Label)getElementByCssSelector("#citizenWorkMaxValue")).setText(String.valueOf(maxValue));
+        
+        ((Label)getElementByCssSelector("#citizenWorkMinValue")).setText(String.valueOf(minValue));
+
+        ((Label)getElementByCssSelector("#CitizenWorkControlPane").lookup("Label")).setText(String.valueOf(minValue));
+
+        ((Button)getElementByCssSelector("#citizenWorkConfirmButton")).setOnMouseClicked(functionHandler);
+
     }
 
     private void removeCitizenWorkMenu() {

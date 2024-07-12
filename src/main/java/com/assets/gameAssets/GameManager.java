@@ -1138,10 +1138,10 @@ public class GameManager {
         String diceNames[] = { "D6", "D8", "D10", "D12", "D20" };
 
         int i = 0;
-        int faceNumber = 0;
+        int faceNumber = 1;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[i] + "_" + i));
+            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[i] + "_" + faceNumber));
             faceNumber++;
         }
         i++;

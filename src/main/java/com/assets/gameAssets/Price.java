@@ -11,11 +11,11 @@ public class Price {
     public static final int RECRUIT_PRICE_PER_DICE = 40000;
     
     // Citizen Work Prices
-    public static final int GOVERNMENT_INCENTIVES_PRICE = -1;
-    public static final int BUILDINGS_RENOVATION_PRICE = -1;
-    public static final int BUILDINGS_CONSTRUCTION_PRICE = -1;
-    public static final int HARVESTING_IMPROVEMENT_TURN_PRICE = -1;
-    public static final int INDUSTRIAL_IMPROVEMENT_TURN_PRICE = -1;
+    public static final int GOVERNMENT_INCENTIVES_PRICE = 1500;
+    public static final int BUILDINGS_RENOVATION_PRICE = 300000;
+    public static final int BUILDINGS_CONSTRUCTION_PRICE = 750000;
+    public static final int HARVESTING_IMPROVEMENT_TURN_PRICE = 20000;
+    public static final int INDUSTRIAL_IMPROVEMENT_TURN_PRICE = 60000;
     public static final int SMALL_CITIZEN_WORK_PRICE = 300000;
     public static final int GREAT_CITIZEN_WORK_PRICE = 800000;
     

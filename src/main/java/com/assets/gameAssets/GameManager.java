@@ -125,6 +125,9 @@ public class GameManager {
     private static State curSelectedState;
     private int selectedPlayerIndex;
     public static Thread botThread = new Thread(); 
+
+    private static HashMap<ARMY_TYPE, Integer> attackerDices;
+    private static HashMap<ARMY_TYPE, Integer> defenderDices;
     
 
     public GameManager() { }
@@ -139,7 +142,26 @@ public class GameManager {
         diceIcons = new HashMap<>();
         //this.mapIconManager = new MapIconManager((Pane)scene.lookup("#mapContainer"));
         this.selectedPlayerIndex = 0;
+        attackerDices = new HashMap<>();
+        defenderDices = new HashMap<>();
         loadDiceIcons();
+        initDices();
+    }
+
+    private void initDices() {
+
+        attackerDices.put(ARMY_TYPE.INFANTRY, 1);
+        attackerDices.put(ARMY_TYPE.ARTILLERY, 1);
+        attackerDices.put(ARMY_TYPE.TANK, 1);
+        attackerDices.put(ARMY_TYPE.APACHE, 1);
+        attackerDices.put(ARMY_TYPE.CHTULHU, 1);
+
+        defenderDices.put(ARMY_TYPE.INFANTRY, 1);
+        defenderDices.put(ARMY_TYPE.ARTILLERY, 1);
+        defenderDices.put(ARMY_TYPE.TANK, 1);
+        defenderDices.put(ARMY_TYPE.APACHE, 1);
+        defenderDices.put(ARMY_TYPE.CHTULHU, 1);
+
     }
 
     private void loadDiceIcons() {
@@ -771,8 +793,15 @@ public class GameManager {
     private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
         int attackerWon = 0;
         int defenderWon = 0;
+
         for(int i = 0; i < attackingArmy.getTroupsByType(type) / Army.SOLDIERS_PER_DICE; i++) {
-            if(attackingArmy.attack(type) > defendingArmy.defend(defendingArmy.getBestArmyType())) attackerWon++; else defenderWon++;
+            int attackDiceValue = attackingArmy.attack(type);
+            int defenseDiceValue = defendingArmy.defend(defendingArmy.getBestArmyType());
+
+            if (attackDiceValue > attackerDices.get(type)) attackerDices.replace(type, attackDiceValue);
+            if (defenseDiceValue > defenderDices.get(type)) defenderDices.replace(type, defenseDiceValue);
+
+            if(attackDiceValue > defenseDiceValue) attackerWon++; else defenderWon++;
         }
         return new Pair<Integer,Integer>(attackerWon, defenderWon);
     }
@@ -1124,7 +1153,7 @@ public class GameManager {
         refreshAttackMenuDices();
     }
 
-    private void refreshDiceContainer(String diceContainerSelector) {
+    private void refreshDiceContainer(String diceContainerSelector, HashMap<ARMY_TYPE, Integer> dices) {
         
         AnchorPane diceContainer = ((AnchorPane)getElementByCssSelector(diceContainerSelector));
 
@@ -1136,15 +1165,18 @@ public class GameManager {
         diceContainer.setStyle("-fx-background-color: " + diceContainerHexColor + ";");
 
         String diceNames[] = { "D6", "D8", "D10", "D12", "D20" };
+        ARMY_TYPE armyTypes[] = { ARMY_TYPE.INFANTRY, ARMY_TYPE.ARTILLERY, ARMY_TYPE.TANK, ARMY_TYPE.APACHE, ARMY_TYPE.CHTULHU };
 
-        int i = 0;
-        int faceNumber = 1;
+
+        int iconIndex = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[i] + "_" + faceNumber));
-            faceNumber++;
+            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]))); 
+            ((ImageView)curImageView).setScaleX(0.75);
+            ((ImageView)curImageView).setScaleY(0.75);
+
+            iconIndex++;
         }
-        i++;
         
     }
 
@@ -1152,9 +1184,9 @@ public class GameManager {
         
         ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
 
-        refreshDiceContainer("#attackerDiceContainer");
+        refreshDiceContainer("#attackerDiceContainer", attackerDices);
 
-        refreshDiceContainer("#defenderDiceContainer");
+        refreshDiceContainer("#defenderDiceContainer", defenderDices);
 
     }
 

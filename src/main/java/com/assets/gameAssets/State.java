@@ -245,7 +245,6 @@ public class State {
 
     public void removeTaxCut() {
         this.taxMultiplier = 1;
-        // TODO: Eventualmente si può fare che quando si toglie il taglio alle tasse, la reputazione scende di nuovo
     }
 
     public void cutTaxes(double percentage) {

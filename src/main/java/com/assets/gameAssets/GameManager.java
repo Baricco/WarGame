@@ -797,17 +797,18 @@ public class GameManager {
     }
 
     private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
+        
         int attackerWon = 0;
         int defenderWon = 0;
-
-        initDices();
 
         for(int i = 0; i < attackingArmy.getTroupsByType(type) / Army.SOLDIERS_PER_DICE; i++) {
             int attackDiceValue = attackingArmy.attack(type);
             int defenseDiceValue = defendingArmy.defend(defendingArmy.getBestArmyType());
 
-            if (attackDiceValue > attackerDices.get(type)) attackerDices.replace(type, attackDiceValue);
-            if (defenseDiceValue > defenderDices.get(type)) defenderDices.replace(type, defenseDiceValue);
+            System.out.println("[" + type + "] - Attacker throws: " + attackDiceValue + ", Defender throws: " + defenseDiceValue);
+
+            if (attackDiceValue > attackerDices.get(type)) attackerDices.put(type, attackDiceValue);
+            if (defenseDiceValue > defenderDices.get(type)) defenderDices.put(type, defenseDiceValue);
 
             if(attackDiceValue > defenseDiceValue) attackerWon++; else defenderWon++;
         }
@@ -821,6 +822,8 @@ public class GameManager {
 
     private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
+        initDices();
+
         Army defendingArmy = defenderState.getArmy();
 
         int totalPoints = 0;
@@ -829,25 +832,32 @@ public class GameManager {
         // every Attacking State splits proportionally the cost
         payAttackCost(attackingStates, attackCost);
 
+        // INFANTRY
+        
         curPoints = attackByArmyType(ARMY_TYPE.INFANTRY, attackingArmy, defendingArmy);
         
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.INFANTRY);
 
         totalPoints += curPoints.getKey();
 
+        // ARTILLERY
+
         curPoints = attackByArmyType(ARMY_TYPE.ARTILLERY, attackingArmy, defendingArmy);
         
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.ARTILLERY);
 
-
         totalPoints += curPoints.getKey();
 
+        // TANKS        
+        
         curPoints = attackByArmyType(ARMY_TYPE.TANK, attackingArmy, defendingArmy);
         
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.TANK);
 
         totalPoints += curPoints.getKey();
 
+        // APACHES & CHTULHU
+        
         if (attackingStates.contains(App.gameManager.getState("ATL"))) {
         
             curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
@@ -858,7 +868,7 @@ public class GameManager {
 
             if (attackingStates.size() > 1) {
                 
-                curPoints = attackByArmyType(ARMY_TYPE.CHTULHU, attackingArmy, defendingArmy);
+                curPoints = attackByArmyType(ARMY_TYPE.APACHE, attackingArmy, defendingArmy);
         
                 refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
         
@@ -1091,8 +1101,6 @@ public class GameManager {
                         });
                     }
     
-    
-    
                     bottomMenu.getChildren().add(attackMenu);
     
                     GameManager.curSelectedState = state;
@@ -1195,7 +1203,7 @@ public class GameManager {
         int iconIndex = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            System.out.println("Dice Type: " + diceNames[iconIndex] + " Dice Value: " + dices.get(armyTypes[iconIndex]));
+            System.out.println(diceContainerSelector + " --> Dice Type: " + diceNames[iconIndex] + " Dice Value: " + dices.get(armyTypes[iconIndex]));
             
             setDiceImageView(((ImageView)curImageView), diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]));
 

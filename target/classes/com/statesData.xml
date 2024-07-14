@@ -2681,8 +2681,8 @@
         <StageRefinedResources>37000</StageRefinedResources>
         <Population>341100000</Population>
         <NeighboringStates>
-            <Border SeaBorder="false">CA</Border>
             <Border SeaBorder="false">MX</Border>
+            <Border SeaBorder="true">AC</Border>
             <Border SeaBorder="true">GL</Border>
             <Border SeaBorder="false">CA</Border>
             <Border SeaBorder="true">SU</Border>

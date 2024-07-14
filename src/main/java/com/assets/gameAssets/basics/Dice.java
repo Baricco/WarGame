@@ -27,7 +27,7 @@ public class Dice {
 
     public int getFaceNumber() { return this.faceNumber; }
 
-    public int throwDice() { return this.randomGenerator.nextInt(1, this.faceNumber); }
+    public int throwDice() { return this.randomGenerator.nextInt(1, this.faceNumber + 1); }
 
 
 }

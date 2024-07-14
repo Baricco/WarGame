@@ -150,6 +150,7 @@ public class GameManager {
     }
 
     private void initDices() {
+
         attackerDices.put(ARMY_TYPE.INFANTRY, 0);
         attackerDices.put(ARMY_TYPE.ARTILLERY, 0);
         attackerDices.put(ARMY_TYPE.TANK, 0);
@@ -167,31 +168,31 @@ public class GameManager {
     private void loadDiceIcons() {
         
         // loading D6 icons
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 0; i <= 6; i++) {
             System.out.println("Loading D6_" + i);
             diceIcons.put("D6_" + i, new Image(getClass().getResource("d6_" + i + ".png").toString()));
         }
 
         // loading D8 icons
-        for (int i = 1; i <= 8; i++) {
+        for (int i = 0; i <= 8; i++) {
             System.out.println("Loading D8_" + i);
             diceIcons.put("D8_" + i, new Image(getClass().getResource("d8_" + i + ".png").toString()));
         }
 
         // loading D10 icons
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 0; i <= 10; i++) {
             System.out.println("Loading D10_" + i);
             diceIcons.put("D10_" + i, new Image(getClass().getResource("d10_" + i + ".png").toString()));
         }
 
         // loading D12 icons
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 0; i <= 12; i++) {
             System.out.println("Loading D12_" + i);
             diceIcons.put("D12_" + i, new Image(getClass().getResource("d12_" + i + ".png").toString()));
         }
 
         // loading D20 icons
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 0; i <= 20; i++) {
             System.out.println("Loading D20_" + i);
             diceIcons.put("D20_" + i, new Image(getClass().getResource("d20_" + i + ".png").toString()));
         }
@@ -1180,6 +1181,8 @@ public class GameManager {
     }
 
     private void setDiceImageView(ImageView imageView, String diceKey) {
+
+        System.out.println("SBORRA\n\n" + diceKey + diceKey.matches("D\\d+_0") + "\n\n");
 
         if (diceKey.matches("D\\d+_0")) {
             // vuol dire che il dado non è stato lanciato e lo mostriamo in trasparenza

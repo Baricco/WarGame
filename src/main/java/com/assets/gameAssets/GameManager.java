@@ -149,7 +149,6 @@ public class GameManager {
     }
 
     private void initDices() {
-
         attackerDices.put(ARMY_TYPE.INFANTRY, 0);
         attackerDices.put(ARMY_TYPE.ARTILLERY, 0);
         attackerDices.put(ARMY_TYPE.TANK, 0);
@@ -794,6 +793,8 @@ public class GameManager {
         int attackerWon = 0;
         int defenderWon = 0;
 
+        initDices();
+
         for(int i = 0; i < attackingArmy.getTroupsByType(type) / Army.SOLDIERS_PER_DICE; i++) {
             int attackDiceValue = attackingArmy.attack(type);
             int defenseDiceValue = defendingArmy.defend(defendingArmy.getBestArmyType());
@@ -1165,19 +1166,32 @@ public class GameManager {
         diceContainer.setStyle("-fx-background-color: " + diceContainerHexColor + ";");
 
         String diceNames[] = { "D6", "D8", "D10", "D12", "D20" };
-        ARMY_TYPE armyTypes[] = { ARMY_TYPE.INFANTRY, ARMY_TYPE.ARTILLERY, ARMY_TYPE.TANK, ARMY_TYPE.APACHE, ARMY_TYPE.CHTULHU };
-
+        ARMY_TYPE armyTypes[] = { ARMY_TYPE.INFANTRY, ARMY_TYPE.ARTILLERY, ARMY_TYPE.TANK, ARMY_TYPE.APACHE, ARMY_TYPE.CHTULHU };  
 
         int iconIndex = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            ((ImageView)curImageView).setImage(diceIcons.get(diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]))); 
-            ((ImageView)curImageView).setScaleX(0.75);
-            ((ImageView)curImageView).setScaleY(0.75);
+            setDiceImageView(((ImageView)curImageView), diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]));
 
             iconIndex++;
         }
         
+    }
+
+    private void setDiceImageView(ImageView imageView, String diceKey) {
+
+        if (diceKey.matches("D\\d+_0")) {
+            // vuol dire che il dado non è stato lanciato e lo mostriamo in trasparenza
+            imageView.setOpacity(0.5);
+        }
+        
+        imageView.setImage(diceIcons.get(diceKey)); 
+    
+        imageView.setScaleX(0.75);
+        imageView.setScaleY(0.75);
+
+
+    
     }
 
     private void refreshAttackMenuDices() {

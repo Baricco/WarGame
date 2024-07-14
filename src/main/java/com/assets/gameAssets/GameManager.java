@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -1430,6 +1431,7 @@ public class GameManager {
     }
 
     private void manageHumanTurn() {
+        Platform.runLater(() -> { refreshSideMenu(); });
         showSideMenu();
         enableAllClicks();
     }

@@ -114,6 +114,12 @@ public class GameManager {
     @FXML
     private Button incrementButton;
 
+    @FXML
+    private Button attackMenuAttackButton;
+
+    @FXML
+    private Button attackMenuCancelButton;
+
     private static HashMap<String, Image> diceIcons;
 
     private HashMap<String, State> states;
@@ -949,13 +955,14 @@ public class GameManager {
 
         boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getArrayListFromArrayListPair(attackingStates), attackCost);
 
+        refreshAttackMenu();
+
         if (outcome) {
             System.out.println("Attacker Won");
 
             try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
             try {
                  addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); 
-                System.out.println("colorato");
                 } catch(Exception e) { }
 
             // Si aggiornano le truppe perse
@@ -967,14 +974,30 @@ public class GameManager {
 
         addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
 
-        removeBottomMenuPane("#attackMenu");
+        disableButton("#attackMenuCancelButton");
+        disableButton("#sideMenuNextTurnButton");
+
+        attackMenuAttackButton.setText("Continue");
+
+        attackMenuAttackButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+
+                enableButton("#attackMenuCancelButton");
+                enableButton("#sideMenuNextTurnButton");
+
+                removeBottomMenuPane("#attackMenu");
     
-        enableButton("#sideMenuFirstButton");
+                enableButton("#sideMenuFirstButton");
 
-        refreshPlayerMenu();
-        refreshSideMenu();
+                refreshPlayerMenu();
+                refreshSideMenu();
 
-        refreshTooltips();
+                refreshTooltips();
+            }
+            
+        });
 
     }
 
@@ -1161,7 +1184,7 @@ public class GameManager {
 
         String diceContainerHexColor = "#4d6555";
 
-        if (diceContainerSelector.startsWith("#attacker")) diceContainerHexColor = players.get(selectedPlayerIndex).getHexColor();
+        if (diceContainerSelector.startsWith("#attacker")) diceContainerHexColor = getHumanPlayer().getHexColor();
         else if (diceContainerSelector.startsWith("#defender")) try { diceContainerHexColor = getOwner(curSelectedState).getHexColor(); } catch (Exception e) { }
 
         diceContainer.setStyle("-fx-background-color: " + diceContainerHexColor + ";");
@@ -1172,6 +1195,8 @@ public class GameManager {
         int iconIndex = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
+            System.out.println("Dice Type: " + diceNames[iconIndex] + " Dice Value: " + dices.get(armyTypes[iconIndex]));
+            
             setDiceImageView(((ImageView)curImageView), diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]));
 
             iconIndex++;
@@ -1181,19 +1206,22 @@ public class GameManager {
 
     private void setDiceImageView(ImageView imageView, String diceKey) {
 
-        System.out.println("SBORRA\n\n" + diceKey + diceKey.matches("D\\d+_0") + "\n\n");
+        imageView.setImage(diceIcons.get(diceKey)); 
 
         if (diceKey.matches("D\\d+_0")) {
             // vuol dire che il dado non è stato lanciato e lo mostriamo in trasparenza
             imageView.setOpacity(0.5);
+        } else {
+            imageView.setOpacity(1);
         }
-        
-        imageView.setImage(diceIcons.get(diceKey)); 
-    
-        imageView.setScaleX(0.75);
-        imageView.setScaleY(0.75);
 
-
+        if (diceKey.matches("D6_\\d+")) {
+            imageView.setScaleX(0.6);
+            imageView.setScaleY(0.6);
+        } else {
+            imageView.setScaleX(0.75);
+            imageView.setScaleY(0.75);
+        }
     
     }
 

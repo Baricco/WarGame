@@ -20,7 +20,11 @@ public class Bot extends Player implements Runnable {
         "Vedi te se mi devo fa dì male dal figlio di Totò Riina",
         "Meglio fare la cacca nella doccia che fare la doccia nella cacca",
         "I <3 Dittatura del Proletariato",
-        "Meglio un giorno in pretura che vent'anni di dittatura"
+        "Meglio un giorno in pretura che vent'anni di dittatura",
+        "Madonna cara",
+        "Baricco spero ti venga un colpo",
+        "Sborricchio",
+        "Galassia lontana, tua madre puttana"
     };
 
     private static RandomGenerator rnd = RandomGenerator.getDefault();

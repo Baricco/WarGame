@@ -150,17 +150,17 @@ public class GameManager {
 
     private void initDices() {
 
-        attackerDices.put(ARMY_TYPE.INFANTRY, 1);
-        attackerDices.put(ARMY_TYPE.ARTILLERY, 1);
-        attackerDices.put(ARMY_TYPE.TANK, 1);
-        attackerDices.put(ARMY_TYPE.APACHE, 1);
-        attackerDices.put(ARMY_TYPE.CHTULHU, 1);
+        attackerDices.put(ARMY_TYPE.INFANTRY, 0);
+        attackerDices.put(ARMY_TYPE.ARTILLERY, 0);
+        attackerDices.put(ARMY_TYPE.TANK, 0);
+        attackerDices.put(ARMY_TYPE.APACHE, 0);
+        attackerDices.put(ARMY_TYPE.CHTULHU, 0);
 
-        defenderDices.put(ARMY_TYPE.INFANTRY, 1);
-        defenderDices.put(ARMY_TYPE.ARTILLERY, 1);
-        defenderDices.put(ARMY_TYPE.TANK, 1);
-        defenderDices.put(ARMY_TYPE.APACHE, 1);
-        defenderDices.put(ARMY_TYPE.CHTULHU, 1);
+        defenderDices.put(ARMY_TYPE.INFANTRY, 0);
+        defenderDices.put(ARMY_TYPE.ARTILLERY, 0);
+        defenderDices.put(ARMY_TYPE.TANK, 0);
+        defenderDices.put(ARMY_TYPE.APACHE, 0);
+        defenderDices.put(ARMY_TYPE.CHTULHU, 0);
 
     }
 

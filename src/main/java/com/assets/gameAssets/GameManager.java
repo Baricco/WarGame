@@ -994,6 +994,8 @@ public class GameManager {
             @Override
             public void handle(ActionEvent event) {
 
+                initDices();
+
                 enableButton("#attackMenuCancelButton");
                 enableButton("#sideMenuNextTurnButton");
 
@@ -1236,6 +1238,16 @@ public class GameManager {
     private void refreshAttackMenuDices() {
         
         ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
+
+        attackerDices.forEach((type, value) -> {
+            int maxValue = Army.getDiceByArmyType(type).getFaceNumber();
+            if (value > maxValue) attackerDices.put(type, maxValue);
+        });
+        
+        defenderDices.forEach((type, value) -> {
+            int maxValue = Army.getDiceByArmyType(type).getFaceNumber();
+            if (value > maxValue) defenderDices.put(type, maxValue);
+        });
 
         refreshDiceContainer("#attackerDiceContainer", attackerDices);
 

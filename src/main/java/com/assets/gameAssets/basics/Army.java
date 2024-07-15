@@ -143,7 +143,7 @@ public class Army {
         throw new IllegalArgumentException("Army Type doesn't exist");
     }
 
-    private Dice getDiceByArmyType(ARMY_TYPE type) {
+    public static Dice getDiceByArmyType(ARMY_TYPE type) {
         if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
         if (type == ARMY_TYPE.INFANTRY) return Dice.getD6();
         if (type == ARMY_TYPE.ARTILLERY) return Dice.getD8();

@@ -234,10 +234,7 @@ public abstract class Player {
         
         this.occupiedStates.add(occupiedState);
 
-        this.setStateColor(occupiedState);
-
-        if(this.occupiedStates.size() == level * 2) increaseLevel();
-        
+        this.setStateColor(occupiedState);        
         
     }
 

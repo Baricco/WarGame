@@ -1522,7 +1522,7 @@ public class GameManager {
 
         this.playTurn();
 
-        // TODO: bisogna spostare l'aumento di livello qui, però non ora perché è utile per il debug
+        if(players.get(selectedPlayerIndex).getOccupiedStates().size() == players.get(selectedPlayerIndex).getLevel() * 2) players.get(selectedPlayerIndex).increaseLevel();
         
     }
 

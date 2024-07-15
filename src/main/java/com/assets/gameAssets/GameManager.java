@@ -120,6 +120,9 @@ public class GameManager {
     @FXML
     private Button attackMenuCancelButton;
 
+    @FXML
+    private AnchorPane negotiationMenu;
+
     private static HashMap<String, Image> diceIcons;
 
     private static HashMap<String, State> states;
@@ -566,6 +569,11 @@ public class GameManager {
         removeBottomMenuPane("#citizenWorkMenu");
 
         enableButton("#sideMenuSecondButton");
+    }
+
+    private void removeNegotiationMenu() {
+        removeBottomMenuPane("#negotiationMenu");
+        enableButton("#sideMenuFirstButton");
     }
 
     private void refreshRecruitMenu() {
@@ -1067,13 +1075,55 @@ public class GameManager {
         ((Button)getElementByCssSelector(selector)).setMouseTransparent(false);
     }
 
+    @FXML
+    void RequestAlliance(ActionEvent event) {
+        System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested an Alliance with " + curSelectedState.getName());
+
+    }
+
+    @FXML
+    void cancelNegotiation(ActionEvent event) {
+        
+        System.out.println("Negotiation Canceled");
+
+        removeNegotiationMenu();
+    }
+
+    @FXML
+    void doNonAggressionPact(ActionEvent event) {
+        System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested a Non.Aggression Pact with " + curSelectedState.getName());
+
+    }
+
     private void showEnemySideMenu(State state) {
 
         EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event){
-                // TODO: INSERIRE FUNZIONE CHE GESTISCE LA NEGOZIAZIONE CON GLI ALTRI STATI
-                System.out.println("Adesso Negozio con " + state.getName());
+            
+                
+                // TODO DA FINIRE
+
+                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+        
+                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+                AnchorPane negotiationMenu;
+
+                try { 
+                    negotiationMenu = (AnchorPane)App.createRoot("/com/assets/fxml/negotiationMenu");
+                } catch (IOException e) { e.printStackTrace(); return; }
+
+                bottomMenu.getChildren().add(negotiationMenu);
+        
+                GameManager.curSelectedState = state;
+
+                playerMenu.setVisible(false);
+
+                negotiationMenu.setVisible(true);
+
+                disableButton("#sideMenuFirstButton");
+
             }
         };
 

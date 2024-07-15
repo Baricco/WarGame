@@ -1,6 +1,9 @@
 package com.assets.gameAssets;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.assets.gameAssets.basics.Army;
 import com.assets.generalAssets.App;
@@ -29,6 +32,7 @@ public abstract class Player {
 
     private ArrayList<State> occupiedStates;    // the states that are occupied by the Player
     private ArrayList<Player> allies;           // this Player allies
+    private HashMap<Player, Integer> nonAggression;    // Players that signed a non-aggression pact with this Player
 
     public Player(String name, String hexColor) {
 
@@ -40,6 +44,7 @@ public abstract class Player {
         
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
+        this.nonAggression = new HashMap<>();
 
         this.active = true;
         this.level = 1;
@@ -59,13 +64,15 @@ public abstract class Player {
         
         this.occupiedStates = new ArrayList<>();
         this.allies = new ArrayList<>();
+        this.nonAggression = new HashMap<>();
+
         
         this.active = true;
         this.level = 1;
 
     }
 
-    public Player(State originalState, String name, String hexColor, PlayerType playerType, ArrayList<State> occupiedStates, ArrayList<Player> allies) {
+    public Player(State originalState, String name, String hexColor, PlayerType playerType, ArrayList<State> occupiedStates, ArrayList<Player> allies, ArrayList<Player> nonAggression) {
         
         this.originalState = originalState;
         this.name = name;
@@ -73,6 +80,7 @@ public abstract class Player {
         this.playerType = playerType;
         this.occupiedStates = occupiedStates;
         this.allies = allies;
+        this.allies = nonAggression;
         this.active = true;
         this.level = 1;
     }
@@ -88,7 +96,11 @@ public abstract class Player {
             s.updateRecruitingArmy();
             s.updateMilitaryConscription();
         }
+        this.updateNonAggressionPact();
+    }
 
+    public void updateNonAggressionPact() {
+        nonAggression.replaceAll((player, time) -> { return time - 1; });
     }
 
     public State getTotalState() {
@@ -149,6 +161,23 @@ public abstract class Player {
         
         return false;
 
+    }
+
+    public void addNonAggressionPact(Player newPlayer, int duration) {
+        this.nonAggression.put(newPlayer, duration);
+    }
+
+    public void removeNonAggressionPact(Player player) {
+        this.nonAggression.remove(player);
+    }
+
+    public boolean hasNonAggressionPact(State state) {
+                
+        if (this.hasOccupied(state)) return false;
+
+        for(Player ally : this.nonAggression.keySet()) if (ally.hasOccupied(state)) return true;
+        
+        return false;
     }
 
     public boolean hasNeighboringState(State state) {

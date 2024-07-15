@@ -123,6 +123,12 @@ public class GameManager {
     @FXML
     private AnchorPane negotiationMenu;
 
+    @FXML
+    private Button nonAggressionPactButton;
+
+    @FXML
+    private Button requestAllianceButton;
+
     private static HashMap<String, Image> diceIcons;
 
     private static HashMap<String, State> states;
@@ -1091,7 +1097,14 @@ public class GameManager {
 
     @FXML
     void doNonAggressionPact(ActionEvent event) {
-        System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested a Non.Aggression Pact with " + curSelectedState.getName());
+        
+        int duration = (int)((Slider)negotiationMenu.lookup("Slider")).getValue();
+
+
+        //  TODO: QUESTA COSA NON DEV'ESSERE AUTOMATICA, POI TROVA UN PO' DI TEMPO PER CHIEDERE A LORENZO COME GESTIRE LA RICHIESTA CHE I BOT MANDANO AL PLAYER
+        getHumanPlayer().addNonAggressionPact(getOwner(curSelectedState), duration);
+
+        System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested a Non Aggression Pact with " + curSelectedState.getName() + " for " + duration + " weeks");
 
     }
 
@@ -1099,10 +1112,7 @@ public class GameManager {
 
         EventHandler<ActionEvent> negotiateHandler = new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event){
-            
-                
-                // TODO DA FINIRE
+            public void handle(ActionEvent event) {
 
                 Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
         
@@ -1124,6 +1134,38 @@ public class GameManager {
 
                 disableButton("#sideMenuFirstButton");
 
+                Slider nonAggressionPactSlider = (Slider)negotiationMenu.lookup("Slider");
+
+                if (getHumanPlayer().hasNonAggressionPact(curSelectedState)) {
+                    nonAggressionPactSlider.setVisible(false);
+                    nonAggressionPactButton.setText("Cancel Non-Aggression Pact");
+                    nonAggressionPactButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                        @Override
+                        public void handle(ActionEvent event) {
+                            
+                            System.out.println(getHumanPlayer().getName() + " Canceled his Non-Aggression Pact with " + curSelectedState);
+
+                            getHumanPlayer().removeNonAggressionPact(getOwner(curSelectedState));
+
+                        }
+                        
+                    });   
+                }
+                else {
+
+                    nonAggressionPactSlider.setMajorTickUnit(1);
+                    nonAggressionPactSlider.setMinorTickCount(0);
+                    nonAggressionPactSlider.setMax(12);
+                    nonAggressionPactSlider.setMin(1);
+                    nonAggressionPactSlider.setSnapToTicks(true);
+                    nonAggressionPactSlider.setShowTickLabels(true);
+                    nonAggressionPactSlider.setValue(6);
+                    nonAggressionPactSlider.setShowTickMarks(false);
+                
+                    attachTooltip(nonAggressionPactSlider, "Number of Weeks");
+
+                }
             }
         };
 

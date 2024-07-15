@@ -122,7 +122,7 @@ public class GameManager {
 
     private static HashMap<String, Image> diceIcons;
 
-    private HashMap<String, State> states;
+    private static HashMap<String, State> states;
     private String fileName;
     private Scene scene;
     private Calendar calendar;
@@ -235,6 +235,9 @@ public class GameManager {
         return App.gameManager.scene.lookup(selector);
     }
 
+    public HashMap<String, State> getAllStates() {
+        return states;
+    }
 
 
     private void addStringToListView(String listViewSelector, String newString) {
@@ -987,6 +990,8 @@ public class GameManager {
         disableButton("#attackMenuCancelButton");
         disableButton("#sideMenuNextTurnButton");
 
+        disableAllClicks();
+
         attackMenuAttackButton.setText("Continue");
 
         attackMenuAttackButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -995,6 +1000,8 @@ public class GameManager {
             public void handle(ActionEvent event) {
 
                 initDices();
+
+                enableAllClicks();
 
                 enableButton("#attackMenuCancelButton");
                 enableButton("#sideMenuNextTurnButton");
@@ -1472,12 +1479,12 @@ public class GameManager {
 
     private void disableAllClicks() {
         disableAllButtons();
-        for (State s : this.states.values()) s.getPath().setMouseTransparent(true);
+        for (State s : getAllStates().values()) s.getPath().setMouseTransparent(true);
     }
 
     private void enableAllClicks() {
         enableAllButtons();
-        for (State s : this.states.values()) s.getPath().setMouseTransparent(false);
+        for (State s : getAllStates().values()) s.getPath().setMouseTransparent(false);
     }
 
     private void manageHumanTurn() {

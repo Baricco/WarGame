@@ -203,7 +203,7 @@ public abstract class Player {
     }
 
     public boolean hasOccupied(State state) {
-        if (this.originalState != null && this.originalState.getId() == state.getId()) return true;
+        if (this.originalState != null && this.originalState.getId().equals(state.getId())) return true;
         return this.occupiedStates.contains(state);
     }
 
@@ -288,7 +288,7 @@ public abstract class Player {
 
     public void addAlly(Player newAlly) throws Exception {
         
-        if (this.allies.contains(newAlly)) throw new Exception("Error on " + this.name + ": Tried to make an alliance with: " + newAlly.getName() + "But that Player results already an ally");
+        if (this.allies.contains(newAlly) || newAlly == null) throw new Exception("Error on " + this.name + ": Tried to make an alliance with: " + newAlly.getName() + "But that Player results already an ally");
         
         this.allies.add(newAlly);
         

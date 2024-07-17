@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="supplyMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1280.0" stylesheets="@app/../attackMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assets.gameAssets.GameManager">
+   <children>
+      <AnchorPane fx:id="resourceSelectorContainer" layoutX="251.33333333333334" layoutY="15.0" prefHeight="60.0" prefWidth="1029.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="125.0" prefHeight="140.0" prefWidth="231.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Money" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Slider fx:id="resourceSlider" layoutX="43.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidSupplyMenu" />
+                  <Label fx:id="maxResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="selectedResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-9.0" layoutY="50.0" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="400.0" prefHeight="140.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Army" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Slider fx:id="resourceSlider" layoutX="42.0" layoutY="51.333333333333336" onDragDetected="#refreshVoidSupplyMenu" />
+                  <Label fx:id="maxResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="179.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="selectedResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="675.0" prefHeight="140.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="5.0" text="Natural Resources" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Slider fx:id="resourceSlider" layoutX="40.0" layoutY="52.333333333333336" onDragDetected="#refreshVoidSupplyMenu" />
+                  <Label fx:id="maxResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="selectedResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="950.0" prefHeight="140.0" prefWidth="225.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" text="Refined Resources" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Slider fx:id="resourceSlider" layoutX="41.0" layoutY="51.666666666666664" onDragDetected="#refreshVoidSupplyMenu" />
+                  <Label fx:id="maxResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="selectedResourceLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-8.0" layoutY="37.6" mouseTransparent="true" prefWidth="50.0" text="Label" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="14.0" layoutY="110.0" mnemonicParsing="false" onAction="#cancelSupply" prefWidth="70.0" text="Cancel" AnchorPane.leftAnchor="15.0" />
+      <Button layoutX="1199.0" layoutY="109.0" mnemonicParsing="false" onAction="#supply" prefWidth="70.0" text="Supply" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>

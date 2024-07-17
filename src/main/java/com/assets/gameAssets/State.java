@@ -424,5 +424,21 @@ public class State {
 
     }
 
+    public void supply(double[] resources) {
+        this.addMoney(resources[0]);
+        this.getArmy().addSoldiers(new Army(resources[1]));
+        this.addNaturalResources(resources[3]);
+        this.addRefinedResources(resources[4]);
+    }
+
+    private void addNaturalResources(double n) {
+        this.naturalResources += n;
+    }
+
+    private void addRefinedResources(double n) {
+        this.refinedResources += n;
+    }
+
+
 
 }

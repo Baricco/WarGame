@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.random.RandomGenerator;
 
 import com.assets.gameAssets.basics.Army;
@@ -128,6 +129,21 @@ public class GameManager {
 
     @FXML
     private Button requestAllianceButton;
+
+    @FXML
+    private AnchorPane resourceSelectorContainer;
+
+    @FXML
+    private Label maxResourceLabel;
+
+    @FXML
+    private AnchorPane supplyMenu;
+
+    @FXML
+    private Slider resourceSlider;
+
+    @FXML
+    private Label selectedResourceLabel;
 
     private static HashMap<String, Image> diceIcons;
 
@@ -613,14 +629,106 @@ public class GameManager {
 
     }
 
+    @FXML
+    void cancelSupply(ActionEvent event) {
+
+        System.out.println("Supply Canceled");
+
+        removeBottomMenuPane("#supplyMenu");
+
+        enableButton("#sideMenuFirstButton");
+    }
+
+    @FXML
+    void refreshVoidSupplyMenu(MouseEvent event) {
+        App.gameManager.refreshSupplyMenu();
+    }
+
+    void refreshSupplyMenu() {
+       
+        ObservableList<Node> resourceSelectors = ((AnchorPane)App.gameManager.scene.lookup("#resourceSelectorContainer")).getChildren();
+
+        double maxResources[] = { curSelectedState.getMoney() / 2, curSelectedState.getTotalArmy() / 2, curSelectedState.getNaturalResources() / 2, curSelectedState.getRefinedResources() / 2 };
+        int i = 0; 
+
+        for (Node armySelector : resourceSelectors) {
+            
+            Slider curSlider = ((Slider)armySelector.lookup("#resourceSlider"));
+
+            curSlider.setMax(maxResources[i]);
+            curSlider.setMajorTickUnit(maxResources[i] / 10);
+            curSlider.setMinorTickCount(0);
+            curSlider.setShowTickMarks(false);
+            curSlider.setSnapToTicks(true);
+
+            ((Label)armySelector.lookup("#selectedResourceLabel")).setText(formatHighNumber(((Slider)armySelector.lookup("#resourceSlider")).getValue()));
+            ((Label)armySelector.lookup("#maxResourceLabel")).setText(formatHighNumber(maxResources[i]));
+            
+            i++;
+        }
+    }
+
+    @FXML
+    void supply(ActionEvent event) {
+        
+        removeBottomMenuPane("#supplyMenu");
+
+        double newResources[] = calcResourcesFromSliders();
+
+        curSelectedState.supply(newResources); 
+        String resourceNames[] = { "Dystopian Dollars", "Soldiers", "Natural Resources", "Refined Resources" }; 
+
+        System.out.println(getHumanPlayer().getName() + " Supplied "  + curSelectedState.getName() + " with:");
+
+        for (int i = 0; i < newResources.length; i++) System.out.println("\t" + newResources[i] + " " + resourceNames[i]);
+
+        enableButton("#sideMenuThirdButton");
+    }
+
+    private double[] calcResourcesFromSliders() {
+
+        double values[] = {0, 0, 0, 0};
+
+        int i = 0;
+        for (Node elem : ((AnchorPane)App.gameManager.scene.lookup("#resourceSelectorContainer")).getChildren()) {
+            values[i] = ((Slider)((AnchorPane)elem).getChildren().get(1)).getValue();
+            i++;
+        }
+
+        return values;
+    }
+
+
     private void showOccupiedStateSideMenu(State state) {
         
         
         EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE IL RIFORNIMENTO
-                    System.out.println("Adesso Rifornisco " + state.getName());
+            public void handle(ActionEvent event) {
+
+                System.out.println(getHumanPlayer().getName() + " wants to supply " + state.getName());
+
+                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+        
+                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+                AnchorPane supplyMenu;
+
+                try { 
+                    supplyMenu = (AnchorPane)App.createRoot("/com/assets/fxml/supplyMenu");
+                } catch (IOException e) { e.printStackTrace(); return; }
+
+                bottomMenu.getChildren().add(supplyMenu);
+        
+                GameManager.curSelectedState = state;
+
+                playerMenu.setVisible(false);
+
+                refreshSupplyMenu();
+
+                supplyMenu.setVisible(true);
+
+                disableButton("#sideMenuFirstButton");
             }
         };
 
@@ -755,9 +863,14 @@ public class GameManager {
             hideButton(fortifyButtonSelector);
         }
 
-        setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
+        if (!getHumanPlayer().getOccupiedStates().isEmpty()) {
+            setButton("#sideMenuFirstButton", "Supply", supplyStateHandler);
+        }
+        else hideButton("#sideMenuFirstButton");
+
         setButton("#sideMenuSecondButton", "Citizen Work", citizenWorkHandler);
         setToggleSwitch("#sideMenuToggleSwitch", militaryConscriptionHandler, curSelectedState.hasMilitaryConscription());
+
 
     }
 
@@ -773,9 +886,43 @@ public class GameManager {
        
         EventHandler<ActionEvent> supplyStateHandler = new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event){
-                    // TODO: INSERIRE FUNZIONE CHE GESTISCE IL RIFORNIMENTO DEGLI ALLEATI
-                    System.out.println("Adesso Rifornisco il mio caro amico " + state.getName());
+            public void handle(ActionEvent event) {
+
+                System.out.println(getHumanPlayer().getName() + " wants to supply " + state.getName());
+
+                Pane playerMenu = (Pane)getElementByCssSelector("#playerMenu");
+        
+                StackPane bottomMenu = (StackPane)getElementByCssSelector("#bottomMenu");
+
+                AnchorPane supplyMenu;
+
+                try { 
+                    supplyMenu = (AnchorPane)App.createRoot("/com/assets/fxml/supplyMenu");
+                } catch (IOException e) { e.printStackTrace(); return; }
+
+                ObservableList<Node> resourceSelectors = ((AnchorPane)recruitMenu.lookup("#resourceSelectorContainer")).getChildren();
+                
+                for (Node resourceSelector : resourceSelectors) {                    
+
+                    Slider curSlider = ((Slider)resourceSelector.lookup("#resourceSlider"));
+                
+                    curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                        public void changed(ObservableValue<? extends Number> ov,
+                            Number old_val, Number new_val) {
+                                App.gameManager.refreshSupplyMenu();
+                            }
+                    });
+                }
+
+                bottomMenu.getChildren().add(supplyMenu);
+        
+                GameManager.curSelectedState = state;
+
+                playerMenu.setVisible(false);
+
+                supplyMenu.setVisible(true);
+
+                disableButton("#sideMenuFirstButton");
             }
         };
 
@@ -1083,6 +1230,9 @@ public class GameManager {
 
     @FXML
     void RequestAlliance(ActionEvent event) {
+
+        try { getHumanPlayer().addAlly(getOwner(curSelectedState)); } catch (Exception e) {  }
+        
         System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested an Alliance with " + curSelectedState.getName());
 
     }
@@ -1100,8 +1250,7 @@ public class GameManager {
         
         int duration = (int)((Slider)negotiationMenu.lookup("Slider")).getValue();
 
-
-        //  TODO: QUESTA COSA NON DEV'ESSERE AUTOMATICA, POI TROVA UN PO' DI TEMPO PER CHIEDERE A LORENZO COME GESTIRE LA RICHIESTA CHE I BOT MANDANO AL PLAYER
+        
         getHumanPlayer().addNonAggressionPact(getOwner(curSelectedState), duration);
 
         System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested a Non Aggression Pact with " + curSelectedState.getName() + " for " + duration + " weeks");
@@ -1213,6 +1362,7 @@ public class GameManager {
                     attackMenu.setVisible(true);
 
                     disableButton("#sideMenuFirstButton");
+                    
     
     
                 }
@@ -1458,14 +1608,18 @@ public class GameManager {
         for (Player p : this.players) if (p.hasOccupied(clickedState)) return;
         
         this.getHumanPlayer().setOriginalState(clickedState);
+
+        if (!clickedState.getId().equals("ATL"))  states.get("ATL").getPath().setMouseTransparent(true);
             
         addStringToListView("#playerStateConqueredTerritoriesListView", clickedState.getName());
 
-        refreshPlayerMenuByState(clickedState.getId());
-        refreshSideMenu(clickedState);
         showPlayerMenu();
-        refreshTooltips();
+        refreshPlayerMenuByState(clickedState.getId());
+
         showSideMenu();
+        refreshSideMenu(clickedState);
+        
+        refreshTooltips();
         changeHoverHandler();
 
         setBotsOriginalState();

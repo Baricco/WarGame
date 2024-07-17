@@ -900,7 +900,7 @@ public class GameManager {
                     supplyMenu = (AnchorPane)App.createRoot("/com/assets/fxml/supplyMenu");
                 } catch (IOException e) { e.printStackTrace(); return; }
 
-                ObservableList<Node> resourceSelectors = ((AnchorPane)recruitMenu.lookup("#resourceSelectorContainer")).getChildren();
+                ObservableList<Node> resourceSelectors = ((AnchorPane)supplyMenu.lookup("#resourceSelectorContainer")).getChildren();
                 
                 for (Node resourceSelector : resourceSelectors) {                    
 
@@ -1769,6 +1769,8 @@ public class GameManager {
 
         try { removeBottomMenuPane("#attackMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
+        try { removeBottomMenuPane("#supplyMenu"); } catch(Exception e) {}
+
 
         
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();

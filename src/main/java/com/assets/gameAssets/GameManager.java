@@ -644,11 +644,20 @@ public class GameManager {
         App.gameManager.refreshSupplyMenu();
     }
 
+    private double[] getSupplyResources(State srcState, State dstState) {
+        return new double[]{
+            (srcState.getMoney() - dstState.getMoney()) / 2,
+            (srcState.getTotalArmy() - dstState.getTotalArmy()) / 2, 
+            (srcState.getNaturalResources() - dstState.getNaturalResources()) / 2, 
+            (srcState.getRefinedResources() - dstState.getRefinedResources()) / 2
+        };
+    }
+
     void refreshSupplyMenu() {
        
         ObservableList<Node> resourceSelectors = ((AnchorPane)App.gameManager.scene.lookup("#resourceSelectorContainer")).getChildren();
 
-        double maxResources[] = { curSelectedState.getMoney() / 2, curSelectedState.getTotalArmy() / 2, curSelectedState.getNaturalResources() / 2, curSelectedState.getRefinedResources() / 2 };
+        double maxResources[] = getSupplyResources(getHumanPlayer().getTotalState(), curSelectedState);
         int i = 0; 
 
         for (Node armySelector : resourceSelectors) {
@@ -671,8 +680,6 @@ public class GameManager {
     @FXML
     void supply(ActionEvent event) {
         
-        removeBottomMenuPane("#supplyMenu");
-
         double newResources[] = calcResourcesFromSliders();
 
         curSelectedState.supply(newResources); 
@@ -682,7 +689,11 @@ public class GameManager {
 
         for (int i = 0; i < newResources.length; i++) System.out.println("\t" + newResources[i] + " " + resourceNames[i]);
 
+        removeBottomMenuPane("#supplyMenu");
+
         enableButton("#sideMenuThirdButton");
+
+        refreshSideMenu();
     }
 
     private double[] calcResourcesFromSliders() {
@@ -718,6 +729,20 @@ public class GameManager {
                     supplyMenu = (AnchorPane)App.createRoot("/com/assets/fxml/supplyMenu");
                 } catch (IOException e) { e.printStackTrace(); return; }
 
+                ObservableList<Node> resourceSelectors = ((AnchorPane)supplyMenu.lookup("#resourceSelectorContainer")).getChildren();
+                
+                for (Node resourceSelector : resourceSelectors) {                    
+
+                    Slider curSlider = ((Slider)resourceSelector.lookup("#resourceSlider"));
+                
+                    curSlider.valueProperty().addListener(new ChangeListener<Number>() {
+                        public void changed(ObservableValue<? extends Number> ov,
+                            Number old_val, Number new_val) {
+                                App.gameManager.refreshSupplyMenu();
+                            }
+                    });
+                }
+                
                 bottomMenu.getChildren().add(supplyMenu);
         
                 GameManager.curSelectedState = state;
@@ -913,12 +938,14 @@ public class GameManager {
                             }
                     });
                 }
-
+                
                 bottomMenu.getChildren().add(supplyMenu);
         
                 GameManager.curSelectedState = state;
 
                 playerMenu.setVisible(false);
+
+                refreshSupplyMenu();
 
                 supplyMenu.setVisible(true);
 

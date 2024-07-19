@@ -1,9 +1,7 @@
 package com.assets.gameAssets;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import com.assets.gameAssets.basics.Army;
 import com.assets.generalAssets.App;
@@ -100,8 +98,10 @@ public abstract class Player {
         this.gameLost();
     }
 
-    private void gameLost() {
-        if (this.getAllStates().isEmpty()) try { App.gameManager.removePlayer(this); } catch (Exception e) { }
+    public void gameLost() {
+        if (this.getAllStates().isEmpty()) {
+            try { App.gameManager.removePlayer(this); } catch (Exception e) { } 
+        }
     }
 
     public void updateNonAggressionPact() {
@@ -309,6 +309,11 @@ public abstract class Player {
 
     public int getLevel() {
         return this.level;
+    }
+    
+    public boolean acceptsAlliance(Player player) {
+        System.out.println(this.getName() + " Refused to Ally with " + player.getName());
+        return false;
     }
     
 

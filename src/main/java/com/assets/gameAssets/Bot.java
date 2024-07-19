@@ -57,10 +57,10 @@ public class Bot extends Player implements Runnable {
         double infantry, artillery, tanks, apaches;
 
         do {
-            infantry = rnd.nextDouble(0, totalArmy.getInfantry() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
-            artillery = rnd.nextDouble(0, totalArmy.getArtillery() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
-            tanks = rnd.nextDouble(0, totalArmy.getTanks() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
-            apaches = rnd.nextDouble(0, totalArmy.getApaches() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
+            try { infantry = rnd.nextDouble(0, totalArmy.getInfantry() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE; } catch(Exception e) { infantry = 0; }
+            try { artillery = rnd.nextDouble(0, totalArmy.getArtillery() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE; } catch(Exception e) { artillery = 0; }
+            try { tanks = rnd.nextDouble(0, totalArmy.getTanks() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE; } catch(Exception e) { tanks = 0; }
+            try { apaches = rnd.nextDouble(0, totalArmy.getApaches() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE; } catch(Exception e) { apaches = 0; }
         } while(infantry == 0 && artillery == 0 && tanks == 0 && apaches == 0);
 
         return new Army(
@@ -70,6 +70,16 @@ public class Bot extends Player implements Runnable {
             apaches,
             totalArmy.getAttackModifier()
         );
+    }
+
+    @Override
+    public boolean acceptsAlliance(Player player) {
+        if (rnd.nextDouble(10) > ((player.getLevel() * 0.1) + ((player.getTotalState().getMoney() + player.getTotalState().getArmy().getTotal()) * 0.0000000001) + (player.getTotalState().getWorkForce() * 0.00000001))) {
+            System.out.println(this.getName() + " Refused to Ally with " + player.getName());
+            return false;
+        }
+        System.out.println(this.getName() + " Accepts to Ally with " + player.getName());
+        return true;
     }
 
     public void play() {
@@ -82,18 +92,16 @@ public class Bot extends Player implements Runnable {
 
         for (int i = 0; i < actionNumber; i++) {
 
-            int curAction = 0; //rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
+            int curAction = rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
 
             switch (curAction) {
                 case 0:     // Attacco
-
-                    
 
                     ArrayList<State> allStates = this.getAllStates();
 
                     State attackingState = allStates.get(rnd.nextInt(allStates.size()));
                     
-                    if (attackingState.getlastTurnAttacksDone() > this.getLevel()) {
+                    if (attackingState.getlastTurnAttacksDone() > this.getLevel() || !this.getTotalState().getArmy().isEnoughBig()) {
                         i--;
                         break;
                     }
@@ -102,9 +110,13 @@ public class Bot extends Player implements Runnable {
 
                     State attackedState = gameManager.getState(neighboringStates.get(rnd.nextInt(neighboringStates.size())).getKey());
 
+                    if (attackedState == null) { i--; break; }
+
                     gameManager.selectState(attackedState);
 
                     System.out.println(this.getName() + " Attacks " + attackedState.getName());
+
+                    gameManager.initDices();
 
                     gameManager.applyAttackOutcome(
                         gameManager.attackState(
@@ -144,19 +156,27 @@ public class Bot extends Player implements Runnable {
                     break;
 
                 default:    // Se entra qui dentro abbiamo un problema
-                    
+                    i--;
                     break;
             }
 
 
             
 
-            try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
+            //try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
         }
 
-        try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
+        //try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
 
         App.gameManager.passTurn();
+    }
+
+    @Override
+    public void gameLost() {
+        if (this.getAllStates().isEmpty()) {
+            try { App.gameManager.removePlayer(this); } catch (Exception e) { } 
+            gameManager.passTurn();
+        }
     }
 
 }

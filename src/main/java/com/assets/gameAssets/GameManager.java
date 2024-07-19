@@ -179,7 +179,7 @@ public class GameManager {
         initDices();
     }
 
-    private void initDices() {
+    public void initDices() {
 
         attackerDices.put(ARMY_TYPE.INFANTRY, 0);
         attackerDices.put(ARMY_TYPE.ARTILLERY, 0);
@@ -231,22 +231,22 @@ public class GameManager {
     }
 
     public void addPlayer(Player newPlayer) throws Exception {
-        if (this.players.contains(newPlayer)) throw new Exception("Error, tried to had: " + newPlayer.getName() + " in the game, but it is already been added");
+        if (App.gameManager.players.contains(newPlayer)) throw new Exception("Error, tried to had: " + newPlayer.getName() + " in the game, but it is already been added");
         
-        if (this.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName());
+        if (App.gameManager.players.add(newPlayer)) System.out.println(newPlayer.getName() + " was added to this Game, Say hi to " + newPlayer.getName());
 
     }
 
     public void removePlayer(Player player) throws Exception {
-        if (!this.players.contains(player)) throw new Exception("Error, tried to remove: " + player.getName() + " from the game, but it is already been removed");
+        if (!App.gameManager.players.contains(player)) throw new Exception("Error, tried to remove: " + player.getName() + " from the game, but it is already been removed");
         
-        if (this.players.remove(player)) System.out.println(player.getName() + " exited the Game, We will miss you " + player.getName() + " :'( ");
+        if (App.gameManager.players.remove(player)) System.out.println(player.getName() + " exited the Game, We will miss you " + player.getName() + " :'( ");
 
     }
 
     public void addState(String id, SVGPath path) {
         try { 
-            this.states.put(id, new State(this.fileName, id, path));
+            states.put(id, new State(this.fileName, id, path));
 
             // for (City city : this.states.get(id).getCities()) { if (city.hasTrainStation()) this.mapIconManager.addIcon(city); }
 
@@ -1030,6 +1030,7 @@ public class GameManager {
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.INFANTRY);
 
         totalPoints += curPoints.getKey();
+        totalPoints -= curPoints.getValue();
 
         // ARTILLERY
 
@@ -1038,6 +1039,7 @@ public class GameManager {
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.ARTILLERY);
 
         totalPoints += curPoints.getKey();
+        totalPoints -= curPoints.getValue();
 
         // TANKS        
         
@@ -1046,6 +1048,8 @@ public class GameManager {
         refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.TANK);
 
         totalPoints += curPoints.getKey();
+        totalPoints -= curPoints.getValue();
+
 
         // APACHES & CHTULHU
         
@@ -1056,6 +1060,8 @@ public class GameManager {
             refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
 
             totalPoints += curPoints.getKey();
+            totalPoints -= curPoints.getValue();
+
 
             if (attackingStates.size() > 1) {
                 
@@ -1064,6 +1070,8 @@ public class GameManager {
                 refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
         
                 totalPoints += curPoints.getKey(); 
+                totalPoints -= curPoints.getValue();
+
             }
         } else {
 
@@ -1071,7 +1079,9 @@ public class GameManager {
         
             refreshArmiesAfterBattle(attackingStates, defenderState, curPoints.getKey(), curPoints.getValue(), ARMY_TYPE.APACHE);
     
-            totalPoints += curPoints.getKey(); 
+            totalPoints += curPoints.getKey();
+            totalPoints -= curPoints.getValue();
+ 
         }
 
         if (totalPoints > 0) return true;
@@ -1142,6 +1152,23 @@ public class GameManager {
         if (outcome) {
             System.out.println("Attacker Won");
 
+            Player curOwner = getOwner(curSelectedState);
+
+            if (curOwner != null) {
+                System.out.println(curOwner.getName() + " Lost " + curSelectedState.getName());
+                try { curOwner.loseOccupiedState(curSelectedState); } 
+                catch(Exception e) {
+                    // if curSelectedState is the Original state of the Owner, shift its originalState 
+                    if (curOwner.getOriginalState().getId().equals(curSelectedState.getId())) {
+                        if (!curOwner.getOccupiedStates().isEmpty()) {
+                            curOwner.setOriginalState(curOwner.getOccupiedStates().remove(0));
+                            System.out.println(curOwner.getName() + " New Original State: " + curOwner.getOriginalState().getName());
+                        } 
+                        else try { removePlayer(curOwner); } catch(Exception err) { }
+                    }
+                }
+            }
+            
             try { getCurrentPlayer().occupyState(curSelectedState); } catch(Exception e) { }
             
             if (selectedPlayerIndex == 0) try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); } catch(Exception e) { }
@@ -1168,6 +1195,8 @@ public class GameManager {
     @FXML
     void attack(ActionEvent event) {
 
+        initDices();
+
         Army attackerArmy = calcArmyFromSliders();
 
         if (!attackerArmy.isEnoughBig()) return;
@@ -1182,9 +1211,9 @@ public class GameManager {
 
         int attackCost = calcAttackPrice(attackingStates, curSelectedState);
 
-        refreshAttackMenu();
-
         applyAttackOutcome(attackState(attackerArmy, GameManager.curSelectedState, getArrayListFromArrayListPair(attackingStates), attackCost));
+
+        refreshAttackMenu();
 
         disableButton("#attackMenuCancelButton");
         disableButton("#sideMenuNextTurnButton");
@@ -1269,8 +1298,18 @@ public class GameManager {
     @FXML
     void RequestAlliance(ActionEvent event) {
 
-        try { getHumanPlayer().addAlly(getOwner(curSelectedState)); } catch (Exception e) {  }
+        Player newAlly = getOwner(curSelectedState);
+
+        if (newAlly == null) { return; }
+
+        if (!newAlly.acceptsAlliance(getHumanPlayer())) return;
+
+        try { 
+            getHumanPlayer().addAlly(newAlly);
+        } catch (Exception e) { return; }
         
+        addStringToListView("#playerStateAlliedStatesListView", newAlly.getOriginalState().getName());
+
         System.out.println(getHumanPlayer().getOriginalState().getName() + " has requested an Alliance with " + curSelectedState.getName());
 
     }
@@ -1376,7 +1415,8 @@ public class GameManager {
     
                     ObservableList<Node> armySelectors = ((AnchorPane)attackMenu.lookup("#ArmySelectorContainer")).getChildren();
     
-            
+                    initDices();
+
                     for (Node armySelector : armySelectors) {                    
     
                         Slider curSlider = ((Slider)armySelector.lookup("#soldierSlider"));
@@ -1523,9 +1563,7 @@ public class GameManager {
     }
 
     private void refreshAttackMenuDices() {
-        
-        ObservableList<Node> diceImageView = ((AnchorPane)getElementByCssSelector("#DiceIconContainer")).getChildren();
-
+    
         attackerDices.forEach((type, value) -> {
             int maxValue = Army.getDiceByArmyType(type).getFaceNumber();
             if (value > maxValue) attackerDices.put(type, maxValue);
@@ -1623,7 +1661,7 @@ public class GameManager {
     }
 
     public State getState(String Id) {
-        return this.states.get(Id);
+        return states.get(Id);
     }
 
     public void handleHover(SVGPath curPath) {
@@ -1773,6 +1811,12 @@ public class GameManager {
     }
 
     private void manageHumanTurn() {
+        if (!getCurrentPlayer().getClass().equals(Human.class)) {
+            try { GameManager.botThread.interrupt(); } catch(Exception e) { }
+            System.out.println("Problemozzo con " + getCurrentPlayer());
+            passTurn();
+        }
+
         Platform.runLater(() -> { refreshSideMenu(); });
         showSideMenu();
         enableAllClicks();

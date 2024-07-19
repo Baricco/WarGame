@@ -970,7 +970,7 @@ public class GameManager {
         }
     }
 
-    private int calcAttackPrice(ArrayList<Pair<State, Boolean>> attackingStates, State defenderState) {
+    public int calcAttackPrice(ArrayList<Pair<State, Boolean>> attackingStates, State defenderState) {
         for (Pair<State, Boolean> s : attackingStates) {
             if (s.getKey().hasSeaBorder(defenderState)) return Price.SEA_ATTACK_PRICE_PER_DICE;
         }
@@ -1011,7 +1011,7 @@ public class GameManager {
         for (int i = 0; i < defenderWon; i++) looseStateArmy(defenderState, Army.SOLDIERS_PER_DICE, type);
     }
 
-    private boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
+    public boolean attackState(Army attackingArmy, State defenderState, ArrayList<State> attackingStates, int attackCost) {
 
         initDices();
 
@@ -1137,6 +1137,34 @@ public class GameManager {
 
     }
 
+    public void applyAttackOutcome(boolean outcome) {
+
+        if (outcome) {
+            System.out.println("Attacker Won");
+
+            try { getCurrentPlayer().occupyState(curSelectedState); } catch(Exception e) { }
+            
+            if (selectedPlayerIndex == 0) try { addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); } catch(Exception e) { }
+
+            // Si aggiornano le truppe perse
+        }
+        else {
+            System.out.println("Defender Won");
+
+        }
+
+        if (selectedPlayerIndex == 0) addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
+
+    }
+
+    public void selectState(State state) {
+        curSelectedState = state;
+    }
+
+    private Player getCurrentPlayer() {
+        return App.gameManager.getPlayers().get(selectedPlayerIndex);
+    }
+
     @FXML
     void attack(ActionEvent event) {
 
@@ -1154,26 +1182,9 @@ public class GameManager {
 
         int attackCost = calcAttackPrice(attackingStates, curSelectedState);
 
-        boolean outcome = attackState(attackerArmy, GameManager.curSelectedState, getArrayListFromArrayListPair(attackingStates), attackCost);
-
         refreshAttackMenu();
 
-        if (outcome) {
-            System.out.println("Attacker Won");
-
-            try { getHumanPlayer().occupyState(curSelectedState); } catch(Exception e) { e.printStackTrace(); }
-            try {
-                 addStringToListView("#playerStateConqueredTerritoriesListView", curSelectedState.getName()); 
-                } catch(Exception e) { }
-
-            // Si aggiornano le truppe perse
-        }
-        else {
-            System.out.println("Defender Won");
-
-        }
-
-        addStringToListView("#playerBattlesListView", "Battle of " + curSelectedState.getRandomCityName() + ": " + (outcome ? "Won" : "Lost"));
+        applyAttackOutcome(attackState(attackerArmy, GameManager.curSelectedState, getArrayListFromArrayListPair(attackingStates), attackCost));
 
         disableButton("#attackMenuCancelButton");
         disableButton("#sideMenuNextTurnButton");
@@ -1674,7 +1685,8 @@ public class GameManager {
 
             do { state = this.getRandomState(); } while (!stateIsValid(state));
             
-            this.getPlayers().get(i).setOriginalState(state); 
+            this.getPlayers().get(i).setOriginalState(state);
+            ((Bot)this.getPlayers().get(i)).linkGameManager(this);
         }
     }
 
@@ -1798,8 +1810,6 @@ public class GameManager {
         try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#supplyMenu"); } catch(Exception e) {}
 
-
-        
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 
         this.playTurn();

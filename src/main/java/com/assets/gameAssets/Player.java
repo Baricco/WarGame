@@ -97,6 +97,11 @@ public abstract class Player {
             s.updateMilitaryConscription();
         }
         this.updateNonAggressionPact();
+        this.gameLost();
+    }
+
+    private void gameLost() {
+        if (this.getAllStates().isEmpty()) try { App.gameManager.removePlayer(this); } catch (Exception e) { }
     }
 
     public void updateNonAggressionPact() {

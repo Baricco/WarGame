@@ -1,8 +1,12 @@
 package com.assets.gameAssets;
 
+import java.util.ArrayList;
 import java.util.random.RandomGenerator;
 
+import com.assets.gameAssets.basics.Army;
 import com.assets.generalAssets.App;
+
+import javafx.util.Pair;
 
 public class Bot extends Player implements Runnable {
     
@@ -32,14 +36,40 @@ public class Bot extends Player implements Runnable {
     */
 
     private static RandomGenerator rnd = RandomGenerator.getDefault();
+    private GameManager gameManager;
 
     public Bot(String name, String hexColor) {
-
         super(name, hexColor, Player.PlayerType.TYPE_BOT);   
+    }
+
+    public void linkGameManager(GameManager gameManager) {
+        this.gameManager = gameManager;
     }
 
     public void run() {
         play();
+    }
+
+    private Army getRandomArmy() {
+
+        Army totalArmy = this.getTotalState().getArmy();
+
+        double infantry, artillery, tanks, apaches;
+
+        do {
+            infantry = rnd.nextDouble(0, totalArmy.getInfantry() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
+            artillery = rnd.nextDouble(0, totalArmy.getArtillery() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
+            tanks = rnd.nextDouble(0, totalArmy.getTanks() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
+            apaches = rnd.nextDouble(0, totalArmy.getApaches() / Army.SOLDIERS_PER_DICE) * Army.SOLDIERS_PER_DICE;
+        } while(infantry == 0 && artillery == 0 && tanks == 0 && apaches == 0);
+
+        return new Army(
+            infantry,
+            artillery,
+            tanks,
+            apaches,
+            totalArmy.getAttackModifier()
+        );
     }
 
     public void play() {
@@ -52,11 +82,45 @@ public class Bot extends Player implements Runnable {
 
         for (int i = 0; i < actionNumber; i++) {
 
-            int curAction = rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
+            int curAction = 0; //rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
 
             switch (curAction) {
                 case 0:     // Attacco
+
                     
+
+                    ArrayList<State> allStates = this.getAllStates();
+
+                    State attackingState = allStates.get(rnd.nextInt(allStates.size()));
+                    
+                    if (attackingState.getlastTurnAttacksDone() > this.getLevel()) {
+                        i--;
+                        break;
+                    }
+
+                    ArrayList<Pair<String, Boolean>> neighboringStates = attackingState.getNeighboringStates();
+
+                    State attackedState = gameManager.getState(neighboringStates.get(rnd.nextInt(neighboringStates.size())).getKey());
+
+                    gameManager.selectState(attackedState);
+
+                    System.out.println(this.getName() + " Attacks " + attackedState.getName());
+
+                    gameManager.applyAttackOutcome(
+                        gameManager.attackState(
+                            getRandomArmy(),
+                            attackedState,
+                            allStates,
+                            gameManager.calcAttackPrice(
+                                getNeighboringStates(attackedState),
+                                attackedState
+                            )
+                        )
+                    );
+                    
+                    attackingState.incrementAttacksDone();
+
+
                     break;
 
                 case 1:     // Negoziazione

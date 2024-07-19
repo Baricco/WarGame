@@ -655,13 +655,13 @@ public class GameManager {
 
     void refreshSupplyMenu() {
        
-        ObservableList<Node> resourceSelectors = ((AnchorPane)App.gameManager.scene.lookup("#resourceSelectorContainer")).getChildren();
-
-        double maxResources[] = getSupplyResources(getHumanPlayer().getTotalState(), curSelectedState);
-        int i = 0; 
+        ObservableList<Node> resourceSelectors = ((AnchorPane)getElementByCssSelector("#resourceSelectorContainer")).getChildren();
 
         for (Node armySelector : resourceSelectors) {
             
+            double maxResources[] = getSupplyResources(getHumanPlayer().getTotalState(), curSelectedState);
+            int i = 0; 
+
             Slider curSlider = ((Slider)armySelector.lookup("#resourceSlider"));
 
             curSlider.setMax(maxResources[i]);
@@ -692,7 +692,11 @@ public class GameManager {
         
         double newResources[] = calcResourcesFromSliders();
 
-        curSelectedState.supply(newResources); 
+        ArrayList<State> givingStates = getCurrentPlayer().getAllStates();
+
+        givingStates.remove(curSelectedState);
+
+        curSelectedState.supply(newResources, givingStates); 
         
         printSupplies(newResources);
 

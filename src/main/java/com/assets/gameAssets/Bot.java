@@ -269,7 +269,10 @@ public class Bot extends Player implements Runnable {
 
                     gameManager.printSupplies(supplies);
 
-                    supplyingState.supply(supplies);
+                    ArrayList<State> givingStates = getAllStates();
+                    givingStates.remove(supplyingState);
+
+                    supplyingState.supply(supplies, givingStates);
                     
                     break;
 

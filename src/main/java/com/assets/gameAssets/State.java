@@ -437,11 +437,42 @@ public class State {
 
     }
     
-    public void supply(double[] resources) {
+    public void supply(double[] resources, ArrayList<State> givingStates) {
+        
         this.addMoney(resources[0]);
         this.getArmy().addSoldiers(new Army(resources[1]));
         this.addNaturalResources(resources[2]);
         this.addRefinedResources(resources[3]);
+
+        double[] totResources = { 0, 0, 0, 0 };
+
+        for (State s : givingStates) {
+            totResources[0] += s.getMoney();
+            totResources[1] += s.getTotalArmy();
+            totResources[2] += s.getNaturalResources();
+            totResources[3] += s.getRefinedResources();
+
+        }
+        
+        for (State s : givingStates) {
+            s.subMoney(resources[0] * (totResources[0] / s.getMoney()));
+            s.subArmy(resources[1] * (totResources[1] / s.getTotalArmy()));
+            s.subNaturalResources(resources[2] * (totResources[2] / s.getNaturalResources()));
+            s.subRefinedResources(resources[3] * (totResources[3] / s.getRefinedResources()));
+        }
+
+    }
+
+    private void subRefinedResources(double refinedResources) {
+        this.refinedResources -= refinedResources;
+    }
+
+    private void subNaturalResources(double naturalResources) {
+        this.naturalResources -= naturalResources;
+    }
+
+    private void subArmy(double totalArmy) {
+        this.army.loseSoldiers(totalArmy);
     }
 
     private void addNaturalResources(double n) {

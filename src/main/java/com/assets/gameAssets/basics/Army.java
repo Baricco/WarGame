@@ -100,6 +100,15 @@ public class Army {
         this.defenseModifierValue = modifierValue;
     }
 
+    public void loseSoldiers(double lostTotalSoldiers) {
+        
+        loseSoldiers(lostTotalSoldiers * 0.5, ARMY_TYPE.INFANTRY);
+        loseSoldiers(lostTotalSoldiers * 0.25, ARMY_TYPE.ARTILLERY);
+        loseSoldiers(lostTotalSoldiers * 0.15, ARMY_TYPE.TANK);
+        loseSoldiers(lostTotalSoldiers * 0.1, ARMY_TYPE.APACHE);
+
+    }
+
     public void loseSoldiers(double lostSoldiers, ARMY_TYPE type) {
         if(type == ARMY_TYPE.EMPTY) throw new IllegalArgumentException("No Army Available");
         if (type == ARMY_TYPE.INFANTRY) this.infantry -= lostSoldiers;

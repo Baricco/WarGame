@@ -51,7 +51,7 @@ public class Bot extends Player implements Runnable {
     }
 
     private Army getRandomArmy() {
-        getRandomArmy(this.getTotalState().getArmy().getTotal());
+        return getRandomArmy(this.getTotalState().getArmy().getTotal());
     }
 
     private Army getRandomArmy(int maxArmy) {
@@ -195,7 +195,7 @@ public class Bot extends Player implements Runnable {
                     break;
                 
                 case 4:     // Recluta
-                
+
                     State recruitingState = this.getAllStates().get(rnd.nextInt(this.getAllStates().size()));
                     recruitingState.recruitArmy(getRandomArmy(recruitingState.getStageArmy()), rnd.nextInt(Army.MIN_MODIFIER, Army.MAX_MODIFIER) + 1);
     

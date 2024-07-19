@@ -132,7 +132,7 @@ public class State {
 
         this.taxMultiplier = 1;
 
-        this.stageArmy = (int)((((((this.population + this.workForce) / 60) + ((this.money / 60) + ((this.naturalResources + this.refinedResources) * 5))) / 50) * ((this.reputation + 5) / 5)) / 5);
+        this.stageArmy = (int)((((((this.population + this.workForce) / 20) + ((this.money / 20) + ((this.naturalResources + this.refinedResources) * 10))) / 50) * ((this.reputation + 5) / 5)) / 2);
 
         this.workForce = (int)(((this.population / 100) * (this.reputation + 5) / 10) + ((this.money / 5) + (this.naturalResources / 5) + (this.refinedResources / 5)));
 

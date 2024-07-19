@@ -124,19 +124,20 @@ public class Bot extends Player implements Runnable {
 
     }
 
+    private State getRandomState() { return this.getAllStates().get(rnd.nextInt(this.getAllStates().size())); }
     
 
     public void play() {
 
-        // TODO: Qui ci vanno tutte le cose che fa il bot quando gioca
-
         // System.out.println(this.getName() + " says: " + stringozze[rnd.nextInt(stringozze.length)]);
         
-        int actionNumber = 1;//rnd.nextInt(MAX_ACTIONS);
+        int actionNumber = rnd.nextInt(MAX_ACTIONS);
 
         for (int i = 0; i < actionNumber; i++) {
 
-            int curAction = 1;//rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
+            int curAction = rnd.nextInt(6); 
+
+            System.out.println("i --> " + i + "\tcurAction --> " + curAction);
 
             switch (curAction) {
                 case 0:     // Attacco
@@ -187,21 +188,88 @@ public class Bot extends Player implements Runnable {
                     break;
 
                 case 2:     // Opere per i Cittadini
-                    
+
+                    State selectedState = getRandomState();
+
+                    boolean repeat = false;
+
+                    do {
+                        switch (rnd.nextInt(6)) {
+                            case 0:
+                                selectedState.harvestImprovement();
+                                repeat = false;
+                                break;
+                            case 1:
+                                selectedState.industrialImprovement();
+                                repeat = false;
+                                break;
+                            case 2:
+                                selectedState.infrastructureBuilding(rnd.nextInt(10, selectedState.getWorkForce() / 2000000));
+                                repeat = false;
+                                break;
+                            case 3:
+                                selectedState.infrastructureRenovation(rnd.nextInt(10, selectedState.getWorkForce() / 1000000));
+                                repeat = false;
+                                break;
+                            case 4:
+                                selectedState.governmentIncentives();
+                                repeat = false;
+                                break;
+                            case 5:
+                                selectedState.cutTaxes(rnd.nextDouble(0.05, 1));
+                                repeat = false;
+                                break;
+                            default:
+                                repeat = true;
+                                break;
+                        }
+                    } while(repeat);
+
                     break;
 
                 case 3:     // Fortificazione
+                    
+                    if (allStatesFortifying()) break;
+
+                    State fortifyingState;
+
+                    do {
+                        fortifyingState = getRandomState();
+                    } while(fortifyingState.isFortifiying());
+                    
+                    System.out.println(this.getName() + " Scheduled to Fortify " + fortifyingState.getName() + " in the Next 2 Turns");
+                    
+                    fortifyingState.startFortification();
 
                     break;
                 
                 case 4:     // Recluta
 
-                    State recruitingState = this.getAllStates().get(rnd.nextInt(this.getAllStates().size()));
+                    State recruitingState = getRandomState();
+
                     recruitingState.recruitArmy(getRandomArmy(recruitingState.getStageArmy()), rnd.nextInt(Army.MIN_MODIFIER, Army.MAX_MODIFIER) + 1);
     
                     break;
 
                 case 5:     // Rifornimento
+                    
+                    if (this.getAllStates().size() < 2) { i--; break; }
+                    
+                    State supplyingState = getRandomState();
+
+                    double[] maxResources = gameManager.getSupplyResources(this.getTotalState(), supplyingState);
+                    
+                    double[] supplies = new double[4];
+
+                    for (int j = 0; j < 4; j++) {
+                        try {
+                            supplies[j] = rnd.nextDouble(maxResources[j]);
+                        } catch(IllegalArgumentException e) { supplies[j] = 0; }
+                    }
+
+                    gameManager.printSupplies(supplies);
+
+                    supplyingState.supply(supplies);
                     
                     break;
 
@@ -213,12 +281,18 @@ public class Bot extends Player implements Runnable {
 
             
 
-            //try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
+            try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
         }
 
-        //try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
+        try { Thread.sleep(rnd.nextLong(500, 2000)); } catch (InterruptedException e) { return; }
 
         App.gameManager.passTurn();
+    }
+
+
+    private boolean allStatesFortifying() {
+        for (State s : this.getAllStates()) if (!s.isFortifiying()) return false;
+        return true;
     }
 
     @Override

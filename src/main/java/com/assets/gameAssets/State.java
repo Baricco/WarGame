@@ -149,7 +149,7 @@ public class State {
 
     public void recruitArmy(Army recruitingArmy, int turnCount) {
 
-        System.out.println(App.gameManager.getCurrentSelectedStateName() + " Recruited some Soldiers, new Army will be available in " + turnCount + " Turns");
+        System.out.println(this.getName() + " Recruited some Soldiers, new Army will be available in " + turnCount + " Turns");
 
         if (this.isRecruiting()) return;
         this.recruitingArmy = new Pair<>(recruitingArmy, new Pair<>(turnCount - 1, turnCount));
@@ -253,41 +253,51 @@ public class State {
     public void cutTaxes(double percentage) {
         this.taxMultiplier = percentage;
         this.increaseReputation((int)Math.round(percentage / 10));
+        System.out.println(this.getName() + " Issued a Tax Cut");
     }
 
     public void governmentIncentives() {
         this.subMoney(Price.GOVERNMENT_INCENTIVES_PRICE * this.population);
         this.increaseReputation(10);
+        System.out.println(this.getName() + " Issued Government Incentives");
     }
 
     public void infrastructureRenovation(int value) {
         this.subMoney(Price.BUILDINGS_RENOVATION_PRICE * value);
         this.increaseReputation(Math.round(value / 100));
+        System.out.println(this.getName() + " Renovated " + value + " Infrastructures");
+
     }
 
     public void infrastructureBuilding(int value) {
         this.subMoney(Price.BUILDINGS_CONSTRUCTION_PRICE * value);
         this.increaseReputation(Math.round(value / 50));
+        System.out.println(this.getName() + " Built " + value + " Infrastructures");
+
     }
 
     public void harvestImprovement() {
         this.subMoney(Price.HARVESTING_IMPROVEMENT_TURN_PRICE);
         this.increaseReputation(5);
         this.workForce *= 1.2;
+        System.out.println(this.getName() + " Started an Agricultural Campaign");
     }
 
     public void industrialImprovement() {
         this.subMoney(Price.INDUSTRIAL_IMPROVEMENT_TURN_PRICE);
         this.increaseReputation(5);
         this.workForce *= 1.4;
+        System.out.println(this.getName() + " Started an Industrial Campaign");
     }
 
     public void addMoney(double money) {
+        money = Math.abs(money);
         System.out.println(this.getName() + " gains " + money + " Dystopian Dollars");
         this.money += money;
     }
 
     public void subMoney(double money) {
+        money = Math.abs(money);
         System.out.println(this.getName() + " pays " + money + " Dystopian Dollars");
         this.money -= money;
     }
@@ -426,7 +436,7 @@ public class State {
         if (this.fortificationRemainingTurns <= 0) this.fortify();
 
     }
-
+    
     public void supply(double[] resources) {
         this.addMoney(resources[0]);
         this.getArmy().addSoldiers(new Army(resources[1]));

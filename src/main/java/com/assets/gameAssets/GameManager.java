@@ -644,7 +644,7 @@ public class GameManager {
         App.gameManager.refreshSupplyMenu();
     }
 
-    private double[] getSupplyResources(State srcState, State dstState) {
+    public double[] getSupplyResources(State srcState, State dstState) {
         return new double[]{
             (srcState.getMoney() - dstState.getMoney()) / 2,
             (srcState.getTotalArmy() - dstState.getTotalArmy()) / 2, 
@@ -677,17 +677,24 @@ public class GameManager {
         }
     }
 
+    public void printSupplies(double[] newResources) {
+        
+        String resourceNames[] = { "Dystopian Dollars", "Soldiers", "Natural Resources", "Refined Resources" }; 
+
+        System.out.println(getHumanPlayer().getName() + " Supplied "  + curSelectedState.getName() + " with:");
+
+        for (int i = 0; i < newResources.length; i++) System.out.println("\t" + newResources[i] + " " + resourceNames[i]);
+
+    }
+
     @FXML
     void supply(ActionEvent event) {
         
         double newResources[] = calcResourcesFromSliders();
 
         curSelectedState.supply(newResources); 
-        String resourceNames[] = { "Dystopian Dollars", "Soldiers", "Natural Resources", "Refined Resources" }; 
-
-        System.out.println(getHumanPlayer().getName() + " Supplied "  + curSelectedState.getName() + " with:");
-
-        for (int i = 0; i < newResources.length; i++) System.out.println("\t" + newResources[i] + " " + resourceNames[i]);
+        
+        printSupplies(newResources);
 
         removeBottomMenuPane("#supplyMenu");
 
@@ -986,8 +993,6 @@ public class GameManager {
             s.subMoney(cost * s.getMoney() / totalMoney);
         }
     }
-
-    public String getCurrentSelectedStateName() { return curSelectedState.getName(); }
 
     private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
         
@@ -1813,7 +1818,6 @@ public class GameManager {
     private void manageHumanTurn() {
         if (!getCurrentPlayer().getClass().equals(Human.class)) {
             try { GameManager.botThread.interrupt(); } catch(Exception e) { }
-            System.out.println("Problemozzo con " + getCurrentPlayer());
             passTurn();
         }
 
@@ -1854,7 +1858,7 @@ public class GameManager {
         try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#supplyMenu"); } catch(Exception e) {}
 
-        System.out.println(getCurrentPlayer().getName() + " Passed their turn");
+        System.out.println(getCurrentPlayer().getName() + " Passed their turn\n");
 
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 

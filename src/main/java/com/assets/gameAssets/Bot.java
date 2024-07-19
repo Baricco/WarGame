@@ -51,8 +51,12 @@ public class Bot extends Player implements Runnable {
     }
 
     private Army getRandomArmy() {
+        getRandomArmy(this.getTotalState().getArmy().getTotal());
+    }
 
-        Army totalArmy = this.getTotalState().getArmy();
+    private Army getRandomArmy(int maxArmy) {
+
+        Army totalArmy = new Army(maxArmy);
 
         double infantry, artillery, tanks, apaches;
 
@@ -82,17 +86,57 @@ public class Bot extends Player implements Runnable {
         return true;
     }
 
+    @Override
+    public boolean acceptsNonAggressionPact(Player player) {
+        if (rnd.nextDouble(10) > ((player.getLevel() * 0.1) + ((player.getTotalState().getMoney() + player.getTotalState().getArmy().getTotal()) * 0.0000000001) + (player.getTotalState().getWorkForce() * 0.00000001))) {
+            System.out.println(this.getName() + " Refused to Treat with " + player.getName());
+            return false;
+        }
+        System.out.println(this.getName() + " Accepts to Ally with " + player.getName());
+        return true;
+    }
+
+    private void requestAlliance() {
+
+        Player newAlly;
+        
+        do { newAlly = gameManager.getPlayers().get(rnd.nextInt(1, gameManager.getPlayers().size())); } while(!newAlly.getClass().equals(Bot.class) || newAlly.isAllied(this) || newAlly.equals(this));
+
+        System.out.println(this.getName() + " Requested an Alliance to " + newAlly.getName());
+
+        if (!((Bot)newAlly).acceptsAlliance(this)) return;
+
+        try { newAlly.addAlly(this); } catch(Exception e) {}
+
+    }
+
+    private void requestNonAggressionPact() {
+
+        Player player;
+        
+        do { player = gameManager.getPlayers().get(rnd.nextInt(1, gameManager.getPlayers().size())); } while(!player.getClass().equals(Bot.class) || player.hasNonAggressionPact(this) || player.equals(this));
+
+        System.out.println(this.getName() + " Requested a Non-Aggression Pact to " + player.getName());
+
+        if (!((Bot)player).acceptsNonAggressionPact(this)) return;
+
+        try { player.addAlly(this); } catch(Exception e) {}
+
+    }
+
+    
+
     public void play() {
 
         // TODO: Qui ci vanno tutte le cose che fa il bot quando gioca
 
         // System.out.println(this.getName() + " says: " + stringozze[rnd.nextInt(stringozze.length)]);
         
-        int actionNumber = rnd.nextInt(MAX_ACTIONS);
+        int actionNumber = 1;//rnd.nextInt(MAX_ACTIONS);
 
         for (int i = 0; i < actionNumber; i++) {
 
-            int curAction = rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
+            int curAction = 1;//rnd.nextInt(6); // QUI COME NUMERO BISOGNA METTERE IL NUMERO DI AZIONI CHE SI POSSONO FARE
 
             switch (curAction) {
                 case 0:     // Attacco
@@ -137,6 +181,9 @@ public class Bot extends Player implements Runnable {
 
                 case 1:     // Negoziazione
                     
+                    if (rnd.nextBoolean()) requestAlliance();
+                    else requestNonAggressionPact();
+                    
                     break;
 
                 case 2:     // Opere per i Cittadini
@@ -148,7 +195,10 @@ public class Bot extends Player implements Runnable {
                     break;
                 
                 case 4:     // Recluta
-
+                
+                    State recruitingState = this.getAllStates().get(rnd.nextInt(this.getAllStates().size()));
+                    recruitingState.recruitArmy(getRandomArmy(recruitingState.getStageArmy()), rnd.nextInt(Army.MIN_MODIFIER, Army.MAX_MODIFIER) + 1);
+    
                     break;
 
                 case 5:     // Rifornimento

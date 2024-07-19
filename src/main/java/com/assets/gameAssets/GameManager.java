@@ -961,7 +961,7 @@ public class GameManager {
     }
 
     private void looseStateArmy(State state, double soldiersNumber, ARMY_TYPE type) {
-        state.getArmy().looseSoldiers(soldiersNumber, type);
+        state.getArmy().loseSoldiers(soldiersNumber, type);
     }
 
     private void looseStateArmy(ArrayList<State> states, double soldiersNumber, ARMY_TYPE type) {
@@ -986,6 +986,8 @@ public class GameManager {
             s.subMoney(cost * s.getMoney() / totalMoney);
         }
     }
+
+    public String getCurrentSelectedStateName() { return curSelectedState.getName(); }
 
     private Pair<Integer, Integer> attackByArmyType(ARMY_TYPE type, Army attackingArmy, Army defendingArmy) {
         
@@ -1140,8 +1142,6 @@ public class GameManager {
         removeBottomMenuPane("#recruitMenu");
 
         curSelectedState.recruitArmy(recruitArmy, Integer.parseInt(attackModifierLabel.getText()));  
-
-        System.out.println(curSelectedState.getName() + " Recruited some Soldiers, new Army will be available in " + attackModifierLabel.getText() + " Turns");
 
         enableButton("#sideMenuThirdButton");
 
@@ -1756,7 +1756,7 @@ public class GameManager {
     }
 
     public State getRandomState() { 
-        return this.states.get(states.keySet().toArray()[RandomGenerator.getDefault().nextInt(states.size())]);
+        return states.get(states.keySet().toArray()[RandomGenerator.getDefault().nextInt(states.size())]);
     }
 
     public ArrayList<Player> getPlayers() {
@@ -1853,6 +1853,8 @@ public class GameManager {
         try { removeBottomMenuPane("#attackMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#supplyMenu"); } catch(Exception e) {}
+
+        System.out.println(getCurrentPlayer().getName() + " Passed their turn");
 
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 

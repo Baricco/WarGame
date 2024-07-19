@@ -148,6 +148,9 @@ public class State {
     public double getArmyMultiplier() { return this.armyMultiplier; }
 
     public void recruitArmy(Army recruitingArmy, int turnCount) {
+
+        System.out.println(App.gameManager.getCurrentSelectedStateName() + " Recruited some Soldiers, new Army will be available in " + turnCount + " Turns");
+
         if (this.isRecruiting()) return;
         this.recruitingArmy = new Pair<>(recruitingArmy, new Pair<>(turnCount - 1, turnCount));
     }

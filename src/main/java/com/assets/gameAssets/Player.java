@@ -158,6 +158,10 @@ public abstract class Player {
             );
     }
 
+    public boolean isAllied(Player player) {
+        return this.allies.contains(player);
+    }
+
     public boolean isAllied(State state) {
         
         if (this.hasOccupied(state)) return false;
@@ -174,6 +178,10 @@ public abstract class Player {
 
     public void removeNonAggressionPact(Player player) {
         this.nonAggression.remove(player);
+    }
+
+    public boolean hasNonAggressionPact(Player player) {
+        return this.nonAggression.containsKey(player);
     }
 
     public boolean hasNonAggressionPact(State state) {
@@ -310,11 +318,17 @@ public abstract class Player {
     public int getLevel() {
         return this.level;
     }
-    
+
     public boolean acceptsAlliance(Player player) {
         System.out.println(this.getName() + " Refused to Ally with " + player.getName());
         return false;
     }
+
+    public boolean acceptsNonAggressionPact(Player player) {
+        System.out.println(this.getName() + " Refused to Treat with " + player.getName());
+        return false;
+    }
+    
     
 
 

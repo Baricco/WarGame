@@ -3,11 +3,11 @@
     <State Id="AE">
         <Name>Saudi Arabia</Name>
         <Money>1000000000</Money>
-        <StageMoney>8000000</StageMoney>
-        <NaturalResources>35000</NaturalResources>
-        <StageNaturalResources>5800</StageNaturalResources>
-        <RefinedResources>48000</RefinedResources>
-        <StageRefinedResources>8000</StageRefinedResources>
+        <StageMoney>80000000</StageMoney>
+        <NaturalResources>350000</NaturalResources>
+        <StageNaturalResources>58000</StageNaturalResources>
+        <RefinedResources>480000</RefinedResources>
+        <StageRefinedResources>80000</StageRefinedResources>
         <Population>70000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">PT</Border>
@@ -65,12 +65,12 @@
 
     <State Id="AF">
         <Name>Afghanistan</Name>
-        <Money>155000000</Money>
-        <StageMoney>8500000</StageMoney>
-        <NaturalResources>45000</NaturalResources>
-        <StageNaturalResources>6700</StageNaturalResources>
-        <RefinedResources>29000</RefinedResources>
-        <StageRefinedResources>3800</StageRefinedResources>
+        <Money>1550000000</Money>
+        <StageMoney>85000000</StageMoney>
+        <NaturalResources>450000</NaturalResources>
+        <StageNaturalResources>67000</StageNaturalResources>
+        <RefinedResources>290000</RefinedResources>
+        <StageRefinedResources>38000</StageRefinedResources>
         <Population>280000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">IR</Border>
@@ -123,17 +123,17 @@
             <City trainStation="false">Muzaffarabad</City>
             <City trainStation="false">Gilgit</City>
         </Cities>
-        <ArmyMultiplier>2.5</ArmyMultiplier>
+        <ArmyMultiplier>2.7</ArmyMultiplier>
     </State>
 
     <State Id="JG">
         <Name>Jugoslavia</Name>
         <Money>550000000</Money>
-        <StageMoney>6800000</StageMoney>
-        <NaturalResources>121000</NaturalResources>
-        <StageNaturalResources>37000</StageNaturalResources>
-        <RefinedResources>38000</RefinedResources>
-        <StageRefinedResources>7900</StageRefinedResources>
+        <StageMoney>68000000</StageMoney>
+        <NaturalResources>1210000</NaturalResources>
+        <StageNaturalResources>370000</StageNaturalResources>
+        <RefinedResources>380000</RefinedResources>
+        <StageRefinedResources>79000</StageRefinedResources>
         <Population>22000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">IT</Border>
@@ -215,11 +215,11 @@
     <State Id="EG">
         <Name>Egypt</Name>
         <Money>600000000</Money>
-        <StageMoney>800000</StageMoney>
-        <NaturalResources>224000</NaturalResources>
-        <StageNaturalResources>35000</StageNaturalResources>
-        <RefinedResources>52000</RefinedResources>
-        <StageRefinedResources>12000</StageRefinedResources>
+        <StageMoney>8000000</StageMoney>
+        <NaturalResources>2240000</NaturalResources>
+        <StageNaturalResources>350000</StageNaturalResources>
+        <RefinedResources>520000</RefinedResources>
+        <StageRefinedResources>120000</StageRefinedResources>
         <Population>148000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">LY</Border>
@@ -282,13 +282,13 @@
     
     <State Id="IR">
         <Name>Iran</Name>
-        <Money>255000000</Money>
-        <StageMoney>8000000</StageMoney>
-        <NaturalResources>100000</NaturalResources>
-        <StageNaturalResources>27900</StageNaturalResources>
-        <RefinedResources>57000</RefinedResources>
-        <StageRefinedResources>4400</StageRefinedResources>
-        <Population>84000000</Population>
+        <Money>390000000</Money>
+        <StageMoney>89000000</StageMoney>
+        <NaturalResources>1040000</NaturalResources>
+        <StageNaturalResources>284000</StageNaturalResources>
+        <RefinedResources>620000</RefinedResources>
+        <StageRefinedResources>82000</StageRefinedResources>
+        <Population>92000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">PT</Border>
             <Border SeaBorder="false">TR</Border>
@@ -339,12 +339,12 @@
 
     <State Id="CG">
         <Name>Congo</Name>
-        <Money>200000000</Money>
-        <StageMoney>64000000</StageMoney>
-        <NaturalResources>71000</NaturalResources>
-        <StageNaturalResources>6800</StageNaturalResources>
-        <RefinedResources>14000</RefinedResources>
-        <StageRefinedResources>2050</StageRefinedResources>
+        <Money>396000000</Money>
+        <StageMoney>108000000</StageMoney>
+        <NaturalResources>965000</NaturalResources>
+        <StageNaturalResources>98000</StageNaturalResources>
+        <RefinedResources>430000</RefinedResources>
+        <StageRefinedResources>49800</StageRefinedResources>
         <Population>125000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">NI</Border>
@@ -413,12 +413,12 @@
     <State Id="AR">
         <Name>Argentina</Name>
         <Money>720000000</Money>
-        <StageMoney>8800000</StageMoney>
-        <NaturalResources>230000</NaturalResources>
-        <StageNaturalResources>28000</StageNaturalResources>
-        <RefinedResources>87000</RefinedResources>
-        <StageRefinedResources>13000</StageRefinedResources>
-        <Population>68400000</Population>
+        <StageMoney>88000000</StageMoney>
+        <NaturalResources>2300000</NaturalResources>
+        <StageNaturalResources>280000</StageNaturalResources>
+        <RefinedResources>870000</RefinedResources>
+        <StageRefinedResources>130000</StageRefinedResources>
+        <Population>684000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">CI</Border>
             <Border SeaBorder="false">BR</Border>
@@ -465,11 +465,11 @@
     <State Id="AT">
         <Name>Austria</Name>
         <Money>850000000</Money>
-        <StageMoney>13000000</StageMoney>
-        <NaturalResources>184000</NaturalResources>
-        <StageNaturalResources>24000</StageNaturalResources>
-        <RefinedResources>61000</RefinedResources>
-        <StageRefinedResources>8900</StageRefinedResources>
+        <StageMoney>130000000</StageMoney>
+        <NaturalResources>1840000</NaturalResources>
+        <StageNaturalResources>240000</StageNaturalResources>
+        <RefinedResources>610000</RefinedResources>
+        <StageRefinedResources>89000</StageRefinedResources>
         <Population>36800000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">IT</Border>
@@ -523,11 +523,11 @@
     <State Id="AU">
         <Name>Australia</Name>
         <Money>950000000</Money>
-        <StageMoney>17000000</StageMoney>
-        <NaturalResources>283000</NaturalResources>
-        <StageNaturalResources>32000</StageNaturalResources>
-        <RefinedResources>153000</RefinedResources>
-        <StageRefinedResources>14000</StageRefinedResources>
+        <StageMoney>170000000</StageMoney>
+        <NaturalResources>2830000</NaturalResources>
+        <StageNaturalResources>320000</StageNaturalResources>
+        <RefinedResources>1530000</RefinedResources>
+        <StageRefinedResources>140000</StageRefinedResources>
         <Population>25850000</Population>
         <NeighboringStates>
             <Border SeaBorder="true">NZ</Border>
@@ -557,12 +557,12 @@
 
     <State Id="ID">
         <Name>India</Name>
-        <Money>5000000</Money>
-        <StageMoney>3900000</StageMoney>
-        <NaturalResources>10400</NaturalResources>
-        <StageNaturalResources>18000</StageNaturalResources>
-        <RefinedResources>23000</RefinedResources>
-        <StageRefinedResources>8300</StageRefinedResources>
+        <Money>300000000</Money>
+        <StageMoney>39000000</StageMoney>
+        <NaturalResources>104000</NaturalResources>
+        <StageNaturalResources>180000</StageNaturalResources>
+        <RefinedResources>230000</RefinedResources>
+        <StageRefinedResources>83000</StageRefinedResources>
         <Population>1500000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">AF</Border>
@@ -637,11 +637,11 @@
     <State Id="IT">
         <Name>Italy</Name>
         <Money>1000000000</Money>
-        <StageMoney>2000000</StageMoney>
-        <NaturalResources>149000</NaturalResources>
-        <StageNaturalResources>48000</StageNaturalResources>
-        <RefinedResources>94000</RefinedResources>
-        <StageRefinedResources>23000</StageRefinedResources>
+        <StageMoney>20000000</StageMoney>
+        <NaturalResources>1490000</NaturalResources>
+        <StageNaturalResources>480000</StageNaturalResources>
+        <RefinedResources>940000</RefinedResources>
+        <StageRefinedResources>230000</StageRefinedResources>
         <Population>70000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">FR</Border>
@@ -735,11 +735,11 @@
     <State Id="FR">
         <Name>France</Name>
         <Money>1150000000</Money>
-        <StageMoney>28000000</StageMoney>
-        <NaturalResources>160000</NaturalResources>
-        <StageNaturalResources>52000</StageNaturalResources>
-        <RefinedResources>123000</RefinedResources>
-        <StageRefinedResources>27000</StageRefinedResources>
+        <StageMoney>280000000</StageMoney>
+        <NaturalResources>1600000</NaturalResources>
+        <StageNaturalResources>520000</StageNaturalResources>
+        <RefinedResources>1230000</RefinedResources>
+        <StageRefinedResources>270000</StageRefinedResources>
         <Population>85000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SP</Border>
@@ -801,12 +801,12 @@
 
     <State Id="SE">
         <Name>Western Africa</Name>
-        <Money>230000000</Money>
-        <StageMoney>13000000</StageMoney>
-        <NaturalResources>56000</NaturalResources>
-        <StageNaturalResources>10300</StageNaturalResources>
-        <RefinedResources>34000</RefinedResources>
-        <StageRefinedResources>6200</StageRefinedResources>
+        <Money>2300000000</Money>
+        <StageMoney>130000000</StageMoney>
+        <NaturalResources>560000</NaturalResources>
+        <StageNaturalResources>103000</StageNaturalResources>
+        <RefinedResources>340000</RefinedResources>
+        <StageRefinedResources>62000</StageRefinedResources>
         <Population>135700000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">MO</Border>
@@ -877,12 +877,12 @@
 
     <State Id="MZ">
         <Name>Mozambique</Name>
-        <Money>232000000</Money>
-        <StageMoney>4700000</StageMoney>
-        <NaturalResources>158000</NaturalResources>
-        <StageNaturalResources>7400</StageNaturalResources>
-        <RefinedResources>20000</RefinedResources>
-        <StageRefinedResources>5600</StageRefinedResources>
+        <Money>332000000</Money>
+        <StageMoney>47000000</StageMoney>
+        <NaturalResources>1880000</NaturalResources>
+        <StageNaturalResources>84000</StageNaturalResources>
+        <RefinedResources>340000</RefinedResources>
+        <StageRefinedResources>66000</StageRefinedResources>
         <Population>127000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SA</Border>
@@ -932,11 +932,11 @@
     <State Id="CI">
         <Name>Chile</Name>
         <Money>400000000</Money>
-        <StageMoney>4800000</StageMoney>
-        <NaturalResources>240000</NaturalResources>
-        <StageNaturalResources>47000</StageNaturalResources>
-        <RefinedResources>74000</RefinedResources>
-        <StageRefinedResources>12000</StageRefinedResources>
+        <StageMoney>48000000</StageMoney>
+        <NaturalResources>2400000</NaturalResources>
+        <StageNaturalResources>470000</StageNaturalResources>
+        <RefinedResources>740000</RefinedResources>
+        <StageRefinedResources>120000</StageRefinedResources>
         <Population>30000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">CO</Border>
@@ -979,11 +979,11 @@
     <State Id="BR">
         <Name>Brazil</Name>
         <Money>350000000</Money>
-        <StageMoney>9000000</StageMoney>
-        <NaturalResources>280000</NaturalResources>
-        <StageNaturalResources>32000</StageNaturalResources>
-        <RefinedResources>79000</RefinedResources>
-        <StageRefinedResources>13000</StageRefinedResources>
+        <StageMoney>90000000</StageMoney>
+        <NaturalResources>2800000</NaturalResources>
+        <StageNaturalResources>320000</StageNaturalResources>
+        <RefinedResources>790000</RefinedResources>
+        <StageRefinedResources>130000</StageRefinedResources>
         <Population>217800000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">CO</Border>
@@ -1039,11 +1039,11 @@
     <State Id="AC">
         <Name>Central America</Name>
         <Money>450000000</Money>
-        <StageMoney>5800000</StageMoney>
-        <NaturalResources>223000</NaturalResources>
-        <StageNaturalResources>34000</StageNaturalResources>
-        <RefinedResources>98000</RefinedResources>
-        <StageRefinedResources>16000</StageRefinedResources>
+        <StageMoney>58000000</StageMoney>
+        <NaturalResources>2230000</NaturalResources>
+        <StageNaturalResources>340000</StageNaturalResources>
+        <RefinedResources>980000</RefinedResources>
+        <StageRefinedResources>160000</StageRefinedResources>
         <Population>75200000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">MX</Border>
@@ -1122,11 +1122,11 @@
     <State Id="SU">
         <Name>Soviet Union</Name>
         <Money>1100000000</Money>
-        <StageMoney>16000000</StageMoney>
-        <NaturalResources>76000</NaturalResources>
-        <StageNaturalResources>25000</StageNaturalResources>
-        <RefinedResources>83000</RefinedResources>
-        <StageRefinedResources>21000</StageRefinedResources>
+        <StageMoney>160000000</StageMoney>
+        <NaturalResources>760000</NaturalResources>
+        <StageNaturalResources>250000</StageNaturalResources>
+        <RefinedResources>830000</RefinedResources>
+        <StageRefinedResources>210000</StageRefinedResources>
         <Population>162000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SC</Border>
@@ -1202,11 +1202,11 @@
     <State Id="CA">
         <Name>Canada</Name>
         <Money>1200000000</Money>
-        <StageMoney>43000000</StageMoney>
-        <NaturalResources>192000</NaturalResources>
-        <StageNaturalResources>43000</StageNaturalResources>
-        <RefinedResources>186000</RefinedResources>
-        <StageRefinedResources>36000</StageRefinedResources>
+        <StageMoney>430000000</StageMoney>
+        <NaturalResources>1920000</NaturalResources>
+        <StageNaturalResources>430000</StageNaturalResources>
+        <RefinedResources>1860000</RefinedResources>
+        <StageRefinedResources>360000</StageRefinedResources>
         <Population>39000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">US</Border>
@@ -1255,12 +1255,12 @@
 
     <State Id="NI">
         <Name>Nigeria</Name>
-        <Money>340000000</Money>
-        <StageMoney>9000000</StageMoney>
-        <NaturalResources>36000</NaturalResources>
-        <StageNaturalResources>9500</StageNaturalResources>
-        <RefinedResources>29000</RefinedResources>
-        <StageRefinedResources>5300</StageRefinedResources>
+        <Money>400000000</Money>
+        <StageMoney>104000000</StageMoney>
+        <NaturalResources>420000</NaturalResources>
+        <StageNaturalResources>98000</StageNaturalResources>
+        <RefinedResources>330000</RefinedResources>
+        <StageRefinedResources>56000</StageRefinedResources>
         <Population>310200000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SE</Border>
@@ -1326,11 +1326,11 @@
     <State Id="CN">
         <Name>China</Name>
         <Money>1250000000</Money>
-        <StageMoney>49000000</StageMoney>
-        <NaturalResources>20300</NaturalResources>
-        <StageNaturalResources>18000</StageNaturalResources>
-        <RefinedResources>178000</RefinedResources>
-        <StageRefinedResources>37000</StageRefinedResources>
+        <StageMoney>490000000</StageMoney>
+        <NaturalResources>203000</NaturalResources>
+        <StageNaturalResources>180000</StageNaturalResources>
+        <RefinedResources>1780000</RefinedResources>
+        <StageRefinedResources>370000</StageRefinedResources>
         <Population>1135000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">TH</Border>
@@ -1387,12 +1387,12 @@
 
     <State Id="CO">
         <Name>Colombia</Name>
-        <Money>420000000</Money>
-        <StageMoney>17000000</StageMoney>
-        <NaturalResources>167000</NaturalResources>
-        <StageNaturalResources>28000</StageNaturalResources>
-        <RefinedResources>75000</RefinedResources>
-        <StageRefinedResources>17000</StageRefinedResources>
+        <Money>470000000</Money>
+        <StageMoney>170000000</StageMoney>
+        <NaturalResources>1670000</NaturalResources>
+        <StageNaturalResources>280000</StageNaturalResources>
+        <RefinedResources>750000</RefinedResources>
+        <StageRefinedResources>170000</StageRefinedResources>
         <Population>102000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">AC</Border>
@@ -1459,11 +1459,11 @@
     <State Id="GR">
         <Name>Greece</Name>
         <Money>400000000</Money>
-        <StageMoney>9400000</StageMoney>
-        <NaturalResources>286000</NaturalResources>
-        <StageNaturalResources>42000</StageNaturalResources>
-        <RefinedResources>151000</RefinedResources>
-        <StageRefinedResources>23000</StageRefinedResources>
+        <StageMoney>94000000</StageMoney>
+        <NaturalResources>2860000</NaturalResources>
+        <StageNaturalResources>420000</StageNaturalResources>
+        <RefinedResources>1510000</RefinedResources>
+        <StageRefinedResources>230000</StageRefinedResources>
         <Population>14200000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">JG</Border>
@@ -1512,11 +1512,11 @@
     <State Id="GE">
         <Name>Germany</Name>
         <Money>1100000000</Money>
-        <StageMoney>28000000</StageMoney>
-        <NaturalResources>238000</NaturalResources>
-        <StageNaturalResources>38000</StageNaturalResources>
-        <RefinedResources>132000</RefinedResources>
-        <StageRefinedResources>26000</StageRefinedResources>
+        <StageMoney>280000000</StageMoney>
+        <NaturalResources>2380000</NaturalResources>
+        <StageNaturalResources>380000</StageNaturalResources>
+        <RefinedResources>1320000</RefinedResources>
+        <StageRefinedResources>260000</StageRefinedResources>
         <Population>90300000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">FR</Border>
@@ -1580,11 +1580,11 @@
     <State Id="MO">
         <Name>Morocco</Name>
         <Money>500000000</Money>
-        <StageMoney>16000000</StageMoney>
-        <NaturalResources>184000</NaturalResources>
-        <StageNaturalResources>29000</StageNaturalResources>
-        <RefinedResources>78000</RefinedResources>
-        <StageRefinedResources>8900</StageRefinedResources>
+        <StageMoney>160000000</StageMoney>
+        <NaturalResources>1840000</NaturalResources>
+        <StageNaturalResources>290000</StageNaturalResources>
+        <RefinedResources>780000</RefinedResources>
+        <StageRefinedResources>89000</StageRefinedResources>
         <Population>79100000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SE</Border>
@@ -1629,13 +1629,13 @@
 
     <State Id="ET">
         <Name>Ethiopia</Name>
-        <Money>110000000</Money>
-        <StageMoney>7000000</StageMoney>
-        <NaturalResources>67000</NaturalResources>
-        <StageNaturalResources>12000</StageNaturalResources>
-        <RefinedResources>28000</RefinedResources>
-        <StageRefinedResources>3900</StageRefinedResources>
-        <Population>214600000</Population>
+        <Money>315000000</Money>
+        <StageMoney>98000000</StageMoney>
+        <NaturalResources>856000</NaturalResources>
+        <StageNaturalResources>287000</StageNaturalResources>
+        <RefinedResources>491000</RefinedResources>
+        <StageRefinedResources>66000</StageRefinedResources>
+        <Population>215600000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">EG</Border>
             <Border SeaBorder="false">NI</Border>
@@ -1698,11 +1698,11 @@
     <State Id="SP">
         <Name>Spain</Name>
         <Money>950000000</Money>
-        <StageMoney>26000000</StageMoney>
-        <NaturalResources>227000</NaturalResources>
-        <StageNaturalResources>32000</StageNaturalResources>
-        <RefinedResources>129000</RefinedResources>
-        <StageRefinedResources>19000</StageRefinedResources>
+        <StageMoney>260000000</StageMoney>
+        <NaturalResources>2270000</NaturalResources>
+        <StageNaturalResources>320000</StageNaturalResources>
+        <RefinedResources>1290000</RefinedResources>
+        <StageRefinedResources>190000</StageRefinedResources>
         <Population>59200000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">FR</Border>
@@ -1772,11 +1772,11 @@
     <State Id="SC">
         <Name>Scandinavia</Name>
         <Money>1100000000</Money>
-        <StageMoney>28000000</StageMoney>
+        <StageMoney>280000000</StageMoney>
         <NaturalResources>132000</NaturalResources>
-        <StageNaturalResources>34000</StageNaturalResources>
+        <StageNaturalResources>340000</StageNaturalResources>
         <RefinedResources>192000</RefinedResources>
-        <StageRefinedResources>31000</StageRefinedResources>
+        <StageRefinedResources>310000</StageRefinedResources>
         <Population>21800000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SU</Border>
@@ -1830,11 +1830,11 @@
     <State Id="IN">
         <Name>Indonesia</Name>
         <Money>900000000</Money>
-        <StageMoney>24000000</StageMoney>
-        <NaturalResources>239000</NaturalResources>
-        <StageNaturalResources>24000</StageNaturalResources>
-        <RefinedResources>112000</RefinedResources>
-        <StageRefinedResources>17000</StageRefinedResources>
+        <StageMoney>240000000</StageMoney>
+        <NaturalResources>2390000</NaturalResources>
+        <StageNaturalResources>240000</StageNaturalResources>
+        <RefinedResources>1120000</RefinedResources>
+        <StageRefinedResources>170000</StageRefinedResources>
         <Population>313400000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">TH</Border>
@@ -1903,11 +1903,11 @@
     <State Id="GB">
         <Name>Great Britain</Name>
         <Money>1050000000</Money>
-        <StageMoney>26500000</StageMoney>
-        <NaturalResources>198000</NaturalResources>
-        <StageNaturalResources>34000</StageNaturalResources>
-        <RefinedResources>179000</RefinedResources>
-        <StageRefinedResources>25000</StageRefinedResources>
+        <StageMoney>265000000</StageMoney>
+        <NaturalResources>1980000</NaturalResources>
+        <StageNaturalResources>340000</StageNaturalResources>
+        <RefinedResources>1790000</RefinedResources>
+        <StageRefinedResources>250000</StageRefinedResources>
         <Population>71400000</Population>
         <NeighboringStates>
             <Border SeaBorder="true">CA</Border>
@@ -1986,11 +1986,11 @@
     <State Id="GL">
         <Name>Greenland</Name>
         <Money>150000000</Money>
-        <StageMoney>3200000</StageMoney>
-        <NaturalResources>32000</NaturalResources>
-        <StageNaturalResources>4300</StageNaturalResources>
-        <RefinedResources>11000</RefinedResources>
-        <StageRefinedResources>1400</StageRefinedResources>
+        <StageMoney>32000000</StageMoney>
+        <NaturalResources>320000</NaturalResources>
+        <StageNaturalResources>43000</StageNaturalResources>
+        <RefinedResources>110000</RefinedResources>
+        <StageRefinedResources>14000</StageRefinedResources>
         <Population>56421</Population>
         <NeighboringStates>
             <Border SeaBorder="true">CA</Border>
@@ -2017,11 +2017,11 @@
     <State Id="PT">
         <Name>Palestine</Name>
         <Money>445000000</Money>
-        <StageMoney>16000000</StageMoney>
-        <NaturalResources>143000</NaturalResources>
-        <StageNaturalResources>29000</StageNaturalResources>
-        <RefinedResources>87000</RefinedResources>
-        <StageRefinedResources>13000</StageRefinedResources>
+        <StageMoney>160000000</StageMoney>
+        <NaturalResources>1430000</NaturalResources>
+        <StageNaturalResources>290000</StageNaturalResources>
+        <RefinedResources>870000</RefinedResources>
+        <StageRefinedResources>130000</StageRefinedResources>
         <Population>78100000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">EG</Border>
@@ -2091,12 +2091,12 @@
 
     <State Id="JP">
         <Name>Japan</Name>
-        <Money>950000000</Money>
-        <StageMoney>30000000</StageMoney>
-        <NaturalResources>207000</NaturalResources>
-        <StageNaturalResources>31000</StageNaturalResources>
-        <RefinedResources>176000</RefinedResources>
-        <StageRefinedResources>23000</StageRefinedResources>
+        <Money>1000000000</Money>
+        <StageMoney>300000000</StageMoney>
+        <NaturalResources>2070000</NaturalResources>
+        <StageNaturalResources>310000</StageNaturalResources>
+        <RefinedResources>1760000</RefinedResources>
+        <StageRefinedResources>230000</StageRefinedResources>
         <Population>126200000</Population>
         <NeighboringStates>
             <Border SeaBorder="true">SU</Border>
@@ -2145,11 +2145,11 @@
     <State Id="KZ">
         <Name>Kazakistan</Name>
         <Money>255000000</Money>
-        <StageMoney>14000000</StageMoney>
-        <NaturalResources>203000</NaturalResources>
-        <StageNaturalResources>18500</StageNaturalResources>
-        <RefinedResources>95000</RefinedResources>
-        <StageRefinedResources>9600</StageRefinedResources>
+        <StageMoney>140000000</StageMoney>
+        <NaturalResources>2030000</NaturalResources>
+        <StageNaturalResources>185000</StageNaturalResources>
+        <RefinedResources>950000</RefinedResources>
+        <StageRefinedResources>96000</StageRefinedResources>
         <Population>59500000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SU</Border>
@@ -2193,12 +2193,12 @@
 
     <State Id="TH">
         <Name>South-East Asia</Name>
-        <Money>765000000</Money>
-        <StageMoney>23000000</StageMoney>
-        <NaturalResources>186000</NaturalResources>
-        <StageNaturalResources>32000</StageNaturalResources>
-        <RefinedResources>149000</RefinedResources>
-        <StageRefinedResources>18000</StageRefinedResources>
+        <Money>825000000</Money>
+        <StageMoney>230000000</StageMoney>
+        <NaturalResources>1860000</NaturalResources>
+        <StageNaturalResources>320000</StageNaturalResources>
+        <RefinedResources>1490000</RefinedResources>
+        <StageRefinedResources>180000</StageRefinedResources>
         <Population>375900000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">IN</Border>
@@ -2302,11 +2302,11 @@
     <State Id="KO">
         <Name>Korea</Name>
         <Money>1100000000</Money>
-        <StageMoney>38000000</StageMoney>
-        <NaturalResources>174000</NaturalResources>
-        <StageNaturalResources>29000</StageNaturalResources>
-        <RefinedResources>231000</RefinedResources>
-        <StageRefinedResources>32000</StageRefinedResources>
+        <StageMoney>380000000</StageMoney>
+        <NaturalResources>1740000</NaturalResources>
+        <StageNaturalResources>290000</StageNaturalResources>
+        <RefinedResources>2310000</RefinedResources>
+        <StageRefinedResources>320000</StageRefinedResources>
         <Population>76900000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">CN</Border>
@@ -2363,12 +2363,12 @@
 
     <State Id="LY">
         <Name>Lybia</Name>
-        <Money>250000000</Money>
-        <StageMoney>19000000</StageMoney>
-        <NaturalResources>265000</NaturalResources>
-        <StageNaturalResources>86000</StageNaturalResources>
-        <RefinedResources>84000</RefinedResources>
-        <StageRefinedResources>7800</StageRefinedResources>
+        <Money>370000000</Money>
+        <StageMoney>190000000</StageMoney>
+        <NaturalResources>2650000</NaturalResources>
+        <StageNaturalResources>860000</StageNaturalResources>
+        <RefinedResources>840000</RefinedResources>
+        <StageRefinedResources>78000</StageRefinedResources>
         <Population>19100000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">MO</Border>
@@ -2409,13 +2409,13 @@
 
     <State Id="RO">
         <Name>Romania</Name>
-        <Money>450000000</Money>
-        <StageMoney>13000000</StageMoney>
-        <NaturalResources>142000</NaturalResources>
-        <StageNaturalResources>38000</StageNaturalResources>
-        <RefinedResources>98000</RefinedResources>
-        <StageRefinedResources>19000</StageRefinedResources>
-        <Population>59200000</Population>
+        <Money>600000000</Money>
+        <StageMoney>130000000</StageMoney>
+        <NaturalResources>172000</NaturalResources>
+        <StageNaturalResources>680000</StageNaturalResources>
+        <RefinedResources>1180000</RefinedResources>
+        <StageRefinedResources>390000</StageRefinedResources>
+        <Population>64200000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SU</Border>
             <Border SeaBorder="false">PL</Border>
@@ -2484,11 +2484,11 @@
     <State Id="MX">
         <Name>Mexico</Name>
         <Money>800000000</Money>
-        <StageMoney>24000000</StageMoney>
-        <NaturalResources>186000</NaturalResources>
-        <StageNaturalResources>32000</StageNaturalResources>
-        <RefinedResources>130000</RefinedResources>
-        <StageRefinedResources>18000</StageRefinedResources>
+        <StageMoney>240000000</StageMoney>
+        <NaturalResources>1860000</NaturalResources>
+        <StageNaturalResources>320000</StageNaturalResources>
+        <RefinedResources>1300000</RefinedResources>
+        <StageRefinedResources>180000</StageRefinedResources>
         <Population>129900000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">US</Border>
@@ -2539,12 +2539,12 @@
 
     <State Id="NZ">
         <Name>New Zealand</Name>
-        <Money>440000000</Money>
-        <StageMoney>22300000</StageMoney>
-        <NaturalResources>252000</NaturalResources>
-        <StageNaturalResources>71000</StageNaturalResources>
-        <RefinedResources>106000</RefinedResources>
-        <StageRefinedResources>22000</StageRefinedResources>
+        <Money>540000000</Money>
+        <StageMoney>223000000</StageMoney>
+        <NaturalResources>2520000</NaturalResources>
+        <StageNaturalResources>710000</StageNaturalResources>
+        <RefinedResources>1060000</RefinedResources>
+        <StageRefinedResources>220000</StageRefinedResources>
         <Population>5149000</Population>
         <NeighboringStates>
             <Border SeaBorder="true">AU</Border>
@@ -2573,11 +2573,11 @@
     <State Id="PL">
         <Name>Poland</Name>
         <Money>650000000</Money>
-        <StageMoney>26500000</StageMoney>
-        <NaturalResources>163000</NaturalResources>
-        <StageNaturalResources>35000</StageNaturalResources>
-        <RefinedResources>92000</RefinedResources>
-        <StageRefinedResources>21000</StageRefinedResources>
+        <StageMoney>265000000</StageMoney>
+        <NaturalResources>1630000</NaturalResources>
+        <StageNaturalResources>350000</StageNaturalResources>
+        <RefinedResources>920000</RefinedResources>
+        <StageRefinedResources>210000</StageRefinedResources>
         <Population>38000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">SU</Border>
@@ -2629,12 +2629,12 @@
 
     <State Id="TR">
         <Name>Turkey</Name>
-        <Money>600000000</Money>
-        <StageMoney>34000000</StageMoney>
-        <NaturalResources>175000</NaturalResources>
-        <StageNaturalResources>23000</StageNaturalResources>
-        <RefinedResources>183000</RefinedResources>
-        <StageRefinedResources>22000</StageRefinedResources>
+        <Money>700000000</Money>
+        <StageMoney>340000000</StageMoney>
+        <NaturalResources>1750000</NaturalResources>
+        <StageNaturalResources>230000</StageNaturalResources>
+        <RefinedResources>1830000</RefinedResources>
+        <StageRefinedResources>220000</StageRefinedResources>
         <Population>85300000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">GR</Border>
@@ -2674,11 +2674,11 @@
     <State Id="US">
         <Name>United States</Name>
         <Money>1200000000</Money>
-        <StageMoney>53000000</StageMoney>
-        <NaturalResources>239000</NaturalResources>
-        <StageNaturalResources>38500</StageNaturalResources>
-        <RefinedResources>238000</RefinedResources>
-        <StageRefinedResources>37000</StageRefinedResources>
+        <StageMoney>383000000</StageMoney>
+        <NaturalResources>2390000</NaturalResources>
+        <StageNaturalResources>385000</StageNaturalResources>
+        <RefinedResources>2380000</RefinedResources>
+        <StageRefinedResources>370000</StageRefinedResources>
         <Population>341100000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">MX</Border>
@@ -2734,12 +2734,12 @@
 
     <State Id="SA">
         <Name>South Africa</Name>
-        <Money>700000000</Money>
-        <StageMoney>26000000</StageMoney>
-        <NaturalResources>176000</NaturalResources>
-        <StageNaturalResources>34000</StageNaturalResources>
-        <RefinedResources>112000</RefinedResources>
-        <StageRefinedResources>23000</StageRefinedResources>
+        <Money>800000000</Money>
+        <StageMoney>260000000</StageMoney>
+        <NaturalResources>1760000</NaturalResources>
+        <StageNaturalResources>340000</StageNaturalResources>
+        <RefinedResources>1120000</RefinedResources>
+        <StageRefinedResources>230000</StageRefinedResources>
         <Population>91000000</Population>
         <NeighboringStates>
             <Border SeaBorder="false">CG</Border>

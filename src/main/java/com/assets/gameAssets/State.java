@@ -447,18 +447,18 @@ public class State {
         double[] totResources = { 0, 0, 0, 0 };
 
         for (State s : givingStates) {
-            totResources[0] += s.getMoney();
-            totResources[1] += s.getTotalArmy();
-            totResources[2] += s.getNaturalResources();
-            totResources[3] += s.getRefinedResources();
+            totResources[0] += s.getMoney() / 2;
+            totResources[1] += s.getTotalArmy() / 2;
+            totResources[2] += s.getNaturalResources() / 2;
+            totResources[3] += s.getRefinedResources() / 2;
 
         }
         
         for (State s : givingStates) {
-            s.subMoney(resources[0] * (totResources[0] / s.getMoney()));
-            s.subArmy(resources[1] * (totResources[1] / s.getTotalArmy()));
-            s.subNaturalResources(resources[2] * (totResources[2] / s.getNaturalResources()));
-            s.subRefinedResources(resources[3] * (totResources[3] / s.getRefinedResources()));
+            s.subMoney(resources[0] * (s.getMoney() / totResources[0]));
+            s.subArmy(resources[1] * (s.getTotalArmy() / totResources[1]));
+            s.subNaturalResources(resources[2] * (s.getNaturalResources() / totResources[2]));
+            s.subRefinedResources(resources[3] * (s.getRefinedResources() / totResources[3]));
         }
 
     }
@@ -481,6 +481,10 @@ public class State {
 
     private void addRefinedResources(double n) {
         this.refinedResources += n;
+    }
+
+    public void resetLastAttacksTurn() {
+        this.lastTurnAttacksDone = 0;
     }
 
 

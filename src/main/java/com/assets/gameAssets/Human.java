@@ -6,8 +6,6 @@ public class Human extends Player {
 
         super(name, hexColor, Player.PlayerType.TYPE_PLAYER);        
 
-    }
-
-    
+    }    
 
 }

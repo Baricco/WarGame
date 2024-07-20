@@ -123,8 +123,6 @@ public class Bot extends Player implements Runnable {
         try { player.addAlly(this); } catch(Exception e) {}
 
     }
-
-    private State getRandomState() { return this.getAllStates().get(rnd.nextInt(this.getAllStates().size())); }
     
 
     public void play() {
@@ -146,7 +144,7 @@ public class Bot extends Player implements Runnable {
 
                     State attackingState = allStates.get(rnd.nextInt(allStates.size()));
                     
-                    if (attackingState.getlastTurnAttacksDone() > this.getLevel() || !this.getTotalState().getArmy().isEnoughBig()) {
+                    if (getlastTurnAttacksDone() > this.getLevel() || !this.getTotalState().getArmy().isEnoughBig()) {
                         i--;
                         break;
                     }

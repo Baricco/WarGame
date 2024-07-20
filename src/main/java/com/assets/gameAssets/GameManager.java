@@ -274,6 +274,15 @@ public class GameManager {
         curListView.scrollTo(curListView.getItems().size());
     }
 
+    private void removeStringFromListView(String listViewSelector, String string) {
+        Node element = (Node)getElementByCssSelector(listViewSelector);
+        ListView<String> curListView;
+        if (!(element instanceof ListView)) return;
+        curListView = (ListView<String>)element;
+        curListView.getItems().remove(string);
+        curListView.scrollTo(curListView.getItems().size());
+    }
+
 
 /*
     private void setListViewCellColor(String listViewSelector, int cellIndex, boolean outcome) {
@@ -1176,6 +1185,7 @@ public class GameManager {
                         else try { removePlayer(curOwner); } catch(Exception err) { }
                     }
                 }
+                if (curOwner.equals(getHumanPlayer())) removeStringFromListView("playerStateConqueredTerritoriesListView", curSelectedState.getName());
             }
             
             try { getCurrentPlayer().occupyState(curSelectedState); } catch(Exception e) { }
@@ -1210,7 +1220,7 @@ public class GameManager {
 
         if (!attackerArmy.isEnoughBig()) return;
 
-        curSelectedState.incrementAttacksDone();
+        getCurrentPlayer().getRandomState().incrementAttacksDone();
 
         refreshSideMenu(curSelectedState);
 
@@ -1404,7 +1414,9 @@ public class GameManager {
             }
         };
 
-        if (getHumanPlayer().hasNeighboringState(state) && state.getlastTurnAttacksDone() <= getHumanPlayer().getLevel()) {  // The Player can attack the Selected State
+        System.out.println(getHumanPlayer().hasNeighboringState(state) + " && (" + getHumanPlayer().getlastTurnAttacksDone() + " <= " + getHumanPlayer().getLevel() + " )");
+
+        if (getHumanPlayer().hasNeighboringState(state) && (getHumanPlayer().getlastTurnAttacksDone() <= getHumanPlayer().getLevel())) {  // The Player can attack the Selected State
 
 
             EventHandler<ActionEvent> attackHandler = new EventHandler<ActionEvent>() {
@@ -1599,6 +1611,8 @@ public class GameManager {
     public void refreshSideMenu() { refreshSideMenu(curSelectedState); }
 
     private void refreshSideMenu(State selectedState) {
+
+        if (selectedPlayerIndex != 0) return;
 
         setLabelContent("#menuStateNameLabel", selectedState.getName());
 
@@ -1832,9 +1846,9 @@ public class GameManager {
 
     private void playTurn() {
 
-        System.out.println(players.get(selectedPlayerIndex).getName() + " is Playing");
+        System.out.println(getCurrentPlayer().getName() + " is Playing");
 
-        players.get(selectedPlayerIndex).updateTurnActions();
+        getCurrentPlayer().updateTurnActions();
 
         if (this.selectedPlayerIndex == 0) { 
             App.gameManager.calendar.update();
@@ -1868,7 +1882,7 @@ public class GameManager {
 
         this.playTurn();
 
-        if(players.get(selectedPlayerIndex).getOccupiedStates().size() == players.get(selectedPlayerIndex).getLevel() * 2) players.get(selectedPlayerIndex).increaseLevel();
+        if(getCurrentPlayer().getOccupiedStates().size() == getCurrentPlayer().getLevel() * 2) getCurrentPlayer().increaseLevel();
         
     }
 

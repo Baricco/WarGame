@@ -2,6 +2,7 @@ package com.assets.gameAssets;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.random.RandomGenerator;
 
 import com.assets.gameAssets.basics.Army;
 import com.assets.generalAssets.App;
@@ -87,8 +88,15 @@ public abstract class Player {
         return (this.originalState != null);
     }
 
+    public int getlastTurnAttacksDone() {
+        int lastAttacks = 0;
+        for (State s : this.getAllStates()) lastAttacks += s.getlastTurnAttacksDone();
+        return lastAttacks;
+    }
+
     public void updateTurnActions() {
         for (State s : this.getAllStates()) {
+            s.resetLastAttacksTurn();
             s.updateResources();
             s.updateFortification();
             s.updateRecruitingArmy();
@@ -192,6 +200,8 @@ public abstract class Player {
         
         return false;
     }
+
+    public State getRandomState() { return this.getAllStates().get(RandomGenerator.getDefault().nextInt(this.getAllStates().size())); }
 
     public boolean hasNeighboringState(State state) {
         if (this.originalState.isNeighboring(state)) return true;

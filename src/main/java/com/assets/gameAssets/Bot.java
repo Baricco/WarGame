@@ -54,7 +54,7 @@ public class Bot extends Player implements Runnable {
         return getRandomArmy(this.getTotalState().getArmy().getTotal());
     }
 
-    private Army getRandomArmy(int maxArmy) {
+    private Army getRandomArmy(long maxArmy) {
 
         Army totalArmy = new Army(maxArmy);
 

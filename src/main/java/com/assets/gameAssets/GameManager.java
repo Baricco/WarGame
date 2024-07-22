@@ -382,7 +382,7 @@ public class GameManager {
     }
 
     private String formatHighNumber(double value) {
-        int billion = 1000000000, million = 1000000, thousand = 1000;
+        long billion = 1000000000L, million = 1000000L, thousand = 1000L;
         if (value >= billion) return Math.round(value / billion) + " Bln";
         if (value >= million) return Math.round(value / million) + " Mln";
         if (value >= thousand) return Math.round(value / thousand) + " K";
@@ -1104,8 +1104,7 @@ public class GameManager {
  
         }
 
-        if (totalPoints > 0) return true;
-        return false;
+       return (totalPoints > 0);
     }
 
     @FXML
@@ -1414,8 +1413,6 @@ public class GameManager {
             }
         };
 
-        System.out.println(getHumanPlayer().hasNeighboringState(state) + " && (" + getHumanPlayer().getlastTurnAttacksDone() + " <= " + getHumanPlayer().getLevel() + " )");
-
         if (getHumanPlayer().hasNeighboringState(state) && (getHumanPlayer().getlastTurnAttacksDone() <= getHumanPlayer().getLevel())) {  // The Player can attack the Selected State
 
 
@@ -1553,7 +1550,7 @@ public class GameManager {
         int iconIndex = 0;
         for (Node curImageView : diceContainer.getChildren()) {
             
-            System.out.println(diceContainerSelector + " --> Dice Type: " + diceNames[iconIndex] + " Dice Value: " + dices.get(armyTypes[iconIndex]));
+        //    System.out.println(diceContainerSelector + " --> Dice Type: " + diceNames[iconIndex] + " Dice Value: " + dices.get(armyTypes[iconIndex]));
             
             setDiceImageView(((ImageView)curImageView), diceNames[iconIndex] + "_" + dices.get(armyTypes[iconIndex]));
 
@@ -1872,6 +1869,8 @@ public class GameManager {
 
     public void passTurn() {
 
+        if(getCurrentPlayer().getOccupiedStates().size() == getCurrentPlayer().getLevel() * 2) getCurrentPlayer().increaseLevel();
+
         try { removeBottomMenuPane("#attackMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#recruitMenu"); } catch(Exception e) {}
         try { removeBottomMenuPane("#supplyMenu"); } catch(Exception e) {}
@@ -1881,8 +1880,6 @@ public class GameManager {
         this.selectedPlayerIndex = (this.selectedPlayerIndex + 1) % this.getActivePlayers().size();
 
         this.playTurn();
-
-        if(getCurrentPlayer().getOccupiedStates().size() == getCurrentPlayer().getLevel() * 2) getCurrentPlayer().increaseLevel();
         
     }
 

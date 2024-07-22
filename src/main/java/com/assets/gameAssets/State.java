@@ -230,7 +230,7 @@ public class State {
         return this.army;
     }
 
-    public int getTotalArmy() {
+    public long getTotalArmy() {
         return this.army.getTotal();
     }
 
@@ -453,12 +453,15 @@ public class State {
             totResources[3] += s.getRefinedResources() / 2;
 
         }
+
+        // resource : x = totRes : s.getRes() / 2
+        // x = resource * (getRes() / 2) / totRes
         
         for (State s : givingStates) {
-            s.subMoney(resources[0] * (s.getMoney() / totResources[0]));
-            s.subArmy(resources[1] * (s.getTotalArmy() / totResources[1]));
-            s.subNaturalResources(resources[2] * (s.getNaturalResources() / totResources[2]));
-            s.subRefinedResources(resources[3] * (s.getRefinedResources() / totResources[3]));
+            s.subMoney(resources[0] * ((s.getMoney() / 2) / totResources[0]));
+            s.subArmy(resources[1] * ((s.getTotalArmy() / 2) / totResources[1]));
+            s.subNaturalResources(resources[2] * ((s.getNaturalResources() / 2) / totResources[2]));
+            s.subRefinedResources(resources[3] * ((s.getRefinedResources() / 2) / totResources[3]));
         }
 
     }

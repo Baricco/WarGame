@@ -162,8 +162,8 @@ public class Army {
         throw new IllegalArgumentException("Army Type doesn't exist");
     }
 
-    public int getTotal() {
-        return (int)Math.round(this.infantry + this.artillery + this.tanks + this.apaches);
+    public long getTotal() {
+        return (long)Math.round(this.infantry + this.artillery + this.tanks + this.apaches);
     }
 
     public ARMY_TYPE getBestArmyType() {
